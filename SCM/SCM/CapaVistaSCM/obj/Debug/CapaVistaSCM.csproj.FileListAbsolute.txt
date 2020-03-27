@@ -1,0 +1,9 @@
+\\Mac\Home\Documents\Universidad\9no somestre\042 Ingenieria de Software\Proyecto Final\Visual\SCM\SCM\CapaVistaSCM\bin\Debug\CapaVistaSCM.dll
+\\Mac\Home\Documents\Universidad\9no somestre\042 Ingenieria de Software\Proyecto Final\Visual\SCM\SCM\CapaVistaSCM\bin\Debug\CapaVistaSCM.pdb
+\\Mac\Home\Documents\Universidad\9no somestre\042 Ingenieria de Software\Proyecto Final\Visual\SCM\SCM\CapaVistaSCM\bin\Debug\CapaModeloSCM.dll
+\\Mac\Home\Documents\Universidad\9no somestre\042 Ingenieria de Software\Proyecto Final\Visual\SCM\SCM\CapaVistaSCM\bin\Debug\CapaModeloSCM.pdb
+\\Mac\Home\Documents\Universidad\9no somestre\042 Ingenieria de Software\Proyecto Final\Visual\SCM\SCM\CapaVistaSCM\obj\Debug\CapaVistaSCM.csprojAssemblyReference.cache
+\\Mac\Home\Documents\Universidad\9no somestre\042 Ingenieria de Software\Proyecto Final\Visual\SCM\SCM\CapaVistaSCM\obj\Debug\CapaVistaSCM.csproj.CoreCompileInputs.cache
+\\Mac\Home\Documents\Universidad\9no somestre\042 Ingenieria de Software\Proyecto Final\Visual\SCM\SCM\CapaVistaSCM\obj\Debug\CapaVistaSCM.csproj.CopyComplete
+\\Mac\Home\Documents\Universidad\9no somestre\042 Ingenieria de Software\Proyecto Final\Visual\SCM\SCM\CapaVistaSCM\obj\Debug\CapaVistaSCM.dll
+\\Mac\Home\Documents\Universidad\9no somestre\042 Ingenieria de Software\Proyecto Final\Visual\SCM\SCM\CapaVistaSCM\obj\Debug\CapaVistaSCM.pdb
