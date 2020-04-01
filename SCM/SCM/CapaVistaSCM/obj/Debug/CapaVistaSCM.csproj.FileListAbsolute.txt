@@ -17,7 +17,6 @@
 \\Mac\Home\Documents\Universidad\9no somestre\042 Ingenieria de Software\Proyecto Final\git hub\SCM-Ligia\SCM\SCM\CapaVistaSCM\bin\Debug\CapaModeloSCM.dll
 \\Mac\Home\Documents\Universidad\9no somestre\042 Ingenieria de Software\Proyecto Final\git hub\SCM-Ligia\SCM\SCM\CapaVistaSCM\bin\Debug\CapaModeloSCM.pdb
 \\Mac\Home\Documents\Universidad\9no somestre\042 Ingenieria de Software\Proyecto Final\git hub\SCM-Ligia\SCM\SCM\CapaVistaSCM\obj\Debug\CapaVistaSCM.csprojAssemblyReference.cache
-\\Mac\Home\Documents\Universidad\9no somestre\042 Ingenieria de Software\Proyecto Final\git hub\SCM-Ligia\SCM\SCM\CapaVistaSCM\obj\Debug\CapaVistaSCM.MovimientosInventarios.Frm_movimientoInventarioDetalle.resources
 \\Mac\Home\Documents\Universidad\9no somestre\042 Ingenieria de Software\Proyecto Final\git hub\SCM-Ligia\SCM\SCM\CapaVistaSCM\obj\Debug\CapaVistaSCM.Frm_MovimientosInventarios.resources
 \\Mac\Home\Documents\Universidad\9no somestre\042 Ingenieria de Software\Proyecto Final\git hub\SCM-Ligia\SCM\SCM\CapaVistaSCM\obj\Debug\CapaVistaSCM.MDI_SCM.resources
 \\Mac\Home\Documents\Universidad\9no somestre\042 Ingenieria de Software\Proyecto Final\git hub\SCM-Ligia\SCM\SCM\CapaVistaSCM\obj\Debug\CapaVistaSCM.Properties.Resources.resources
@@ -27,3 +26,5 @@
 \\Mac\Home\Documents\Universidad\9no somestre\042 Ingenieria de Software\Proyecto Final\git hub\SCM-Ligia\SCM\SCM\CapaVistaSCM\obj\Debug\CapaVistaSCM.dll
 \\Mac\Home\Documents\Universidad\9no somestre\042 Ingenieria de Software\Proyecto Final\git hub\SCM-Ligia\SCM\SCM\CapaVistaSCM\obj\Debug\CapaVistaSCM.pdb
 \\Mac\Home\Documents\Universidad\9no somestre\042 Ingenieria de Software\Proyecto Final\git hub\SCM-Ligia\SCM\SCM\CapaVistaSCM\obj\Debug\CapaVistaSCM.Frm_OrdenCompra.resources
+\\Mac\Home\Documents\Universidad\9no somestre\042 Ingenieria de Software\Proyecto Final\git hub\SCM-Ligia\SCM\SCM\CapaVistaSCM\obj\Debug\CapaVistaSCM.MovimientosInventarios.Frm_productos.resources
+\\Mac\Home\Documents\Universidad\9no somestre\042 Ingenieria de Software\Proyecto Final\git hub\SCM-Ligia\SCM\SCM\CapaVistaSCM\obj\Debug\CapaVistaSCM.OrdenesCompra.Frm_productos.resources

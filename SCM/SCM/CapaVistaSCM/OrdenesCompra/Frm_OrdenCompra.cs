@@ -16,5 +16,11 @@ namespace CapaVistaSCM
         {
             InitializeComponent();
         }
+
+        private void Grp_agregarProducto_Enter(object sender, EventArgs e)
+        {
+            OrdenesCompra.Frm_productos productos = new OrdenesCompra.Frm_productos();
+            productos.Show();
+        }
     }
 }

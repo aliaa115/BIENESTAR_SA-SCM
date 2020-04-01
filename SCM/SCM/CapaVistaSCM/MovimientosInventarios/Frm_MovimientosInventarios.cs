@@ -19,10 +19,10 @@ namespace CapaVistaSCM
 
         private void Button1_Click(object sender, EventArgs e)
         {
-            MovimientosInventarios.Frm_movimientoInventarioDetalle inventarioDetalle =
-                new MovimientosInventarios.Frm_movimientoInventarioDetalle();
+            MovimientosInventarios.Frm_productos productos =
+                new MovimientosInventarios.Frm_productos();
 
-            inventarioDetalle.Show();
+            productos.Show();
         }
     }
 }

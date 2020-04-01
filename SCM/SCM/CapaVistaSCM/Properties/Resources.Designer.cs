@@ -63,6 +63,16 @@ namespace CapaVistaSCM.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _027_shopping_cart {
+            get {
+                object obj = ResourceManager.GetObject("027-shopping-cart", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap _059_file {
             get {
                 object obj = ResourceManager.GetObject("059-file", resourceCulture);
@@ -106,6 +116,16 @@ namespace CapaVistaSCM.Properties {
         internal static System.Drawing.Bitmap _092_package {
             get {
                 object obj = ResourceManager.GetObject("092-package", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _159_pencil {
+            get {
+                object obj = ResourceManager.GetObject("159-pencil", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
