@@ -103,5 +103,17 @@ namespace CapaVistaSCM
                 childForm.Close();
             }
         }
+
+        private void MovimientosDeInventarioToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Frm_MovimientosInventarios movimientosInventarios = new Frm_MovimientosInventarios();
+            movimientosInventarios.Show();
+        }
+
+        private void OrdenDeCompraToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Frm_OrdenCompra ordenCompra = new Frm_OrdenCompra();
+            ordenCompra.Show();
+        }
     }
 }

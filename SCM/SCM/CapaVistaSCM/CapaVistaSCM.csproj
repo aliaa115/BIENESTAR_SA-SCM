@@ -43,6 +43,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Frm_cotizacionProveedores.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_cotizacionProveedores.Designer.cs">
+      <DependentUpon>Frm_cotizacionProveedores.cs</DependentUpon>
+    </Compile>
     <Compile Include="OrdenesCompra\Frm_OrdenCompra.cs">
       <SubType>Form</SubType>
     </Compile>
