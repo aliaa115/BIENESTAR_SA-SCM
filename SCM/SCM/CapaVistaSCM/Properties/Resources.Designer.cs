@@ -93,6 +93,16 @@ namespace CapaVistaSCM.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _091_trolley {
+            get {
+                object obj = ResourceManager.GetObject("091-trolley", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap _092_package {
             get {
                 object obj = ResourceManager.GetObject("092-package", resourceCulture);

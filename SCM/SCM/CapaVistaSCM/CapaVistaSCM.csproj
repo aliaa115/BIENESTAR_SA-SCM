@@ -43,6 +43,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Frm_OrdenCompra.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_OrdenCompra.Designer.cs">
+      <DependentUpon>Frm_OrdenCompra.cs</DependentUpon>
+    </Compile>
     <Compile Include="MovimientosInventarios\Frm_movimientoInventarioDetalle.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -76,6 +82,9 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Frm_OrdenCompra.resx">
+      <DependentUpon>Frm_OrdenCompra.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MovimientosInventarios\Frm_movimientoInventarioDetalle.resx">
       <DependentUpon>Frm_movimientoInventarioDetalle.cs</DependentUpon>
     </EmbeddedResource>
@@ -104,6 +113,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\065-edit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\091-trolley.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="OrdenesCompra\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
