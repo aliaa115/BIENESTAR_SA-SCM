@@ -10,18 +10,16 @@ using System.Windows.Forms;
 
 namespace CapaVistaSCM
 {
-    public partial class Frm_MovimientosInventarios : Form
+    public partial class Frm_OrdenCompra : Form
     {
-        public Frm_MovimientosInventarios()
+        public Frm_OrdenCompra()
         {
             InitializeComponent();
         }
 
-        private void Button1_Click(object sender, EventArgs e)
+        private void Grp_agregarProducto_Enter(object sender, EventArgs e)
         {
-            MovimientosInventarios.Frm_productos productos =
-                new MovimientosInventarios.Frm_productos();
-
+            OrdenesCompra.Frm_productos productos = new OrdenesCompra.Frm_productos();
             productos.Show();
         }
     }

@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace CapaVistaSCM.MovimientosInventarios
 {
-    public partial class Frm_movimientoInventarioDetalle : Form
+    public partial class Frm_productos : Form
     {
-        public Frm_movimientoInventarioDetalle()
+        public Frm_productos()
         {
             InitializeComponent();
         }
