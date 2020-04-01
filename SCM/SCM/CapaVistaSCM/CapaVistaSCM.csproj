@@ -33,6 +33,8 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -41,13 +43,67 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="MovimientosInventarios\Frm_movimientoInventarioDetalle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MovimientosInventarios\Frm_movimientoInventarioDetalle.Designer.cs">
+      <DependentUpon>Frm_movimientoInventarioDetalle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MovimientosInventarios\Frm_MovimientosInventarios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MovimientosInventarios\.Designer.cs">
+      <DependentUpon>Frm_MovimientosInventarios.cs</DependentUpon>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MDI_SCM.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MDI_SCM.Designer.cs">
+      <DependentUpon>MDI_SCM.cs</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\CapaModeloSCM\CapaModeloSCM.csproj">
       <Project>{767a629c-555e-4eba-96cd-636be58a2256}</Project>
       <Name>CapaModeloSCM</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="MovimientosInventarios\Frm_movimientoInventarioDetalle.resx">
+      <DependentUpon>Frm_movimientoInventarioDetalle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MovimientosInventarios\Frm_MovimientosInventarios.resx">
+      <DependentUpon>Frm_MovimientosInventarios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MDI_SCM.resx">
+      <DependentUpon>MDI_SCM.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\083-floppy-disk.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\092-package.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\243-exit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\059-file.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\065-edit.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
