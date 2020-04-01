@@ -1,6 +1,0 @@
-\\Mac\Home\Documents\Universidad\9no somestre\042 Ingenieria de Software\Proyecto Final\Visual\SCM\SCM\CapaControladorSCM\bin\Debug\CapaControladorSCM.dll
-\\Mac\Home\Documents\Universidad\9no somestre\042 Ingenieria de Software\Proyecto Final\Visual\SCM\SCM\CapaControladorSCM\bin\Debug\CapaControladorSCM.pdb
-\\Mac\Home\Documents\Universidad\9no somestre\042 Ingenieria de Software\Proyecto Final\Visual\SCM\SCM\CapaControladorSCM\obj\Debug\CapaControladorSCM.csprojAssemblyReference.cache
-\\Mac\Home\Documents\Universidad\9no somestre\042 Ingenieria de Software\Proyecto Final\Visual\SCM\SCM\CapaControladorSCM\obj\Debug\CapaControladorSCM.csproj.CoreCompileInputs.cache
-\\Mac\Home\Documents\Universidad\9no somestre\042 Ingenieria de Software\Proyecto Final\Visual\SCM\SCM\CapaControladorSCM\obj\Debug\CapaControladorSCM.dll
-\\Mac\Home\Documents\Universidad\9no somestre\042 Ingenieria de Software\Proyecto Final\Visual\SCM\SCM\CapaControladorSCM\obj\Debug\CapaControladorSCM.pdb
