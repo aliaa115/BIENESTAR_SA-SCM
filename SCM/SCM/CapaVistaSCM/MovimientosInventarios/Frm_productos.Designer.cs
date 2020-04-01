@@ -169,7 +169,7 @@
             // 
             this.Grp_cancelar.Controls.Add(this.Btn_cancelar);
             this.Grp_cancelar.Font = new System.Drawing.Font("Century Gothic", 10F);
-            this.Grp_cancelar.Location = new System.Drawing.Point(693, 19);
+            this.Grp_cancelar.Location = new System.Drawing.Point(693, 87);
             this.Grp_cancelar.Name = "Grp_cancelar";
             this.Grp_cancelar.Size = new System.Drawing.Size(110, 60);
             this.Grp_cancelar.TabIndex = 32;
@@ -205,7 +205,7 @@
             // 
             this.Grp_guardar.Controls.Add(this.Btn_guardar);
             this.Grp_guardar.Font = new System.Drawing.Font("Century Gothic", 10F);
-            this.Grp_guardar.Location = new System.Drawing.Point(693, 82);
+            this.Grp_guardar.Location = new System.Drawing.Point(696, 21);
             this.Grp_guardar.Name = "Grp_guardar";
             this.Grp_guardar.Size = new System.Drawing.Size(107, 60);
             this.Grp_guardar.TabIndex = 31;

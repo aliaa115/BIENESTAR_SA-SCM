@@ -34,35 +34,33 @@
             this.Lbl_titulo = new System.Windows.Forms.Label();
             this.Pnl_desarrollo = new System.Windows.Forms.Panel();
             this.Grp_DatosDetalle = new System.Windows.Forms.GroupBox();
+            this.Lbl_precioTotal = new System.Windows.Forms.Label();
+            this.Txt_precioTotal = new System.Windows.Forms.TextBox();
+            this.Dgv_movimientoDetalle = new System.Windows.Forms.DataGridView();
+            this.Producto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Precio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Nud_cantidad = new System.Windows.Forms.NumericUpDown();
             this.Grp_cancelar = new System.Windows.Forms.GroupBox();
             this.Btn_cancelar = new System.Windows.Forms.Button();
             this.Lbl_cantidad = new System.Windows.Forms.Label();
             this.Grp_guardar = new System.Windows.Forms.GroupBox();
             this.Btn_guardar = new System.Windows.Forms.Button();
-            this.Txt_costo = new System.Windows.Forms.TextBox();
             this.Txt_precio = new System.Windows.Forms.TextBox();
             this.Cmb_nombre = new System.Windows.Forms.ComboBox();
-            this.Lbl_costo = new System.Windows.Forms.Label();
             this.Lbl_precio = new System.Windows.Forms.Label();
             this.Cbo_codigo = new System.Windows.Forms.ComboBox();
             this.Lbl_codigo = new System.Windows.Forms.Label();
             this.Lbl_nombre = new System.Windows.Forms.Label();
-            this.Dgv_movimientoDetalle = new System.Windows.Forms.DataGridView();
-            this.Producto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Precio = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Lbl_precioTotal = new System.Windows.Forms.Label();
-            this.Txt_precioTotal = new System.Windows.Forms.TextBox();
             this.Tbl_movimientoInventario.SuspendLayout();
             this.Pnl_titulo.SuspendLayout();
             this.Pnl_desarrollo.SuspendLayout();
             this.Grp_DatosDetalle.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Dgv_movimientoDetalle)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Nud_cantidad)).BeginInit();
             this.Grp_cancelar.SuspendLayout();
             this.Grp_guardar.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.Dgv_movimientoDetalle)).BeginInit();
             this.SuspendLayout();
             // 
             // Tbl_movimientoInventario
@@ -138,10 +136,8 @@
             this.Grp_DatosDetalle.Controls.Add(this.Grp_cancelar);
             this.Grp_DatosDetalle.Controls.Add(this.Lbl_cantidad);
             this.Grp_DatosDetalle.Controls.Add(this.Grp_guardar);
-            this.Grp_DatosDetalle.Controls.Add(this.Txt_costo);
             this.Grp_DatosDetalle.Controls.Add(this.Txt_precio);
             this.Grp_DatosDetalle.Controls.Add(this.Cmb_nombre);
-            this.Grp_DatosDetalle.Controls.Add(this.Lbl_costo);
             this.Grp_DatosDetalle.Controls.Add(this.Lbl_precio);
             this.Grp_DatosDetalle.Controls.Add(this.Cbo_codigo);
             this.Grp_DatosDetalle.Controls.Add(this.Lbl_codigo);
@@ -153,176 +149,26 @@
             this.Grp_DatosDetalle.TabStop = false;
             this.Grp_DatosDetalle.Text = "PRODUCTO PARA MOVIMIENTO";
             // 
-            // Nud_cantidad
+            // Lbl_precioTotal
             // 
-            this.Nud_cantidad.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Nud_cantidad.Location = new System.Drawing.Point(96, 115);
-            this.Nud_cantidad.Maximum = new decimal(new int[] {
-            1000000,
-            0,
-            0,
-            0});
-            this.Nud_cantidad.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this.Nud_cantidad.Name = "Nud_cantidad";
-            this.Nud_cantidad.Size = new System.Drawing.Size(53, 27);
-            this.Nud_cantidad.TabIndex = 34;
-            this.Nud_cantidad.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
+            this.Lbl_precioTotal.AutoSize = true;
+            this.Lbl_precioTotal.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Lbl_precioTotal.Location = new System.Drawing.Point(0, 145);
+            this.Lbl_precioTotal.Name = "Lbl_precioTotal";
+            this.Lbl_precioTotal.Size = new System.Drawing.Size(114, 19);
+            this.Lbl_precioTotal.TabIndex = 37;
+            this.Lbl_precioTotal.Text = "PRECIO TOTAL";
             // 
-            // Grp_cancelar
+            // Txt_precioTotal
             // 
-            this.Grp_cancelar.Controls.Add(this.Btn_cancelar);
-            this.Grp_cancelar.Font = new System.Drawing.Font("Century Gothic", 10F);
-            this.Grp_cancelar.Location = new System.Drawing.Point(693, 19);
-            this.Grp_cancelar.Name = "Grp_cancelar";
-            this.Grp_cancelar.Size = new System.Drawing.Size(110, 60);
-            this.Grp_cancelar.TabIndex = 32;
-            this.Grp_cancelar.TabStop = false;
-            this.Grp_cancelar.Text = "CANCELAR";
-            // 
-            // Btn_cancelar
-            // 
-            this.Btn_cancelar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(207)))), ((int)(((byte)(138)))));
-            this.Btn_cancelar.BackgroundImage = global::CapaVistaSCM.Properties.Resources._243_exit;
-            this.Btn_cancelar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.Btn_cancelar.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Btn_cancelar.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(207)))), ((int)(((byte)(138)))));
-            this.Btn_cancelar.FlatAppearance.BorderSize = 0;
-            this.Btn_cancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Btn_cancelar.Location = new System.Drawing.Point(3, 20);
-            this.Btn_cancelar.Name = "Btn_cancelar";
-            this.Btn_cancelar.Size = new System.Drawing.Size(104, 37);
-            this.Btn_cancelar.TabIndex = 36;
-            this.Btn_cancelar.UseVisualStyleBackColor = false;
-            // 
-            // Lbl_cantidad
-            // 
-            this.Lbl_cantidad.AutoSize = true;
-            this.Lbl_cantidad.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Lbl_cantidad.Location = new System.Drawing.Point(0, 118);
-            this.Lbl_cantidad.Name = "Lbl_cantidad";
-            this.Lbl_cantidad.Size = new System.Drawing.Size(90, 19);
-            this.Lbl_cantidad.TabIndex = 33;
-            this.Lbl_cantidad.Text = "CANTIDAD";
-            // 
-            // Grp_guardar
-            // 
-            this.Grp_guardar.Controls.Add(this.Btn_guardar);
-            this.Grp_guardar.Font = new System.Drawing.Font("Century Gothic", 10F);
-            this.Grp_guardar.Location = new System.Drawing.Point(693, 82);
-            this.Grp_guardar.Name = "Grp_guardar";
-            this.Grp_guardar.Size = new System.Drawing.Size(107, 60);
-            this.Grp_guardar.TabIndex = 31;
-            this.Grp_guardar.TabStop = false;
-            this.Grp_guardar.Text = "AGREGAR";
-            // 
-            // Btn_guardar
-            // 
-            this.Btn_guardar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(207)))), ((int)(((byte)(138)))));
-            this.Btn_guardar.BackgroundImage = global::CapaVistaSCM.Properties.Resources._159_pencil;
-            this.Btn_guardar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.Btn_guardar.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Btn_guardar.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(207)))), ((int)(((byte)(138)))));
-            this.Btn_guardar.FlatAppearance.BorderSize = 0;
-            this.Btn_guardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Btn_guardar.Location = new System.Drawing.Point(3, 20);
-            this.Btn_guardar.Name = "Btn_guardar";
-            this.Btn_guardar.Size = new System.Drawing.Size(101, 37);
-            this.Btn_guardar.TabIndex = 35;
-            this.Btn_guardar.UseVisualStyleBackColor = false;
-            // 
-            // Txt_costo
-            // 
-            this.Txt_costo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(232)))), ((int)(((byte)(232)))));
-            this.Txt_costo.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.Txt_costo.Enabled = false;
-            this.Txt_costo.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Txt_costo.Location = new System.Drawing.Point(395, 89);
-            this.Txt_costo.Name = "Txt_costo";
-            this.Txt_costo.Size = new System.Drawing.Size(241, 20);
-            this.Txt_costo.TabIndex = 30;
-            // 
-            // Txt_precio
-            // 
-            this.Txt_precio.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(232)))), ((int)(((byte)(232)))));
-            this.Txt_precio.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.Txt_precio.Enabled = false;
-            this.Txt_precio.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Txt_precio.Location = new System.Drawing.Point(80, 89);
-            this.Txt_precio.Name = "Txt_precio";
-            this.Txt_precio.Size = new System.Drawing.Size(241, 20);
-            this.Txt_precio.TabIndex = 29;
-            // 
-            // Cmb_nombre
-            // 
-            this.Cmb_nombre.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(232)))), ((int)(((byte)(232)))));
-            this.Cmb_nombre.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.Cmb_nombre.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Cmb_nombre.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Cmb_nombre.FormattingEnabled = true;
-            this.Cmb_nombre.Location = new System.Drawing.Point(80, 56);
-            this.Cmb_nombre.Name = "Cmb_nombre";
-            this.Cmb_nombre.Size = new System.Drawing.Size(494, 28);
-            this.Cmb_nombre.TabIndex = 21;
-            // 
-            // Lbl_costo
-            // 
-            this.Lbl_costo.AutoSize = true;
-            this.Lbl_costo.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Lbl_costo.Location = new System.Drawing.Point(327, 89);
-            this.Lbl_costo.Name = "Lbl_costo";
-            this.Lbl_costo.Size = new System.Drawing.Size(62, 19);
-            this.Lbl_costo.TabIndex = 17;
-            this.Lbl_costo.Text = "COSTO";
-            // 
-            // Lbl_precio
-            // 
-            this.Lbl_precio.AutoSize = true;
-            this.Lbl_precio.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Lbl_precio.Location = new System.Drawing.Point(0, 89);
-            this.Lbl_precio.Name = "Lbl_precio";
-            this.Lbl_precio.Size = new System.Drawing.Size(64, 19);
-            this.Lbl_precio.TabIndex = 15;
-            this.Lbl_precio.Text = "PRECIO";
-            // 
-            // Cbo_codigo
-            // 
-            this.Cbo_codigo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(232)))), ((int)(((byte)(232)))));
-            this.Cbo_codigo.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.Cbo_codigo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Cbo_codigo.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Cbo_codigo.FormattingEnabled = true;
-            this.Cbo_codigo.Location = new System.Drawing.Point(81, 22);
-            this.Cbo_codigo.Name = "Cbo_codigo";
-            this.Cbo_codigo.Size = new System.Drawing.Size(226, 28);
-            this.Cbo_codigo.TabIndex = 14;
-            // 
-            // Lbl_codigo
-            // 
-            this.Lbl_codigo.AutoSize = true;
-            this.Lbl_codigo.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Lbl_codigo.Location = new System.Drawing.Point(0, 26);
-            this.Lbl_codigo.Name = "Lbl_codigo";
-            this.Lbl_codigo.Size = new System.Drawing.Size(75, 19);
-            this.Lbl_codigo.TabIndex = 9;
-            this.Lbl_codigo.Text = "CODIGO";
-            // 
-            // Lbl_nombre
-            // 
-            this.Lbl_nombre.AutoSize = true;
-            this.Lbl_nombre.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Lbl_nombre.Location = new System.Drawing.Point(0, 60);
-            this.Lbl_nombre.Name = "Lbl_nombre";
-            this.Lbl_nombre.Size = new System.Drawing.Size(74, 19);
-            this.Lbl_nombre.TabIndex = 11;
-            this.Lbl_nombre.Text = "NOMBRE";
+            this.Txt_precioTotal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(232)))), ((int)(((byte)(232)))));
+            this.Txt_precioTotal.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.Txt_precioTotal.Enabled = false;
+            this.Txt_precioTotal.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Txt_precioTotal.Location = new System.Drawing.Point(120, 145);
+            this.Txt_precioTotal.Name = "Txt_precioTotal";
+            this.Txt_precioTotal.Size = new System.Drawing.Size(233, 20);
+            this.Txt_precioTotal.TabIndex = 38;
             // 
             // Dgv_movimientoDetalle
             // 
@@ -370,26 +216,155 @@
             this.Precio.Name = "Precio";
             this.Precio.ReadOnly = true;
             // 
-            // Lbl_precioTotal
+            // Nud_cantidad
             // 
-            this.Lbl_precioTotal.AutoSize = true;
-            this.Lbl_precioTotal.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Lbl_precioTotal.Location = new System.Drawing.Point(0, 145);
-            this.Lbl_precioTotal.Name = "Lbl_precioTotal";
-            this.Lbl_precioTotal.Size = new System.Drawing.Size(114, 19);
-            this.Lbl_precioTotal.TabIndex = 37;
-            this.Lbl_precioTotal.Text = "PRECIO TOTAL";
+            this.Nud_cantidad.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Nud_cantidad.Location = new System.Drawing.Point(96, 115);
+            this.Nud_cantidad.Maximum = new decimal(new int[] {
+            1000000,
+            0,
+            0,
+            0});
+            this.Nud_cantidad.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.Nud_cantidad.Name = "Nud_cantidad";
+            this.Nud_cantidad.Size = new System.Drawing.Size(53, 27);
+            this.Nud_cantidad.TabIndex = 34;
+            this.Nud_cantidad.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             // 
-            // Txt_precioTotal
+            // Grp_cancelar
             // 
-            this.Txt_precioTotal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(232)))), ((int)(((byte)(232)))));
-            this.Txt_precioTotal.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.Txt_precioTotal.Enabled = false;
-            this.Txt_precioTotal.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Txt_precioTotal.Location = new System.Drawing.Point(120, 145);
-            this.Txt_precioTotal.Name = "Txt_precioTotal";
-            this.Txt_precioTotal.Size = new System.Drawing.Size(233, 20);
-            this.Txt_precioTotal.TabIndex = 38;
+            this.Grp_cancelar.Controls.Add(this.Btn_cancelar);
+            this.Grp_cancelar.Font = new System.Drawing.Font("Century Gothic", 10F);
+            this.Grp_cancelar.Location = new System.Drawing.Point(692, 104);
+            this.Grp_cancelar.Name = "Grp_cancelar";
+            this.Grp_cancelar.Size = new System.Drawing.Size(110, 60);
+            this.Grp_cancelar.TabIndex = 32;
+            this.Grp_cancelar.TabStop = false;
+            this.Grp_cancelar.Text = "CANCELAR";
+            // 
+            // Btn_cancelar
+            // 
+            this.Btn_cancelar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(207)))), ((int)(((byte)(138)))));
+            this.Btn_cancelar.BackgroundImage = global::CapaVistaSCM.Properties.Resources._243_exit;
+            this.Btn_cancelar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.Btn_cancelar.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Btn_cancelar.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(207)))), ((int)(((byte)(138)))));
+            this.Btn_cancelar.FlatAppearance.BorderSize = 0;
+            this.Btn_cancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Btn_cancelar.Location = new System.Drawing.Point(3, 20);
+            this.Btn_cancelar.Name = "Btn_cancelar";
+            this.Btn_cancelar.Size = new System.Drawing.Size(104, 37);
+            this.Btn_cancelar.TabIndex = 36;
+            this.Btn_cancelar.UseVisualStyleBackColor = false;
+            // 
+            // Lbl_cantidad
+            // 
+            this.Lbl_cantidad.AutoSize = true;
+            this.Lbl_cantidad.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Lbl_cantidad.Location = new System.Drawing.Point(0, 118);
+            this.Lbl_cantidad.Name = "Lbl_cantidad";
+            this.Lbl_cantidad.Size = new System.Drawing.Size(90, 19);
+            this.Lbl_cantidad.TabIndex = 33;
+            this.Lbl_cantidad.Text = "CANTIDAD";
+            // 
+            // Grp_guardar
+            // 
+            this.Grp_guardar.Controls.Add(this.Btn_guardar);
+            this.Grp_guardar.Font = new System.Drawing.Font("Century Gothic", 10F);
+            this.Grp_guardar.Location = new System.Drawing.Point(692, 38);
+            this.Grp_guardar.Name = "Grp_guardar";
+            this.Grp_guardar.Size = new System.Drawing.Size(107, 60);
+            this.Grp_guardar.TabIndex = 31;
+            this.Grp_guardar.TabStop = false;
+            this.Grp_guardar.Text = "AGREGAR";
+            // 
+            // Btn_guardar
+            // 
+            this.Btn_guardar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(207)))), ((int)(((byte)(138)))));
+            this.Btn_guardar.BackgroundImage = global::CapaVistaSCM.Properties.Resources._159_pencil;
+            this.Btn_guardar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.Btn_guardar.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Btn_guardar.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(207)))), ((int)(((byte)(138)))));
+            this.Btn_guardar.FlatAppearance.BorderSize = 0;
+            this.Btn_guardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Btn_guardar.Location = new System.Drawing.Point(3, 20);
+            this.Btn_guardar.Name = "Btn_guardar";
+            this.Btn_guardar.Size = new System.Drawing.Size(101, 37);
+            this.Btn_guardar.TabIndex = 35;
+            this.Btn_guardar.UseVisualStyleBackColor = false;
+            // 
+            // Txt_precio
+            // 
+            this.Txt_precio.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(232)))), ((int)(((byte)(232)))));
+            this.Txt_precio.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.Txt_precio.Enabled = false;
+            this.Txt_precio.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Txt_precio.Location = new System.Drawing.Point(80, 89);
+            this.Txt_precio.Name = "Txt_precio";
+            this.Txt_precio.Size = new System.Drawing.Size(241, 20);
+            this.Txt_precio.TabIndex = 29;
+            // 
+            // Cmb_nombre
+            // 
+            this.Cmb_nombre.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(232)))), ((int)(((byte)(232)))));
+            this.Cmb_nombre.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.Cmb_nombre.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Cmb_nombre.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Cmb_nombre.FormattingEnabled = true;
+            this.Cmb_nombre.Location = new System.Drawing.Point(80, 56);
+            this.Cmb_nombre.Name = "Cmb_nombre";
+            this.Cmb_nombre.Size = new System.Drawing.Size(494, 28);
+            this.Cmb_nombre.TabIndex = 21;
+            // 
+            // Lbl_precio
+            // 
+            this.Lbl_precio.AutoSize = true;
+            this.Lbl_precio.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Lbl_precio.Location = new System.Drawing.Point(0, 89);
+            this.Lbl_precio.Name = "Lbl_precio";
+            this.Lbl_precio.Size = new System.Drawing.Size(64, 19);
+            this.Lbl_precio.TabIndex = 15;
+            this.Lbl_precio.Text = "PRECIO";
+            // 
+            // Cbo_codigo
+            // 
+            this.Cbo_codigo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(232)))), ((int)(((byte)(232)))));
+            this.Cbo_codigo.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.Cbo_codigo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Cbo_codigo.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Cbo_codigo.FormattingEnabled = true;
+            this.Cbo_codigo.Location = new System.Drawing.Point(81, 22);
+            this.Cbo_codigo.Name = "Cbo_codigo";
+            this.Cbo_codigo.Size = new System.Drawing.Size(226, 28);
+            this.Cbo_codigo.TabIndex = 14;
+            // 
+            // Lbl_codigo
+            // 
+            this.Lbl_codigo.AutoSize = true;
+            this.Lbl_codigo.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Lbl_codigo.Location = new System.Drawing.Point(0, 26);
+            this.Lbl_codigo.Name = "Lbl_codigo";
+            this.Lbl_codigo.Size = new System.Drawing.Size(75, 19);
+            this.Lbl_codigo.TabIndex = 9;
+            this.Lbl_codigo.Text = "CODIGO";
+            // 
+            // Lbl_nombre
+            // 
+            this.Lbl_nombre.AutoSize = true;
+            this.Lbl_nombre.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Lbl_nombre.Location = new System.Drawing.Point(0, 60);
+            this.Lbl_nombre.Name = "Lbl_nombre";
+            this.Lbl_nombre.Size = new System.Drawing.Size(74, 19);
+            this.Lbl_nombre.TabIndex = 11;
+            this.Lbl_nombre.Text = "NOMBRE";
             // 
             // Frm_productos
             // 
@@ -407,10 +382,10 @@
             this.Pnl_desarrollo.ResumeLayout(false);
             this.Grp_DatosDetalle.ResumeLayout(false);
             this.Grp_DatosDetalle.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Dgv_movimientoDetalle)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Nud_cantidad)).EndInit();
             this.Grp_cancelar.ResumeLayout(false);
             this.Grp_guardar.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.Dgv_movimientoDetalle)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -421,7 +396,6 @@
         private System.Windows.Forms.Panel Pnl_titulo;
         private System.Windows.Forms.Panel Pnl_desarrollo;
         private System.Windows.Forms.GroupBox Grp_DatosDetalle;
-        private System.Windows.Forms.Label Lbl_costo;
         private System.Windows.Forms.Label Lbl_precio;
         private System.Windows.Forms.ComboBox Cbo_codigo;
         private System.Windows.Forms.Label Lbl_codigo;
@@ -429,7 +403,6 @@
         private System.Windows.Forms.Button Btn_titulo;
         private System.Windows.Forms.Label Lbl_titulo;
         private System.Windows.Forms.ComboBox Cmb_nombre;
-        private System.Windows.Forms.TextBox Txt_costo;
         private System.Windows.Forms.TextBox Txt_precio;
         private System.Windows.Forms.GroupBox Grp_cancelar;
         private System.Windows.Forms.Button Btn_cancelar;

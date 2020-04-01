@@ -30,12 +30,14 @@
         {
             this.Tbl_movimientoInventario = new System.Windows.Forms.TableLayoutPanel();
             this.Pnl_titulo = new System.Windows.Forms.Panel();
+            this.Btn_MovInventario = new System.Windows.Forms.Button();
             this.Lbl_titulo = new System.Windows.Forms.Label();
             this.Pnl_desarrollo = new System.Windows.Forms.Panel();
             this.Grp_movimientoDetalle = new System.Windows.Forms.GroupBox();
             this.Lbl_precioTotal = new System.Windows.Forms.Label();
             this.Txt_precioTotal = new System.Windows.Forms.TextBox();
             this.Grp_agregarProducto = new System.Windows.Forms.GroupBox();
+            this.Btn_agregarProducto = new System.Windows.Forms.Button();
             this.Dgv_movimientoDetalle = new System.Windows.Forms.DataGridView();
             this.Producto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -46,9 +48,16 @@
             this.Tbc_Datos = new System.Windows.Forms.TabControl();
             this.Tbp_Datos = new System.Windows.Forms.TabPage();
             this.Pnl_datos = new System.Windows.Forms.Panel();
+            this.Cmb_proveedor = new System.Windows.Forms.ComboBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.Dtp_fechaEntrega = new System.Windows.Forms.DateTimePicker();
+            this.Lbl_fechaEntrega = new System.Windows.Forms.Label();
+            this.Dtp_fecha = new System.Windows.Forms.DateTimePicker();
             this.Lbl_fechaEmision = new System.Windows.Forms.Label();
             this.Grp_cancelar = new System.Windows.Forms.GroupBox();
+            this.Btn_cancelar = new System.Windows.Forms.Button();
             this.Grp_guardar = new System.Windows.Forms.GroupBox();
+            this.Btn_guardar = new System.Windows.Forms.Button();
             this.Cbo_cotizacion = new System.Windows.Forms.ComboBox();
             this.Lbl_cotizacion = new System.Windows.Forms.Label();
             this.Txt_nombre = new System.Windows.Forms.TextBox();
@@ -57,15 +66,6 @@
             this.Lbl_nombre = new System.Windows.Forms.Label();
             this.Tbp_descripcion = new System.Windows.Forms.TabPage();
             this.Txt_descripcion = new System.Windows.Forms.TextBox();
-            this.Btn_MovInventario = new System.Windows.Forms.Button();
-            this.Btn_agregarProducto = new System.Windows.Forms.Button();
-            this.Btn_cancelar = new System.Windows.Forms.Button();
-            this.Btn_guardar = new System.Windows.Forms.Button();
-            this.Dtp_fecha = new System.Windows.Forms.DateTimePicker();
-            this.Dtp_fechaEntrega = new System.Windows.Forms.DateTimePicker();
-            this.Lbl_fechaEntrega = new System.Windows.Forms.Label();
-            this.Cmb_proveedor = new System.Windows.Forms.ComboBox();
-            this.label2 = new System.Windows.Forms.Label();
             this.Tbl_movimientoInventario.SuspendLayout();
             this.Pnl_titulo.SuspendLayout();
             this.Pnl_desarrollo.SuspendLayout();
@@ -106,6 +106,23 @@
             this.Pnl_titulo.Name = "Pnl_titulo";
             this.Pnl_titulo.Size = new System.Drawing.Size(1027, 124);
             this.Pnl_titulo.TabIndex = 0;
+            // 
+            // Btn_MovInventario
+            // 
+            this.Btn_MovInventario.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(143)))), ((int)(((byte)(208)))), ((int)(((byte)(68)))));
+            this.Btn_MovInventario.BackgroundImage = global::CapaVistaSCM.Properties.Resources._027_shopping_cart;
+            this.Btn_MovInventario.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.Btn_MovInventario.Dock = System.Windows.Forms.DockStyle.Right;
+            this.Btn_MovInventario.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(143)))), ((int)(((byte)(208)))), ((int)(((byte)(68)))));
+            this.Btn_MovInventario.FlatAppearance.BorderSize = 0;
+            this.Btn_MovInventario.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(143)))), ((int)(((byte)(208)))), ((int)(((byte)(68)))));
+            this.Btn_MovInventario.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(143)))), ((int)(((byte)(208)))), ((int)(((byte)(68)))));
+            this.Btn_MovInventario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Btn_MovInventario.Location = new System.Drawing.Point(889, 0);
+            this.Btn_MovInventario.Name = "Btn_MovInventario";
+            this.Btn_MovInventario.Size = new System.Drawing.Size(138, 124);
+            this.Btn_MovInventario.TabIndex = 3;
+            this.Btn_MovInventario.UseVisualStyleBackColor = false;
             // 
             // Lbl_titulo
             // 
@@ -173,6 +190,22 @@
             this.Grp_agregarProducto.TabStop = false;
             this.Grp_agregarProducto.Text = "AGREGAR PRODUCTO";
             this.Grp_agregarProducto.Enter += new System.EventHandler(this.Grp_agregarProducto_Enter);
+            // 
+            // Btn_agregarProducto
+            // 
+            this.Btn_agregarProducto.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(207)))), ((int)(((byte)(138)))));
+            this.Btn_agregarProducto.BackgroundImage = global::CapaVistaSCM.Properties.Resources._065_edit;
+            this.Btn_agregarProducto.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.Btn_agregarProducto.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Btn_agregarProducto.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(207)))), ((int)(((byte)(138)))));
+            this.Btn_agregarProducto.FlatAppearance.BorderSize = 0;
+            this.Btn_agregarProducto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Btn_agregarProducto.Font = new System.Drawing.Font("Century Gothic", 10F);
+            this.Btn_agregarProducto.Location = new System.Drawing.Point(3, 23);
+            this.Btn_agregarProducto.Name = "Btn_agregarProducto";
+            this.Btn_agregarProducto.Size = new System.Drawing.Size(205, 28);
+            this.Btn_agregarProducto.TabIndex = 8;
+            this.Btn_agregarProducto.UseVisualStyleBackColor = false;
             // 
             // Dgv_movimientoDetalle
             // 
@@ -282,6 +315,61 @@
             this.Pnl_datos.Size = new System.Drawing.Size(998, 148);
             this.Pnl_datos.TabIndex = 0;
             // 
+            // Cmb_proveedor
+            // 
+            this.Cmb_proveedor.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(232)))), ((int)(((byte)(232)))));
+            this.Cmb_proveedor.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.Cmb_proveedor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Cmb_proveedor.FormattingEnabled = true;
+            this.Cmb_proveedor.Location = new System.Drawing.Point(523, 43);
+            this.Cmb_proveedor.Name = "Cmb_proveedor";
+            this.Cmb_proveedor.Size = new System.Drawing.Size(362, 28);
+            this.Cmb_proveedor.TabIndex = 45;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(411, 47);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(100, 19);
+            this.label2.TabIndex = 46;
+            this.label2.Text = "PROVEEDOR";
+            // 
+            // Dtp_fechaEntrega
+            // 
+            this.Dtp_fechaEntrega.CalendarFont = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Dtp_fechaEntrega.CalendarMonthBackground = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(232)))), ((int)(((byte)(232)))));
+            this.Dtp_fechaEntrega.CalendarTitleBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(207)))), ((int)(((byte)(138)))));
+            this.Dtp_fechaEntrega.CalendarTitleForeColor = System.Drawing.SystemColors.ControlText;
+            this.Dtp_fechaEntrega.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.Dtp_fechaEntrega.Location = new System.Drawing.Point(539, 77);
+            this.Dtp_fechaEntrega.Name = "Dtp_fechaEntrega";
+            this.Dtp_fechaEntrega.Size = new System.Drawing.Size(161, 27);
+            this.Dtp_fechaEntrega.TabIndex = 44;
+            // 
+            // Lbl_fechaEntrega
+            // 
+            this.Lbl_fechaEntrega.AutoSize = true;
+            this.Lbl_fechaEntrega.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Lbl_fechaEntrega.Location = new System.Drawing.Point(320, 83);
+            this.Lbl_fechaEntrega.Name = "Lbl_fechaEntrega";
+            this.Lbl_fechaEntrega.Size = new System.Drawing.Size(213, 19);
+            this.Lbl_fechaEntrega.TabIndex = 43;
+            this.Lbl_fechaEntrega.Text = "FECHA ESTIMADA ENTREGA";
+            // 
+            // Dtp_fecha
+            // 
+            this.Dtp_fecha.CalendarFont = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Dtp_fecha.CalendarMonthBackground = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(232)))), ((int)(((byte)(232)))));
+            this.Dtp_fecha.CalendarTitleBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(207)))), ((int)(((byte)(138)))));
+            this.Dtp_fecha.CalendarTitleForeColor = System.Drawing.SystemColors.ControlText;
+            this.Dtp_fecha.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.Dtp_fecha.Location = new System.Drawing.Point(142, 77);
+            this.Dtp_fecha.Name = "Dtp_fecha";
+            this.Dtp_fecha.Size = new System.Drawing.Size(167, 27);
+            this.Dtp_fecha.TabIndex = 42;
+            // 
             // Lbl_fechaEmision
             // 
             this.Lbl_fechaEmision.AutoSize = true;
@@ -296,23 +384,53 @@
             // 
             this.Grp_cancelar.Controls.Add(this.Btn_cancelar);
             this.Grp_cancelar.Font = new System.Drawing.Font("Century Gothic", 10F);
-            this.Grp_cancelar.Location = new System.Drawing.Point(891, 3);
+            this.Grp_cancelar.Location = new System.Drawing.Point(885, 77);
             this.Grp_cancelar.Name = "Grp_cancelar";
             this.Grp_cancelar.Size = new System.Drawing.Size(110, 60);
             this.Grp_cancelar.TabIndex = 26;
             this.Grp_cancelar.TabStop = false;
             this.Grp_cancelar.Text = "CANCELAR";
             // 
+            // Btn_cancelar
+            // 
+            this.Btn_cancelar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(207)))), ((int)(((byte)(138)))));
+            this.Btn_cancelar.BackgroundImage = global::CapaVistaSCM.Properties.Resources._243_exit;
+            this.Btn_cancelar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.Btn_cancelar.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Btn_cancelar.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(207)))), ((int)(((byte)(138)))));
+            this.Btn_cancelar.FlatAppearance.BorderSize = 0;
+            this.Btn_cancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Btn_cancelar.Location = new System.Drawing.Point(3, 20);
+            this.Btn_cancelar.Name = "Btn_cancelar";
+            this.Btn_cancelar.Size = new System.Drawing.Size(104, 37);
+            this.Btn_cancelar.TabIndex = 10;
+            this.Btn_cancelar.UseVisualStyleBackColor = false;
+            // 
             // Grp_guardar
             // 
             this.Grp_guardar.Controls.Add(this.Btn_guardar);
             this.Grp_guardar.Font = new System.Drawing.Font("Century Gothic", 10F);
-            this.Grp_guardar.Location = new System.Drawing.Point(891, 69);
+            this.Grp_guardar.Location = new System.Drawing.Point(888, 11);
             this.Grp_guardar.Name = "Grp_guardar";
             this.Grp_guardar.Size = new System.Drawing.Size(107, 60);
             this.Grp_guardar.TabIndex = 25;
             this.Grp_guardar.TabStop = false;
             this.Grp_guardar.Text = "GUARDAR";
+            // 
+            // Btn_guardar
+            // 
+            this.Btn_guardar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(207)))), ((int)(((byte)(138)))));
+            this.Btn_guardar.BackgroundImage = global::CapaVistaSCM.Properties.Resources._083_floppy_disk;
+            this.Btn_guardar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.Btn_guardar.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Btn_guardar.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(207)))), ((int)(((byte)(138)))));
+            this.Btn_guardar.FlatAppearance.BorderSize = 0;
+            this.Btn_guardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Btn_guardar.Location = new System.Drawing.Point(3, 20);
+            this.Btn_guardar.Name = "Btn_guardar";
+            this.Btn_guardar.Size = new System.Drawing.Size(101, 37);
+            this.Btn_guardar.TabIndex = 9;
+            this.Btn_guardar.UseVisualStyleBackColor = false;
             // 
             // Cbo_cotizacion
             // 
@@ -380,10 +498,10 @@
             // 
             this.Tbp_descripcion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(232)))), ((int)(((byte)(232)))));
             this.Tbp_descripcion.Controls.Add(this.Txt_descripcion);
-            this.Tbp_descripcion.Location = new System.Drawing.Point(4, 22);
+            this.Tbp_descripcion.Location = new System.Drawing.Point(4, 25);
             this.Tbp_descripcion.Name = "Tbp_descripcion";
             this.Tbp_descripcion.Padding = new System.Windows.Forms.Padding(3);
-            this.Tbp_descripcion.Size = new System.Drawing.Size(1161, 169);
+            this.Tbp_descripcion.Size = new System.Drawing.Size(1004, 159);
             this.Tbp_descripcion.TabIndex = 1;
             this.Tbp_descripcion.Text = "Nota";
             // 
@@ -395,131 +513,15 @@
             this.Txt_descripcion.Size = new System.Drawing.Size(1152, 142);
             this.Txt_descripcion.TabIndex = 12;
             // 
-            // Btn_MovInventario
-            // 
-            this.Btn_MovInventario.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(143)))), ((int)(((byte)(208)))), ((int)(((byte)(68)))));
-            this.Btn_MovInventario.BackgroundImage = global::CapaVistaSCM.Properties.Resources._027_shopping_cart;
-            this.Btn_MovInventario.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.Btn_MovInventario.Dock = System.Windows.Forms.DockStyle.Right;
-            this.Btn_MovInventario.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(143)))), ((int)(((byte)(208)))), ((int)(((byte)(68)))));
-            this.Btn_MovInventario.FlatAppearance.BorderSize = 0;
-            this.Btn_MovInventario.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(143)))), ((int)(((byte)(208)))), ((int)(((byte)(68)))));
-            this.Btn_MovInventario.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(143)))), ((int)(((byte)(208)))), ((int)(((byte)(68)))));
-            this.Btn_MovInventario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Btn_MovInventario.Location = new System.Drawing.Point(889, 0);
-            this.Btn_MovInventario.Name = "Btn_MovInventario";
-            this.Btn_MovInventario.Size = new System.Drawing.Size(138, 124);
-            this.Btn_MovInventario.TabIndex = 3;
-            this.Btn_MovInventario.UseVisualStyleBackColor = false;
-            // 
-            // Btn_agregarProducto
-            // 
-            this.Btn_agregarProducto.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(207)))), ((int)(((byte)(138)))));
-            this.Btn_agregarProducto.BackgroundImage = global::CapaVistaSCM.Properties.Resources._065_edit;
-            this.Btn_agregarProducto.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.Btn_agregarProducto.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Btn_agregarProducto.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(207)))), ((int)(((byte)(138)))));
-            this.Btn_agregarProducto.FlatAppearance.BorderSize = 0;
-            this.Btn_agregarProducto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Btn_agregarProducto.Font = new System.Drawing.Font("Century Gothic", 10F);
-            this.Btn_agregarProducto.Location = new System.Drawing.Point(3, 23);
-            this.Btn_agregarProducto.Name = "Btn_agregarProducto";
-            this.Btn_agregarProducto.Size = new System.Drawing.Size(205, 28);
-            this.Btn_agregarProducto.TabIndex = 8;
-            this.Btn_agregarProducto.UseVisualStyleBackColor = false;
-            // 
-            // Btn_cancelar
-            // 
-            this.Btn_cancelar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(207)))), ((int)(((byte)(138)))));
-            this.Btn_cancelar.BackgroundImage = global::CapaVistaSCM.Properties.Resources._243_exit;
-            this.Btn_cancelar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.Btn_cancelar.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Btn_cancelar.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(207)))), ((int)(((byte)(138)))));
-            this.Btn_cancelar.FlatAppearance.BorderSize = 0;
-            this.Btn_cancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Btn_cancelar.Location = new System.Drawing.Point(3, 20);
-            this.Btn_cancelar.Name = "Btn_cancelar";
-            this.Btn_cancelar.Size = new System.Drawing.Size(104, 37);
-            this.Btn_cancelar.TabIndex = 10;
-            this.Btn_cancelar.UseVisualStyleBackColor = false;
-            // 
-            // Btn_guardar
-            // 
-            this.Btn_guardar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(207)))), ((int)(((byte)(138)))));
-            this.Btn_guardar.BackgroundImage = global::CapaVistaSCM.Properties.Resources._083_floppy_disk;
-            this.Btn_guardar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.Btn_guardar.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Btn_guardar.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(207)))), ((int)(((byte)(138)))));
-            this.Btn_guardar.FlatAppearance.BorderSize = 0;
-            this.Btn_guardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Btn_guardar.Location = new System.Drawing.Point(3, 20);
-            this.Btn_guardar.Name = "Btn_guardar";
-            this.Btn_guardar.Size = new System.Drawing.Size(101, 37);
-            this.Btn_guardar.TabIndex = 9;
-            this.Btn_guardar.UseVisualStyleBackColor = false;
-            // 
-            // Dtp_fecha
-            // 
-            this.Dtp_fecha.CalendarFont = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Dtp_fecha.CalendarMonthBackground = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(232)))), ((int)(((byte)(232)))));
-            this.Dtp_fecha.CalendarTitleBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(207)))), ((int)(((byte)(138)))));
-            this.Dtp_fecha.CalendarTitleForeColor = System.Drawing.SystemColors.ControlText;
-            this.Dtp_fecha.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.Dtp_fecha.Location = new System.Drawing.Point(142, 77);
-            this.Dtp_fecha.Name = "Dtp_fecha";
-            this.Dtp_fecha.Size = new System.Drawing.Size(167, 27);
-            this.Dtp_fecha.TabIndex = 42;
-            // 
-            // Dtp_fechaEntrega
-            // 
-            this.Dtp_fechaEntrega.CalendarFont = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Dtp_fechaEntrega.CalendarMonthBackground = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(232)))), ((int)(((byte)(232)))));
-            this.Dtp_fechaEntrega.CalendarTitleBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(207)))), ((int)(((byte)(138)))));
-            this.Dtp_fechaEntrega.CalendarTitleForeColor = System.Drawing.SystemColors.ControlText;
-            this.Dtp_fechaEntrega.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.Dtp_fechaEntrega.Location = new System.Drawing.Point(539, 77);
-            this.Dtp_fechaEntrega.Name = "Dtp_fechaEntrega";
-            this.Dtp_fechaEntrega.Size = new System.Drawing.Size(161, 27);
-            this.Dtp_fechaEntrega.TabIndex = 44;
-            // 
-            // Lbl_fechaEntrega
-            // 
-            this.Lbl_fechaEntrega.AutoSize = true;
-            this.Lbl_fechaEntrega.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Lbl_fechaEntrega.Location = new System.Drawing.Point(320, 83);
-            this.Lbl_fechaEntrega.Name = "Lbl_fechaEntrega";
-            this.Lbl_fechaEntrega.Size = new System.Drawing.Size(213, 19);
-            this.Lbl_fechaEntrega.TabIndex = 43;
-            this.Lbl_fechaEntrega.Text = "FECHA ESTIMADA ENTREGA";
-            // 
-            // Cmb_proveedor
-            // 
-            this.Cmb_proveedor.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(232)))), ((int)(((byte)(232)))));
-            this.Cmb_proveedor.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.Cmb_proveedor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Cmb_proveedor.FormattingEnabled = true;
-            this.Cmb_proveedor.Location = new System.Drawing.Point(523, 43);
-            this.Cmb_proveedor.Name = "Cmb_proveedor";
-            this.Cmb_proveedor.Size = new System.Drawing.Size(362, 28);
-            this.Cmb_proveedor.TabIndex = 45;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(411, 47);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(100, 19);
-            this.label2.TabIndex = 46;
-            this.label2.Text = "PROVEEDOR";
-            // 
             // Frm_OrdenCompra
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.ClientSize = new System.Drawing.Size(1033, 650);
             this.Controls.Add(this.Tbl_movimientoInventario);
             this.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "Frm_OrdenCompra";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Orden de Compra";
             this.Tbl_movimientoInventario.ResumeLayout(false);
             this.Pnl_titulo.ResumeLayout(false);
