@@ -63,6 +63,16 @@ namespace CapaVistaSCM.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _026_calendar_2 {
+            get {
+                object obj = ResourceManager.GetObject("026-calendar-2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap _027_shopping_cart {
             get {
                 object obj = ResourceManager.GetObject("027-shopping-cart", resourceCulture);
@@ -83,9 +93,29 @@ namespace CapaVistaSCM.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _059_file1 {
+            get {
+                object obj = ResourceManager.GetObject("059-file1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap _065_edit {
             get {
                 object obj = ResourceManager.GetObject("065-edit", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _066_edit_1 {
+            get {
+                object obj = ResourceManager.GetObject("066-edit-1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -126,6 +156,16 @@ namespace CapaVistaSCM.Properties {
         internal static System.Drawing.Bitmap _159_pencil {
             get {
                 object obj = ResourceManager.GetObject("159-pencil", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _223_trash {
+            get {
+                object obj = ResourceManager.GetObject("223-trash", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
