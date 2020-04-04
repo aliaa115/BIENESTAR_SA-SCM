@@ -12,109 +12,50 @@ namespace CapaVistaSCM
 {
     public partial class MDI_SCM : Form
     {
-        private int childFormNumber = 0;
-
         public MDI_SCM()
         {
-
             InitializeComponent();
         }
-        
-        private void ShowNewForm(object sender, EventArgs e)
+
+        private void ListaDeOrdenesDeCompraToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Form childForm = new Form();
-            childForm.MdiParent = this;
-            childForm.Text = "Ventana " + childFormNumber++;
-            childForm.Show();
+            Frm_listaOrdenesCompra listaOrdenesCompra = new Frm_listaOrdenesCompra();
+            listaOrdenesCompra.Show();
         }
 
-        private void OpenFile(object sender, EventArgs e)
-        {
-            OpenFileDialog openFileDialog = new OpenFileDialog();
-            openFileDialog.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.Personal);
-            openFileDialog.Filter = "Archivos de texto (*.txt)|*.txt|Todos los archivos (*.*)|*.*";
-            if (openFileDialog.ShowDialog(this) == DialogResult.OK)
-            {
-                string FileName = openFileDialog.FileName;
-            }
-        }
-
-        private void SaveAsToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            SaveFileDialog saveFileDialog = new SaveFileDialog();
-            saveFileDialog.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.Personal);
-            saveFileDialog.Filter = "Archivos de texto (*.txt)|*.txt|Todos los archivos (*.*)|*.*";
-            if (saveFileDialog.ShowDialog(this) == DialogResult.OK)
-            {
-                string FileName = saveFileDialog.FileName;
-            }
-        }
-
-        private void ExitToolsStripMenuItem_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
-        private void CutToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-        }
-
-        private void CopyToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-        }
-
-        private void PasteToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-        }
-
-        private void ToolBarToolStripMenuItem_Click(object sender, EventArgs e)
+        private void MovimientosInventarioToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void StatusBarToolStripMenuItem_Click(object sender, EventArgs e)
+        private void TrasladoDeInventarioToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            Frm_listaTrasladosInventario trasladosInventario = new Frm_listaTrasladosInventario();
+            trasladosInventario.Show();
+        }
+
+        private void MovimientoDeInventarioToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Frm_listaMovimientosInventario listaMovimientosInventario =
+                new Frm_listaMovimientosInventario();
+            listaMovimientosInventario.Show();
+        }
+
+        private void MantenimientoEjemploToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MantenimientoBase mantenimiento = new MantenimientoBase("usuario");
+            mantenimiento.Show();
+        }
+
+        private void CotizacionesToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void CascadeToolStripMenuItem_Click(object sender, EventArgs e)
+        private void ListaDeCotizacionesToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            LayoutMdi(MdiLayout.Cascade);
-        }
-
-        private void TileVerticalToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            LayoutMdi(MdiLayout.TileVertical);
-        }
-
-        private void TileHorizontalToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            LayoutMdi(MdiLayout.TileHorizontal);
-        }
-
-        private void ArrangeIconsToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            LayoutMdi(MdiLayout.ArrangeIcons);
-        }
-
-        private void CloseAllToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            foreach (Form childForm in MdiChildren)
-            {
-                childForm.Close();
-            }
-        }
-
-        private void MovimientosDeInventarioToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            Frm_MovimientosInventarios movimientosInventarios = new Frm_MovimientosInventarios();
-            movimientosInventarios.Show();
-        }
-
-        private void OrdenDeCompraToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            Frm_OrdenCompra ordenCompra = new Frm_OrdenCompra();
-            ordenCompra.Show();
+            Frm_listaCotizaciones listaCotizaciones = new Frm_listaCotizaciones();
+            listaCotizaciones.Show();
         }
     }
 }
