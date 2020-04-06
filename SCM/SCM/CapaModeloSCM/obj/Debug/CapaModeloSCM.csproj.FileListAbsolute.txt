@@ -7,3 +7,12 @@
 \\Mac\Home\Documents\Universidad\9no somestre\042 Ingenieria de Software\Proyecto Final\Visual\SCM\SCM\CapaModeloSCM\obj\Debug\CapaModeloSCM.csproj.CopyComplete
 \\Mac\Home\Documents\Universidad\9no somestre\042 Ingenieria de Software\Proyecto Final\Visual\SCM\SCM\CapaModeloSCM\obj\Debug\CapaModeloSCM.dll
 \\Mac\Home\Documents\Universidad\9no somestre\042 Ingenieria de Software\Proyecto Final\Visual\SCM\SCM\CapaModeloSCM\obj\Debug\CapaModeloSCM.pdb
+\\Mac\Home\Documents\Universidad\9no somestre\042 Ingenieria de Software\Proyecto Final\git hub\SCM-Ligia\SCM\SCM\CapaModeloSCM\bin\Debug\CapaModeloSCM.dll
+\\Mac\Home\Documents\Universidad\9no somestre\042 Ingenieria de Software\Proyecto Final\git hub\SCM-Ligia\SCM\SCM\CapaModeloSCM\bin\Debug\CapaModeloSCM.pdb
+\\Mac\Home\Documents\Universidad\9no somestre\042 Ingenieria de Software\Proyecto Final\git hub\SCM-Ligia\SCM\SCM\CapaModeloSCM\bin\Debug\CapaControladorSCM.dll
+\\Mac\Home\Documents\Universidad\9no somestre\042 Ingenieria de Software\Proyecto Final\git hub\SCM-Ligia\SCM\SCM\CapaModeloSCM\bin\Debug\CapaControladorSCM.pdb
+\\Mac\Home\Documents\Universidad\9no somestre\042 Ingenieria de Software\Proyecto Final\git hub\SCM-Ligia\SCM\SCM\CapaModeloSCM\obj\Debug\CapaModeloSCM.csprojAssemblyReference.cache
+\\Mac\Home\Documents\Universidad\9no somestre\042 Ingenieria de Software\Proyecto Final\git hub\SCM-Ligia\SCM\SCM\CapaModeloSCM\obj\Debug\CapaModeloSCM.csproj.CoreCompileInputs.cache
+\\Mac\Home\Documents\Universidad\9no somestre\042 Ingenieria de Software\Proyecto Final\git hub\SCM-Ligia\SCM\SCM\CapaModeloSCM\obj\Debug\CapaModeloSCM.csproj.CopyComplete
+\\Mac\Home\Documents\Universidad\9no somestre\042 Ingenieria de Software\Proyecto Final\git hub\SCM-Ligia\SCM\SCM\CapaModeloSCM\obj\Debug\CapaModeloSCM.dll
+\\Mac\Home\Documents\Universidad\9no somestre\042 Ingenieria de Software\Proyecto Final\git hub\SCM-Ligia\SCM\SCM\CapaModeloSCM\obj\Debug\CapaModeloSCM.pdb

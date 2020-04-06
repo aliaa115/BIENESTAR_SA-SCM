@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace CapaVistaSCM.MovimientosInventarios
+namespace CapaVistaSCM
 {
-    public partial class Frm_productos : Form
+    public partial class Frm_solicitudTransporte : Form
     {
-        public Frm_productos()
+        public Frm_solicitudTransporte()
         {
             InitializeComponent();
         }

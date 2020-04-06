@@ -1,6 +1,6 @@
 ﻿namespace CapaVistaSCM
 {
-    partial class Frm_cotizacionProveedores
+    partial class Frm_solicitudTransporte
     {
         /// <summary>
         /// Required designer variable.
@@ -31,7 +31,7 @@
             this.components = new System.ComponentModel.Container();
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "Frm_cotizacionProveedores";
+            this.Text = "Frm_solicitudTransporte";
         }
 
         #endregion
