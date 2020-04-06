@@ -67,3 +67,4 @@
 \\Mac\Home\Documents\Universidad\9no somestre\042 Ingenieria de Software\Proyecto Final\git hub\SCM-Ligia\SCM\SCM\CapaVistaSCM\obj\Debug\CapaVistaSCM.Frm_listaTrasladosInventario.resources
 \\Mac\Home\Documents\Universidad\9no somestre\042 Ingenieria de Software\Proyecto Final\git hub\SCM-Ligia\SCM\SCM\CapaVistaSCM\obj\Debug\CapaVistaSCM.Frm_trasladoDeProducto.resources
 \\Mac\Home\Documents\Universidad\9no somestre\042 Ingenieria de Software\Proyecto Final\git hub\SCM-Ligia\SCM\SCM\CapaVistaSCM\obj\Debug\CapaVistaSCM.Frm_listaCotizaciones.resources
+\\Mac\Home\Documents\Universidad\9no somestre\042 Ingenieria de Software\Proyecto Final\git hub\SCM-Ligia\SCM\SCM\CapaVistaSCM\obj\Debug\CapaVistaSCM.Mantenimiento.Frm_manteniminto.resources

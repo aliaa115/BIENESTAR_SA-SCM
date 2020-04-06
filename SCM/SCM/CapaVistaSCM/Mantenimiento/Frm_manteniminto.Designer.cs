@@ -1,6 +1,6 @@
-﻿namespace CapaVistaSCM
+﻿namespace CapaVistaSCM.Mantenimiento
 {
-    partial class MantenimientoBase
+    partial class Frm_manteniminto
     {
         /// <summary>
         /// Required designer variable.
@@ -32,7 +32,7 @@
             this.Pnl_titulo = new System.Windows.Forms.Panel();
             this.Lbl_titulo = new System.Windows.Forms.Label();
             this.Pnl_desarrollo = new System.Windows.Forms.Panel();
-            this.navegador1 = new CapaDeDiseno.Navegador();
+            this.Nav_Mantenimiento = new CapaDeDiseno.Navegador();
             this.Btn_MovInventario = new System.Windows.Forms.Button();
             this.Tbl_movimientoInventario.SuspendLayout();
             this.Pnl_titulo.SuspendLayout();
@@ -52,7 +52,7 @@
             this.Tbl_movimientoInventario.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 70F));
             this.Tbl_movimientoInventario.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 60F));
             this.Tbl_movimientoInventario.Size = new System.Drawing.Size(844, 721);
-            this.Tbl_movimientoInventario.TabIndex = 4;
+            this.Tbl_movimientoInventario.TabIndex = 6;
             // 
             // Pnl_titulo
             // 
@@ -72,34 +72,33 @@
             this.Lbl_titulo.Font = new System.Drawing.Font("Century Gothic", 30F, System.Drawing.FontStyle.Bold);
             this.Lbl_titulo.Location = new System.Drawing.Point(0, 0);
             this.Lbl_titulo.Name = "Lbl_titulo";
-            this.Lbl_titulo.Size = new System.Drawing.Size(138, 47);
+            this.Lbl_titulo.Size = new System.Drawing.Size(0, 47);
             this.Lbl_titulo.TabIndex = 0;
-            this.Lbl_titulo.Text = "TABLA";
             // 
             // Pnl_desarrollo
             // 
             this.Pnl_desarrollo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(232)))), ((int)(((byte)(232)))));
-            this.Pnl_desarrollo.Controls.Add(this.navegador1);
+            this.Pnl_desarrollo.Controls.Add(this.Nav_Mantenimiento);
             this.Pnl_desarrollo.Dock = System.Windows.Forms.DockStyle.Fill;
             this.Pnl_desarrollo.Location = new System.Drawing.Point(3, 73);
             this.Pnl_desarrollo.Name = "Pnl_desarrollo";
             this.Pnl_desarrollo.Size = new System.Drawing.Size(838, 645);
             this.Pnl_desarrollo.TabIndex = 1;
             // 
-            // navegador1
+            // Nav_Mantenimiento
             // 
-            this.navegador1.BackColor = System.Drawing.Color.White;
-            this.navegador1.Font = new System.Drawing.Font("Century Gothic", 7F);
-            this.navegador1.Location = new System.Drawing.Point(3, 3);
-            this.navegador1.Name = "navegador1";
-            this.navegador1.Size = new System.Drawing.Size(838, 650);
-            this.navegador1.TabIndex = 0;
-            this.navegador1.Load += new System.EventHandler(this.Navegador1_Load_1);
+            this.Nav_Mantenimiento.BackColor = System.Drawing.Color.White;
+            this.Nav_Mantenimiento.Font = new System.Drawing.Font("Century Gothic", 7F);
+            this.Nav_Mantenimiento.Location = new System.Drawing.Point(3, 3);
+            this.Nav_Mantenimiento.Name = "Nav_Mantenimiento";
+            this.Nav_Mantenimiento.Size = new System.Drawing.Size(838, 650);
+            this.Nav_Mantenimiento.TabIndex = 0;
+            this.Nav_Mantenimiento.Load += new System.EventHandler(this.Nav_Mantenimiento_Load);
             // 
             // Btn_MovInventario
             // 
             this.Btn_MovInventario.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(143)))), ((int)(((byte)(208)))), ((int)(((byte)(68)))));
-            this.Btn_MovInventario.BackgroundImage = global::CapaVistaSCM.Properties.Resources._027_shopping_cart;
+            this.Btn_MovInventario.BackgroundImage = global::CapaVistaSCM.Properties.Resources._094_hammer_1;
             this.Btn_MovInventario.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.Btn_MovInventario.Dock = System.Windows.Forms.DockStyle.Right;
             this.Btn_MovInventario.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(143)))), ((int)(((byte)(208)))), ((int)(((byte)(68)))));
@@ -113,15 +112,13 @@
             this.Btn_MovInventario.TabIndex = 3;
             this.Btn_MovInventario.UseVisualStyleBackColor = false;
             // 
-            // MantenimientoBase
+            // Frm_manteniminto
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.ClientSize = new System.Drawing.Size(844, 721);
             this.Controls.Add(this.Tbl_movimientoInventario);
-            this.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
-            this.Margin = new System.Windows.Forms.Padding(5);
-            this.Name = "MantenimientoBase";
+            this.Name = "Frm_manteniminto";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Mantenimiento";
             this.Tbl_movimientoInventario.ResumeLayout(false);
@@ -139,6 +136,6 @@
         private System.Windows.Forms.Button Btn_MovInventario;
         private System.Windows.Forms.Label Lbl_titulo;
         private System.Windows.Forms.Panel Pnl_desarrollo;
-        private CapaDeDiseno.Navegador navegador1;
+        private CapaDeDiseno.Navegador Nav_Mantenimiento;
     }
 }

@@ -30,15 +30,17 @@ namespace CapaVistaSCM
                                           // LOS COMBOS SE ASIGNAN SEGUN EL ORDEN EN QUE SE DECLAREN
             //navegador1.asignarComboConTabla("tabla", "campo", 0); // 0 o 1 en modo, 0 pone el id y 1 coloca el nombre y consulta el id
             navegador1.asignarTabla("tipos_productos"); // tabla principal
-            navegador1.asignarNombreForm("TIPOS PRODUCTOS"); // Titulo y nombre del form
+            //navegador1.asignarNombreForm("TIPOS PRODUCTOS"); // Titulo y nombre del form
         }
-
-        private void Navegador1_Load(object sender, EventArgs e)
+        
+        private void Navegador1_Load_1(object sender, EventArgs e)
         {
+            /*
             string aplicacionActiva = "1";
             navegador1.ObtenerIdUsuario(usuario); // Pasa el parametro del usuario
             navegador1.botonesYPermisosInicial(usuario, aplicacionActiva); // Consulta permisos al iniciar
             navegador1.ObtenerIdAplicacion(aplicacionActiva);// Pasa el id de la aplicacion actual
+            */
         }
     }
 }
