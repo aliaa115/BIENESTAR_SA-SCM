@@ -10,7 +10,7 @@ namespace CapaModeloSCM.Mantenimientos
     {
 
         /*
-         id de tablas:
+         ID DE TABLAS:
             1 = contactos
             2 = proveedores
             3 = tipos_productos

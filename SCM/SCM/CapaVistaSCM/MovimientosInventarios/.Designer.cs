@@ -62,6 +62,7 @@
             this.Tbc_Datos = new System.Windows.Forms.TabControl();
             this.Tbp_Datos = new System.Windows.Forms.TabPage();
             this.Pnl_datos = new System.Windows.Forms.Panel();
+            this.Chk_iva = new System.Windows.Forms.CheckBox();
             this.Chb_estado = new System.Windows.Forms.CheckBox();
             this.Gpb_editar = new System.Windows.Forms.GroupBox();
             this.button1 = new System.Windows.Forms.Button();
@@ -80,7 +81,6 @@
             this.Lbl_nombre = new System.Windows.Forms.Label();
             this.Tbp_descripcion = new System.Windows.Forms.TabPage();
             this.Txt_descripcion = new System.Windows.Forms.TextBox();
-            this.Chk_iva = new System.Windows.Forms.CheckBox();
             this.Tbl_movimientoInventario.SuspendLayout();
             this.Pnl_titulo.SuspendLayout();
             this.Pnl_desarrollo.SuspendLayout();
@@ -512,6 +512,16 @@
             this.Pnl_datos.Size = new System.Drawing.Size(871, 148);
             this.Pnl_datos.TabIndex = 0;
             // 
+            // Chk_iva
+            // 
+            this.Chk_iva.AutoSize = true;
+            this.Chk_iva.Location = new System.Drawing.Point(314, 54);
+            this.Chk_iva.Name = "Chk_iva";
+            this.Chk_iva.Size = new System.Drawing.Size(122, 25);
+            this.Chk_iva.TabIndex = 48;
+            this.Chk_iva.Text = "IVA incluido";
+            this.Chk_iva.UseVisualStyleBackColor = true;
+            // 
             // Chb_estado
             // 
             this.Chb_estado.AutoSize = true;
@@ -713,16 +723,6 @@
             this.Txt_descripcion.Size = new System.Drawing.Size(871, 156);
             this.Txt_descripcion.TabIndex = 12;
             // 
-            // Chk_iva
-            // 
-            this.Chk_iva.AutoSize = true;
-            this.Chk_iva.Location = new System.Drawing.Point(314, 54);
-            this.Chk_iva.Name = "Chk_iva";
-            this.Chk_iva.Size = new System.Drawing.Size(122, 25);
-            this.Chk_iva.TabIndex = 48;
-            this.Chk_iva.Text = "IVA incluido";
-            this.Chk_iva.UseVisualStyleBackColor = true;
-            // 
             // Frm_MovimientosInventarios
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -733,6 +733,7 @@
             this.Name = "Frm_MovimientosInventarios";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Movimientos de Inventario";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Frm_MovimientosInventarios_FormClosed);
             this.Tbl_movimientoInventario.ResumeLayout(false);
             this.Pnl_titulo.ResumeLayout(false);
             this.Pnl_titulo.PerformLayout();

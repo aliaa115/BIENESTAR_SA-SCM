@@ -63,6 +63,12 @@
     <Compile Include="Cotizaciones\Frm_listaCotizaciones.Designer.cs">
       <DependentUpon>Frm_listaCotizaciones.cs</DependentUpon>
     </Compile>
+    <Compile Include="Lista\Frm_lista.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Lista\Frm_lista.Designer.cs">
+      <DependentUpon>Frm_lista.cs</DependentUpon>
+    </Compile>
     <Compile Include="Mantenimiento\Frm_manteniminto.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -144,6 +150,9 @@
     <EmbeddedResource Include="Cotizaciones\Frm_listaCotizaciones.resx">
       <DependentUpon>Frm_listaCotizaciones.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Lista\Frm_lista.resx">
+      <DependentUpon>Frm_lista.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Mantenimiento\Frm_manteniminto.resx">
       <DependentUpon>Frm_manteniminto.cs</DependentUpon>
     </EmbeddedResource>
@@ -223,6 +232,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\094-hammer-1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\149-notepad-2.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

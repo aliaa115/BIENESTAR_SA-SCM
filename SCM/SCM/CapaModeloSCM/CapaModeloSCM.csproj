@@ -42,7 +42,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Mantenimientos\Cls_listas.cs" />
     <Compile Include="Mantenimientos\Cls_matenimiento.cs" />
+    <Compile Include="Mantenimientos\listaDatos.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

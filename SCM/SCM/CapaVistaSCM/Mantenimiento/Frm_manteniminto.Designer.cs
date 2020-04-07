@@ -30,10 +30,10 @@
         {
             this.Tbl_movimientoInventario = new System.Windows.Forms.TableLayoutPanel();
             this.Pnl_titulo = new System.Windows.Forms.Panel();
+            this.Btn_MovInventario = new System.Windows.Forms.Button();
             this.Lbl_titulo = new System.Windows.Forms.Label();
             this.Pnl_desarrollo = new System.Windows.Forms.Panel();
             this.Nav_Mantenimiento = new CapaDeDiseno.Navegador();
-            this.Btn_MovInventario = new System.Windows.Forms.Button();
             this.Tbl_movimientoInventario.SuspendLayout();
             this.Pnl_titulo.SuspendLayout();
             this.Pnl_desarrollo.SuspendLayout();
@@ -65,6 +65,23 @@
             this.Pnl_titulo.Size = new System.Drawing.Size(838, 64);
             this.Pnl_titulo.TabIndex = 0;
             // 
+            // Btn_MovInventario
+            // 
+            this.Btn_MovInventario.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(143)))), ((int)(((byte)(208)))), ((int)(((byte)(68)))));
+            this.Btn_MovInventario.BackgroundImage = global::CapaVistaSCM.Properties.Resources._094_hammer_1;
+            this.Btn_MovInventario.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.Btn_MovInventario.Dock = System.Windows.Forms.DockStyle.Right;
+            this.Btn_MovInventario.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(143)))), ((int)(((byte)(208)))), ((int)(((byte)(68)))));
+            this.Btn_MovInventario.FlatAppearance.BorderSize = 0;
+            this.Btn_MovInventario.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(143)))), ((int)(((byte)(208)))), ((int)(((byte)(68)))));
+            this.Btn_MovInventario.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(143)))), ((int)(((byte)(208)))), ((int)(((byte)(68)))));
+            this.Btn_MovInventario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Btn_MovInventario.Location = new System.Drawing.Point(700, 0);
+            this.Btn_MovInventario.Name = "Btn_MovInventario";
+            this.Btn_MovInventario.Size = new System.Drawing.Size(138, 64);
+            this.Btn_MovInventario.TabIndex = 3;
+            this.Btn_MovInventario.UseVisualStyleBackColor = false;
+            // 
             // Lbl_titulo
             // 
             this.Lbl_titulo.AutoSize = true;
@@ -94,23 +111,6 @@
             this.Nav_Mantenimiento.Size = new System.Drawing.Size(838, 650);
             this.Nav_Mantenimiento.TabIndex = 0;
             this.Nav_Mantenimiento.Load += new System.EventHandler(this.Nav_Mantenimiento_Load);
-            // 
-            // Btn_MovInventario
-            // 
-            this.Btn_MovInventario.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(143)))), ((int)(((byte)(208)))), ((int)(((byte)(68)))));
-            this.Btn_MovInventario.BackgroundImage = global::CapaVistaSCM.Properties.Resources._094_hammer_1;
-            this.Btn_MovInventario.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.Btn_MovInventario.Dock = System.Windows.Forms.DockStyle.Right;
-            this.Btn_MovInventario.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(143)))), ((int)(((byte)(208)))), ((int)(((byte)(68)))));
-            this.Btn_MovInventario.FlatAppearance.BorderSize = 0;
-            this.Btn_MovInventario.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(143)))), ((int)(((byte)(208)))), ((int)(((byte)(68)))));
-            this.Btn_MovInventario.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(143)))), ((int)(((byte)(208)))), ((int)(((byte)(68)))));
-            this.Btn_MovInventario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Btn_MovInventario.Location = new System.Drawing.Point(700, 0);
-            this.Btn_MovInventario.Name = "Btn_MovInventario";
-            this.Btn_MovInventario.Size = new System.Drawing.Size(138, 64);
-            this.Btn_MovInventario.TabIndex = 3;
-            this.Btn_MovInventario.UseVisualStyleBackColor = false;
             // 
             // Frm_manteniminto
             // 

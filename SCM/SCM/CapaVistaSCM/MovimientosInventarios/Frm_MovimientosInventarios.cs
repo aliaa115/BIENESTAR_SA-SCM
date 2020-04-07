@@ -12,14 +12,21 @@ namespace CapaVistaSCM
 {
     public partial class Frm_MovimientosInventarios : Form
     {
-        public Frm_MovimientosInventarios()
+        Form form;
+        public Frm_MovimientosInventarios(Form form)
         {
             InitializeComponent();
+            this.form = form;
         }
 
         private void Button1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void Frm_MovimientosInventarios_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            form.Show();
         }
     }
 }
