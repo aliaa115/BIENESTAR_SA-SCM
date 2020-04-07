@@ -23,29 +23,20 @@ namespace CapaVistaSCM.Lista
             InitializeComponent();
 
             this.tabla = tabla;
+            establecerDatos();
+        }
 
-            MessageBox.Show(tabla + "");
-            
+        private void establecerDatos()
+        {
+                        
             Cls_listas datos = new Cls_listas();
 
-            ListaData listaDatos = datos.DatosLista(tabla);
+            ListaData listaDatos = datos.DatosLista(tabla, Dgv_lista);
             
             Text = Text + listaDatos.form;
             Lbl_titulo.Text = listaDatos.titulo;
 
-            List<DataGridViewColumn> columnas = listaDatos.columns;
-
-            try
-            {
-                columnas.ForEach(delegate (DataGridViewColumn col)
-                {
-                    Dgv_lista.Columns.Add(col);
-                });
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex + "");
-            }
+            Dgv_lista.Update();
 
 
         }

@@ -10,7 +10,7 @@ namespace CapaModeloSCM.Mantenimientos.ListaDatos
 
         public string form { get; set; }
 
-        public List<DataGridViewColumn> columns { get; set; }
+        public DataGridView dgv { get; set; }
         
         public bool Equals(ListaData other)
         {

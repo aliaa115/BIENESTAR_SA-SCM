@@ -29,7 +29,14 @@ namespace CapaVistaSCM
 
         private void listas(int tabla, Form form)
         {
-            Frm_lista lista = new Frm_lista(tabla, form);
+            Frm_lista lista = null;
+
+            switch (tabla) {
+                case 1:
+                    lista = new Frm_lista(tabla, form);
+                    break;
+            }
+
             lista.Show();
         }
 

@@ -17,26 +17,23 @@ namespace CapaModeloSCM.Mantenimientos
             3 = Compras
             4 = Cotizacion
          */
-        public ListaData DatosLista(int tipoLista)
+        public ListaData DatosLista(int tipoLista, DataGridView dgv)
         {
             ListaData data = new ListaData();
             switch (tipoLista)
             {
                 case 1:
-                    List<DataGridViewColumn> dgv1 = columns(tipoLista);
-                    data.columns = dgv1;
+                    dataGV(tipoLista, dgv);
                     data.titulo = "MOVIMIENTOS DE INVENTARIO";
                     data.form = " de Movimientos de Inventario";
                     return data;
                 case 2:
-                    List<DataGridViewColumn> dgv2 = columns(tipoLista);
-                    data.columns = dgv2;
+                    dataGV(tipoLista, dgv);
                     data.titulo = "TRASLADO DE INVENTARIO";
                     data.form = " de Traslado de Inventario";
                     return data;
                 case 3:
-                    List<DataGridViewColumn> dgv3 = columns(tipoLista);
-                    data.columns = dgv3;
+                    dataGV(tipoLista, dgv);
                     data.titulo = "COMPRAS";
                     data.form = " de Compras";
                     return data;
@@ -44,30 +41,21 @@ namespace CapaModeloSCM.Mantenimientos
             return null;
         }
 
-        public List<DataGridViewColumn> columns(int tipoLista)
+        public void dataGV(int tipoLista, DataGridView dgv)
         {
-            List<DataGridViewColumn> columnas = new List<DataGridViewColumn>();
 
+            DataGridTextBox textBox = new DataGridTextBox();
             switch (tipoLista)
             {
-                case 1 | 2:
-                    DataGridViewColumn codigo = new DataGridViewColumn();
-                    codigo.HeaderText = "CODIGO";
-                    DataGridViewColumn nombre = new DataGridViewColumn();
-                    nombre.HeaderText = "NOMBRE";
-                    DataGridViewColumn tipoMovimiento = new DataGridViewColumn();
-                    tipoMovimiento.HeaderText = "TIPO MOVIMIENTO";
-                    DataGridViewColumn estado = new DataGridViewColumn();
-                    estado.HeaderText = "ESTADO";
+                case 1:
 
-                    columnas.Add(codigo);
-                    columnas.Add(nombre);
-                    columnas.Add(tipoMovimiento);
-                    columnas.Add(estado);
-                    return columnas;
+                    dgv.Columns.Add("codigo", "CODIGO");
+                    dgv.Columns.Add("nombre", "NOMBRE");
+                    dgv.Columns.Add("tipoMovimiento", "TIPO MOVIMIENTO");
+                    dgv.Columns.Add("estado", "ESTADO");
+                    break;
+
             }
-
-            return null;
         }
 
     }
