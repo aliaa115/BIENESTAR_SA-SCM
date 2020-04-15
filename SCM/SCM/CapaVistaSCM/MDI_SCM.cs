@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using CapaVistaSCM.Mantenimiento;
+using CapaVistaSCM.Lista;
 
 namespace CapaVistaSCM
 {
@@ -26,6 +27,19 @@ namespace CapaVistaSCM
             contacto.Show();
         }
 
+        private void listas(int tabla, Form form)
+        {
+            Frm_lista lista = null;
+
+            switch (tabla) {
+                case 1:
+                    lista = new Frm_lista(tabla, form);
+                    break;
+            }
+
+            lista.Show();
+        }
+
         private void ListaDeOrdenesDeCompraToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Frm_listaOrdenesCompra listaOrdenesCompra = new Frm_listaOrdenesCompra();
@@ -39,15 +53,15 @@ namespace CapaVistaSCM
 
         private void TrasladoDeInventarioToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
-            Frm_listaTrasladosInventario trasladosInventario = new Frm_listaTrasladosInventario();
-            trasladosInventario.Show();
+            Frm_trasladoDeProducto trasladoDeProducto = null;
+            listas(1, trasladoDeProducto);
         }
 
         private void MovimientoDeInventarioToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Frm_listaMovimientosInventario listaMovimientosInventario =
-                new Frm_listaMovimientosInventario();
-            listaMovimientosInventario.Show();
+            Frm_MovimientosInventarios movimientosInventarios = null;
+            listas(1, movimientosInventarios);
+            // movimientosInventarios.Show();
         }
 
         private void CotizacionesToolStripMenuItem_Click(object sender, EventArgs e)
@@ -71,19 +85,44 @@ namespace CapaVistaSCM
             mant(2);
         }
 
-        private void MantenimientoEjemploToolStripMenuItem_Click(object sender, EventArgs e)
+        private void TiposDeProductosToolStripMenuItem_Click(object sender, EventArgs e)
         {
             mant(3);
         }
 
-        private void ImpuestoSobreProductoToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            mant(4);
-        }
-
-        private void CategoriasDeProductosToolStripMenuItem_Click(object sender, EventArgs e)
+        private void CategoriasToolStripMenuItem_Click(object sender, EventArgs e)
         {
             mant(5);
+        }
+
+        private void AcreedoresToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            mant(6);
+        }
+
+        private void ServiciosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            mant(7);
+        }
+
+        private void MarcasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            mant(8);
+        }
+
+        private void LineasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            mant(9);
+        }
+
+        private void PresentacionesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            mant(10);
+        }
+
+        private void BodegasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            mant(11);
         }
     }
 }

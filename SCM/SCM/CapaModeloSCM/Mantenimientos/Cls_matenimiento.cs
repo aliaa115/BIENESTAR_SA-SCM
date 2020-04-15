@@ -10,7 +10,7 @@ namespace CapaModeloSCM.Mantenimientos
     {
 
         /*
-         id de tablas:
+         ID DE TABLAS:
             1 = contactos
             2 = proveedores
             3 = tipos_productos
@@ -23,6 +23,7 @@ namespace CapaModeloSCM.Mantenimientos
             10= presentaciones
             11= bodegas
             12= documentos
+            13= tipos_movimientos
 
         ORDEN DE LOS DATOS EN RETURN PARA datos:
             1 = alias
@@ -88,6 +89,10 @@ namespace CapaModeloSCM.Mantenimientos
                 case 12:
                     string[] alias12 = { "Id", "Codigo", "Nombre", "Tipo documento", "Estado" };
                     return (alias12, "1", "documentos", "de Documentos", "DOCUMENTO", 0);
+
+                case 13:
+                    string[] alias13 = { "Id", "Cuenta", "Nombre", "Descripcion", "Signo", "Estado" };
+                    return (alias13, "1", "tipos_movimientos", "de Tipos de Movimientos", "TIPO MOVIMIENTO", 0);
 
                 default:
                     break;
