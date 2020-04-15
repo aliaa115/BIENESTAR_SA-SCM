@@ -41,19 +41,31 @@ namespace CapaVistaSCM.Lista
 
         }
 
-        private void setVentana(int tabla)
+        private void setVentana(int tabla, int modo, int encab)
         {
             switch (tabla)
             {
                 case 1:
-                    this.form = new Frm_MovimientosInventarios(this);
+                    this.form = new Frm_MovimientosInventarios(this, modo, encab );
                     break;
             }
         }
 
         private void Btn_nuevo_Click(object sender, EventArgs e)
         {
-            setVentana(tabla);
+            setVentana(tabla, 1 , 0 );
+            form.Show();
+            Hide();
+        }
+
+        private void Dgv_lista_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            Dgv_lista.Rows[Dgv_lista.CurrentRow.Index].Selected = true;
+        }
+
+        private void Btn_ver_Click(object sender, EventArgs e)
+        {
+            setVentana(tabla, 2, int.Parse(Dgv_lista.CurrentRow.Cells[0].Value.ToString()));
             form.Show();
             Hide();
         }

@@ -5,6 +5,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using CapaModeloSCM.Mantenimientos.ListaDatos;
+using CapaControladorSCM.MovimientosInventario;
+using CapaControladorSCM.Objetos;
 
 namespace CapaModeloSCM.Mantenimientos
 {
@@ -48,14 +50,43 @@ namespace CapaModeloSCM.Mantenimientos
             switch (tipoLista)
             {
                 case 1:
-
+                    //CapaControladoSCM.Listas dgvLlenar = new CapaControladoSCM.Listas();
+                    //string[] arreglo = dgvLlenar.obtenerDatosMovimientoInv();
                     dgv.Columns.Add("codigo", "CODIGO");
                     dgv.Columns.Add("nombre", "NOMBRE");
                     dgv.Columns.Add("tipoMovimiento", "TIPO MOVIMIENTO");
                     dgv.Columns.Add("estado", "ESTADO");
+                    llenarDGV(tipoLista, dgv);
                     break;
 
             }
+        }
+
+        public void llenarDGV(int tipoLista, DataGridView dgv)
+        {
+
+            switch (tipoLista)
+            {
+                case 1:
+
+                    SQL_MovimientoEncabezado movimientoEncabezado = new SQL_MovimientoEncabezado();
+
+                    dgv.Rows.Clear();
+                    int fila = 0;
+
+                    foreach (MovimientoEncabezado movEncTmp in movimientoEncabezado.llenarDGVMovimientoEncabezado())
+                    {
+                        dgv.Rows.Add();
+                        dgv.Rows[fila].Cells[0].Value = movEncTmp.ID_MOVIMIENTO_ENCABEZADO.ToString();
+                        dgv.Rows[fila].Cells[1].Value = movEncTmp.NOMBRE_MOVIMIENTO;
+                        dgv.Rows[fila].Cells[2].Value = movEncTmp.TIPO_MOVIMIENTO.NOMBRE_TIPO_MOVIMIENTO;
+                        dgv.Rows[fila].Cells[3].Value = movEncTmp.ESTADO.ToString();
+                        fila++;
+                    }
+
+                    break;
+            }
+
         }
 
     }

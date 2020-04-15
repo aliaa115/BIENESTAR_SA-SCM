@@ -37,22 +37,19 @@
             this.Lbl_costoTotal = new System.Windows.Forms.Label();
             this.Txt_costoTotal = new System.Windows.Forms.TextBox();
             this.Lbl_precioTotal = new System.Windows.Forms.Label();
-            this.Txt_precioTotal = new System.Windows.Forms.TextBox();
             this.Dgv_movimientoDetalle = new System.Windows.Forms.DataGridView();
-            this.Producto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Precio = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Costo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Grp_producto = new System.Windows.Forms.GroupBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.combo1 = new CapaVista.Combo();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.Btn_buscar = new System.Windows.Forms.Button();
+            this.Txt_producto = new System.Windows.Forms.TextBox();
             this.Txt_costo = new System.Windows.Forms.TextBox();
+            this.Txt_precioTotal = new System.Windows.Forms.TextBox();
             this.Lbl_costo = new System.Windows.Forms.Label();
             this.Nud_cantidad = new System.Windows.Forms.NumericUpDown();
             this.Lbl_cantidad = new System.Windows.Forms.Label();
             this.Txt_precio = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.Cbo_producto = new System.Windows.Forms.ComboBox();
             this.Lbl_producto = new System.Windows.Forms.Label();
             this.Gpb_eliminar = new System.Windows.Forms.GroupBox();
             this.Btn_eliminar = new System.Windows.Forms.Button();
@@ -63,8 +60,8 @@
             this.Tbp_Datos = new System.Windows.Forms.TabPage();
             this.Pnl_datos = new System.Windows.Forms.Panel();
             this.Chk_iva = new System.Windows.Forms.CheckBox();
-            this.Chb_estado = new System.Windows.Forms.CheckBox();
-            this.Gpb_editar = new System.Windows.Forms.GroupBox();
+            this.Chk_estado = new System.Windows.Forms.CheckBox();
+            this.Grp_editar = new System.Windows.Forms.GroupBox();
             this.button1 = new System.Windows.Forms.Button();
             this.Chk_codigo = new System.Windows.Forms.CheckBox();
             this.Dtp_fecha = new System.Windows.Forms.DateTimePicker();
@@ -81,12 +78,19 @@
             this.Lbl_nombre = new System.Windows.Forms.Label();
             this.Tbp_descripcion = new System.Windows.Forms.TabPage();
             this.Txt_descripcion = new System.Windows.Forms.TextBox();
+            this.Codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Producto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Costo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Precio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Tbl_movimientoInventario.SuspendLayout();
             this.Pnl_titulo.SuspendLayout();
             this.Pnl_desarrollo.SuspendLayout();
             this.Gpb_detalle.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Dgv_movimientoDetalle)).BeginInit();
             this.Grp_producto.SuspendLayout();
+            this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Nud_cantidad)).BeginInit();
             this.Gpb_eliminar.SuspendLayout();
             this.Gpb_agregar.SuspendLayout();
@@ -94,7 +98,7 @@
             this.Tbc_Datos.SuspendLayout();
             this.Tbp_Datos.SuspendLayout();
             this.Pnl_datos.SuspendLayout();
-            this.Gpb_editar.SuspendLayout();
+            this.Grp_editar.SuspendLayout();
             this.Grp_cancelar.SuspendLayout();
             this.Grp_guardar.SuspendLayout();
             this.Tbp_descripcion.SuspendLayout();
@@ -171,7 +175,6 @@
             this.Gpb_detalle.Controls.Add(this.Lbl_costoTotal);
             this.Gpb_detalle.Controls.Add(this.Txt_costoTotal);
             this.Gpb_detalle.Controls.Add(this.Lbl_precioTotal);
-            this.Gpb_detalle.Controls.Add(this.Txt_precioTotal);
             this.Gpb_detalle.Controls.Add(this.Dgv_movimientoDetalle);
             this.Gpb_detalle.Location = new System.Drawing.Point(8, 326);
             this.Gpb_detalle.Name = "Gpb_detalle";
@@ -211,17 +214,6 @@
             this.Lbl_precioTotal.TabIndex = 26;
             this.Lbl_precioTotal.Text = "PRECIO TOTAL";
             // 
-            // Txt_precioTotal
-            // 
-            this.Txt_precioTotal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(232)))), ((int)(((byte)(232)))));
-            this.Txt_precioTotal.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.Txt_precioTotal.Enabled = false;
-            this.Txt_precioTotal.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Txt_precioTotal.Location = new System.Drawing.Point(126, 197);
-            this.Txt_precioTotal.Name = "Txt_precioTotal";
-            this.Txt_precioTotal.Size = new System.Drawing.Size(161, 20);
-            this.Txt_precioTotal.TabIndex = 27;
-            // 
             // Dgv_movimientoDetalle
             // 
             this.Dgv_movimientoDetalle.AllowUserToAddRows = false;
@@ -231,11 +223,12 @@
             this.Dgv_movimientoDetalle.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.Dgv_movimientoDetalle.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.Dgv_movimientoDetalle.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Codigo,
             this.Producto,
             this.Nombre,
             this.Cantidad,
-            this.Precio,
-            this.Costo});
+            this.Costo,
+            this.Precio});
             this.Dgv_movimientoDetalle.Location = new System.Drawing.Point(5, 26);
             this.Dgv_movimientoDetalle.Name = "Dgv_movimientoDetalle";
             this.Dgv_movimientoDetalle.ReadOnly = true;
@@ -245,46 +238,18 @@
             this.Dgv_movimientoDetalle.Size = new System.Drawing.Size(878, 168);
             this.Dgv_movimientoDetalle.TabIndex = 25;
             // 
-            // Producto
-            // 
-            this.Producto.HeaderText = "Producto";
-            this.Producto.Name = "Producto";
-            this.Producto.ReadOnly = true;
-            // 
-            // Nombre
-            // 
-            this.Nombre.HeaderText = "Nombre";
-            this.Nombre.Name = "Nombre";
-            this.Nombre.ReadOnly = true;
-            // 
-            // Cantidad
-            // 
-            this.Cantidad.HeaderText = "Cantidad";
-            this.Cantidad.Name = "Cantidad";
-            this.Cantidad.ReadOnly = true;
-            // 
-            // Precio
-            // 
-            this.Precio.HeaderText = "Precio";
-            this.Precio.Name = "Precio";
-            this.Precio.ReadOnly = true;
-            // 
-            // Costo
-            // 
-            this.Costo.HeaderText = "Costo";
-            this.Costo.Name = "Costo";
-            this.Costo.ReadOnly = true;
-            // 
             // Grp_producto
             // 
-            this.Grp_producto.Controls.Add(this.textBox1);
+            this.Grp_producto.Controls.Add(this.combo1);
+            this.Grp_producto.Controls.Add(this.groupBox1);
+            this.Grp_producto.Controls.Add(this.Txt_producto);
             this.Grp_producto.Controls.Add(this.Txt_costo);
+            this.Grp_producto.Controls.Add(this.Txt_precioTotal);
             this.Grp_producto.Controls.Add(this.Lbl_costo);
             this.Grp_producto.Controls.Add(this.Nud_cantidad);
             this.Grp_producto.Controls.Add(this.Lbl_cantidad);
             this.Grp_producto.Controls.Add(this.Txt_precio);
             this.Grp_producto.Controls.Add(this.label1);
-            this.Grp_producto.Controls.Add(this.Cbo_producto);
             this.Grp_producto.Controls.Add(this.Lbl_producto);
             this.Grp_producto.Controls.Add(this.Gpb_eliminar);
             this.Grp_producto.Controls.Add(this.Gpb_agregar);
@@ -295,16 +260,51 @@
             this.Grp_producto.TabStop = false;
             this.Grp_producto.Text = "PRODUCTOS";
             // 
-            // textBox1
+            // combo1
             // 
-            this.textBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(232)))), ((int)(((byte)(232)))));
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox1.Enabled = false;
-            this.textBox1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(10, 63);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(457, 20);
-            this.textBox1.TabIndex = 49;
+            this.combo1.Location = new System.Drawing.Point(103, 25);
+            this.combo1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.combo1.Name = "combo1";
+            this.combo1.Size = new System.Drawing.Size(218, 31);
+            this.combo1.TabIndex = 50;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.Btn_buscar);
+            this.groupBox1.Font = new System.Drawing.Font("Century Gothic", 10F);
+            this.groupBox1.Location = new System.Drawing.Point(324, 6);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(101, 55);
+            this.groupBox1.TabIndex = 36;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "BUSCAR";
+            // 
+            // Btn_buscar
+            // 
+            this.Btn_buscar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(207)))), ((int)(((byte)(138)))));
+            this.Btn_buscar.BackgroundImage = global::CapaVistaSCM.Properties.Resources._191_search;
+            this.Btn_buscar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.Btn_buscar.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Btn_buscar.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(207)))), ((int)(((byte)(138)))));
+            this.Btn_buscar.FlatAppearance.BorderSize = 0;
+            this.Btn_buscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Btn_buscar.Location = new System.Drawing.Point(3, 20);
+            this.Btn_buscar.Name = "Btn_buscar";
+            this.Btn_buscar.Size = new System.Drawing.Size(95, 32);
+            this.Btn_buscar.TabIndex = 35;
+            this.Btn_buscar.UseVisualStyleBackColor = false;
+            this.Btn_buscar.Click += new System.EventHandler(this.Btn_buscar_Click);
+            // 
+            // Txt_producto
+            // 
+            this.Txt_producto.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(232)))), ((int)(((byte)(232)))));
+            this.Txt_producto.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.Txt_producto.Enabled = false;
+            this.Txt_producto.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Txt_producto.Location = new System.Drawing.Point(10, 63);
+            this.Txt_producto.Name = "Txt_producto";
+            this.Txt_producto.Size = new System.Drawing.Size(277, 20);
+            this.Txt_producto.TabIndex = 49;
             // 
             // Txt_costo
             // 
@@ -316,6 +316,17 @@
             this.Txt_costo.Name = "Txt_costo";
             this.Txt_costo.Size = new System.Drawing.Size(103, 20);
             this.Txt_costo.TabIndex = 48;
+            // 
+            // Txt_precioTotal
+            // 
+            this.Txt_precioTotal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(232)))), ((int)(((byte)(232)))));
+            this.Txt_precioTotal.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.Txt_precioTotal.Enabled = false;
+            this.Txt_precioTotal.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Txt_precioTotal.Location = new System.Drawing.Point(364, 60);
+            this.Txt_precioTotal.Name = "Txt_precioTotal";
+            this.Txt_precioTotal.Size = new System.Drawing.Size(103, 20);
+            this.Txt_precioTotal.TabIndex = 27;
             // 
             // Lbl_costo
             // 
@@ -366,7 +377,7 @@
             this.Txt_precio.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.Txt_precio.Enabled = false;
             this.Txt_precio.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Txt_precio.Location = new System.Drawing.Point(363, 25);
+            this.Txt_precio.Location = new System.Drawing.Point(364, 63);
             this.Txt_precio.Name = "Txt_precio";
             this.Txt_precio.Size = new System.Drawing.Size(103, 20);
             this.Txt_precio.TabIndex = 44;
@@ -375,25 +386,11 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(293, 26);
+            this.label1.Location = new System.Drawing.Point(294, 64);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(64, 19);
             this.label1.TabIndex = 37;
             this.label1.Text = "PRECIO";
-            // 
-            // Cbo_producto
-            // 
-            this.Cbo_producto.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-            this.Cbo_producto.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.Cbo_producto.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(232)))), ((int)(((byte)(232)))));
-            this.Cbo_producto.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.Cbo_producto.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Cbo_producto.ForeColor = System.Drawing.Color.Black;
-            this.Cbo_producto.FormattingEnabled = true;
-            this.Cbo_producto.Location = new System.Drawing.Point(105, 22);
-            this.Cbo_producto.Name = "Cbo_producto";
-            this.Cbo_producto.Size = new System.Drawing.Size(182, 29);
-            this.Cbo_producto.TabIndex = 36;
             // 
             // Lbl_producto
             // 
@@ -456,6 +453,7 @@
             this.Btn_agregar.Size = new System.Drawing.Size(95, 32);
             this.Btn_agregar.TabIndex = 35;
             this.Btn_agregar.UseVisualStyleBackColor = false;
+            this.Btn_agregar.Click += new System.EventHandler(this.Btn_agregar_Click);
             // 
             // Grp_DatosMovimiento
             // 
@@ -493,8 +491,8 @@
             // 
             this.Pnl_datos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(232)))), ((int)(((byte)(232)))));
             this.Pnl_datos.Controls.Add(this.Chk_iva);
-            this.Pnl_datos.Controls.Add(this.Chb_estado);
-            this.Pnl_datos.Controls.Add(this.Gpb_editar);
+            this.Pnl_datos.Controls.Add(this.Chk_estado);
+            this.Pnl_datos.Controls.Add(this.Grp_editar);
             this.Pnl_datos.Controls.Add(this.Chk_codigo);
             this.Pnl_datos.Controls.Add(this.Dtp_fecha);
             this.Pnl_datos.Controls.Add(this.Lbl_fecha);
@@ -522,32 +520,35 @@
             this.Chk_iva.Text = "IVA incluido";
             this.Chk_iva.UseVisualStyleBackColor = true;
             // 
-            // Chb_estado
+            // Chk_estado
             // 
-            this.Chb_estado.AutoSize = true;
-            this.Chb_estado.Location = new System.Drawing.Point(441, 102);
-            this.Chb_estado.Name = "Chb_estado";
-            this.Chb_estado.Size = new System.Drawing.Size(82, 25);
-            this.Chb_estado.TabIndex = 47;
-            this.Chb_estado.Text = "Activo";
-            this.Chb_estado.UseVisualStyleBackColor = true;
+            this.Chk_estado.AutoSize = true;
+            this.Chk_estado.Checked = true;
+            this.Chk_estado.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.Chk_estado.Location = new System.Drawing.Point(314, 90);
+            this.Chk_estado.Name = "Chk_estado";
+            this.Chk_estado.Size = new System.Drawing.Size(82, 25);
+            this.Chk_estado.TabIndex = 47;
+            this.Chk_estado.Text = "Activo";
+            this.Chk_estado.UseVisualStyleBackColor = true;
             // 
-            // Gpb_editar
+            // Grp_editar
             // 
-            this.Gpb_editar.Controls.Add(this.button1);
-            this.Gpb_editar.Font = new System.Drawing.Font("Century Gothic", 10F);
-            this.Gpb_editar.Location = new System.Drawing.Point(759, 79);
-            this.Gpb_editar.Name = "Gpb_editar";
-            this.Gpb_editar.Size = new System.Drawing.Size(107, 55);
-            this.Gpb_editar.TabIndex = 26;
-            this.Gpb_editar.TabStop = false;
-            this.Gpb_editar.Text = "EDITAR";
+            this.Grp_editar.Controls.Add(this.button1);
+            this.Grp_editar.Font = new System.Drawing.Font("Century Gothic", 10F);
+            this.Grp_editar.Location = new System.Drawing.Point(759, 79);
+            this.Grp_editar.Name = "Grp_editar";
+            this.Grp_editar.Size = new System.Drawing.Size(107, 55);
+            this.Grp_editar.TabIndex = 26;
+            this.Grp_editar.TabStop = false;
+            this.Grp_editar.Text = "EDITAR";
             // 
             // button1
             // 
             this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(207)))), ((int)(((byte)(138)))));
             this.button1.BackgroundImage = global::CapaVistaSCM.Properties.Resources._066_edit_1;
             this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button1.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.button1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.button1.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(207)))), ((int)(((byte)(138)))));
             this.button1.FlatAppearance.BorderSize = 0;
@@ -567,6 +568,7 @@
             this.Chk_codigo.TabIndex = 42;
             this.Chk_codigo.Text = "Codigo automatico";
             this.Chk_codigo.UseVisualStyleBackColor = true;
+            this.Chk_codigo.CheckedChanged += new System.EventHandler(this.Chk_codigo_CheckedChanged);
             // 
             // Dtp_fecha
             // 
@@ -645,12 +647,11 @@
             // Cbo_tipoMovimiento
             // 
             this.Cbo_tipoMovimiento.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(232)))), ((int)(((byte)(232)))));
-            this.Cbo_tipoMovimiento.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.Cbo_tipoMovimiento.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Cbo_tipoMovimiento.FormattingEnabled = true;
-            this.Cbo_tipoMovimiento.Location = new System.Drawing.Point(118, 56);
+            this.Cbo_tipoMovimiento.Location = new System.Drawing.Point(118, 51);
             this.Cbo_tipoMovimiento.Name = "Cbo_tipoMovimiento";
-            this.Cbo_tipoMovimiento.Size = new System.Drawing.Size(171, 28);
+            this.Cbo_tipoMovimiento.Size = new System.Drawing.Size(171, 29);
             this.Cbo_tipoMovimiento.TabIndex = 3;
             // 
             // Lbl_tipoMovimiento
@@ -723,9 +724,46 @@
             this.Txt_descripcion.Size = new System.Drawing.Size(871, 156);
             this.Txt_descripcion.TabIndex = 12;
             // 
+            // Codigo
+            // 
+            this.Codigo.HeaderText = "Codigo";
+            this.Codigo.Name = "Codigo";
+            this.Codigo.ReadOnly = true;
+            // 
+            // Producto
+            // 
+            this.Producto.HeaderText = "Producto";
+            this.Producto.Name = "Producto";
+            this.Producto.ReadOnly = true;
+            // 
+            // Nombre
+            // 
+            this.Nombre.HeaderText = "Nombre";
+            this.Nombre.Name = "Nombre";
+            this.Nombre.ReadOnly = true;
+            // 
+            // Cantidad
+            // 
+            this.Cantidad.HeaderText = "Cantidad";
+            this.Cantidad.Name = "Cantidad";
+            this.Cantidad.ReadOnly = true;
+            // 
+            // Costo
+            // 
+            this.Costo.HeaderText = "Costo";
+            this.Costo.Name = "Costo";
+            this.Costo.ReadOnly = true;
+            // 
+            // Precio
+            // 
+            this.Precio.HeaderText = "Precio";
+            this.Precio.Name = "Precio";
+            this.Precio.ReadOnly = true;
+            // 
             // Frm_MovimientosInventarios
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            this.CancelButton = this.button1;
             this.ClientSize = new System.Drawing.Size(904, 639);
             this.Controls.Add(this.Tbl_movimientoInventario);
             this.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -743,6 +781,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.Dgv_movimientoDetalle)).EndInit();
             this.Grp_producto.ResumeLayout(false);
             this.Grp_producto.PerformLayout();
+            this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.Nud_cantidad)).EndInit();
             this.Gpb_eliminar.ResumeLayout(false);
             this.Gpb_agregar.ResumeLayout(false);
@@ -751,7 +790,7 @@
             this.Tbp_Datos.ResumeLayout(false);
             this.Pnl_datos.ResumeLayout(false);
             this.Pnl_datos.PerformLayout();
-            this.Gpb_editar.ResumeLayout(false);
+            this.Grp_editar.ResumeLayout(false);
             this.Grp_cancelar.ResumeLayout(false);
             this.Grp_guardar.ResumeLayout(false);
             this.Tbp_descripcion.ResumeLayout(false);
@@ -786,7 +825,7 @@
         private System.Windows.Forms.Label Lbl_nombre;
         private System.Windows.Forms.TabPage Tbp_descripcion;
         private System.Windows.Forms.TextBox Txt_descripcion;
-        private System.Windows.Forms.GroupBox Gpb_editar;
+        private System.Windows.Forms.GroupBox Grp_editar;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.CheckBox Chk_codigo;
         private System.Windows.Forms.GroupBox Gpb_eliminar;
@@ -795,7 +834,6 @@
         private System.Windows.Forms.Button Btn_agregar;
         private System.Windows.Forms.TextBox Txt_precio;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ComboBox Cbo_producto;
         private System.Windows.Forms.Label Lbl_producto;
         private System.Windows.Forms.GroupBox Gpb_detalle;
         private System.Windows.Forms.Label Lbl_costoTotal;
@@ -803,17 +841,21 @@
         private System.Windows.Forms.Label Lbl_precioTotal;
         private System.Windows.Forms.TextBox Txt_precioTotal;
         private System.Windows.Forms.DataGridView Dgv_movimientoDetalle;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Producto;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Cantidad;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Precio;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Costo;
         private System.Windows.Forms.TextBox Txt_costo;
         private System.Windows.Forms.Label Lbl_costo;
         private System.Windows.Forms.NumericUpDown Nud_cantidad;
         private System.Windows.Forms.Label Lbl_cantidad;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.CheckBox Chb_estado;
+        private System.Windows.Forms.TextBox Txt_producto;
+        private System.Windows.Forms.CheckBox Chk_estado;
         private System.Windows.Forms.CheckBox Chk_iva;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Button Btn_buscar;
+        private CapaVista.Combo combo1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Codigo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Producto;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Cantidad;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Costo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Precio;
     }
 }

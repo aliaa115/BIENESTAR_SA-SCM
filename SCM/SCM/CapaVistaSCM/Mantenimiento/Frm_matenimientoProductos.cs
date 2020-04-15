@@ -8,18 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace CapaVistaSCM
+namespace CapaVistaSCM.Mantenimiento
 {
-    public partial class Frm_listaMovimientosInventario : Form
+    public partial class Frm_matenimientoProductos : Form
     {
-        public Frm_listaMovimientosInventario()
+        public Frm_matenimientoProductos()
         {
             InitializeComponent();
-        }
-
-        private void Button1_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

@@ -4,22 +4,26 @@ using System.Data.Odbc;
 namespace CapaControladorSCM
 {
     public class conexionSCM
-    {
-        public OdbcConnection conexion(string bd)
+    { 
+        OdbcConnection conn;
+        public Tuple<OdbcConnection, OdbcTransaction> conexion()
         {
-            OdbcConnection conn = new OdbcConnection("Dsn="+bd+"");// creacion de la conexion via ODBC
+            conn = new OdbcConnection("Dsn=ERP");// creacion de la conexion via ODBC
+            OdbcTransaction transaccion = null;
             try
             {
                 conn.Open();
+                transaccion = conn.BeginTransaction();
             }
             catch (OdbcException)
             {
                 Console.WriteLine("No Conectó");
             }
-            return conn;
+
+            return Tuple.Create(conn, transaccion);
         }
 
-        public void desconexion(OdbcConnection conn)
+        public void desconexion()
         {
             try
             {

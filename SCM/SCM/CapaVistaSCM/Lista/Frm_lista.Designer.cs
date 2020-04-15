@@ -193,11 +193,15 @@
             this.Btn_ver.Size = new System.Drawing.Size(93, 32);
             this.Btn_ver.TabIndex = 9;
             this.Btn_ver.UseVisualStyleBackColor = false;
+            this.Btn_ver.Click += new System.EventHandler(this.Btn_ver_Click);
             // 
             // Dgv_lista
             // 
+            this.Dgv_lista.AllowUserToAddRows = false;
             this.Dgv_lista.AllowUserToDeleteRows = false;
             this.Dgv_lista.AllowUserToOrderColumns = true;
+            this.Dgv_lista.AllowUserToResizeColumns = false;
+            this.Dgv_lista.AllowUserToResizeRows = false;
             this.Dgv_lista.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.Dgv_lista.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(232)))), ((int)(((byte)(232)))));
             this.Dgv_lista.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -205,8 +209,10 @@
             this.Dgv_lista.Name = "Dgv_lista";
             this.Dgv_lista.RowHeadersVisible = false;
             this.Dgv_lista.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            this.Dgv_lista.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.Dgv_lista.Size = new System.Drawing.Size(776, 498);
             this.Dgv_lista.TabIndex = 0;
+            this.Dgv_lista.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Dgv_lista_CellContentClick);
             // 
             // Frm_lista
             // 

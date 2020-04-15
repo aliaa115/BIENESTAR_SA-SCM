@@ -53,8 +53,8 @@ namespace CapaVistaSCM
 
         private void TrasladoDeInventarioToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
-            Frm_listaTrasladosInventario trasladosInventario = new Frm_listaTrasladosInventario();
-            trasladosInventario.Show();
+            Frm_trasladoDeProducto trasladoDeProducto = null;
+            listas(1, trasladoDeProducto);
         }
 
         private void MovimientoDeInventarioToolStripMenuItem_Click(object sender, EventArgs e)

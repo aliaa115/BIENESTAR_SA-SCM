@@ -37,6 +37,10 @@
     <Reference Include="CapaDeDiseno">
       <HintPath>W:\Bienestar S.A\Formación\DLLS\Navegador\CapaDeDiseno\bin\Debug\CapaDeDiseno.dll</HintPath>
     </Reference>
+    <Reference Include="CapaVista, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>W:\Bienestar S.A\Formación\DLLS\ComboAuto\CapaVista\bin\Debug\CapaVista.dll</HintPath>
+    </Reference>
     <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
     <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
     <Reference Include="System" />
@@ -75,17 +79,17 @@
     <Compile Include="Mantenimiento\Frm_manteniminto.Designer.cs">
       <DependentUpon>Frm_manteniminto.cs</DependentUpon>
     </Compile>
-    <Compile Include="MovimientosInventarios\Frm_listaMovimientosInventario.cs">
+    <Compile Include="Mantenimiento\Frm_matenimientoProductos.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MovimientosInventarios\Frm_listaMovimientosInventario.Designer.cs">
-      <DependentUpon>Frm_listaMovimientosInventario.cs</DependentUpon>
+    <Compile Include="Mantenimiento\Frm_matenimientoProductos.Designer.cs">
+      <DependentUpon>Frm_matenimientoProductos.cs</DependentUpon>
     </Compile>
-    <Compile Include="MovimientosInventarios\Frm_listaTrasladosInventario.cs">
+    <Compile Include="Mensajes\Mesaje.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MovimientosInventarios\Frm_listaTrasladosInventario.Designer.cs">
-      <DependentUpon>Frm_listaTrasladosInventario.cs</DependentUpon>
+    <Compile Include="Mensajes\Mesaje.Designer.cs">
+      <DependentUpon>Mesaje.cs</DependentUpon>
     </Compile>
     <Compile Include="OrdenesCompra\Frm_listaOrdenesCompra.cs">
       <SubType>Form</SubType>
@@ -156,11 +160,8 @@
     <EmbeddedResource Include="Mantenimiento\Frm_manteniminto.resx">
       <DependentUpon>Frm_manteniminto.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MovimientosInventarios\Frm_listaMovimientosInventario.resx">
-      <DependentUpon>Frm_listaMovimientosInventario.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="MovimientosInventarios\Frm_listaTrasladosInventario.resx">
-      <DependentUpon>Frm_listaTrasladosInventario.cs</DependentUpon>
+    <EmbeddedResource Include="Mensajes\Mesaje.resx">
+      <DependentUpon>Mesaje.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MovimientosInventarios\Frm_trasladoDeProducto.resx">
       <DependentUpon>Frm_trasladoDeProducto.cs</DependentUpon>
@@ -222,9 +223,6 @@
     <None Include="Resources\223-trash.png" />
   </ItemGroup>
   <ItemGroup>
-    <WCFMetadata Include="Connected Services\" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\108-inbox-4.png" />
   </ItemGroup>
   <ItemGroup>
@@ -235,6 +233,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\149-notepad-2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\191-search.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\019-idea.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
