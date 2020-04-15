@@ -33,9 +33,9 @@
             this.Btn_MovInventario = new System.Windows.Forms.Button();
             this.Lbl_titulo = new System.Windows.Forms.Label();
             this.Pnl_desarrollo = new System.Windows.Forms.Panel();
-            this.Gbx_editar = new System.Windows.Forms.GroupBox();
+            this.Grp_editar = new System.Windows.Forms.GroupBox();
             this.Btn_editar = new System.Windows.Forms.Button();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.Grp_nuevo = new System.Windows.Forms.GroupBox();
             this.Btn_nuevo = new System.Windows.Forms.Button();
             this.Grp_guardar = new System.Windows.Forms.GroupBox();
             this.Btn_ver = new System.Windows.Forms.Button();
@@ -43,8 +43,8 @@
             this.Tbl_movimientoInventario.SuspendLayout();
             this.Pnl_titulo.SuspendLayout();
             this.Pnl_desarrollo.SuspendLayout();
-            this.Gbx_editar.SuspendLayout();
-            this.groupBox1.SuspendLayout();
+            this.Grp_editar.SuspendLayout();
+            this.Grp_nuevo.SuspendLayout();
             this.Grp_guardar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Dgv_lista)).BeginInit();
             this.SuspendLayout();
@@ -105,8 +105,8 @@
             // Pnl_desarrollo
             // 
             this.Pnl_desarrollo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(232)))), ((int)(((byte)(232)))));
-            this.Pnl_desarrollo.Controls.Add(this.Gbx_editar);
-            this.Pnl_desarrollo.Controls.Add(this.groupBox1);
+            this.Pnl_desarrollo.Controls.Add(this.Grp_editar);
+            this.Pnl_desarrollo.Controls.Add(this.Grp_nuevo);
             this.Pnl_desarrollo.Controls.Add(this.Grp_guardar);
             this.Pnl_desarrollo.Controls.Add(this.Dgv_lista);
             this.Pnl_desarrollo.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -115,16 +115,16 @@
             this.Pnl_desarrollo.Size = new System.Drawing.Size(794, 562);
             this.Pnl_desarrollo.TabIndex = 1;
             // 
-            // Gbx_editar
+            // Grp_editar
             // 
-            this.Gbx_editar.Controls.Add(this.Btn_editar);
-            this.Gbx_editar.Font = new System.Drawing.Font("Century Gothic", 10F);
-            this.Gbx_editar.Location = new System.Drawing.Point(216, 3);
-            this.Gbx_editar.Name = "Gbx_editar";
-            this.Gbx_editar.Size = new System.Drawing.Size(96, 55);
-            this.Gbx_editar.TabIndex = 28;
-            this.Gbx_editar.TabStop = false;
-            this.Gbx_editar.Text = "EDITAR";
+            this.Grp_editar.Controls.Add(this.Btn_editar);
+            this.Grp_editar.Font = new System.Drawing.Font("Century Gothic", 10F);
+            this.Grp_editar.Location = new System.Drawing.Point(216, 3);
+            this.Grp_editar.Name = "Grp_editar";
+            this.Grp_editar.Size = new System.Drawing.Size(96, 55);
+            this.Grp_editar.TabIndex = 28;
+            this.Grp_editar.TabStop = false;
+            this.Grp_editar.Text = "EDITAR";
             // 
             // Btn_editar
             // 
@@ -141,16 +141,16 @@
             this.Btn_editar.TabIndex = 9;
             this.Btn_editar.UseVisualStyleBackColor = false;
             // 
-            // groupBox1
+            // Grp_nuevo
             // 
-            this.groupBox1.Controls.Add(this.Btn_nuevo);
-            this.groupBox1.Font = new System.Drawing.Font("Century Gothic", 10F);
-            this.groupBox1.Location = new System.Drawing.Point(114, 3);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(96, 55);
-            this.groupBox1.TabIndex = 27;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "NUEVO";
+            this.Grp_nuevo.Controls.Add(this.Btn_nuevo);
+            this.Grp_nuevo.Font = new System.Drawing.Font("Century Gothic", 10F);
+            this.Grp_nuevo.Location = new System.Drawing.Point(114, 3);
+            this.Grp_nuevo.Name = "Grp_nuevo";
+            this.Grp_nuevo.Size = new System.Drawing.Size(96, 55);
+            this.Grp_nuevo.TabIndex = 27;
+            this.Grp_nuevo.TabStop = false;
+            this.Grp_nuevo.Text = "NUEVO";
             // 
             // Btn_nuevo
             // 
@@ -228,8 +228,8 @@
             this.Pnl_titulo.ResumeLayout(false);
             this.Pnl_titulo.PerformLayout();
             this.Pnl_desarrollo.ResumeLayout(false);
-            this.Gbx_editar.ResumeLayout(false);
-            this.groupBox1.ResumeLayout(false);
+            this.Grp_editar.ResumeLayout(false);
+            this.Grp_nuevo.ResumeLayout(false);
             this.Grp_guardar.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.Dgv_lista)).EndInit();
             this.ResumeLayout(false);
@@ -243,9 +243,9 @@
         private System.Windows.Forms.Button Btn_MovInventario;
         private System.Windows.Forms.Label Lbl_titulo;
         private System.Windows.Forms.Panel Pnl_desarrollo;
-        private System.Windows.Forms.GroupBox Gbx_editar;
+        private System.Windows.Forms.GroupBox Grp_editar;
         private System.Windows.Forms.Button Btn_editar;
-        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox Grp_nuevo;
         private System.Windows.Forms.Button Btn_nuevo;
         private System.Windows.Forms.GroupBox Grp_guardar;
         private System.Windows.Forms.Button Btn_ver;

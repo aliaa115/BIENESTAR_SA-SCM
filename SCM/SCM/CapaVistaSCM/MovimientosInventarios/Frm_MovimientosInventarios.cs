@@ -1,13 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using CapaModeloSCM.Movimientos;
+using System;
 using System.Windows.Forms;
-using CapaModeloSCM.Movimientos;
 
 namespace CapaVistaSCM
 {
@@ -71,8 +64,7 @@ namespace CapaVistaSCM
                     movimientoInventario.llenarDGV(Dgv_movimientoDetalle, encabezado);
 
                     break;
-                case 3:
-                    break;
+
             }
 
 
