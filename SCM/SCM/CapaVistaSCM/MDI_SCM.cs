@@ -1,14 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+﻿using CapaVistaSCM.Lista;
 using CapaVistaSCM.Mantenimiento;
-using CapaVistaSCM.Lista;
+using System;
+using System.Windows.Forms;
 
 namespace CapaVistaSCM
 {
@@ -33,7 +26,7 @@ namespace CapaVistaSCM
 
             switch (tabla) {
                 case 1:
-                    lista = new Frm_lista(tabla, form);
+                    lista = new Frm_lista(tabla, form, usuario);
                     break;
             }
 
@@ -46,15 +39,10 @@ namespace CapaVistaSCM
             listaOrdenesCompra.Show();
         }
 
-        private void MovimientosInventarioToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void TrasladoDeInventarioToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
             Frm_trasladoDeProducto trasladoDeProducto = null;
-            listas(1, trasladoDeProducto);
+            listas(2, trasladoDeProducto);
         }
 
         private void MovimientoDeInventarioToolStripMenuItem_Click(object sender, EventArgs e)
