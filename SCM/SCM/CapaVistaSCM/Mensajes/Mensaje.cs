@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace CapaVistaSCM.Mensajes
 {
-    public partial class Mesaje : Form
+    public partial class Mensaje : Form
     {
-        public Mesaje( string mensaje )
+        public Mensaje( string mensaje )
         {
             InitializeComponent();
             label1.Text = mensaje;

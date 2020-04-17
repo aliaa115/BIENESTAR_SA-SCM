@@ -19,14 +19,14 @@ namespace CapaVistaSCM.Lista
 
             this.usuario = usuario;
             this.tabla = tabla;
-            establecerDatos();
 
-            Grp_editar.Visible = false;
         }
 
         private void establecerDatos()
         {
-                        
+
+            Dgv_lista.Columns.Clear();
+
             Cls_listas datos = new Cls_listas();
 
             ListaData listaDatos = datos.DatosLista(tabla, Dgv_lista);
@@ -53,7 +53,7 @@ namespace CapaVistaSCM.Lista
         {
             setVentana(tabla, 1 , 0 );
             form.Show();
-            Hide();
+            Visible = false;
             switch (tabla)
             {
                 case 1:
@@ -71,13 +71,36 @@ namespace CapaVistaSCM.Lista
         {
             setVentana(tabla, 2, int.Parse(Dgv_lista.CurrentRow.Cells[0].Value.ToString()));
             form.Show();
-            Hide();
+            Visible = false;
             switch (tabla)
             {
                 case 1:
                     //sn.insertarBitacora(usuario, "Ingreso a ventana para visualizar un registro de movimientos de invenrario", "movimientos_inventario_encabezado");
                     break;
             }
+        }
+
+        private void Btn_editar_Click(object sender, EventArgs e)
+        {
+            setVentana(tabla, 3, int.Parse(Dgv_lista.CurrentRow.Cells[0].Value.ToString()));
+            form.Show();
+            Visible = false;
+            switch (tabla)
+            {
+                case 1:
+                    //sn.insertarBitacora(usuario, "Ingreso a ventana para visualizar un registro de movimientos de invenrario", "movimientos_inventario_encabezado");
+                    break;
+            }
+        }
+
+        private void Frm_lista_Load(object sender, EventArgs e)
+        {
+            establecerDatos();
+        }
+
+        private void Frm_lista_VisibleChanged(object sender, EventArgs e)
+        {
+            establecerDatos();
         }
     }
 }

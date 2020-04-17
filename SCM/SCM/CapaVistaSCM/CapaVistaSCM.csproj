@@ -41,6 +41,9 @@
     <Reference Include="CapaDeDiseno">
       <HintPath>W:\Bienestar S.A\Formación\DLLS\Navegador\CapaDeDiseno\bin\Debug\CapaDeDiseno.dll</HintPath>
     </Reference>
+    <Reference Include="CapaDiseno">
+      <HintPath>W:\Bienestar S.A\Formación\DLLS\Seguridad\CapaDiseno\bin\Debug\CapaDiseno.dll</HintPath>
+    </Reference>
     <Reference Include="CapaVista, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>W:\Bienestar S.A\Formación\DLLS\ComboAuto\CapaVista\bin\Debug\CapaVista.dll</HintPath>
@@ -89,23 +92,23 @@
     <Compile Include="Mantenimiento\Frm_matenimientoProductos.Designer.cs">
       <DependentUpon>Frm_matenimientoProductos.cs</DependentUpon>
     </Compile>
-    <Compile Include="Mensajes\Mesaje.cs">
+    <Compile Include="MDI_SCM.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Mensajes\Mesaje.Designer.cs">
-      <DependentUpon>Mesaje.cs</DependentUpon>
+    <Compile Include="MDI_SCM.Designer.cs">
+      <DependentUpon>MDI_SCM.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Mensajes\Mensaje.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Mensajes\Mensaje.Designer.cs">
+      <DependentUpon>Mensaje.cs</DependentUpon>
     </Compile>
     <Compile Include="OrdenesCompra\Frm_listaOrdenesCompra.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="OrdenesCompra\Frm_listaOrdenesCompra.Designer.cs">
       <DependentUpon>Frm_listaOrdenesCompra.cs</DependentUpon>
-    </Compile>
-    <Compile Include="MDI_SCM.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="MDI_SCM.Designer.cs">
-      <DependentUpon>MDI_SCM.cs</DependentUpon>
     </Compile>
     <Compile Include="MovimientosInventarios\Frm_trasladoDeProducto.cs">
       <SubType>Form</SubType>
@@ -164,8 +167,11 @@
     <EmbeddedResource Include="Mantenimiento\Frm_manteniminto.resx">
       <DependentUpon>Frm_manteniminto.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Mensajes\Mesaje.resx">
-      <DependentUpon>Mesaje.cs</DependentUpon>
+    <EmbeddedResource Include="MDI_SCM.resx">
+      <DependentUpon>MDI_SCM.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mensajes\Mensaje.resx">
+      <DependentUpon>Mensaje.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MovimientosInventarios\Frm_trasladoDeProducto.resx">
       <DependentUpon>Frm_trasladoDeProducto.cs</DependentUpon>
@@ -175,9 +181,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MantenimientoBase.resx">
       <DependentUpon>MantenimientoBase.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="MDI_SCM.resx">
-      <DependentUpon>MDI_SCM.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="OrdenesCompra\Frm_OrdenCompra.resx">
       <DependentUpon>Frm_OrdenCompra.cs</DependentUpon>

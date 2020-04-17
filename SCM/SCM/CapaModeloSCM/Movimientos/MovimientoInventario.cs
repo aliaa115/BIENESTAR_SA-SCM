@@ -8,7 +8,7 @@ namespace CapaModeloSCM.Movimientos
     {
         public string[] datosMovimiento(int encabezado)
         {
-            MovimientoEncabezado movimientoEncabezado = new MovimientoEncabezado();
+            MovimientoEncabezado movimientoEncabezado;
             SQL_MovimientoEncabezado sQL_MovimientoEncabezado = new SQL_MovimientoEncabezado();
 
             movimientoEncabezado = sQL_MovimientoEncabezado.obtenerMovimientoEncabezado(encabezado);
@@ -44,6 +44,54 @@ namespace CapaModeloSCM.Movimientos
                 dgv.Rows[fila].Cells[5].Value = (movDetTmp.PRECIO * movDetTmp.CANTIDAD).ToString();
                 fila++;
             }
+        }
+
+        public void insertarMovimientoEncabezado(string[] encabezado)
+        {
+            SQL_MovimientoEncabezado movimientoEncabezado = new SQL_MovimientoEncabezado();
+
+            movimientoEncabezado.ingresarMovimientoEncabezado(encabezado);
+
+        }
+
+        public void actualizarMovimientoEncabezado(string[] encabezado)
+        {
+            SQL_MovimientoEncabezado movimientoEncabezado = new SQL_MovimientoEncabezado();
+
+            movimientoEncabezado.actualizarMovimientoEncabezado(encabezado);
+
+        }
+
+        public void insertarMovimientoDetalle(string[] detalle)
+        {
+            SQL_MovimientoDetalle movimientoDetalle = new SQL_MovimientoDetalle();
+
+            movimientoDetalle.ingresarMovimientoDetalle(detalle);
+
+        }
+
+        public void eliminarMovimientoDetalle(int encabezado, int detalle)
+        {
+            SQL_MovimientoDetalle movimientoDetalle = new SQL_MovimientoDetalle();
+
+            movimientoDetalle.eliminarMovimientoDetalle(detalle, encabezado);
+        }
+
+        public string[] obtenerProducto(int id_producto)
+        {
+            Producto producto;
+            SQL_Producto sql_producto = new SQL_Producto();
+            
+            producto = sql_producto.obtenerProductoDetalle(id_producto);
+
+            string[] datos = {
+                producto.ID_PRODUCTO.ToString(),
+                producto.NOMBRE_PRODUCTO,
+                producto.COSTO_PRODUCTO.ToString(),
+                producto.PRECIO_PRODUCTO.ToString()
+            };
+
+            return datos;
         }
     }
 }

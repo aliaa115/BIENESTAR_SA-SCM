@@ -24,6 +24,7 @@ namespace CapaModeloSCM.Mantenimientos
             11= bodegas
             12= documentos
             13= tipos_movimientos
+            14= productos
 
         ORDEN DE LOS DATOS EN RETURN PARA datos:
             1 = alias
@@ -92,7 +93,11 @@ namespace CapaModeloSCM.Mantenimientos
 
                 case 13:
                     string[] alias13 = { "Id", "Cuenta", "Nombre", "Descripcion", "Signo", "Estado" };
-                    return (alias13, "1", "tipos_movimientos", "de Tipos de Movimientos", "TIPO MOVIMIENTO", 0);
+                    return (alias13, "1", "tipos_movimientos", "de Tipos de Movimientos", "TIPO MOVIMIENTO", 1);
+
+                case 14:
+                    string[] alias14 = { "Id", "Tipo", "Impuesto", "Categoria", "Nombre", "Descripcion", "Costo", "Precio", "Cant Max", "Cant Min", "Estado" };
+                    return (alias14, "1", "productos", "de Productos", "PRODUCTO", 3);
 
                 default:
                     break;
@@ -112,6 +117,7 @@ namespace CapaModeloSCM.Mantenimientos
                             return ("contactos", "id_contacto", 0);
                     }
                     break;
+
                 //proveedores
                 case 6:
                     switch (no)
@@ -120,6 +126,31 @@ namespace CapaModeloSCM.Mantenimientos
                             return ("contactos", "id_contacto", 0);
                     }
                     break;
+
+                //cuentas
+                case 13:
+                    switch (no)
+                    {
+                        case 1:
+                            return ("cuentas", "id_cuenta", 0);
+                    }
+                    break;
+
+                //productos
+                case 14:
+                    switch (no)
+                    {
+                        case 1:
+                            return ("tipos_productos", "id_tipo_producto", 0);
+
+                        case 2:
+                            return ("impuestos", "id_impuesto", 0);
+
+                        case 3:
+                            return ("categorias", "id_categoria", 0);
+                    }
+                    break;
+
                 default:
                     break;
             }

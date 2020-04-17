@@ -140,6 +140,7 @@
             this.Btn_editar.Size = new System.Drawing.Size(90, 32);
             this.Btn_editar.TabIndex = 9;
             this.Btn_editar.UseVisualStyleBackColor = false;
+            this.Btn_editar.Click += new System.EventHandler(this.Btn_editar_Click);
             // 
             // Grp_nuevo
             // 
@@ -224,6 +225,8 @@
             this.Name = "Frm_lista";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Lista";
+            this.Load += new System.EventHandler(this.Frm_lista_Load);
+            this.VisibleChanged += new System.EventHandler(this.Frm_lista_VisibleChanged);
             this.Tbl_movimientoInventario.ResumeLayout(false);
             this.Pnl_titulo.ResumeLayout(false);
             this.Pnl_titulo.PerformLayout();
