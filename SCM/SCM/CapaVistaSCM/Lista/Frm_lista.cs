@@ -31,7 +31,7 @@ namespace CapaVistaSCM.Lista
 
             ListaData listaDatos = datos.DatosLista(tabla, Dgv_lista);
             
-            Text = Text + listaDatos.form;
+            Text = "Lista " + listaDatos.form;
             Lbl_titulo.Text = listaDatos.titulo;
 
             Dgv_lista.Update();

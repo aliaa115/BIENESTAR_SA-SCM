@@ -40,6 +40,7 @@ namespace CapaVistaSCM
                     break;
             }
 
+            lista.MdiParent = this;
             lista.Show();
         }
 
@@ -47,6 +48,7 @@ namespace CapaVistaSCM
         {
             Frm_listaOrdenesCompra listaOrdenesCompra = new Frm_listaOrdenesCompra();
             listaOrdenesCompra.Show();
+            listaOrdenesCompra.MdiParent = this;
         }
 
         private void movimientoDeInventarioToolStripMenuItem_Click(object sender, EventArgs e)

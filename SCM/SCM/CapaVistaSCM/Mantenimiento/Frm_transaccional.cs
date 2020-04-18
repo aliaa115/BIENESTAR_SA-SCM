@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace CapaVistaSCM.Mantenimiento
 {
-    public partial class Frm_matenimientoProductos : Form
+    public partial class Mantenimiento : Form
     {
-        public Frm_matenimientoProductos()
+        public Mantenimiento()
         {
             InitializeComponent();
         }

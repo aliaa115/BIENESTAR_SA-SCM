@@ -56,13 +56,12 @@
             this.inventarioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.inventarioToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.bodegasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.movimientosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tiposDeMovimientosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.movimientosInventarioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.trasladoDeInventarioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.movimientoDeInventarioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.seguridadToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.movimientosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.tiposDeMovimientosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -207,7 +206,7 @@
             this.presentacionesToolStripMenuItem,
             this.impuestosSobreProductosToolStripMenuItem});
             this.productosToolStripMenuItem.Name = "productosToolStripMenuItem";
-            this.productosToolStripMenuItem.Size = new System.Drawing.Size(180, 26);
+            this.productosToolStripMenuItem.Size = new System.Drawing.Size(179, 26);
             this.productosToolStripMenuItem.Text = "Productos";
             // 
             // productoToolStripMenuItem
@@ -265,7 +264,7 @@
             this.inventarioToolStripMenuItem1,
             this.bodegasToolStripMenuItem});
             this.inventarioToolStripMenuItem.Name = "inventarioToolStripMenuItem";
-            this.inventarioToolStripMenuItem.Size = new System.Drawing.Size(180, 26);
+            this.inventarioToolStripMenuItem.Size = new System.Drawing.Size(179, 26);
             this.inventarioToolStripMenuItem.Text = "Inventarios";
             // 
             // inventarioToolStripMenuItem1
@@ -280,6 +279,21 @@
             this.bodegasToolStripMenuItem.Size = new System.Drawing.Size(161, 26);
             this.bodegasToolStripMenuItem.Text = "Bodegas";
             this.bodegasToolStripMenuItem.Click += new System.EventHandler(this.bodegasToolStripMenuItem_Click);
+            // 
+            // movimientosToolStripMenuItem
+            // 
+            this.movimientosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tiposDeMovimientosToolStripMenuItem});
+            this.movimientosToolStripMenuItem.Name = "movimientosToolStripMenuItem";
+            this.movimientosToolStripMenuItem.Size = new System.Drawing.Size(179, 26);
+            this.movimientosToolStripMenuItem.Text = "Movimientos";
+            // 
+            // tiposDeMovimientosToolStripMenuItem
+            // 
+            this.tiposDeMovimientosToolStripMenuItem.Name = "tiposDeMovimientosToolStripMenuItem";
+            this.tiposDeMovimientosToolStripMenuItem.Size = new System.Drawing.Size(246, 26);
+            this.tiposDeMovimientosToolStripMenuItem.Text = "Tipos de Movimientos";
+            this.tiposDeMovimientosToolStripMenuItem.Click += new System.EventHandler(this.tiposDeMovimientosToolStripMenuItem_Click);
             // 
             // movimientosInventarioToolStripMenuItem
             // 
@@ -311,37 +325,16 @@
             this.seguridadToolStripMenuItem.Text = "Seguridad";
             this.seguridadToolStripMenuItem.Click += new System.EventHandler(this.seguridadToolStripMenuItem_Click);
             // 
-            // panel1
-            // 
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(0, 29);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1206, 519);
-            this.panel1.TabIndex = 6;
-            // 
-            // movimientosToolStripMenuItem
-            // 
-            this.movimientosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.tiposDeMovimientosToolStripMenuItem});
-            this.movimientosToolStripMenuItem.Name = "movimientosToolStripMenuItem";
-            this.movimientosToolStripMenuItem.Size = new System.Drawing.Size(180, 26);
-            this.movimientosToolStripMenuItem.Text = "Movimientos";
-            // 
-            // tiposDeMovimientosToolStripMenuItem
-            // 
-            this.tiposDeMovimientosToolStripMenuItem.Name = "tiposDeMovimientosToolStripMenuItem";
-            this.tiposDeMovimientosToolStripMenuItem.Size = new System.Drawing.Size(246, 26);
-            this.tiposDeMovimientosToolStripMenuItem.Text = "Tipos de Movimientos";
-            this.tiposDeMovimientosToolStripMenuItem.Click += new System.EventHandler(this.tiposDeMovimientosToolStripMenuItem_Click);
-            // 
             // MDI_SCM
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(207)))), ((int)(((byte)(138)))));
+            this.BackgroundImage = global::CapaVistaSCM.Properties.Resources.FondoSCM;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1206, 570);
-            this.Controls.Add(this.panel1);
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.statusStrip);
+            this.DoubleBuffered = true;
             this.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.IsMdiContainer = true;
             this.Name = "MDI_SCM";
@@ -390,7 +383,6 @@
         private System.Windows.Forms.ToolStripMenuItem movimientoDeInventarioToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem seguridadToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem impuestosSobreProductosToolStripMenuItem;
-        private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.ToolStripMenuItem movimientosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem tiposDeMovimientosToolStripMenuItem;
     }
