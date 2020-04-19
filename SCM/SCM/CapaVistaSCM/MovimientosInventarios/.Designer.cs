@@ -463,6 +463,7 @@
             this.Btn_eliminar.Size = new System.Drawing.Size(104, 32);
             this.Btn_eliminar.TabIndex = 36;
             this.Btn_eliminar.UseVisualStyleBackColor = false;
+            this.Btn_eliminar.Click += new System.EventHandler(this.Btn_eliminar_Click);
             // 
             // Gpb_agregar
             // 
@@ -612,11 +613,12 @@
             this.Dtp_fecha.CalendarMonthBackground = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(232)))), ((int)(((byte)(232)))));
             this.Dtp_fecha.CalendarTitleBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(207)))), ((int)(((byte)(138)))));
             this.Dtp_fecha.CalendarTitleForeColor = System.Drawing.SystemColors.ControlText;
-            this.Dtp_fecha.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.Dtp_fecha.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.Dtp_fecha.Location = new System.Drawing.Point(118, 86);
             this.Dtp_fecha.Name = "Dtp_fecha";
             this.Dtp_fecha.Size = new System.Drawing.Size(133, 27);
             this.Dtp_fecha.TabIndex = 4;
+            this.Dtp_fecha.ValueChanged += new System.EventHandler(this.Dtp_fecha_ValueChanged);
             // 
             // Lbl_fecha
             // 
@@ -679,6 +681,7 @@
             this.Btn_guardar.Size = new System.Drawing.Size(101, 32);
             this.Btn_guardar.TabIndex = 9;
             this.Btn_guardar.UseVisualStyleBackColor = false;
+            this.Btn_guardar.Click += new System.EventHandler(this.Btn_guardar_Click);
             // 
             // Cbo_tipoMovimiento
             // 
@@ -689,6 +692,7 @@
             this.Cbo_tipoMovimiento.Name = "Cbo_tipoMovimiento";
             this.Cbo_tipoMovimiento.Size = new System.Drawing.Size(171, 29);
             this.Cbo_tipoMovimiento.TabIndex = 3;
+            this.Cbo_tipoMovimiento.SelectedIndexChanged += new System.EventHandler(this.Cbo_tipoMovimiento_SelectedIndexChanged);
             // 
             // Lbl_tipoMovimiento
             // 
@@ -709,6 +713,7 @@
             this.Txt_nombre.Name = "Txt_nombre";
             this.Txt_nombre.Size = new System.Drawing.Size(245, 27);
             this.Txt_nombre.TabIndex = 2;
+            this.Txt_nombre.TextChanged += new System.EventHandler(this.Txt_nombre_TextChanged);
             // 
             // Lbl_codigo
             // 
@@ -729,6 +734,7 @@
             this.Txt_codigo.Name = "Txt_codigo";
             this.Txt_codigo.Size = new System.Drawing.Size(178, 27);
             this.Txt_codigo.TabIndex = 1;
+            this.Txt_codigo.TextChanged += new System.EventHandler(this.Txt_codigo_TextChanged);
             // 
             // Lbl_nombre
             // 
@@ -759,6 +765,7 @@
             this.Txt_descripcion.Name = "Txt_descripcion";
             this.Txt_descripcion.Size = new System.Drawing.Size(871, 156);
             this.Txt_descripcion.TabIndex = 12;
+            this.Txt_descripcion.TextChanged += new System.EventHandler(this.Txt_descripcion_TextChanged);
             // 
             // Frm_MovimientosInventarios
             // 

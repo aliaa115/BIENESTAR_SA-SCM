@@ -1,6 +1,6 @@
 ﻿namespace CapaVistaSCM.Mensajes
 {
-    partial class Mesaje
+    partial class Mensaje
     {
         /// <summary>
         /// Required designer variable.

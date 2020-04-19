@@ -8,14 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace CapaVistaSCM.Mensajes
+namespace CapaVistaSCM.Mantenimiento
 {
-    public partial class Mesaje : Form
+    public partial class Mantenimiento : Form
     {
-        public Mesaje( string mensaje )
+        public Mantenimiento()
         {
             InitializeComponent();
-            label1.Text = mensaje;
         }
     }
 }

@@ -10,5 +10,7 @@ namespace CapaControladorSCM.Objetos
     {
         public int ID_PRODUCTO { get; set; }
         public string NOMBRE_PRODUCTO { get; set; }
+        public double COSTO_PRODUCTO { get; set; }
+        public double PRECIO_PRODUCTO { get; set; }
     }
 }

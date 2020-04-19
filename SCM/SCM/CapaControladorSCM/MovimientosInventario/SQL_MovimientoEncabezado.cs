@@ -93,6 +93,52 @@ namespace CapaControladorSCM.MovimientosInventario
 
             return null;
         }
+
+        //Ingreso del movimiento encabezado
+        public void ingresarMovimientoEncabezado(string [] valores)
+        {
+            string sCommando = string.Format("INSERT INTO `erp`.`movimientos_inventario_encabezado` ( " +
+                    "id_movimiento_inventario_encabezado, " +
+                    "id_tipo_movimiento, " +
+                    "nombre_movimiento, " +
+                    "descripcion_movimiento, " +
+                    "fecha_movimiento) VALUES " +
+                    "    ({0}, {2}, '{3}', '{4}', '{5}'); ",
+                    valores[0], valores[1], valores[2], valores[3], valores[4], valores[5]);
+
+            try
+            {
+                transaccion.insertarDatos(sCommando);
+            }
+            catch (OdbcException ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+
+        }
+
+
+        //Actualizacion del movimiento encabezado
+        public void actualizarMovimientoEncabezado(string[] valores)
+        {
+            string sCommando = string.Format("UPDATE `erp`.`movimientos_inventario_encabezado` SET " +
+                    "id_tipo_movimiento = {2}, " +
+                    "nombre_movimiento = '{3}', " +
+                    "descripcion_movimiento = '{4}', " +
+                    "fecha_movimiento = '{5}'" +
+                    "WHERE id_movimiento_inventario_encabezado = {0}; ",
+                    valores[0], valores[1], valores[2], valores[3], valores[4], valores[5]);
+
+            try
+            {
+                transaccion.insertarDatos(sCommando);
+            }
+            catch (OdbcException ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+
+        }
     }
 }
 

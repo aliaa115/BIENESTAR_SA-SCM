@@ -1,6 +1,6 @@
 ﻿namespace CapaVistaSCM.Mantenimiento
 {
-    partial class Frm_matenimientoProductos
+    partial class Mantenimiento
     {
         /// <summary>
         /// Required designer variable.
@@ -28,10 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "Frm_matenimientoProductos";
+            this.SuspendLayout();
+            // 
+            // Mantenimiento
+            // 
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            this.ClientSize = new System.Drawing.Size(844, 721);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
+            this.Name = "Mantenimiento";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Transaccional";
+            this.ResumeLayout(false);
+
         }
 
         #endregion

@@ -67,7 +67,6 @@
 \\Mac\Home\Documents\Universidad\9no somestre\042 Ingenieria de Software\Proyecto Final\git hub\SCM-Ligia\SCM\SCM\CapaVistaSCM\obj\Debug\CapaVistaSCM.Frm_listaCotizaciones.resources
 \\Mac\Home\Documents\Universidad\9no somestre\042 Ingenieria de Software\Proyecto Final\git hub\SCM-Ligia\SCM\SCM\CapaVistaSCM\obj\Debug\CapaVistaSCM.Mantenimiento.Frm_manteniminto.resources
 \\Mac\Home\Documents\Universidad\9no somestre\042 Ingenieria de Software\Proyecto Final\git hub\SCM-Ligia\SCM\SCM\CapaVistaSCM\obj\Debug\CapaVistaSCM.Lista.Frm_lista.resources
-\\Mac\Home\Documents\Universidad\9no somestre\042 Ingenieria de Software\Proyecto Final\git hub\SCM-Ligia\SCM\SCM\CapaVistaSCM\obj\Debug\CapaVistaSCM.Mensajes.Mesaje.resources
 \\Mac\Home\Documents\Universidad\9no somestre\042 Ingenieria de Software\Proyecto Final\git hub\SCM-Ligia\SCM\SCM\CapaVistaSCM\bin\Debug\CapaVista.dll
 \\Mac\Home\Documents\Universidad\9no somestre\042 Ingenieria de Software\Proyecto Final\git hub\SCM-Ligia\SCM\SCM\CapaVistaSCM\bin\Debug\CapaVista.pdb
 \\Mac\Home\Documents\Universidad\9no somestre\042 Ingenieria de Software\Proyecto Final\git hub\SCM-Ligia\SCM\SCM\CapaVistaSCM\bin\Debug\CapaVista.dll.config
@@ -76,3 +75,9 @@
 \\Mac\Home\Documents\Universidad\9no somestre\042 Ingenieria de Software\Proyecto Final\git hub\SCM-Ligia\SCM\SCM\CapaVistaSCM\bin\Debug\CapaModelo.dll
 \\Mac\Home\Documents\Universidad\9no somestre\042 Ingenieria de Software\Proyecto Final\git hub\SCM-Ligia\SCM\SCM\CapaVistaSCM\bin\Debug\CapaModelo.pdb
 \\Mac\Home\Documents\Universidad\9no somestre\042 Ingenieria de Software\Proyecto Final\git hub\SCM-Ligia\SCM\SCM\CapaVistaSCM\bin\Debug\CapaDatos.pdb
+\\Mac\Home\Documents\Universidad\9no somestre\042 Ingenieria de Software\Proyecto Final\git hub\SCM-Ligia\SCM\SCM\CapaVistaSCM\bin\Debug\CapaDiseno.dll
+\\Mac\Home\Documents\Universidad\9no somestre\042 Ingenieria de Software\Proyecto Final\git hub\SCM-Ligia\SCM\SCM\CapaVistaSCM\bin\Debug\CapaLogica.dll
+\\Mac\Home\Documents\Universidad\9no somestre\042 Ingenieria de Software\Proyecto Final\git hub\SCM-Ligia\SCM\SCM\CapaVistaSCM\bin\Debug\CapaDiseno.pdb
+\\Mac\Home\Documents\Universidad\9no somestre\042 Ingenieria de Software\Proyecto Final\git hub\SCM-Ligia\SCM\SCM\CapaVistaSCM\bin\Debug\CapaLogica.pdb
+\\Mac\Home\Documents\Universidad\9no somestre\042 Ingenieria de Software\Proyecto Final\git hub\SCM-Ligia\SCM\SCM\CapaVistaSCM\obj\Debug\CapaVistaSCM.Mensajes.Mensaje.resources
+\\Mac\Home\Documents\Universidad\9no somestre\042 Ingenieria de Software\Proyecto Final\git hub\SCM-Ligia\SCM\SCM\CapaVistaSCM\obj\Debug\CapaVistaSCM.Mantenimiento.Mantenimiento.resources
