@@ -51,8 +51,10 @@
     <Compile Include="Mensajes\Mensaje.Designer.cs">
       <DependentUpon>Mensaje.cs</DependentUpon>
     </Compile>
+    <Compile Include="Objetos\CotizacionDetalle.cs" />
     <Compile Include="Objetos\Inventario.cs" />
-    <Compile Include="Query\SQL_Cotizacion.cs" />
+    <Compile Include="Query\SQL_CotizacionEncabezado.cs" />
+    <Compile Include="Query\SQL_CotizacionDetalle.cs" />
     <Compile Include="Query\SQL_Inventario.cs" />
     <Compile Include="Query\SQL_MovimientoDetalle.cs" />
     <Compile Include="Query\SQL_MovimientoEncabezado.cs" />

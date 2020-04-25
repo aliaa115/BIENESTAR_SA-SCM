@@ -1,3 +1,22 @@
 *.DS_Store
+*.rsuser
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
 *.cache
+<<<<<<< HEAD
 *.vs
+=======
+
+# User-specific files (MonoDevelop/Xamarin Studio)
+*.userprefs
+
+# Mono auto generated files
+mono_crash.*
+
+# Visual Studio 2015/2017 cache/options directory
+.vs/
+# Uncomment if you have tasks that create the project's static files in wwwroot
+#wwwroot/
+>>>>>>> 9607e5e047a1ad6e7a8bcbfb6a5df71e00ea695d

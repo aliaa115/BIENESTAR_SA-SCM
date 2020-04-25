@@ -76,7 +76,7 @@ namespace CapaVistaSCM.Lista
 
         private void Btn_nuevo_Click(object sender, EventArgs e)
         {
-            setVentana(tabla, 1 , 0 );
+            setVentana(tabla, 1 , Dgv_lista.RowCount );
             form.Show();
             form.TopLevel = false;
             form.TopMost = true;

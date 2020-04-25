@@ -9,7 +9,7 @@ using System.Data.Odbc;
 
 namespace CapaControladorSCM.Query
 {
-    public class SQL_Cotizacion
+    public class SQL_CotizacionEncabezado
     {
         transaccion transaccion = new transaccion();
         Mensaje mensaje;
