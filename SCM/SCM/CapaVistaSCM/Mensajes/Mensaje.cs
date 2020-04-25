@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using CapaVistaSCM;
 
 namespace CapaVistaSCM.Mensajes
 {
@@ -15,7 +16,7 @@ namespace CapaVistaSCM.Mensajes
         public Mensaje( string mensaje )
         {
             InitializeComponent();
-            label1.Text = mensaje;
+            Txt_mensaje.Text = mensaje;
         }
     }
 }

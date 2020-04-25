@@ -124,20 +124,20 @@
   <data name="091-trolley" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\091-trolley.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="065-edit" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\065-edit.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="027-shopping-cart" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\027-shopping-cart.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="223-trash" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\223-trash.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="094-hammer-1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\094-hammer-1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="179-open-book-2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\179-open-book-2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="191-search" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\191-search.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="223-trash" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\223-trash.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="092-package" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\092-package.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -147,6 +147,9 @@
   </data>
   <data name="066-edit-1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\066-edit-1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="FondoSCM" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\FondoSCM.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="059-file1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\059-file1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -166,8 +169,8 @@
   <data name="159-pencil" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\159-pencil.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="094-hammer-1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\094-hammer-1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="065-edit" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\065-edit.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="083-floppy-disk" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\083-floppy-disk.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -175,7 +178,7 @@
   <data name="243-exit" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\243-exit.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="FondoSCM" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\FondoSCM.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="forklift" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\forklift.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

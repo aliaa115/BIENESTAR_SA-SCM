@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using CapaModeloSCM.Mensajes;
 
 namespace CapaModeloSCM.Mantenimientos
 {
@@ -25,6 +26,7 @@ namespace CapaModeloSCM.Mantenimientos
             12= documentos
             13= tipos_movimientos
             14= productos
+            15= inventarios
 
         ORDEN DE LOS DATOS EN RETURN PARA datos:
             1 = alias
@@ -39,6 +41,9 @@ namespace CapaModeloSCM.Mantenimientos
             2 = campo
             3 = modo
              */
+
+        Mensaje mensaje;
+        
         public (string[], string, string, string, string, int) datos(int tabla)
         {
             switch (tabla)
@@ -96,10 +101,16 @@ namespace CapaModeloSCM.Mantenimientos
                     return (alias13, "1", "tipos_movimientos", "de Tipos de Movimientos", "TIPO MOVIMIENTO", 1);
 
                 case 14:
-                    string[] alias14 = { "Id", "Tipo", "Impuesto", "Categoria", "Nombre", "Descripcion", "Costo", "Precio", "Cant Max", "Cant Min", "Estado" };
+                    string[] alias14 = { "Id", "Tipo", "Impuesto", "Categoria", "Nombre", "Descripcion", "Costo", "Precio", "Cant Max", "Cant Min", "Stock", "Estado" };
                     return (alias14, "1", "productos", "de Productos", "PRODUCTO", 3);
 
+                case 15:
+                    string[] alias15 = { "Nombre", "Producto", "Bodega", "Descripcion", "Maximo", "Minimo", "Estanteria", "Existencias", "Estado" };
+                    return (alias15, "1", "inventarios", "de Inventarios", "INVENTARIO", 2);
+
                 default:
+                    mensaje = new Mensaje("Error al identificar el mantenimiento a trabajar.");
+                    mensaje.Show();
                     break;
             }
             return (null,null,null, null, null, 0);
@@ -114,7 +125,11 @@ namespace CapaModeloSCM.Mantenimientos
                     switch (no)
                     {
                         case 1:
-                            return ("contactos", "id_contacto", 0);
+                            return ("contactos", "nombre_contacto", 1);
+                        default:
+                            mensaje = new Mensaje("Error al identificar el mantenimiento a trabajar.");
+                            mensaje.Show();
+                            break;
                     }
                     break;
 
@@ -123,7 +138,11 @@ namespace CapaModeloSCM.Mantenimientos
                     switch (no)
                     {
                         case 1:
-                            return ("contactos", "id_contacto", 0);
+                            return ("contactos", "nombre_contacto", 1);
+                        default:
+                            mensaje = new Mensaje("Error al identificar el mantenimiento a trabajar.");
+                            mensaje.Show();
+                            break;
                     }
                     break;
 
@@ -132,7 +151,11 @@ namespace CapaModeloSCM.Mantenimientos
                     switch (no)
                     {
                         case 1:
-                            return ("cuentas", "id_cuenta", 0);
+                            return ("cuentas", "nombre", 1);
+                        default:
+                            mensaje = new Mensaje("Error al identificar el mantenimiento a trabajar.");
+                            mensaje.Show();
+                            break;
                     }
                     break;
 
@@ -141,17 +164,40 @@ namespace CapaModeloSCM.Mantenimientos
                     switch (no)
                     {
                         case 1:
-                            return ("tipos_productos", "id_tipo_producto", 0);
+                            return ("tipos_productos", "nombre_tipo_producto", 1);
 
                         case 2:
-                            return ("impuestos", "id_impuesto", 0);
+                            return ("impuestos", "nombre_impuesto", 1);
 
                         case 3:
-                            return ("categorias", "id_categoria", 0);
+                            return ("categorias", "nombre_categoria", 1);
+                        default:
+                            mensaje = new Mensaje("Error al identificar el mantenimiento a trabajar.");
+                            mensaje.Show();
+                            break;
+                    }
+                    break;
+
+                //inventarios
+                case 15:
+                    switch (no)
+                    {
+                        case 1:
+                            return ("productos", "nombre_producto", 1);
+
+                        case 2:
+                            return ("bodegas", "nombre_bodega", 1);
+
+                        default:
+                            mensaje = new Mensaje("Error al identificar el mantenimiento a trabajar.");
+                            mensaje.Show();
+                            break;
                     }
                     break;
 
                 default:
+                    mensaje = new Mensaje("Error al tomar los datos relacionados al mantenimiento a trabajar.");
+                    mensaje.Show();
                     break;
             }
             return ("", "", 0);

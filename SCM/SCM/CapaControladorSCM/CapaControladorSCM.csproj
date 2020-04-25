@@ -33,6 +33,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -44,19 +45,49 @@
   <ItemGroup>
     <Compile Include="Conexion\conexionSCM.cs" />
     <Compile Include="Conexion\transaccion.cs" />
-    <Compile Include="MovimientosInventario\SQL_MovimientoDetalle.cs" />
-    <Compile Include="MovimientosInventario\SQL_MovimientoEncabezado.cs" />
-    <Compile Include="MovimientosInventario\SQL_Producto.cs" />
+    <Compile Include="Mensajes\Mensaje.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Mensajes\Mensaje.Designer.cs">
+      <DependentUpon>Mensaje.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Objetos\Inventario.cs" />
+    <Compile Include="Query\SQL_Cotizacion.cs" />
+    <Compile Include="Query\SQL_Inventario.cs" />
+    <Compile Include="Query\SQL_MovimientoDetalle.cs" />
+    <Compile Include="Query\SQL_MovimientoEncabezado.cs" />
+    <Compile Include="Query\SQL_OrdenCompraEncabezado.cs" />
+    <Compile Include="Query\SQL_Producto.cs" />
     <Compile Include="Objetos\Bodega.cs" />
+    <Compile Include="Objetos\CotizacionEncabezado.cs" />
     <Compile Include="Objetos\Documento.cs" />
     <Compile Include="Objetos\MovimientoDetalle.cs" />
     <Compile Include="Objetos\MovimientoEncabezado.cs" />
+    <Compile Include="Objetos\OrdenCompraDetalle.cs" />
+    <Compile Include="Objetos\OrdenCompraEncabezado.cs" />
     <Compile Include="Objetos\OrdenTransporte.cs" />
-    <Compile Include="MovimientosInventario\SQL_TipoMovimiento.cs" />
+    <Compile Include="Query\SQL_TipoMovimiento.cs" />
     <Compile Include="Objetos\Producto.cs" />
+    <Compile Include="Objetos\Proveedor.cs" />
     <Compile Include="Objetos\TipoMovimiento.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <EmbeddedResource Include="Mensajes\Mensaje.resx">
+      <DependentUpon>Mensaje.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\019-idea.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

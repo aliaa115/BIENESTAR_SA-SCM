@@ -1,10 +1,12 @@
 ﻿using System;
 using System.Data.Odbc;
+using CapaControladorSCM.Mensajes;
 
 namespace CapaControladorSCM
 {
     public class conexionSCM
     { 
+        Mensaje mensaje;
         OdbcConnection conn;
         public Tuple<OdbcConnection, OdbcTransaction> conexion()
         {
@@ -17,6 +19,8 @@ namespace CapaControladorSCM
             }
             catch (OdbcException)
             {
+                mensaje = new Mensaje("No se ha podido conectar a la Base de datos");
+                mensaje.Show();
                 Console.WriteLine("No Conectó");
             }
 
@@ -31,6 +35,8 @@ namespace CapaControladorSCM
             }
             catch (OdbcException)
             {
+                mensaje = new Mensaje("No se ha podido conectar a la Base de datos");
+                mensaje.Show();
                 Console.WriteLine("No Conectó");
             }
 

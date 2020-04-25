@@ -1,30 +1,36 @@
 ﻿using CapaModeloSCM.Movimientos;
 using System;
 using System.Windows.Forms;
+using CapaModeloSCM.Mensajes;
 
 namespace CapaVistaSCM
 {
     public partial class Frm_MovimientosInventarios : Form
     {
 
-        MovimientoInventario movimientoInventario = new MovimientoInventario();
-        ComboTipoMovimiento comboTipoMovimiento = new ComboTipoMovimiento();
+        MovimientoInventario_proceso movimientoInventario = new MovimientoInventario_proceso();
+        ComboTipoMovimiento_proceso comboTipoMovimiento = new ComboTipoMovimiento_proceso();
+        Mensaje mensaje;
         Form form;
         int modo;
         int cantidadDetalles;
         int cambioDet;
         int cambioEnc;
+        int idEncabezado;
+        string idProd = "";
         public Frm_MovimientosInventarios(Form form, int modo, int encabezado)
         {
             InitializeComponent();
-
+            
+            Text = "1002 - " + Text;
             Dtp_fecha.Format = DateTimePickerFormat.Custom;
             Dtp_fecha.CustomFormat = "dd MM yyyy";
-
+            idEncabezado = movimientoInventario.obtenerUltimoIdEnc();
             this.form = form;
             string[] datos;
             this.modo = modo;
             cambioDet = 0;
+            Chk_codigo.Checked = true;
 
             switch (modo)
             {
@@ -43,8 +49,6 @@ namespace CapaVistaSCM
                     Grp_guardar.Enabled = false;
                     Grp_cancelar.Visible = false;
                     Grp_cancelar.Enabled = false;
-                    Grp_editar.Visible = false;
-                    Grp_editar.Enabled = false;
                     Chk_codigo.Visible = false;
                     Chk_codigo.Enabled = false;
                     Chk_iva.Visible = false;
@@ -63,7 +67,7 @@ namespace CapaVistaSCM
                     Txt_descripcion.Text = datos[3];
                     Dtp_fecha.Value = DateTime.Parse(datos[4]);
 
-                    if(datos[5] == "1")
+                    if (datos[5] == "1")
                     {
                         Chk_estado.Checked = true;
                     }
@@ -82,7 +86,7 @@ namespace CapaVistaSCM
                     Chk_codigo.Visible = false;
                     Chk_codigo.Enabled = false;
                     combo1.llenarse("productos", "id_producto", "nombre_producto");
-                    
+
                     Cbo_tipoMovimiento.ValueMember = "ID_TIPO_MOVIMIENTO";
                     Cbo_tipoMovimiento.DisplayMember = "NOMBRE_TIPO_MOVIMIENTO";
                     Cbo_tipoMovimiento.DataSource = comboTipoMovimiento.tipoMov();
@@ -128,7 +132,7 @@ namespace CapaVistaSCM
             }
             else
             {
-                Txt_codigo.Text = "";
+                Txt_codigo.Text = idEncabezado + "";
                 Txt_codigo.Enabled = false;
             }
         }
@@ -140,7 +144,19 @@ namespace CapaVistaSCM
 
         private void Btn_buscar_Click(object sender, EventArgs e)
         {
-            Txt_producto.Text = combo1.obtenerP() + " - " + combo1.obtenerU();
+            Txt_producto.Text = combo1.ObtenerIndif();
+
+            string prod = combo1.ObtenerIndif();
+            idProd = "";
+            int i = 0;
+            while (prod[i] != '-')
+            {
+                idProd = idProd + prod[i];
+                i++;
+            }
+
+            Nud_cantidad.Maximum = movimientoInventario.existenciasPosibles(int.Parse(idProd));
+
         }
 
         private void Btn_agregar_Click(object sender, EventArgs e)
@@ -161,48 +177,14 @@ namespace CapaVistaSCM
                     }
                     else
                     {
-                        int ubicacion = Txt_producto.Text.IndexOf("-");
-                        int largo = Txt_producto.Text.Length;
-                        string id = "";
 
-                        if (Txt_producto.Text[0] < 58 || Txt_producto.Text[0] > 47)
-                        {
-                            int i = 0;
+                        string[] prod = movimientoInventario.obtenerProducto(int.Parse(idProd));
 
-                            while (i != ubicacion)
-                            {
-                                id += Txt_producto.Text[i];
-                                i++;
-                            }
-                        }
-                        else
-                        {
-                            int i = ubicacion + 1;
-
-                            while (i != largo)
-                            {
-                                id += Txt_producto.Text[i];
-                                i++;
-                            }
-                        }
-
-                        string[] prod = movimientoInventario.obtenerProducto(int.Parse(id));
-
-                        int fila = Dgv_movimientoDetalle.RowCount;
-
-                        Dgv_movimientoDetalle.Rows.Add();
-                        Dgv_movimientoDetalle.Rows[fila].Cells[0].Value = fila + 1;
-                        Dgv_movimientoDetalle.Rows[fila].Cells[1].Value = prod[0];
-                        Dgv_movimientoDetalle.Rows[fila].Cells[2].Value = prod[1];
-                        Dgv_movimientoDetalle.Rows[fila].Cells[3].Value = Nud_cantidad.Value.ToString();
-                        Dgv_movimientoDetalle.Rows[fila].Cells[4].Value = (double.Parse(Nud_cantidad.Value.ToString()) * double.Parse(prod[2]));
-                        Dgv_movimientoDetalle.Rows[fila].Cells[5].Value = (double.Parse(Nud_cantidad.Value.ToString()) * double.Parse(prod[3]));
-                        fila++;
+                        alterarDetalle(prod, 1);
 
                     }
                     break;
-                case 2:
-                    break;
+
                 case 3:
                     if (Txt_producto.Text == "")
                     {
@@ -217,43 +199,20 @@ namespace CapaVistaSCM
                     else
                     {
                         cambioDet = 1;
-                        int ubicacion = Txt_producto.Text.IndexOf("-");
-                        int largo = Txt_producto.Text.Length;
-                        string id = "";
+                        Txt_producto.Text = combo1.ObtenerIndif();
 
-                        if (Txt_producto.Text[0] < 58 || Txt_producto.Text[0] > 47)
+                        string prod = combo1.ObtenerIndif();
+                        idProd = "";
+                        int i = 0;
+                        while (prod[i] != '-')
                         {
-                            int i = 0;
-
-                            while (i != ubicacion)
-                            {
-                                id += Txt_producto.Text[i];
-                                i++;
-                            }
-                        }
-                        else
-                        {
-                            int i = ubicacion + 1;
-
-                            while (i != largo)
-                            {
-                                id += Txt_producto.Text[i];
-                                i++;
-                            }
+                            idProd = idProd + prod[i];
+                            i++;
                         }
 
-                        string[] prod = movimientoInventario.obtenerProducto(int.Parse(id));
+                        string[] produ = movimientoInventario.obtenerProducto(int.Parse(idProd));
 
-                        int fila = Dgv_movimientoDetalle.RowCount;
-
-                        Dgv_movimientoDetalle.Rows.Add();
-                        Dgv_movimientoDetalle.Rows[fila].Cells[0].Value = fila + 1;
-                        Dgv_movimientoDetalle.Rows[fila].Cells[1].Value = prod[0];
-                        Dgv_movimientoDetalle.Rows[fila].Cells[2].Value = prod[1];
-                        Dgv_movimientoDetalle.Rows[fila].Cells[3].Value = Nud_cantidad.Value.ToString();
-                        Dgv_movimientoDetalle.Rows[fila].Cells[4].Value = (double.Parse(Nud_cantidad.Value.ToString()) * double.Parse(prod[2]));
-                        Dgv_movimientoDetalle.Rows[fila].Cells[5].Value = (double.Parse(Nud_cantidad.Value.ToString()) * double.Parse(prod[3]));
-                        fila++;
+                        alterarDetalle(produ, 1);
 
                     }
                     break;
@@ -297,17 +256,8 @@ namespace CapaVistaSCM
 
                             while (fila < Dgv_movimientoDetalle.RowCount)
                             {
-                                string[] detalle = {
-                                Dgv_movimientoDetalle.Rows[fila].Cells[0].Value.ToString(),
-                                Txt_codigo.Text,
-                                Dgv_movimientoDetalle.Rows[fila].Cells[1].Value.ToString(),
-                                Dgv_movimientoDetalle.Rows[fila].Cells[3].Value.ToString(),
-                                Dgv_movimientoDetalle.Rows[fila].Cells[4].Value.ToString(),
-                                Dgv_movimientoDetalle.Rows[fila].Cells[5].Value.ToString()
-                                };
 
-                                movimientoInventario.insertarMovimientoDetalle(detalle);
-
+                                insertarDetalle(fila);
                                 fila++;
                             }
 
@@ -315,12 +265,11 @@ namespace CapaVistaSCM
                     }
                     catch (Exception ex)
                     {
-                        ms = new Mensajes.Mensaje("Error al gr ul movimieeto: \n " + ex.ToString());
+                        ms = new Mensajes.Mensaje("Error al guardar el movimiento: \n " + ex.ToString());
                         ms.Show();
                     }
                     break;
-                case 2:
-                    break;
+
                 case 3:
                     if (cambioEnc != 0)
                     {
@@ -352,41 +301,12 @@ namespace CapaVistaSCM
                     }
                     if (cambioDet != 0)
                     {
-
-                        int fila = 0;
-
-                        while (fila < Dgv_movimientoDetalle.RowCount)
-                        {
-
-                            movimientoInventario.eliminarMovimientoDetalle(
-                                int.Parse(Txt_codigo.Text),
-                                int.Parse(Dgv_movimientoDetalle.CurrentRow.Cells[0].Value.ToString()));
-
-                            fila++;
-                        }
-
-                        fila = 0;
-
-                        while (fila < Dgv_movimientoDetalle.RowCount)
-                        {
-                            string[] detalle = {
-                                Dgv_movimientoDetalle.Rows[fila].Cells[0].Value.ToString(),
-                                Txt_codigo.Text,
-                                Dgv_movimientoDetalle.Rows[fila].Cells[1].Value.ToString(),
-                                Dgv_movimientoDetalle.Rows[fila].Cells[3].Value.ToString(),
-                                Dgv_movimientoDetalle.Rows[fila].Cells[4].Value.ToString(),
-                                Dgv_movimientoDetalle.Rows[fila].Cells[5].Value.ToString()
-                                };
-
-                            movimientoInventario.insertarMovimientoDetalle(detalle);
-
-                            fila++;
-                        }
+                        alterarDetalle(null, 2);
 
                     }
                     break;
             }
-            ms = new Mensajes.Mensaje("Movimiento Gardado con exito");
+            ms = new Mensajes.Mensaje("Movimiento Guardado con exito");
             ms.Show();
             this.Close();
         }
@@ -396,8 +316,8 @@ namespace CapaVistaSCM
             cambioDet = 1;
 
             movimientoInventario.eliminarMovimientoDetalle(
-                int.Parse(Txt_codigo.Text), 
-                int.Parse(Dgv_movimientoDetalle.CurrentRow.Cells[0].ToString()));
+                int.Parse(Txt_codigo.Text),
+                int.Parse(Dgv_movimientoDetalle.CurrentRow.Cells[0].Value.ToString()));
 
             Dgv_movimientoDetalle.Rows.RemoveAt(Dgv_movimientoDetalle.CurrentRow.Index);
 
@@ -442,5 +362,123 @@ namespace CapaVistaSCM
                 cambioEnc = 1;
             }
         }
+
+        private void alterarDetalle(string[] prod, int tipo)
+        {
+
+            int fila;
+            switch (modo)
+            {
+                case 1:
+                    switch (tipo)
+                    {
+                        case 1:
+                            fila = Dgv_movimientoDetalle.RowCount;
+
+                            Dgv_movimientoDetalle.Rows.Add();
+                            if (fila == 0)
+                            {
+                                Dgv_movimientoDetalle.Rows[fila].Cells[0].Value = fila;
+                            }
+                            else
+                            {
+                                Dgv_movimientoDetalle.Rows[fila].Cells[0].Value = int.Parse(Dgv_movimientoDetalle.Rows[fila - 1].Cells[0].Value.ToString()) + 1;
+                            }
+                            Dgv_movimientoDetalle.Rows[fila].Cells[1].Value = prod[0];
+                            Dgv_movimientoDetalle.Rows[fila].Cells[2].Value = prod[1];
+                            Dgv_movimientoDetalle.Rows[fila].Cells[3].Value = Nud_cantidad.Value.ToString();
+                            Dgv_movimientoDetalle.Rows[fila].Cells[4].Value = (double.Parse(Nud_cantidad.Value.ToString()) * double.Parse(prod[2]));
+                            Dgv_movimientoDetalle.Rows[fila].Cells[5].Value = (double.Parse(Nud_cantidad.Value.ToString()) * double.Parse(prod[3]));
+
+                            break;
+
+                        case 2:
+                            fila = 0;
+
+                            while (fila < Dgv_movimientoDetalle.RowCount)
+                            {
+
+                                insertarDetalle(fila);
+                                fila++;
+                            }
+                            break;
+                    }
+                    break;
+                case 3:
+                    switch (tipo)
+                    {
+                        case 1:
+                            fila = Dgv_movimientoDetalle.RowCount;
+
+                            Dgv_movimientoDetalle.Rows.Add();
+                            if (fila == 0)
+                            {
+                                Dgv_movimientoDetalle.Rows[fila].Cells[0].Value = fila;
+                            }
+                            else
+                            {
+                                Dgv_movimientoDetalle.Rows[fila].Cells[0].Value = int.Parse(Dgv_movimientoDetalle.Rows[fila - 1].Cells[0].Value.ToString()) + 1;
+                            }
+                            Dgv_movimientoDetalle.Rows[fila].Cells[1].Value = prod[0];
+                            Dgv_movimientoDetalle.Rows[fila].Cells[2].Value = prod[1];
+                            Dgv_movimientoDetalle.Rows[fila].Cells[3].Value = Nud_cantidad.Value.ToString();
+                            Dgv_movimientoDetalle.Rows[fila].Cells[4].Value = (double.Parse(Nud_cantidad.Value.ToString()) * double.Parse(prod[2]));
+                            Dgv_movimientoDetalle.Rows[fila].Cells[5].Value = (double.Parse(Nud_cantidad.Value.ToString()) * double.Parse(prod[3]));
+
+                            movimientoInventario.eliminarMovimientoDetalle(int.Parse(Txt_codigo.Text));
+
+                            fila = 0;
+
+                            while (fila < Dgv_movimientoDetalle.RowCount)
+                            {
+                                insertarDetalle(fila);
+                                fila++;
+                            }
+                            break;
+
+                        case 2:
+                            movimientoInventario.eliminarMovimientoDetalle(int.Parse(Txt_codigo.Text));
+
+                            fila = 0;
+
+                            while (fila < Dgv_movimientoDetalle.RowCount)
+                            {
+                                insertarDetalle(fila);
+                                fila++;
+                            }
+                            break;
+                    }
+                    break;
+
+            }
+
+        }
+
+        private void insertarDetalle(int fila)
+        {
+            string[] detalle = {
+                                Dgv_movimientoDetalle.Rows[fila].Cells[0].Value.ToString(),
+                                Txt_codigo.Text,
+                                Dgv_movimientoDetalle.Rows[fila].Cells[1].Value.ToString(),
+                                Dgv_movimientoDetalle.Rows[fila].Cells[3].Value.ToString(),
+                                Dgv_movimientoDetalle.Rows[fila].Cells[4].Value.ToString(),
+                                Dgv_movimientoDetalle.Rows[fila].Cells[5].Value.ToString()
+                                };
+            int producto = int.Parse(Dgv_movimientoDetalle.Rows[fila].Cells[1].Value.ToString());
+            int cant = int.Parse(Dgv_movimientoDetalle.Rows[fila].Cells[3].Value.ToString());
+            string signo = movimientoInventario.signoTipoMovimiento(int.Parse(Cbo_tipoMovimiento.SelectedValue.ToString()));
+
+
+            string cantidad = signo + " " + cant;
+            if (movimientoInventario.operacionMovimiento(producto, cant, int.Parse(Cbo_tipoMovimiento.SelectedValue.ToString())))
+            {
+                movimientoInventario.insertarMovimientoDetalle(detalle, producto, cantidad);
+            }
+            else
+            {
+                mensaje = new Mensaje("Error al operar el moviiento del producto: [ " + producto + " ]\n Prfavor verificar las existencias");
+            }
+
+        }
     }
-} 
+}
