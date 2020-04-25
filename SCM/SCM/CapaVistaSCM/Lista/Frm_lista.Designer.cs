@@ -230,10 +230,6 @@
             this.MinimizeBox = false;
             this.Name = "Frm_lista";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-<<<<<<< HEAD
-            this.Text = "Lista";
-=======
->>>>>>> ab521d974243ea3175fc300f88df0bb26c49e6c9
             this.Load += new System.EventHandler(this.Frm_lista_Load);
             this.VisibleChanged += new System.EventHandler(this.Frm_lista_VisibleChanged);
             this.Tbl_movimientoInventario.ResumeLayout(false);

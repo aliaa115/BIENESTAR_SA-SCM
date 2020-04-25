@@ -26,10 +26,7 @@ namespace CapaModeloSCM.Mantenimientos
             12= documentos
             13= tipos_movimientos
             14= productos
-<<<<<<< HEAD
-=======
             15= inventarios
->>>>>>> ab521d974243ea3175fc300f88df0bb26c49e6c9
 
         ORDEN DE LOS DATOS EN RETURN PARA datos:
             1 = alias
@@ -104,17 +101,12 @@ namespace CapaModeloSCM.Mantenimientos
                     return (alias13, "1", "tipos_movimientos", "de Tipos de Movimientos", "TIPO MOVIMIENTO", 1);
 
                 case 14:
-<<<<<<< HEAD
-                    string[] alias14 = { "Id", "Tipo", "Impuesto", "Categoria", "Nombre", "Descripcion", "Costo", "Precio", "Cant Max", "Cant Min", "Estado" };
-                    return (alias14, "1", "productos", "de Productos", "PRODUCTO", 3);
-=======
                     string[] alias14 = { "Id", "Tipo", "Impuesto", "Categoria", "Nombre", "Descripcion", "Costo", "Precio", "Cant Max", "Cant Min", "Stock", "Estado" };
                     return (alias14, "1", "productos", "de Productos", "PRODUCTO", 3);
 
                 case 15:
                     string[] alias15 = { "Nombre", "Producto", "Bodega", "Descripcion", "Maximo", "Minimo", "Estanteria", "Existencias", "Estado" };
                     return (alias15, "1", "inventarios", "de Inventarios", "INVENTARIO", 2);
->>>>>>> ab521d974243ea3175fc300f88df0bb26c49e6c9
 
                 default:
                     mensaje = new Mensaje("Error al identificar el mantenimiento a trabajar.");
@@ -159,15 +151,11 @@ namespace CapaModeloSCM.Mantenimientos
                     switch (no)
                     {
                         case 1:
-<<<<<<< HEAD
-                            return ("cuentas", "id_cuenta", 0);
-=======
                             return ("cuentas", "nombre", 1);
                         default:
                             mensaje = new Mensaje("Error al identificar el mantenimiento a trabajar.");
                             mensaje.Show();
                             break;
->>>>>>> ab521d974243ea3175fc300f88df0bb26c49e6c9
                     }
                     break;
 
@@ -176,15 +164,6 @@ namespace CapaModeloSCM.Mantenimientos
                     switch (no)
                     {
                         case 1:
-<<<<<<< HEAD
-                            return ("tipos_productos", "id_tipo_producto", 0);
-
-                        case 2:
-                            return ("impuestos", "id_impuesto", 0);
-
-                        case 3:
-                            return ("categorias", "id_categoria", 0);
-=======
                             return ("tipos_productos", "nombre_tipo_producto", 1);
 
                         case 2:
@@ -213,7 +192,6 @@ namespace CapaModeloSCM.Mantenimientos
                             mensaje = new Mensaje("Error al identificar el mantenimiento a trabajar.");
                             mensaje.Show();
                             break;
->>>>>>> ab521d974243ea3175fc300f88df0bb26c49e6c9
                     }
                     break;
 
