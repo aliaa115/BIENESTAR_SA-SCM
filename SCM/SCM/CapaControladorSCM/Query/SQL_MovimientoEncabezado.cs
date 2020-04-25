@@ -110,8 +110,12 @@ namespace CapaControladorSCM.Query
             }
             catch (OdbcException ex)
             {
+<<<<<<< HEAD:SCM/SCM/CapaControladorSCM/MovimientosInventario/SQL_MovimientoEncabezado.cs
+                MessageBox.Show(ex.ToString());
+=======
                 mensaje = new Mensaje("Error en la operacion con la Base de Datos: \n" + ex.Message);
                 mensaje.Show();
+>>>>>>> ab521d974243ea3175fc300f88df0bb26c49e6c9:SCM/SCM/CapaControladorSCM/Query/SQL_MovimientoEncabezado.cs
             }
 
         }
@@ -134,6 +138,9 @@ namespace CapaControladorSCM.Query
             }
             catch (OdbcException ex)
             {
+<<<<<<< HEAD:SCM/SCM/CapaControladorSCM/MovimientosInventario/SQL_MovimientoEncabezado.cs
+                MessageBox.Show(ex.ToString());
+=======
                 mensaje = new Mensaje("Error en la operacion con la Base de Datos: \n" + ex.Message);
                 mensaje.Show();
             }
@@ -167,6 +174,7 @@ namespace CapaControladorSCM.Query
                 mensaje = new Mensaje("Error en la operacion con la Base de Datos: \n" + ex.Message);
                 mensaje.Show();
                 return 0;
+>>>>>>> ab521d974243ea3175fc300f88df0bb26c49e6c9:SCM/SCM/CapaControladorSCM/Query/SQL_MovimientoEncabezado.cs
             }
 
         }

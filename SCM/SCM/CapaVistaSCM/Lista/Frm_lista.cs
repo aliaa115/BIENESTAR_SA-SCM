@@ -20,7 +20,11 @@ namespace CapaVistaSCM.Lista
             this.panel = panel;
             this.usuario = usuario;
             this.tabla = tabla;
+<<<<<<< HEAD
+
+=======
                         
+>>>>>>> ab521d974243ea3175fc300f88df0bb26c49e6c9
         }
 
         private void establecerDatos()
@@ -31,6 +35,11 @@ namespace CapaVistaSCM.Lista
             Cls_listas datos = new Cls_listas();
 
             ListaData listaDatos = datos.DatosLista(tabla, Dgv_lista);
+<<<<<<< HEAD
+            
+            Text = "Lista " + listaDatos.form;
+            Lbl_titulo.Text = listaDatos.titulo;
+=======
             switch (tabla)
             {
                 case 1:
@@ -52,6 +61,7 @@ namespace CapaVistaSCM.Lista
                 default:
                     break;
             }
+>>>>>>> ab521d974243ea3175fc300f88df0bb26c49e6c9
 
             Dgv_lista.Update();
 
@@ -78,9 +88,12 @@ namespace CapaVistaSCM.Lista
         {
             setVentana(tabla, 1 , 0 );
             form.Show();
+<<<<<<< HEAD
+=======
             form.TopLevel = false;
             form.TopMost = true;
             panel.Controls.Add(form);
+>>>>>>> ab521d974243ea3175fc300f88df0bb26c49e6c9
             Visible = false;
             switch (tabla)
             {
@@ -97,7 +110,14 @@ namespace CapaVistaSCM.Lista
 
         private void Btn_ver_Click(object sender, EventArgs e)
         {
+<<<<<<< HEAD
+            setVentana(tabla, 2, int.Parse(Dgv_lista.CurrentRow.Cells[0].Value.ToString()));
+            form.Show();
+            Visible = false;
+            switch (tabla)
+=======
             if (Dgv_lista.RowCount > 0)
+>>>>>>> ab521d974243ea3175fc300f88df0bb26c49e6c9
             {
                 setVentana(tabla, 2, int.Parse(Dgv_lista.CurrentRow.Cells[0].Value.ToString()));
                 form.Show();
@@ -133,6 +153,22 @@ namespace CapaVistaSCM.Lista
             }
         }
 
+<<<<<<< HEAD
+        private void Btn_editar_Click(object sender, EventArgs e)
+        {
+            setVentana(tabla, 3, int.Parse(Dgv_lista.CurrentRow.Cells[0].Value.ToString()));
+            form.Show();
+            Visible = false;
+            switch (tabla)
+            {
+                case 1:
+                    //sn.insertarBitacora(usuario, "Ingreso a ventana para visualizar un registro de movimientos de invenrario", "movimientos_inventario_encabezado");
+                    break;
+            }
+        }
+
+=======
+>>>>>>> ab521d974243ea3175fc300f88df0bb26c49e6c9
         private void Frm_lista_Load(object sender, EventArgs e)
         {
             establecerDatos();
