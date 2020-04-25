@@ -46,7 +46,7 @@
     </Reference>
     <Reference Include="CapaVista, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>W:\Bienestar S.A\Formación\DLLS\ComboAuto\CapaVista\bin\Debug\CapaVista.dll</HintPath>
+      <HintPath>Y:\Google Drive\Bienestar S.A\Formación\DLLS\ComboAuto\CapaVista\bin\Debug\CapaVista.dll</HintPath>
     </Reference>
     <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
     <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
@@ -87,6 +87,7 @@
       <DependentUpon>Frm_manteniminto.cs</DependentUpon>
     </Compile>
     <Compile Include="Mantenimiento\Frm_transaccional.cs">
+<<<<<<< HEAD
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Mantenimiento\Frm_transaccional.Designer.cs">
@@ -103,12 +104,24 @@
     </Compile>
     <Compile Include="Mensajes\Mensaje.Designer.cs">
       <DependentUpon>Mensaje.cs</DependentUpon>
+=======
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Mantenimiento\Frm_transaccional.Designer.cs">
+      <DependentUpon>Frm_transaccional.cs</DependentUpon>
+>>>>>>> ab521d974243ea3175fc300f88df0bb26c49e6c9
     </Compile>
     <Compile Include="OrdenesCompra\Frm_listaOrdenesCompra.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="OrdenesCompra\Frm_listaOrdenesCompra.Designer.cs">
       <DependentUpon>Frm_listaOrdenesCompra.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Mensajes\Mensaje.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Mensajes\Mensaje.Designer.cs">
+      <DependentUpon>Mensaje.cs</DependentUpon>
     </Compile>
     <Compile Include="MovimientosInventarios\Frm_trasladoDeProducto.cs">
       <SubType>Form</SubType>
@@ -121,12 +134,6 @@
     </Compile>
     <Compile Include="Transportes\Frm_solicitudTransporte.Designer.cs">
       <DependentUpon>Frm_solicitudTransporte.cs</DependentUpon>
-    </Compile>
-    <Compile Include="MantenimientoBase.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="MantenimientoBase.Designer.cs">
-      <DependentUpon>MantenimientoBase.cs</DependentUpon>
     </Compile>
     <Compile Include="OrdenesCompra\Frm_OrdenCompra.cs">
       <SubType>Form</SubType>
@@ -169,6 +176,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Mantenimiento\Frm_transaccional.resx">
       <DependentUpon>Frm_transaccional.cs</DependentUpon>
+<<<<<<< HEAD
     </EmbeddedResource>
     <EmbeddedResource Include="MDI_SCM.resx">
       <DependentUpon>MDI_SCM.cs</DependentUpon>
@@ -185,6 +193,18 @@
     <EmbeddedResource Include="MantenimientoBase.resx">
       <DependentUpon>MantenimientoBase.cs</DependentUpon>
     </EmbeddedResource>
+=======
+    </EmbeddedResource>
+    <EmbeddedResource Include="MDI_SCM.resx">
+      <DependentUpon>MDI_SCM.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mensajes\Mensaje.resx">
+      <DependentUpon>Mensaje.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MovimientosInventarios\Frm_trasladoDeProducto.resx">
+      <DependentUpon>Frm_trasladoDeProducto.cs</DependentUpon>
+    </EmbeddedResource>
+>>>>>>> ab521d974243ea3175fc300f88df0bb26c49e6c9
     <EmbeddedResource Include="OrdenesCompra\Frm_OrdenCompra.resx">
       <DependentUpon>Frm_OrdenCompra.cs</DependentUpon>
     </EmbeddedResource>
@@ -253,5 +273,11 @@
   <ItemGroup>
     <None Include="Resources\FondoSCM.png" />
   </ItemGroup>
+<<<<<<< HEAD
+=======
+  <ItemGroup>
+    <None Include="Resources\forklift.png" />
+  </ItemGroup>
+>>>>>>> ab521d974243ea3175fc300f88df0bb26c49e6c9
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

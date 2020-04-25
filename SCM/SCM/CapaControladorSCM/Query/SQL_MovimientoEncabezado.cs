@@ -1,16 +1,13 @@
-﻿using System;
+﻿using CapaControladorSCM.Mensajes;
+using CapaControladorSCM.Objetos;
 using System.Collections.Generic;
 using System.Data.Odbc;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using CapaControladorSCM.Objetos;
 
-namespace CapaControladorSCM.MovimientosInventario
+namespace CapaControladorSCM.Query
 {
     public class SQL_MovimientoEncabezado
     {
+        Mensaje mensaje;
         transaccion transaccion = new transaccion();
 
         //obtener datos para el datagrid de encabezado de movimiento
@@ -42,11 +39,11 @@ namespace CapaControladorSCM.MovimientosInventario
             }
             catch (OdbcException ex)
             {
-                MessageBox.Show(ex.ToString(), "Error al obtener reporte");
+                mensaje = new Mensaje("Error en la operacion con la Base de Datos: \n" + ex.Message);
+                mensaje.Show();
                 return null;
             }
 
-            return null;
         }
 
         //obtener un solo movimiento encabezado
@@ -87,7 +84,8 @@ namespace CapaControladorSCM.MovimientosInventario
             }
             catch (OdbcException ex)
             {
-                MessageBox.Show(ex.ToString(), "Error al obtener reporte");
+                mensaje = new Mensaje("Error en la operacion con la Base de Datos: \n" + ex.Message);
+                mensaje.Show();
                 return null;
             }
 
@@ -112,7 +110,12 @@ namespace CapaControladorSCM.MovimientosInventario
             }
             catch (OdbcException ex)
             {
+<<<<<<< HEAD:SCM/SCM/CapaControladorSCM/MovimientosInventario/SQL_MovimientoEncabezado.cs
                 MessageBox.Show(ex.ToString());
+=======
+                mensaje = new Mensaje("Error en la operacion con la Base de Datos: \n" + ex.Message);
+                mensaje.Show();
+>>>>>>> ab521d974243ea3175fc300f88df0bb26c49e6c9:SCM/SCM/CapaControladorSCM/Query/SQL_MovimientoEncabezado.cs
             }
 
         }
@@ -135,7 +138,43 @@ namespace CapaControladorSCM.MovimientosInventario
             }
             catch (OdbcException ex)
             {
+<<<<<<< HEAD:SCM/SCM/CapaControladorSCM/MovimientosInventario/SQL_MovimientoEncabezado.cs
                 MessageBox.Show(ex.ToString());
+=======
+                mensaje = new Mensaje("Error en la operacion con la Base de Datos: \n" + ex.Message);
+                mensaje.Show();
+            }
+
+        }
+
+        //obtener el ultimo id
+        public int obtenerUltimoId()
+        {
+            int dato = 0;
+                string sComando = string.Format(
+                    "SELECT " +
+                        "id_movimiento_inventario_encabezado " +
+                    "FROM `erp`.`movimientos_inventario_encabezado` ;");
+            try
+            {
+
+                OdbcDataReader reader = transaccion.ConsultarDatos(sComando);
+
+                if (reader.HasRows)
+                {
+                    while (reader.Read())
+                    {
+                        dato = reader.GetInt32(0);
+                    }
+                }
+                return dato + 1;
+            }
+            catch (OdbcException ex)
+            {
+                mensaje = new Mensaje("Error en la operacion con la Base de Datos: \n" + ex.Message);
+                mensaje.Show();
+                return 0;
+>>>>>>> ab521d974243ea3175fc300f88df0bb26c49e6c9:SCM/SCM/CapaControladorSCM/Query/SQL_MovimientoEncabezado.cs
             }
 
         }

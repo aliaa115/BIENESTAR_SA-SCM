@@ -10,16 +10,21 @@ namespace CapaVistaSCM.Lista
     {
         //sentencia sn = new sentencia();
         Form form;
+        Panel panel;
         int tabla;
         string usuario;
 
-        public Frm_lista(int tabla, Form form, string usuario)
+        public Frm_lista(Panel panel, int tabla, Form form, string usuario)
         {
             InitializeComponent();
-
+            this.panel = panel;
             this.usuario = usuario;
             this.tabla = tabla;
+<<<<<<< HEAD
 
+=======
+                        
+>>>>>>> ab521d974243ea3175fc300f88df0bb26c49e6c9
         }
 
         private void establecerDatos()
@@ -30,9 +35,33 @@ namespace CapaVistaSCM.Lista
             Cls_listas datos = new Cls_listas();
 
             ListaData listaDatos = datos.DatosLista(tabla, Dgv_lista);
+<<<<<<< HEAD
             
             Text = "Lista " + listaDatos.form;
             Lbl_titulo.Text = listaDatos.titulo;
+=======
+            switch (tabla)
+            {
+                case 1:
+                    Text = "1002 - Lista " + listaDatos.form;
+                    Lbl_titulo.Text = listaDatos.titulo;
+                    break;
+                case 2:
+                    Text = "1002 - Lista " + listaDatos.form;
+                    Lbl_titulo.Text = listaDatos.titulo;
+                    break;
+                case 3:
+                    Text = "1003 - Lista " + listaDatos.form;
+                    Lbl_titulo.Text = listaDatos.titulo;
+                    break;
+                case 4:
+                    Text = "1003 - Lista " + listaDatos.form;
+                    Lbl_titulo.Text = listaDatos.titulo;
+                    break;
+                default:
+                    break;
+            }
+>>>>>>> ab521d974243ea3175fc300f88df0bb26c49e6c9
 
             Dgv_lista.Update();
 
@@ -46,6 +75,12 @@ namespace CapaVistaSCM.Lista
                 case 1:
                     this.form = new Frm_MovimientosInventarios(this, modo, encab );
                     break;
+                case 2:
+                    break;
+                case 3:
+                    this.form = new Frm_OrdenCompra(this, modo, encab);
+                    break;
+
             }
         }
 
@@ -53,6 +88,12 @@ namespace CapaVistaSCM.Lista
         {
             setVentana(tabla, 1 , 0 );
             form.Show();
+<<<<<<< HEAD
+=======
+            form.TopLevel = false;
+            form.TopMost = true;
+            panel.Controls.Add(form);
+>>>>>>> ab521d974243ea3175fc300f88df0bb26c49e6c9
             Visible = false;
             switch (tabla)
             {
@@ -69,17 +110,50 @@ namespace CapaVistaSCM.Lista
 
         private void Btn_ver_Click(object sender, EventArgs e)
         {
+<<<<<<< HEAD
             setVentana(tabla, 2, int.Parse(Dgv_lista.CurrentRow.Cells[0].Value.ToString()));
             form.Show();
             Visible = false;
             switch (tabla)
+=======
+            if (Dgv_lista.RowCount > 0)
+>>>>>>> ab521d974243ea3175fc300f88df0bb26c49e6c9
             {
-                case 1:
-                    //sn.insertarBitacora(usuario, "Ingreso a ventana para visualizar un registro de movimientos de invenrario", "movimientos_inventario_encabezado");
-                    break;
+                setVentana(tabla, 2, int.Parse(Dgv_lista.CurrentRow.Cells[0].Value.ToString()));
+                form.Show();
+                form.TopLevel = false;
+                form.TopMost = true;
+                panel.Controls.Add(form);
+                Visible = false;
+                switch (tabla)
+                {
+                    case 1:
+                        //sn.insertarBitacora(usuario, "Ingreso a ventana para visualizar un registro de movimientos de invenrario", "movimientos_inventario_encabezado");
+                        break;
+                }
             }
         }
 
+        private void Btn_editar_Click(object sender, EventArgs e)
+        {
+            if (Dgv_lista.RowCount > 0)
+            {
+                setVentana(tabla, 3, int.Parse(Dgv_lista.CurrentRow.Cells[0].Value.ToString()));
+                form.Show();
+                form.TopLevel = false;
+                form.TopMost = true;
+                panel.Controls.Add(form);
+                Visible = false;
+                switch (tabla)
+                {
+                    case 1:
+                        //sn.insertarBitacora(usuario, "Ingreso a ventana para visualizar un registro de movimientos de invenrario", "movimientos_inventario_encabezado");
+                        break;
+                }
+            }
+        }
+
+<<<<<<< HEAD
         private void Btn_editar_Click(object sender, EventArgs e)
         {
             setVentana(tabla, 3, int.Parse(Dgv_lista.CurrentRow.Cells[0].Value.ToString()));
@@ -93,6 +167,8 @@ namespace CapaVistaSCM.Lista
             }
         }
 
+=======
+>>>>>>> ab521d974243ea3175fc300f88df0bb26c49e6c9
         private void Frm_lista_Load(object sender, EventArgs e)
         {
             establecerDatos();

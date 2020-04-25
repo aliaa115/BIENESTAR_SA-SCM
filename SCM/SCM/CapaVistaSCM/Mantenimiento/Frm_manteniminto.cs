@@ -23,6 +23,8 @@ namespace CapaVistaSCM.Mantenimiento
         {
             InitializeComponent();
 
+
+            Text = "1001 - " + Text;
             noTabla = tbl;
             usuario = user;
 
@@ -40,8 +42,8 @@ namespace CapaVistaSCM.Mantenimiento
             noForaneas = Mant.datos(tbl).Item6;
             if (noForaneas != 0)
             {
-                int i = noForaneas;
-                while(i != 0)
+                int i = 1;
+                while(i <= noForaneas)
                 {
                     Mant.foraneas(tbl,i);
                     Nav_Mantenimiento.asignarComboConTabla(
@@ -49,7 +51,7 @@ namespace CapaVistaSCM.Mantenimiento
                         Mant.foraneas(tbl, i).Item2, 
                         Mant.foraneas(tbl, i).Item3
                         );
-                    i--;
+                    i++;
                 }
             }
 
@@ -63,7 +65,7 @@ namespace CapaVistaSCM.Mantenimiento
 
         private void Nav_Mantenimiento_Load(object sender, EventArgs e)
         {
-            string aplicacionActiva = "1";
+            string aplicacionActiva = "1001";
             Nav_Mantenimiento.ObtenerIdUsuario(usuario); // Pasa el parametro del usuario
             Nav_Mantenimiento.botonesYPermisosInicial(usuario, aplicacionActiva); // Consulta permisos al iniciar
             Nav_Mantenimiento.ObtenerIdAplicacion(aplicacionActiva);// Pasa el id de la aplicacion actual

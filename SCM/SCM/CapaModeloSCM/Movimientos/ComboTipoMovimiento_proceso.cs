@@ -3,13 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using CapaControladorSCM.MovimientosInventario;
+using CapaControladorSCM.Query;
 using CapaControladorSCM.Objetos;
 using System.Windows.Forms;
 
 namespace CapaModeloSCM.Movimientos
 {
-    public class ComboTipoMovimiento
+    public class ComboTipoMovimiento_proceso
     {
 
         public List<TipoMovimiento> tipoMov()

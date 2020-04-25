@@ -2,17 +2,21 @@
 using System.Data.Odbc;
 using System.Windows.Forms;
 using CapaControladorSCM.Objetos;
+using CapaControladorSCM.Mensajes;
 
-namespace CapaControladorSCM.MovimientosInventario
+namespace CapaControladorSCM.Query
 {
     public class SQL_TipoMovimiento
     {
+        Mensaje mensaje;
         transaccion transaccion = new transaccion();
+        TipoMovimiento tipoMovimiento;
+        List<TipoMovimiento> tipoMovimientoList;
 
         //obtener datos para los combobox del tipo de movimiento
         public List<TipoMovimiento> llenarComboTipoMovimiento()
         {
-            List<TipoMovimiento> tipoMovimientoList = new List<TipoMovimiento>();
+            tipoMovimientoList = new List<TipoMovimiento>();
 
             try
             {
@@ -36,16 +40,18 @@ namespace CapaControladorSCM.MovimientosInventario
             }
             catch (OdbcException ex)
             {
-                MessageBox.Show(ex.ToString(), "Error al obtener reporte");
+                mensaje = new Mensaje("Error en la operacion con la Base de Datos: \n" + ex.Message);
+                mensaje.Show();
                 return null;
             }
 
             return null;
         }
 
+        //obtener el tipo de movimiento para el ingreso de movimiento
         public TipoMovimiento obtenerTipoMovimiento(int id_tipo_movimiento)
         {
-            TipoMovimiento tipoMovimiento = new TipoMovimiento();
+            tipoMovimiento = new TipoMovimiento();
 
             try
             {
@@ -69,11 +75,43 @@ namespace CapaControladorSCM.MovimientosInventario
             }
             catch (OdbcException ex)
             {
-                MessageBox.Show(ex.ToString(), "Error al obtener reporte");
+                mensaje = new Mensaje("Error en la operacion con la Base de Datos: \n" + ex.Message);
+                mensaje.Show();
                 return null;
             }
 
-            return null;
+        }
+
+        //obtener el signo del tipo de movimiento
+        public string obtenerSignoTipoMovimiento(int id_tipo_movimiento) {
+
+            string signo = "";
+
+            try
+            {
+                string sComando = string.Format("SELECT signo " +
+                    "FROM tipos_movimientos " +
+                    "WHERE id_tipo_movimiento = {0} ;",
+                    id_tipo_movimiento);
+
+                OdbcDataReader reader = transaccion.ConsultarDatos(sComando);
+
+                if (reader.HasRows)
+                {
+                    while (reader.Read())
+                    {
+                        signo = reader.GetString(0);
+                    }
+                }
+                return signo;
+            }
+            catch (OdbcException ex)
+            {
+                mensaje = new Mensaje("Error en la operacion con la Base de Datos: \n" + ex.Message);
+                mensaje.Show();
+                return null;
+            }
+
         }
     }
 }

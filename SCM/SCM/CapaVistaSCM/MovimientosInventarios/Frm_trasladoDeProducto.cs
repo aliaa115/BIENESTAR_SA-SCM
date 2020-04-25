@@ -14,6 +14,7 @@ namespace CapaVistaSCM
     {
         public Frm_trasladoDeProducto()
         {
+            Text = "1002 - " + Text;
             InitializeComponent();
         }
     }

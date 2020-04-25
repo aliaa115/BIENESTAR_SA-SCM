@@ -259,5 +259,18 @@ namespace CapaVistaSCM.Properties {
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
+<<<<<<< HEAD
+=======
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap forklift {
+            get {
+                object obj = ResourceManager.GetObject("forklift", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+>>>>>>> ab521d974243ea3175fc300f88df0bb26c49e6c9
     }
 }
