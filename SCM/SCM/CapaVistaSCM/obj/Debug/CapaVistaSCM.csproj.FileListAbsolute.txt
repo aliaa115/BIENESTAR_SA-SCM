@@ -58,5 +58,31 @@
 \\Mac\Home\Documents\Universidad\9no somestre\042 Ingenieria de Software\Proyecto Final\git hub\SCM-Ligia\SCM\SCM\CapaVistaSCM\bin\Debug\CapaModelo.pdb
 \\Mac\Home\Documents\Universidad\9no somestre\042 Ingenieria de Software\Proyecto Final\git hub\SCM-Ligia\SCM\SCM\CapaVistaSCM\bin\Debug\CapaDeDatos.pdb
 \\Mac\Home\Documents\Universidad\9no somestre\042 Ingenieria de Software\Proyecto Final\git hub\SCM-Ligia\SCM\SCM\CapaVistaSCM\bin\Debug\CapaLogica_Consultas.pdb
+<<<<<<< HEAD
+\\Mac\Home\Documents\Universidad\9no somestre\042 Ingenieria de Software\Proyecto Final\git hub\SCM-Ligia\SCM\SCM\CapaVistaSCM\bin\Debug\CapaDatos_Consultas.pdb
+\\Mac\Home\Documents\Universidad\9no somestre\042 Ingenieria de Software\Proyecto Final\git hub\SCM-Ligia\SCM\SCM\CapaVistaSCM\obj\Debug\CapaVistaSCM.MantenimientoBase.resources
+\\Mac\Home\Documents\Universidad\9no somestre\042 Ingenieria de Software\Proyecto Final\git hub\SCM-Ligia\SCM\SCM\CapaVistaSCM\obj\Debug\CapaVistaSCM.Frm_listaOrdenesCompra.resources
+\\Mac\Home\Documents\Universidad\9no somestre\042 Ingenieria de Software\Proyecto Final\git hub\SCM-Ligia\SCM\SCM\CapaVistaSCM\bin\Debug\CapaControladorSCM.dll
+\\Mac\Home\Documents\Universidad\9no somestre\042 Ingenieria de Software\Proyecto Final\git hub\SCM-Ligia\SCM\SCM\CapaVistaSCM\bin\Debug\CapaControladorSCM.pdb
+\\Mac\Home\Documents\Universidad\9no somestre\042 Ingenieria de Software\Proyecto Final\git hub\SCM-Ligia\SCM\SCM\CapaVistaSCM\obj\Debug\CapaVistaSCM.Frm_trasladoDeProducto.resources
+\\Mac\Home\Documents\Universidad\9no somestre\042 Ingenieria de Software\Proyecto Final\git hub\SCM-Ligia\SCM\SCM\CapaVistaSCM\obj\Debug\CapaVistaSCM.Frm_listaCotizaciones.resources
+\\Mac\Home\Documents\Universidad\9no somestre\042 Ingenieria de Software\Proyecto Final\git hub\SCM-Ligia\SCM\SCM\CapaVistaSCM\obj\Debug\CapaVistaSCM.Mantenimiento.Frm_manteniminto.resources
+\\Mac\Home\Documents\Universidad\9no somestre\042 Ingenieria de Software\Proyecto Final\git hub\SCM-Ligia\SCM\SCM\CapaVistaSCM\obj\Debug\CapaVistaSCM.Lista.Frm_lista.resources
+\\Mac\Home\Documents\Universidad\9no somestre\042 Ingenieria de Software\Proyecto Final\git hub\SCM-Ligia\SCM\SCM\CapaVistaSCM\bin\Debug\CapaVista.dll
+\\Mac\Home\Documents\Universidad\9no somestre\042 Ingenieria de Software\Proyecto Final\git hub\SCM-Ligia\SCM\SCM\CapaVistaSCM\bin\Debug\CapaVista.pdb
+\\Mac\Home\Documents\Universidad\9no somestre\042 Ingenieria de Software\Proyecto Final\git hub\SCM-Ligia\SCM\SCM\CapaVistaSCM\bin\Debug\CapaVista.dll.config
+\\Mac\Home\Documents\Universidad\9no somestre\042 Ingenieria de Software\Proyecto Final\git hub\SCM-Ligia\SCM\SCM\CapaVistaSCM\bin\Debug\CapaControlador.dll
+\\Mac\Home\Documents\Universidad\9no somestre\042 Ingenieria de Software\Proyecto Final\git hub\SCM-Ligia\SCM\SCM\CapaVistaSCM\bin\Debug\CapaControlador.pdb
+\\Mac\Home\Documents\Universidad\9no somestre\042 Ingenieria de Software\Proyecto Final\git hub\SCM-Ligia\SCM\SCM\CapaVistaSCM\bin\Debug\CapaModelo.dll
+\\Mac\Home\Documents\Universidad\9no somestre\042 Ingenieria de Software\Proyecto Final\git hub\SCM-Ligia\SCM\SCM\CapaVistaSCM\bin\Debug\CapaModelo.pdb
+\\Mac\Home\Documents\Universidad\9no somestre\042 Ingenieria de Software\Proyecto Final\git hub\SCM-Ligia\SCM\SCM\CapaVistaSCM\bin\Debug\CapaDatos.pdb
+\\Mac\Home\Documents\Universidad\9no somestre\042 Ingenieria de Software\Proyecto Final\git hub\SCM-Ligia\SCM\SCM\CapaVistaSCM\bin\Debug\CapaDiseno.dll
+\\Mac\Home\Documents\Universidad\9no somestre\042 Ingenieria de Software\Proyecto Final\git hub\SCM-Ligia\SCM\SCM\CapaVistaSCM\bin\Debug\CapaLogica.dll
+\\Mac\Home\Documents\Universidad\9no somestre\042 Ingenieria de Software\Proyecto Final\git hub\SCM-Ligia\SCM\SCM\CapaVistaSCM\bin\Debug\CapaDiseno.pdb
+\\Mac\Home\Documents\Universidad\9no somestre\042 Ingenieria de Software\Proyecto Final\git hub\SCM-Ligia\SCM\SCM\CapaVistaSCM\bin\Debug\CapaLogica.pdb
+\\Mac\Home\Documents\Universidad\9no somestre\042 Ingenieria de Software\Proyecto Final\git hub\SCM-Ligia\SCM\SCM\CapaVistaSCM\obj\Debug\CapaVistaSCM.Mensajes.Mensaje.resources
+\\Mac\Home\Documents\Universidad\9no somestre\042 Ingenieria de Software\Proyecto Final\git hub\SCM-Ligia\SCM\SCM\CapaVistaSCM\obj\Debug\CapaVistaSCM.Mantenimiento.Mantenimiento.resources
+=======
 \\Mac\Home\Documents\Universidad\9no somestre\042 Ingenieria de Software\Proyecto Final\git hub\SCM-Ligia\SCM\SCM\CapaVistaSCM\bin\Debug\CapaControlador.pdb
 \\Mac\Home\Documents\Universidad\9no somestre\042 Ingenieria de Software\Proyecto Final\git hub\SCM-Ligia\SCM\SCM\CapaVistaSCM\bin\Debug\CapaDatos_Consultas.pdb
+>>>>>>> ab521d974243ea3175fc300f88df0bb26c49e6c9
