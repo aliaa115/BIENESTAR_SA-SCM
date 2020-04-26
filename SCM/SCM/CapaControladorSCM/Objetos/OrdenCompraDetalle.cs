@@ -10,8 +10,10 @@ namespace CapaControladorSCM.Objetos
     {
         public int ID_ORDEN_COMPRA_DETALLE { get; set; }
         public OrdenCompraEncabezado ORDEN_COMPRA_ENCABEZADO { get; set; }
+        public CotizacionEncabezado COTIZACION_ENCABEZADO { get; set; }
+        public Proveedor PROVEEDOR { get; set; }
         public Producto PRODUCTO { get; set; } 
         public int CANTIDAD { get; set; }
-        public int precio_unitario { get; set; }
+        public double PRECIO_UNITARIO { get; set; }
     }
 }

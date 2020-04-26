@@ -58,6 +58,7 @@
     <Compile Include="Query\SQL_Inventario.cs" />
     <Compile Include="Query\SQL_MovimientoDetalle.cs" />
     <Compile Include="Query\SQL_MovimientoEncabezado.cs" />
+    <Compile Include="Query\SQL_OrdenCompraDetalle.cs" />
     <Compile Include="Query\SQL_OrdenCompraEncabezado.cs" />
     <Compile Include="Query\SQL_Producto.cs" />
     <Compile Include="Objetos\Bodega.cs" />
@@ -68,6 +69,7 @@
     <Compile Include="Objetos\OrdenCompraDetalle.cs" />
     <Compile Include="Objetos\OrdenCompraEncabezado.cs" />
     <Compile Include="Objetos\OrdenTransporte.cs" />
+    <Compile Include="Query\SQL_Proveedor.cs" />
     <Compile Include="Query\SQL_TipoMovimiento.cs" />
     <Compile Include="Objetos\Producto.cs" />
     <Compile Include="Objetos\Proveedor.cs" />

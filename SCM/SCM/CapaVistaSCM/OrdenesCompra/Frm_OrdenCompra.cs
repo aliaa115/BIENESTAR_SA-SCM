@@ -247,12 +247,154 @@ namespace CapaVistaSCM
         {
             switch (modo)
             {
+                //ingreso de un nuevo producto a la orden de compra
                 case 1:
+
+                    if (Txt_producto.Text == "")
+                    {
+                        mensaje = new Mensajes.Mensaje("No se ha elegido ningun producto");
+                        mensaje.Show();
+                    }
+                    else if (Nud_cantidad.Value == 0)
+                    {
+                        mensaje = new Mensajes.Mensaje("No se ha indicado una cantidad valida de producto");
+                        mensaje.Show();
+                    }
+                    else
+                    {
+
+                        string[] prod = ordenesDeCompras.obtenerProducto(int.Parse(idProd));
+
+                        alterarDetalle(prod, 1);
+
+                    }
+                    break;
+
                     break;
                 case 2:
                     break;
 
             }
         }
+
+
+        private void alterarDetalle(string[] prod, int tipo)
+        {
+
+            int fila;
+            switch (modo)
+            {
+                case 1:
+                    switch (tipo)
+                    {
+                        case 1:
+                            fila = Dgv_movimientoDetalle.RowCount;
+
+                            Dgv_movimientoDetalle.Rows.Add();
+                            if (fila == 0)
+                            {
+                                Dgv_movimientoDetalle.Rows[fila].Cells[0].Value = fila;
+                            }
+                            else
+                            {
+                                Dgv_movimientoDetalle.Rows[fila].Cells[0].Value = int.Parse(Dgv_movimientoDetalle.Rows[fila - 1].Cells[0].Value.ToString()) + 1;
+                            }
+                            Dgv_movimientoDetalle.Rows[fila].Cells[1].Value = prod[0];
+                            Dgv_movimientoDetalle.Rows[fila].Cells[2].Value = prod[1];
+                            Dgv_movimientoDetalle.Rows[fila].Cells[3].Value = Nud_cantidad.Value.ToString();
+                            Dgv_movimientoDetalle.Rows[fila].Cells[4].Value = (double.Parse(Nud_cantidad.Value.ToString()) * double.Parse(prod[2]));
+                            Dgv_movimientoDetalle.Rows[fila].Cells[5].Value = (double.Parse(Nud_cantidad.Value.ToString()) * double.Parse(prod[3]));
+
+                            break;
+
+                        case 2:
+                            fila = 0;
+
+                            while (fila < Dgv_movimientoDetalle.RowCount)
+                            {
+
+                                insertarDetalle(fila);
+                                fila++;
+                            }
+                            break;
+                    }
+                    break;
+                case 3:
+                    switch (tipo) 
+                    {
+                        case 1:
+                            fila = Dgv_movimientoDetalle.RowCount;
+
+                            Dgv_movimientoDetalle.Rows.Add();
+                            if (fila == 0)
+                            {
+                                Dgv_movimientoDetalle.Rows[fila].Cells[0].Value = fila;
+                            }
+                            else
+                            {
+                                Dgv_movimientoDetalle.Rows[fila].Cells[0].Value = int.Parse(Dgv_movimientoDetalle.Rows[fila - 1].Cells[0].Value.ToString()) + 1;
+                            }
+                            Dgv_movimientoDetalle.Rows[fila].Cells[1].Value = prod[0];
+                            Dgv_movimientoDetalle.Rows[fila].Cells[2].Value = prod[1];
+                            Dgv_movimientoDetalle.Rows[fila].Cells[3].Value = Nud_cantidad.Value.ToString();
+                            Dgv_movimientoDetalle.Rows[fila].Cells[4].Value = (double.Parse(Nud_cantidad.Value.ToString()) * double.Parse(prod[2]));
+                            Dgv_movimientoDetalle.Rows[fila].Cells[5].Value = (double.Parse(Nud_cantidad.Value.ToString()) * double.Parse(prod[3]));
+
+                            movimientoInventario.eliminarMovimientoDetalle(int.Parse(Txt_codigo.Text));
+
+                            fila = 0;
+
+                            while (fila < Dgv_movimientoDetalle.RowCount)
+                            {
+                                insertarDetalle(fila);
+                                fila++;
+                            }
+                            break;
+
+                        case 2:
+                            movimientoInventario.eliminarMovimientoDetalle(int.Parse(Txt_codigo.Text));
+
+                            fila = 0;
+
+                            while (fila < Dgv_movimientoDetalle.RowCount)
+                            {
+                                insertarDetalle(fila);
+                                fila++;
+                            }
+                            break;
+                    }
+                    break;
+
+            }
+
+        }
+
+        private void insertarDetalle(int fila)
+        {
+            string[] detalle = {
+                                Dgv_movimientoDetalle.Rows[fila].Cells[0].Value.ToString(),
+                                Txt_codigo.Text,
+                                Dgv_movimientoDetalle.Rows[fila].Cells[1].Value.ToString(),
+                                Dgv_movimientoDetalle.Rows[fila].Cells[3].Value.ToString(),
+                                Dgv_movimientoDetalle.Rows[fila].Cells[4].Value.ToString(),
+                                Dgv_movimientoDetalle.Rows[fila].Cells[5].Value.ToString()
+                                };
+            int producto = int.Parse(Dgv_movimientoDetalle.Rows[fila].Cells[1].Value.ToString());
+            int cant = int.Parse(Dgv_movimientoDetalle.Rows[fila].Cells[3].Value.ToString());
+            string signo = movimientoInventario.signoTipoMovimiento(int.Parse(Cbo_tipoMovimiento.SelectedValue.ToString()));
+
+
+            string cantidad = signo + " " + cant;
+            if (movimientoInventario.operacionMovimiento(producto, cant, int.Parse(Cbo_tipoMovimiento.SelectedValue.ToString())))
+            {
+                movimientoInventario.insertarMovimientoDetalle(detalle, producto, cantidad);
+            }
+            else
+            {
+                mensaje = new Mensaje("Error al operar el moviiento del producto: [ " + producto + " ]\n Prfavor verificar las existencias");
+            }
+
+        }
+
     }
 }

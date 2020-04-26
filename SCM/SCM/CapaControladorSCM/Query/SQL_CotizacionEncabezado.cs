@@ -13,6 +13,7 @@ namespace CapaControladorSCM.Query
     {
         transaccion transaccion = new transaccion();
         Mensaje mensaje;
+        CotizacionEncabezado cotizacionEncabezado = new CotizacionEncabezado();
 
         //obtener datos para los combobox de cotizaciones segun proveedor
         public List<TipoMovimiento> llenarComboTipoMovimiento(int id_proveedor)
@@ -49,7 +50,36 @@ namespace CapaControladorSCM.Query
             }
         }
 
+        //obtener datos para consulta de detalles de orden de compra 
+        public CotizacionEncabezado obtenerCotizacionEncabezado(int id_proveedor)
+        {
+            try
+            {
+                string sComando = string.Format("SELECT id_proveedor, nombre_proveedor " +
+                    "FROM proveedores " +
+                    "WHERE id_proveedor = {0} ;",
+                    id_proveedor);
 
+                OdbcDataReader reader = transaccion.ConsultarDatos(sComando);
+
+                if (reader.HasRows)
+                {
+                    while (reader.Read())
+                    {
+                        cotizacionEncabezado.ID_COTIZACION = reader.GetInt32(0);
+                        cotizacionEncabezado.NOMBRE_COTIZACION = reader.GetString(1);
+                    }
+                }
+                return cotizacionEncabezado;
+            }
+            catch (OdbcException ex)
+            {
+                mensaje = new Mensaje("Error en la operacion con la Base de Datos: \n" + ex.Message);
+                mensaje.Show();
+                return null;
+            }
+
+        }
 
     }
 }

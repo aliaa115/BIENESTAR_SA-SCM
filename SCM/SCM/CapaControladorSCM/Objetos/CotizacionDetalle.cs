@@ -12,6 +12,6 @@ namespace CapaControladorSCM.Objetos
         public CotizacionEncabezado COTIZACION_ENCABEZADO { get; set; }
         public Producto PRODUCTO { get; set; }
         public int CANTIDAD { get; set; }
-        public float PRECIO_UNITARIO { get; set; }
+        public double PRECIO_UNITARIO { get; set; }
     }
 }
