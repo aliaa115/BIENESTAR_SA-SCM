@@ -31,6 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_MovimientosInventarios));
             this.Tbl_movimientoInventario = new System.Windows.Forms.TableLayoutPanel();
             this.Pnl_titulo = new System.Windows.Forms.Panel();
+            this.Btn_ayuda = new PDFHelpViewer.AyudaRup();
             this.Btn_MovInventario = new System.Windows.Forms.Button();
             this.Lbl_titulo = new System.Windows.Forms.Label();
             this.Pnl_desarrollo = new System.Windows.Forms.Panel();
@@ -45,6 +46,8 @@
             this.Cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Costo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Precio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Impuesto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Cambio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Grp_producto = new System.Windows.Forms.GroupBox();
             this.combo1 = new CapaVista.Combo();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -114,7 +117,7 @@
             this.Tbl_movimientoInventario.RowCount = 2;
             this.Tbl_movimientoInventario.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 70F));
             this.Tbl_movimientoInventario.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 60F));
-            this.Tbl_movimientoInventario.Size = new System.Drawing.Size(904, 639);
+            this.Tbl_movimientoInventario.Size = new System.Drawing.Size(919, 698);
             this.Tbl_movimientoInventario.TabIndex = 1;
             // 
             // Pnl_titulo
@@ -125,8 +128,17 @@
             this.Pnl_titulo.Dock = System.Windows.Forms.DockStyle.Fill;
             this.Pnl_titulo.Location = new System.Drawing.Point(3, 3);
             this.Pnl_titulo.Name = "Pnl_titulo";
-            this.Pnl_titulo.Size = new System.Drawing.Size(898, 64);
+            this.Pnl_titulo.Size = new System.Drawing.Size(913, 64);
             this.Pnl_titulo.TabIndex = 0;
+            // 
+            // Btn_ayuda
+            // 
+            this.Btn_ayuda.BackColor = System.Drawing.Color.Transparent;
+            this.Btn_ayuda.Location = new System.Drawing.Point(845, 6);
+            this.Btn_ayuda.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.Btn_ayuda.Name = "Btn_ayuda";
+            this.Btn_ayuda.Size = new System.Drawing.Size(62, 58);
+            this.Btn_ayuda.TabIndex = 49;
             // 
             // Btn_MovInventario
             // 
@@ -139,7 +151,7 @@
             this.Btn_MovInventario.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(143)))), ((int)(((byte)(208)))), ((int)(((byte)(68)))));
             this.Btn_MovInventario.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(143)))), ((int)(((byte)(208)))), ((int)(((byte)(68)))));
             this.Btn_MovInventario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Btn_MovInventario.Location = new System.Drawing.Point(760, 0);
+            this.Btn_MovInventario.Location = new System.Drawing.Point(775, 0);
             this.Btn_MovInventario.Name = "Btn_MovInventario";
             this.Btn_MovInventario.Size = new System.Drawing.Size(138, 64);
             this.Btn_MovInventario.TabIndex = 3;
@@ -159,13 +171,14 @@
             // Pnl_desarrollo
             // 
             this.Pnl_desarrollo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(232)))), ((int)(((byte)(232)))));
+            this.Pnl_desarrollo.Controls.Add(this.Btn_ayuda);
             this.Pnl_desarrollo.Controls.Add(this.Gpb_detalle);
             this.Pnl_desarrollo.Controls.Add(this.Grp_producto);
             this.Pnl_desarrollo.Controls.Add(this.Grp_DatosMovimiento);
             this.Pnl_desarrollo.Dock = System.Windows.Forms.DockStyle.Fill;
             this.Pnl_desarrollo.Location = new System.Drawing.Point(3, 73);
             this.Pnl_desarrollo.Name = "Pnl_desarrollo";
-            this.Pnl_desarrollo.Size = new System.Drawing.Size(898, 563);
+            this.Pnl_desarrollo.Size = new System.Drawing.Size(913, 622);
             this.Pnl_desarrollo.TabIndex = 1;
             // 
             // Gpb_detalle
@@ -174,7 +187,7 @@
             this.Gpb_detalle.Controls.Add(this.Txt_costoTotal);
             this.Gpb_detalle.Controls.Add(this.Lbl_precioTotal);
             this.Gpb_detalle.Controls.Add(this.Dgv_movimientoDetalle);
-            this.Gpb_detalle.Location = new System.Drawing.Point(8, 326);
+            this.Gpb_detalle.Location = new System.Drawing.Point(9, 393);
             this.Gpb_detalle.Name = "Gpb_detalle";
             this.Gpb_detalle.Size = new System.Drawing.Size(886, 230);
             this.Gpb_detalle.TabIndex = 16;
@@ -226,7 +239,9 @@
             this.Nombre,
             this.Cantidad,
             this.Costo,
-            this.Precio});
+            this.Precio,
+            this.Impuesto,
+            this.Cambio});
             this.Dgv_movimientoDetalle.Location = new System.Drawing.Point(5, 26);
             this.Dgv_movimientoDetalle.Name = "Dgv_movimientoDetalle";
             this.Dgv_movimientoDetalle.ReadOnly = true;
@@ -279,6 +294,24 @@
             this.Precio.Name = "Precio";
             this.Precio.ReadOnly = true;
             // 
+            // Impuesto
+            // 
+            this.Impuesto.HeaderText = "Impuesto";
+            this.Impuesto.MinimumWidth = 6;
+            this.Impuesto.Name = "Impuesto";
+            this.Impuesto.ReadOnly = true;
+            this.Impuesto.Visible = false;
+            // 
+            // Cambio
+            // 
+            this.Cambio.HeaderText = "CAMBIO";
+            this.Cambio.MinimumWidth = 6;
+            this.Cambio.Name = "Cambio";
+            this.Cambio.ReadOnly = true;
+            this.Cambio.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Cambio.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.Cambio.Visible = false;
+            // 
             // Grp_producto
             // 
             this.Grp_producto.Controls.Add(this.combo1);
@@ -294,7 +327,7 @@
             this.Grp_producto.Controls.Add(this.Lbl_producto);
             this.Grp_producto.Controls.Add(this.Gpb_eliminar);
             this.Grp_producto.Controls.Add(this.Gpb_agregar);
-            this.Grp_producto.Location = new System.Drawing.Point(3, 223);
+            this.Grp_producto.Location = new System.Drawing.Point(9, 290);
             this.Grp_producto.Name = "Grp_producto";
             this.Grp_producto.Size = new System.Drawing.Size(891, 97);
             this.Grp_producto.TabIndex = 15;
@@ -501,7 +534,7 @@
             // Grp_DatosMovimiento
             // 
             this.Grp_DatosMovimiento.Controls.Add(this.Tbc_Datos);
-            this.Grp_DatosMovimiento.Location = new System.Drawing.Point(3, 3);
+            this.Grp_DatosMovimiento.Location = new System.Drawing.Point(9, 70);
             this.Grp_DatosMovimiento.Name = "Grp_DatosMovimiento";
             this.Grp_DatosMovimiento.Size = new System.Drawing.Size(891, 214);
             this.Grp_DatosMovimiento.TabIndex = 14;
@@ -557,10 +590,11 @@
             this.Chk_iva.AutoSize = true;
             this.Chk_iva.Location = new System.Drawing.Point(314, 54);
             this.Chk_iva.Name = "Chk_iva";
-            this.Chk_iva.Size = new System.Drawing.Size(148, 27);
+            this.Chk_iva.Size = new System.Drawing.Size(207, 27);
             this.Chk_iva.TabIndex = 48;
-            this.Chk_iva.Text = "IVA incluido";
+            this.Chk_iva.Text = "Impuesto iincluido";
             this.Chk_iva.UseVisualStyleBackColor = true;
+            this.Chk_iva.CheckedChanged += new System.EventHandler(this.Chk_iva_CheckedChanged);
             // 
             // Chk_estado
             // 
@@ -731,7 +765,7 @@
             this.Tbp_descripcion.Location = new System.Drawing.Point(4, 25);
             this.Tbp_descripcion.Name = "Tbp_descripcion";
             this.Tbp_descripcion.Padding = new System.Windows.Forms.Padding(3);
-            this.Tbp_descripcion.Size = new System.Drawing.Size(877, 159);
+            this.Tbp_descripcion.Size = new System.Drawing.Size(877, 154);
             this.Tbp_descripcion.TabIndex = 1;
             this.Tbp_descripcion.Text = "Nota";
             // 
@@ -741,14 +775,14 @@
             this.Txt_descripcion.Location = new System.Drawing.Point(3, 3);
             this.Txt_descripcion.Multiline = true;
             this.Txt_descripcion.Name = "Txt_descripcion";
-            this.Txt_descripcion.Size = new System.Drawing.Size(871, 153);
+            this.Txt_descripcion.Size = new System.Drawing.Size(871, 148);
             this.Txt_descripcion.TabIndex = 12;
             this.Txt_descripcion.TextChanged += new System.EventHandler(this.Txt_descripcion_TextChanged);
             // 
             // Frm_MovimientosInventarios
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.ClientSize = new System.Drawing.Size(904, 639);
+            this.ClientSize = new System.Drawing.Size(919, 698);
             this.Controls.Add(this.Tbl_movimientoInventario);
             this.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -833,14 +867,16 @@
         private System.Windows.Forms.CheckBox Chk_iva;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button Btn_buscar;
-        //private CapaVista.Combo combo1;
+        private CapaVista.Combo combo1;
+        private System.Windows.Forms.ComboBox Cbo_tipoMovimiento;
         private System.Windows.Forms.DataGridViewTextBoxColumn Codigo;
         private System.Windows.Forms.DataGridViewTextBoxColumn Producto;
         private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
         private System.Windows.Forms.DataGridViewTextBoxColumn Cantidad;
         private System.Windows.Forms.DataGridViewTextBoxColumn Costo;
         private System.Windows.Forms.DataGridViewTextBoxColumn Precio;
-        private CapaVista.Combo combo1;
-        private System.Windows.Forms.ComboBox Cbo_tipoMovimiento;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Impuesto;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Cambio;
+        private PDFHelpViewer.AyudaRup Btn_ayuda;
     }
 }

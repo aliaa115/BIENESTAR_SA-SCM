@@ -11,18 +11,38 @@ namespace CapaModeloSCM.Compras
 { 
     public class OrdenesDeCompras_proceso
     {
-        SQL_OrdenCompraEncabezado ordenCompraEncabezado = new SQL_OrdenCompraEncabezado();
+        SQL_OrdenCompraEncabezado sql_ordenCompraEncabezado = new SQL_OrdenCompraEncabezado();
         SQL_Producto sql_producto = new SQL_Producto();
         SQL_TipoMovimiento sql_tipoMovimiento = new SQL_TipoMovimiento();
         SQL_CotizacionDetalle sql_cotizacionDetalle = new SQL_CotizacionDetalle();
         Producto producto = new Producto();
+        OrdenCompraEncabezado ordenCompraEncabezado = new OrdenCompraEncabezado();
         CotizacionEncabezado cotizacionEncabezado = new CotizacionEncabezado();
         CotizacionDetalle cotizacionDetalle = new CotizacionDetalle();
         Mensaje mensaje;
 
+        //Obtener datos de Orden de compra encabezado
+        public string[] datosMovimiento(int encabezado)
+        {
+            ordenCompraEncabezado = sql_ordenCompraEncabezado.obtenerOrdenEncabezado(encabezado);
+
+            string[] datos =  {
+                ordenCompraEncabezado.COTIZACION_ENCABEZADO.ToString(),
+                ordenCompraEncabezado.NOMBRE_ORDEN_COMPRA,
+                ordenCompraEncabezado.DESCRIPCION_ORDEN_COMPRA,
+                ordenCompraEncabezado.PROVEEDOR.NOMBRE_PROVEEDOR,
+                ordenCompraEncabezado.COTIZACION_ENCABEZADO.ID_COTIZACION.ToString(),
+                ordenCompraEncabezado.FECHA_ENTREGA.ToString(),
+                ordenCompraEncabezado.FECHA_EMISION.ToString(),
+                ordenCompraEncabezado.ESTADO.ToString()
+                };
+
+            return datos;
+        }
+
         public int ultimoId()
         {
-            return ordenCompraEncabezado.obtenerUltimoId();
+            return sql_ordenCompraEncabezado.obtenerUltimoId();
         }
 
 

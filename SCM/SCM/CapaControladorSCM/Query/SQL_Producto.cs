@@ -9,6 +9,7 @@ namespace CapaControladorSCM.Query
     {
         Mensaje mensaje;
         Producto producto;
+        SQL_Impuesto sql_impuesto = new SQL_Impuesto();
         transaccion transaccion = new transaccion();
 
         //obtener datos para consulta de detalles de movimientos 
@@ -52,7 +53,7 @@ namespace CapaControladorSCM.Query
             try
             {
                 string sComando = string.Format(
-                    "SELECT id_producto, nombre_producto, costo_producto, precio_producto " +
+                    "SELECT id_producto, nombre_producto, costo_producto, precio_producto, id_impuesto " +
                     "FROM productos " +
                     "WHERE id_producto = {0} ;",
                     id_producto);
@@ -67,6 +68,7 @@ namespace CapaControladorSCM.Query
                         producto.NOMBRE_PRODUCTO = reader.GetString(1);
                         producto.COSTO_PRODUCTO = reader.GetDouble(2);
                         producto.PRECIO_PRODUCTO = reader.GetDouble(3);
+                        producto.IMPUESTO = sql_impuesto.obtenerImpuestos(reader.GetInt32(0));
                     }
                 }
                 return producto;
@@ -106,8 +108,8 @@ namespace CapaControladorSCM.Query
             }
             catch (OdbcException ex)
             {
-                //mensaje = new Mensaje("Error en la operacion con la Base de Datos: \n" + ex.Message);
-                //mensaje.Show();
+                mensaje = new Mensaje("Error en la operacion con la Base de Datos: \n" + ex.Message);
+                mensaje.Show();
                 return dato;
             }
         }
@@ -130,5 +132,6 @@ namespace CapaControladorSCM.Query
             }
 
         }
+
     }
 }

@@ -1,7 +1,9 @@
-﻿using CapaDatos;
+﻿using CapaControladorSCM.Mensajes;
+using CapaDatos;
 using CapaModeloSCM.Mantenimientos;
 using CapaModeloSCM.Mantenimientos.ListaDatos;
 using System;
+using System.IO;
 using System.Windows.Forms;
 
 namespace CapaVistaSCM.Lista
@@ -13,6 +15,7 @@ namespace CapaVistaSCM.Lista
         Panel panel;
         int tabla;
         string usuario;
+        Mensaje mensaje;
 
         public Frm_lista(Panel panel, int tabla, Form form, string usuario)
         {
@@ -20,7 +23,6 @@ namespace CapaVistaSCM.Lista
             this.panel = panel;
             this.usuario = usuario;
             this.tabla = tabla;
-                        
         }
 
         private void establecerDatos()
@@ -36,18 +38,22 @@ namespace CapaVistaSCM.Lista
                 case 1:
                     Text = "1002 - Lista " + listaDatos.form;
                     Lbl_titulo.Text = listaDatos.titulo;
+                    Btn_ayuda.AsignarAyuda("~\\SCM.pdf");
                     break;
                 case 2:
                     Text = "1002 - Lista " + listaDatos.form;
                     Lbl_titulo.Text = listaDatos.titulo;
+                    Btn_ayuda.AsignarAyuda("~\\SCM.pdf");
                     break;
                 case 3:
                     Text = "1003 - Lista " + listaDatos.form;
                     Lbl_titulo.Text = listaDatos.titulo;
+                    Btn_ayuda.AsignarAyuda("~\\SCM.pdf");
                     break;
                 case 4:
                     Text = "1003 - Lista " + listaDatos.form;
                     Lbl_titulo.Text = listaDatos.titulo;
+                    Btn_ayuda.AsignarAyuda("~\\SCM.pdf");
                     break;
                 default:
                     break;

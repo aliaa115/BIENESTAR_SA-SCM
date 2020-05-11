@@ -41,7 +41,7 @@ namespace CapaControladorSCM.Query
                     {
                         OrdenCompraDetalle ordenCompraDetalleTmp = new OrdenCompraDetalle();
                         ordenCompraDetalleTmp.ID_ORDEN_COMPRA_DETALLE = reader.GetInt32(0);
-                        ordenCompraDetalleTmp.COTIZACION_ENCABEZADO = sql_CotizacionEncabezado.obtenerCotizacionEncabezado( reader.GetInt32(2));
+                        ordenCompraDetalleTmp.COTIZACION_ENCABEZADO = sql_CotizacionEncabezado.obtenerCotizacionEncabezado(reader.GetInt32(1), reader.GetInt32(2));
                         ordenCompraDetalleTmp.PROVEEDOR = sql_Proveedor.obtenerProveedor(reader.GetInt32(2));
                         ordenCompraDetalleTmp.PRODUCTO = sql_Producto.obtenerProducto(reader.GetInt32(3));
                         ordenCompraDetalleTmp.CANTIDAD = reader.GetInt32(4);

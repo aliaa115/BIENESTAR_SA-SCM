@@ -34,6 +34,7 @@
             this.Btn_MovInventario = new System.Windows.Forms.Button();
             this.Lbl_titulo = new System.Windows.Forms.Label();
             this.Pnl_desarrollo = new System.Windows.Forms.Panel();
+            this.Btn_ayuda = new PDFHelpViewer.AyudaRup();
             this.Grp_editar = new System.Windows.Forms.GroupBox();
             this.Btn_editar = new System.Windows.Forms.Button();
             this.Grp_nuevo = new System.Windows.Forms.GroupBox();
@@ -100,12 +101,13 @@
             this.Lbl_titulo.Font = new System.Drawing.Font("Century Gothic", 30F, System.Drawing.FontStyle.Bold);
             this.Lbl_titulo.Location = new System.Drawing.Point(0, 0);
             this.Lbl_titulo.Name = "Lbl_titulo";
-            this.Lbl_titulo.Size = new System.Drawing.Size(0, 47);
+            this.Lbl_titulo.Size = new System.Drawing.Size(0, 59);
             this.Lbl_titulo.TabIndex = 0;
             // 
             // Pnl_desarrollo
             // 
             this.Pnl_desarrollo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(232)))), ((int)(((byte)(232)))));
+            this.Pnl_desarrollo.Controls.Add(this.Btn_ayuda);
             this.Pnl_desarrollo.Controls.Add(this.Grp_editar);
             this.Pnl_desarrollo.Controls.Add(this.Grp_nuevo);
             this.Pnl_desarrollo.Controls.Add(this.Grp_guardar);
@@ -115,6 +117,15 @@
             this.Pnl_desarrollo.Name = "Pnl_desarrollo";
             this.Pnl_desarrollo.Size = new System.Drawing.Size(794, 562);
             this.Pnl_desarrollo.TabIndex = 1;
+            // 
+            // Btn_ayuda
+            // 
+            this.Btn_ayuda.BackColor = System.Drawing.Color.Transparent;
+            this.Btn_ayuda.Location = new System.Drawing.Point(718, 0);
+            this.Btn_ayuda.Margin = new System.Windows.Forms.Padding(21, 19, 21, 19);
+            this.Btn_ayuda.Name = "Btn_ayuda";
+            this.Btn_ayuda.Size = new System.Drawing.Size(66, 58);
+            this.Btn_ayuda.TabIndex = 29;
             // 
             // Grp_editar
             // 
@@ -136,9 +147,9 @@
             this.Btn_editar.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(207)))), ((int)(((byte)(138)))));
             this.Btn_editar.FlatAppearance.BorderSize = 0;
             this.Btn_editar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Btn_editar.Location = new System.Drawing.Point(3, 20);
+            this.Btn_editar.Location = new System.Drawing.Point(3, 24);
             this.Btn_editar.Name = "Btn_editar";
-            this.Btn_editar.Size = new System.Drawing.Size(90, 32);
+            this.Btn_editar.Size = new System.Drawing.Size(90, 28);
             this.Btn_editar.TabIndex = 9;
             this.Btn_editar.UseVisualStyleBackColor = false;
             this.Btn_editar.Click += new System.EventHandler(this.Btn_editar_Click);
@@ -163,9 +174,9 @@
             this.Btn_nuevo.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(207)))), ((int)(((byte)(138)))));
             this.Btn_nuevo.FlatAppearance.BorderSize = 0;
             this.Btn_nuevo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Btn_nuevo.Location = new System.Drawing.Point(3, 20);
+            this.Btn_nuevo.Location = new System.Drawing.Point(3, 24);
             this.Btn_nuevo.Name = "Btn_nuevo";
-            this.Btn_nuevo.Size = new System.Drawing.Size(90, 32);
+            this.Btn_nuevo.Size = new System.Drawing.Size(90, 28);
             this.Btn_nuevo.TabIndex = 9;
             this.Btn_nuevo.UseVisualStyleBackColor = false;
             this.Btn_nuevo.Click += new System.EventHandler(this.Btn_nuevo_Click);
@@ -190,9 +201,9 @@
             this.Btn_ver.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(207)))), ((int)(((byte)(138)))));
             this.Btn_ver.FlatAppearance.BorderSize = 0;
             this.Btn_ver.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Btn_ver.Location = new System.Drawing.Point(3, 20);
+            this.Btn_ver.Location = new System.Drawing.Point(3, 24);
             this.Btn_ver.Name = "Btn_ver";
-            this.Btn_ver.Size = new System.Drawing.Size(93, 32);
+            this.Btn_ver.Size = new System.Drawing.Size(93, 28);
             this.Btn_ver.TabIndex = 9;
             this.Btn_ver.UseVisualStyleBackColor = false;
             this.Btn_ver.Click += new System.EventHandler(this.Btn_ver_Click);
@@ -210,6 +221,7 @@
             this.Dgv_lista.Location = new System.Drawing.Point(8, 61);
             this.Dgv_lista.Name = "Dgv_lista";
             this.Dgv_lista.RowHeadersVisible = false;
+            this.Dgv_lista.RowHeadersWidth = 51;
             this.Dgv_lista.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.Dgv_lista.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.Dgv_lista.Size = new System.Drawing.Size(776, 498);
@@ -258,5 +270,6 @@
         private System.Windows.Forms.GroupBox Grp_guardar;
         private System.Windows.Forms.Button Btn_ver;
         public System.Windows.Forms.DataGridView Dgv_lista;
+        private PDFHelpViewer.AyudaRup Btn_ayuda;
     }
 }

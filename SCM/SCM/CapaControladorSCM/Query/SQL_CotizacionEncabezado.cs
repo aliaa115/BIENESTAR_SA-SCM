@@ -51,14 +51,21 @@ namespace CapaControladorSCM.Query
         }
 
         //obtener datos para consulta de detalles de orden de compra 
-        public CotizacionEncabezado obtenerCotizacionEncabezado(int id_proveedor)
+        public CotizacionEncabezado obtenerCotizacionEncabezado(int id_cotizacion_encabezado, int id_proveedor)
         {
             try
             {
-                string sComando = string.Format("SELECT id_proveedor, nombre_proveedor " +
-                    "FROM proveedores " +
-                    "WHERE id_proveedor = {0} ;",
-                    id_proveedor);
+                string sComando = string.Format(
+                    "select " +
+                        "id_cotizacion_encabezado, " +
+                        "id_proveedor, " +
+                        "nombre_cotizacion " +
+                    "from " +
+                        "cotizaciones_encabezado " +
+                    "where " +
+                        "id_cotizacion_encabezado = {0} and " +
+                        "id_proveedor = {1}; ",
+                    id_cotizacion_encabezado, id_proveedor);
 
                 OdbcDataReader reader = transaccion.ConsultarDatos(sComando);
 
@@ -67,7 +74,7 @@ namespace CapaControladorSCM.Query
                     while (reader.Read())
                     {
                         cotizacionEncabezado.ID_COTIZACION = reader.GetInt32(0);
-                        cotizacionEncabezado.NOMBRE_COTIZACION = reader.GetString(1);
+                        cotizacionEncabezado.NOMBRE_COTIZACION = reader.GetString(2);
                     }
                 }
                 return cotizacionEncabezado;

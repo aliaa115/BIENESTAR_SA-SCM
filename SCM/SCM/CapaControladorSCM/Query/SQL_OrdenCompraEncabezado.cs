@@ -9,6 +9,9 @@ namespace CapaControladorSCM.Query
     {
         Mensaje mensaje;
         transaccion transaccion = new transaccion();
+        OrdenCompraEncabezado ordenCompraEncabezado = new OrdenCompraEncabezado();
+        SQL_Proveedor sql_proveedor = new SQL_Proveedor();
+        SQL_CotizacionEncabezado sql_cotizacionEncabezado = new SQL_CotizacionEncabezado();
 
         //obtener datos para el datagrid de encabezados de ordenes de compra
         public List<OrdenCompraEncabezado> llenarDGVOrdenCompraEncabezado()
@@ -45,6 +48,53 @@ namespace CapaControladorSCM.Query
 
         }
 
+        //obtener datos de una orden de compra
+        public OrdenCompraEncabezado obtenerOrdenEncabezado(int encabezado)
+        {
+            try
+            {
+                string sComando = string.Format("" +
+                    "select " +
+                        "id_orden_compra_encabezado, " +
+                        "nombre_orden_compra, " +
+                        "descripcion_orden_compra, " +
+                        "id_proveedor, " +
+                        "id_cotizacion_encabezado, " +
+                        "fecha_entrega, " +
+                        "fecha_emision, " +
+                        "ESTADO " +
+                    "from " +
+                        "ordenes_compras_encabezado " +
+                    "where " +
+                        "id_orden_compra_encabezado = {0};",
+                        encabezado);
+
+                OdbcDataReader reader = transaccion.ConsultarDatos(sComando);
+
+                if (reader.HasRows)
+                {
+                    while (reader.Read())
+                    {
+                        ordenCompraEncabezado.ID_ORDEN_COMPRA_ENCABEZADO = reader.GetInt32(0);
+                        ordenCompraEncabezado.NOMBRE_ORDEN_COMPRA = reader.GetString(1);
+                        ordenCompraEncabezado.DESCRIPCION_ORDEN_COMPRA = reader.GetString(2);
+                        ordenCompraEncabezado.PROVEEDOR = sql_proveedor.obtenerProveedor(reader.GetInt32(3));
+                        ordenCompraEncabezado.COTIZACION_ENCABEZADO =
+                            sql_cotizacionEncabezado.obtenerCotizacionEncabezado(reader.GetInt32(3), reader.GetInt32(3));
+                        ordenCompraEncabezado.FECHA_ENTREGA = reader.GetDate(4);
+                        ordenCompraEncabezado.FECHA_EMISION = reader.GetDate(5);
+                        ordenCompraEncabezado.ESTADO = reader.GetInt32(6);
+                    }
+                }
+                return ordenCompraEncabezado;
+            }
+            catch (OdbcException ex)
+            {
+                mensaje = new Mensaje("Error en la operacion con la Base de Datos: \n" + ex.Message);
+                mensaje.Show();
+                return null;
+            }
+        }
 
         //obtener el ultimo id
         public int obtenerUltimoId()

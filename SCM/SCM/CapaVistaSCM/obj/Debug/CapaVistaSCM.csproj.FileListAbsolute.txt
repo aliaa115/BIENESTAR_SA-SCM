@@ -60,3 +60,7 @@
 \\Mac\Home\Documents\Universidad\9no somestre\042 Ingenieria de Software\Proyecto Final\git hub\SCM-Ligia\SCM\SCM\CapaVistaSCM\bin\Debug\CapaLogica_Consultas.pdb
 \\Mac\Home\Documents\Universidad\9no somestre\042 Ingenieria de Software\Proyecto Final\git hub\SCM-Ligia\SCM\SCM\CapaVistaSCM\bin\Debug\CapaControlador.pdb
 \\Mac\Home\Documents\Universidad\9no somestre\042 Ingenieria de Software\Proyecto Final\git hub\SCM-Ligia\SCM\SCM\CapaVistaSCM\bin\Debug\CapaDatos_Consultas.pdb
+\\Mac\Home\Documents\Universidad\9no somestre\042 Ingenieria de Software\Proyecto Final\git hub\SCM-Ligia\SCM\SCM\CapaVistaSCM\bin\Debug\PDFHelpViewer.dll
+\\Mac\Home\Documents\Universidad\9no somestre\042 Ingenieria de Software\Proyecto Final\git hub\SCM-Ligia\SCM\SCM\CapaVistaSCM\bin\Debug\AxInterop.AcroPDFLib.dll
+\\Mac\Home\Documents\Universidad\9no somestre\042 Ingenieria de Software\Proyecto Final\git hub\SCM-Ligia\SCM\SCM\CapaVistaSCM\bin\Debug\Interop.AcroPDFLib.dll
+\\Mac\Home\Documents\Universidad\9no somestre\042 Ingenieria de Software\Proyecto Final\git hub\SCM-Ligia\SCM\SCM\CapaVistaSCM\bin\Debug\PDFHelpViewer.pdb
