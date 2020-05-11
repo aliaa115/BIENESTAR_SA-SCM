@@ -53,6 +53,7 @@ namespace CapaModeloSCM.Movimientos
                 dgv.Rows[fila].Cells[3].Value = movDetTmp.CANTIDAD.ToString();
                 dgv.Rows[fila].Cells[4].Value = (movDetTmp.COSTO * movDetTmp.CANTIDAD).ToString();
                 dgv.Rows[fila].Cells[5].Value = (movDetTmp.PRECIO * movDetTmp.CANTIDAD).ToString();
+                dgv.Rows[fila].Cells[7].Value = "1";
                 fila++;
             }
         }
@@ -82,15 +83,21 @@ namespace CapaModeloSCM.Movimientos
 
             sql_movimientoDetalle.ingresarMovimientoDetalle(detalle);
 
-            sql_producto.actualizarStockProducto(producto, cantidad);
+            if (detalle[6] == "0")
+            {
+                sql_producto.actualizarStockProducto(producto, cantidad);
+            }
         }
 
         //elimina un movimiento detalle de la base de datos
-        public void eliminarMovimientoDetalle(int encabezado, int detalle)
+        public void eliminarMovimientoDetalle(int encabezado, int detalle, int producto, string cantidad)
         {
             sql_movimientoDetalle = new SQL_MovimientoDetalle();
 
             sql_movimientoDetalle.eliminarMovimientoDetalle(detalle, encabezado);
+
+            sql_producto.actualizarStockProducto(producto, cantidad);
+
         }
 
         //elimina todos los movimientos detalle relacionados a un encabezado detalle
@@ -99,6 +106,8 @@ namespace CapaModeloSCM.Movimientos
             sql_movimientoDetalle = new SQL_MovimientoDetalle();
 
             sql_movimientoDetalle.eliminarMovimientoDetalle(encabezado);
+
+
         }
 
         //Obtiene el producto asociado al detalle
@@ -112,7 +121,8 @@ namespace CapaModeloSCM.Movimientos
                 producto.ID_PRODUCTO.ToString(),
                 producto.NOMBRE_PRODUCTO,
                 producto.COSTO_PRODUCTO.ToString(),
-                producto.PRECIO_PRODUCTO.ToString()
+                producto.PRECIO_PRODUCTO.ToString(),
+                producto.IMPUESTO.TASA_IMPUESTO.ToString()
             };
 
             return datos;

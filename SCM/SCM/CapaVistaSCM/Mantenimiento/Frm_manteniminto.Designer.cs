@@ -89,7 +89,7 @@
             this.Lbl_titulo.Font = new System.Drawing.Font("Century Gothic", 30F, System.Drawing.FontStyle.Bold);
             this.Lbl_titulo.Location = new System.Drawing.Point(0, 0);
             this.Lbl_titulo.Name = "Lbl_titulo";
-            this.Lbl_titulo.Size = new System.Drawing.Size(0, 47);
+            this.Lbl_titulo.Size = new System.Drawing.Size(0, 59);
             this.Lbl_titulo.TabIndex = 0;
             // 
             // Pnl_desarrollo
@@ -107,6 +107,7 @@
             this.Nav_Mantenimiento.BackColor = System.Drawing.Color.White;
             this.Nav_Mantenimiento.Font = new System.Drawing.Font("Century Gothic", 7F);
             this.Nav_Mantenimiento.Location = new System.Drawing.Point(3, 3);
+            this.Nav_Mantenimiento.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Nav_Mantenimiento.Name = "Nav_Mantenimiento";
             this.Nav_Mantenimiento.Size = new System.Drawing.Size(838, 650);
             this.Nav_Mantenimiento.TabIndex = 0;
