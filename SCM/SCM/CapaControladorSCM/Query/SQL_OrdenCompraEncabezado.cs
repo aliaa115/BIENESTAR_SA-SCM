@@ -1,5 +1,6 @@
 ﻿using CapaControladorSCM.Mensajes;
 using CapaControladorSCM.Objetos;
+using System;
 using System.Collections.Generic;
 using System.Data.Odbc;
 
@@ -80,10 +81,10 @@ namespace CapaControladorSCM.Query
                         ordenCompraEncabezado.DESCRIPCION_ORDEN_COMPRA = reader.GetString(2);
                         ordenCompraEncabezado.PROVEEDOR = sql_proveedor.obtenerProveedor(reader.GetInt32(3));
                         ordenCompraEncabezado.COTIZACION_ENCABEZADO =
-                            sql_cotizacionEncabezado.obtenerCotizacionEncabezado(reader.GetInt32(3), reader.GetInt32(3));
-                        ordenCompraEncabezado.FECHA_ENTREGA = reader.GetDate(4);
-                        ordenCompraEncabezado.FECHA_EMISION = reader.GetDate(5);
-                        ordenCompraEncabezado.ESTADO = reader.GetInt32(6);
+                            sql_cotizacionEncabezado.obtenerCotizacionEncabezado(reader.GetInt32(4), reader.GetInt32(3));
+                        ordenCompraEncabezado.FECHA_ENTREGA = reader.GetDate(5);
+                        ordenCompraEncabezado.FECHA_EMISION = reader.GetDate(6);
+                        ordenCompraEncabezado.ESTADO = reader.GetInt32(7);
                     }
                 }
                 return ordenCompraEncabezado;

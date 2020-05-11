@@ -33,6 +33,7 @@
             this.Btn_MovInventario = new System.Windows.Forms.Button();
             this.Lbl_titulo = new System.Windows.Forms.Label();
             this.Pnl_desarrollo = new System.Windows.Forms.Panel();
+            this.Btn_ayuda = new PDFHelpViewer.AyudaRup();
             this.Gpb_detalle = new System.Windows.Forms.GroupBox();
             this.Lbl_costoTotal = new System.Windows.Forms.Label();
             this.Txt_costoTotal = new System.Windows.Forms.TextBox();
@@ -66,7 +67,7 @@
             this.Pnl_datos = new System.Windows.Forms.Panel();
             this.Cbo_cotizacion = new CapaVista.Combo();
             this.Txt_cotizacion = new System.Windows.Forms.TextBox();
-            this.Txt_Proveedor = new System.Windows.Forms.TextBox();
+            this.Txt_proveedor = new System.Windows.Forms.TextBox();
             this.Grp_BuscarCot = new System.Windows.Forms.GroupBox();
             this.Btn_cotizacion = new System.Windows.Forms.Button();
             this.Grp_BuscarProv = new System.Windows.Forms.GroupBox();
@@ -91,7 +92,6 @@
             this.Lbl_nombre = new System.Windows.Forms.Label();
             this.Tbp_descripcion = new System.Windows.Forms.TabPage();
             this.Txt_descripcion = new System.Windows.Forms.TextBox();
-            this.Btn_ayuda = new PDFHelpViewer.AyudaRup();
             this.Tbl_movimientoInventario.SuspendLayout();
             this.Pnl_titulo.SuspendLayout();
             this.Pnl_desarrollo.SuspendLayout();
@@ -179,6 +179,15 @@
             this.Pnl_desarrollo.Name = "Pnl_desarrollo";
             this.Pnl_desarrollo.Size = new System.Drawing.Size(898, 754);
             this.Pnl_desarrollo.TabIndex = 1;
+            // 
+            // Btn_ayuda
+            // 
+            this.Btn_ayuda.BackColor = System.Drawing.Color.Transparent;
+            this.Btn_ayuda.Location = new System.Drawing.Point(819, 6);
+            this.Btn_ayuda.Margin = new System.Windows.Forms.Padding(6);
+            this.Btn_ayuda.Name = "Btn_ayuda";
+            this.Btn_ayuda.Size = new System.Drawing.Size(70, 62);
+            this.Btn_ayuda.TabIndex = 17;
             // 
             // Gpb_detalle
             // 
@@ -537,7 +546,7 @@
             this.Pnl_datos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(232)))), ((int)(((byte)(232)))));
             this.Pnl_datos.Controls.Add(this.Cbo_cotizacion);
             this.Pnl_datos.Controls.Add(this.Txt_cotizacion);
-            this.Pnl_datos.Controls.Add(this.Txt_Proveedor);
+            this.Pnl_datos.Controls.Add(this.Txt_proveedor);
             this.Pnl_datos.Controls.Add(this.Grp_BuscarCot);
             this.Pnl_datos.Controls.Add(this.Grp_BuscarProv);
             this.Pnl_datos.Controls.Add(this.Cbo_proveedor);
@@ -564,7 +573,7 @@
             // 
             // Cbo_cotizacion
             // 
-            this.Cbo_cotizacion.Location = new System.Drawing.Point(113, 142);
+            this.Cbo_cotizacion.Location = new System.Drawing.Point(428, 129);
             this.Cbo_cotizacion.Margin = new System.Windows.Forms.Padding(2);
             this.Cbo_cotizacion.Name = "Cbo_cotizacion";
             this.Cbo_cotizacion.Size = new System.Drawing.Size(245, 36);
@@ -576,29 +585,29 @@
             this.Txt_cotizacion.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.Txt_cotizacion.Enabled = false;
             this.Txt_cotizacion.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Txt_cotizacion.Location = new System.Drawing.Point(532, 138);
+            this.Txt_cotizacion.Location = new System.Drawing.Point(141, 138);
             this.Txt_cotizacion.Name = "Txt_cotizacion";
             this.Txt_cotizacion.Size = new System.Drawing.Size(282, 25);
             this.Txt_cotizacion.TabIndex = 53;
             // 
-            // Txt_Proveedor
+            // Txt_proveedor
             // 
-            this.Txt_Proveedor.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(232)))), ((int)(((byte)(232)))));
-            this.Txt_Proveedor.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.Txt_Proveedor.Enabled = false;
-            this.Txt_Proveedor.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Txt_Proveedor.Location = new System.Drawing.Point(532, 71);
-            this.Txt_Proveedor.Name = "Txt_Proveedor";
-            this.Txt_Proveedor.Size = new System.Drawing.Size(282, 25);
-            this.Txt_Proveedor.TabIndex = 52;
+            this.Txt_proveedor.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(232)))), ((int)(((byte)(232)))));
+            this.Txt_proveedor.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.Txt_proveedor.Enabled = false;
+            this.Txt_proveedor.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Txt_proveedor.Location = new System.Drawing.Point(141, 73);
+            this.Txt_proveedor.Name = "Txt_proveedor";
+            this.Txt_proveedor.Size = new System.Drawing.Size(282, 25);
+            this.Txt_proveedor.TabIndex = 52;
             // 
             // Grp_BuscarCot
             // 
             this.Grp_BuscarCot.Controls.Add(this.Btn_cotizacion);
             this.Grp_BuscarCot.Font = new System.Drawing.Font("Century Gothic", 10F);
-            this.Grp_BuscarCot.Location = new System.Drawing.Point(383, 113);
+            this.Grp_BuscarCot.Location = new System.Drawing.Point(705, 114);
             this.Grp_BuscarCot.Name = "Grp_BuscarCot";
-            this.Grp_BuscarCot.Size = new System.Drawing.Size(138, 55);
+            this.Grp_BuscarCot.Size = new System.Drawing.Size(146, 55);
             this.Grp_BuscarCot.TabIndex = 52;
             this.Grp_BuscarCot.TabStop = false;
             this.Grp_BuscarCot.Text = "BUSCAR COTIZ";
@@ -614,7 +623,7 @@
             this.Btn_cotizacion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Btn_cotizacion.Location = new System.Drawing.Point(3, 24);
             this.Btn_cotizacion.Name = "Btn_cotizacion";
-            this.Btn_cotizacion.Size = new System.Drawing.Size(132, 28);
+            this.Btn_cotizacion.Size = new System.Drawing.Size(140, 28);
             this.Btn_cotizacion.TabIndex = 35;
             this.Btn_cotizacion.UseVisualStyleBackColor = false;
             this.Btn_cotizacion.Click += new System.EventHandler(this.Btn_cotizacion_Click);
@@ -623,9 +632,9 @@
             // 
             this.Grp_BuscarProv.Controls.Add(this.Btn_proveedor);
             this.Grp_BuscarProv.Font = new System.Drawing.Font("Century Gothic", 10F);
-            this.Grp_BuscarProv.Location = new System.Drawing.Point(380, 46);
+            this.Grp_BuscarProv.Location = new System.Drawing.Point(705, 51);
             this.Grp_BuscarProv.Name = "Grp_BuscarProv";
-            this.Grp_BuscarProv.Size = new System.Drawing.Size(144, 55);
+            this.Grp_BuscarProv.Size = new System.Drawing.Size(149, 55);
             this.Grp_BuscarProv.TabIndex = 52;
             this.Grp_BuscarProv.TabStop = false;
             this.Grp_BuscarProv.Text = "BUSCAR PROV";
@@ -641,14 +650,14 @@
             this.Btn_proveedor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Btn_proveedor.Location = new System.Drawing.Point(3, 24);
             this.Btn_proveedor.Name = "Btn_proveedor";
-            this.Btn_proveedor.Size = new System.Drawing.Size(138, 28);
+            this.Btn_proveedor.Size = new System.Drawing.Size(143, 28);
             this.Btn_proveedor.TabIndex = 35;
             this.Btn_proveedor.UseVisualStyleBackColor = false;
             this.Btn_proveedor.Click += new System.EventHandler(this.Btn_proveedor_Click);
             // 
             // Cbo_proveedor
             // 
-            this.Cbo_proveedor.Location = new System.Drawing.Point(113, 66);
+            this.Cbo_proveedor.Location = new System.Drawing.Point(428, 72);
             this.Cbo_proveedor.Margin = new System.Windows.Forms.Padding(2);
             this.Cbo_proveedor.Name = "Cbo_proveedor";
             this.Cbo_proveedor.Size = new System.Drawing.Size(245, 31);
@@ -862,15 +871,6 @@
             this.Txt_descripcion.Size = new System.Drawing.Size(871, 274);
             this.Txt_descripcion.TabIndex = 12;
             // 
-            // Btn_ayuda
-            // 
-            this.Btn_ayuda.BackColor = System.Drawing.Color.Transparent;
-            this.Btn_ayuda.Location = new System.Drawing.Point(819, 6);
-            this.Btn_ayuda.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
-            this.Btn_ayuda.Name = "Btn_ayuda";
-            this.Btn_ayuda.Size = new System.Drawing.Size(70, 62);
-            this.Btn_ayuda.TabIndex = 17;
-            // 
             // Frm_OrdenCompra
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -968,7 +968,7 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button Btn_buscar;
         private System.Windows.Forms.TextBox Txt_cotizacion;
-        private System.Windows.Forms.TextBox Txt_Proveedor;
+        private System.Windows.Forms.TextBox Txt_proveedor;
         private System.Windows.Forms.GroupBox Grp_BuscarCot;
         private System.Windows.Forms.Button Btn_cotizacion;
         private System.Windows.Forms.GroupBox Grp_BuscarProv;

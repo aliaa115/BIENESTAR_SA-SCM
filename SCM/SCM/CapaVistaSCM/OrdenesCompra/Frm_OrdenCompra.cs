@@ -57,6 +57,8 @@ namespace CapaVistaSCM
             //se establece el tipo de ingreso de codigo como codigo automatico 
             Chk_codigo.Checked = true;
 
+            idEncabezado = encabezado;
+
             Chk_codigo.Checked = true;
             Lbl_costo.Visible = false;
             Lbl_precio.Visible = false;
@@ -66,7 +68,9 @@ namespace CapaVistaSCM
                 //nueva ordent de compra
                 case 1:
                     tipoCodigo();
+
                     llenarCombos();
+
                     Btn_ayuda.AsignarAyuda("\\\\Mac\\Home\\Documents\\Universidad\\9no somestre\\042 Ingenieria de Software\\Proyecto Final\\Visual\\PruebasSCM\\PruebasSCM\\bin\\Debug\\Ayuda\\SCM.pdf");
 
                     break;
@@ -89,11 +93,16 @@ namespace CapaVistaSCM
                     Cbo_cotizacion.Enabled = false;
                     Cbo_proveedor.Enabled = false;
                     Dgv_ordenCompraDetalle.Enabled = false;
+                    Grp_BuscarCot.Enabled = false;
+                    Grp_BuscarCot.Visible = false;
+                    Grp_BuscarProv.Visible = false;
+                    Grp_BuscarProv.Enabled = false;
+                    Dtp_emision.Enabled = false;
+                    Dtp_entrega.Enabled = false;
+
                     Btn_ayuda.AsignarAyuda("");
 
-
-
-
+                    llenarEncabezado();
                     break;
 
                 //editar una orden de compra
@@ -107,12 +116,16 @@ namespace CapaVistaSCM
                     Cbo_cotizacion.Enabled = false;
                     Grp_BuscarCot.Enabled = false;
                     Grp_BuscarCot.Visible = false;
-                    Cbo_proveedor.Visible = false;
-                    Cbo_proveedor.Enabled = false;
                     Grp_BuscarProv.Visible = false;
                     Grp_BuscarProv.Enabled = false;
+                    Cbo_proveedor.Visible = false;
+                    Cbo_proveedor.Enabled = false;
+                    Dtp_emision.Enabled = false;
+                    Dtp_entrega.Enabled = false;
+
                     Btn_ayuda.AsignarAyuda("");
 
+                    llenarEncabezado();
                     break;
 
             }
@@ -121,12 +134,28 @@ namespace CapaVistaSCM
 
         private void llenarEncabezado()
         {
+            string[] datos;
+            datos = ordenesDeCompras.ordenCompraEncab(idEncabezado);
 
+            Txt_codigo.Text = datos[0];
+            Txt_nombre.Text = datos[1];
+            Txt_descripcion.Text = datos[2];
+            Txt_proveedor.Text = datos[3];
+            Txt_cotizacion.Text = datos[4];
+            Dtp_entrega.Value = DateTime.Parse(datos[5]);
+            Dtp_emision.Value = DateTime.Parse(datos[6]);
+
+            if (datos[7] == "1")
+            {
+                Chk_estado.Checked = true;
+            }
+            else
+            {
+                Chk_estado.Checked = false;
+            }
 
             /*
-            string[] datos;
-            datos = movimientoInventario.datosMovimiento(idEncabezado);
-
+            
             Txt_codigo.Text = datos[0];
             Cbo_tipoMovimiento.Text = datos[1];
             Txt_nombre.Text = datos[2];
@@ -185,7 +214,7 @@ namespace CapaVistaSCM
                 //nueva ordent de compra
                 case 1:
 
-                    if (Txt_cotizacion.Text != "" || Txt_Proveedor.Text != "")
+                    if (Txt_cotizacion.Text != "" || Txt_proveedor.Text != "")
                     {
                         if (Chk_estado.Checked)
                         {
@@ -206,7 +235,7 @@ namespace CapaVistaSCM
                             i++;
                         }
 
-                        string prov = Txt_Proveedor.Text;
+                        string prov = Txt_proveedor.Text;
                         idProv = "";
                         i = 0;
                         while (prov[i] != '-')
@@ -255,7 +284,7 @@ namespace CapaVistaSCM
 
         private void Btn_buscar_Click(object sender, EventArgs e)
         {
-            if (Txt_Proveedor.Text == "" || Txt_cotizacion.Text == "")
+            if (Txt_proveedor.Text == "" || Txt_cotizacion.Text == "")
             {
                 mensaje = new Mensaje("Para agregar un producto se debe ingresar una cotizacion y un proveedor antes.");
                 mensaje.Show();
@@ -288,7 +317,7 @@ namespace CapaVistaSCM
         private void Btn_proveedor_Click(object sender, EventArgs e)
         {
             string prov = Cbo_proveedor.ObtenerIndif();
-            Txt_Proveedor.Text = prov;
+            Txt_proveedor.Text = prov;
             idProv = "";
             int i = 0;
             while (prov[i] != '-')
