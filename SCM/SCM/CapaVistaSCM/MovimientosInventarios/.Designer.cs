@@ -31,10 +31,10 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_MovimientosInventarios));
             this.Tbl_movimientoInventario = new System.Windows.Forms.TableLayoutPanel();
             this.Pnl_titulo = new System.Windows.Forms.Panel();
-            this.Btn_ayuda = new PDFHelpViewer.AyudaRup();
             this.Btn_MovInventario = new System.Windows.Forms.Button();
             this.Lbl_titulo = new System.Windows.Forms.Label();
             this.Pnl_desarrollo = new System.Windows.Forms.Panel();
+            this.Btn_ayuda = new PDFHelpViewer.AyudaRup();
             this.Gpb_detalle = new System.Windows.Forms.GroupBox();
             this.Lbl_costoTotal = new System.Windows.Forms.Label();
             this.Txt_costoTotal = new System.Windows.Forms.TextBox();
@@ -131,15 +131,6 @@
             this.Pnl_titulo.Size = new System.Drawing.Size(913, 64);
             this.Pnl_titulo.TabIndex = 0;
             // 
-            // Btn_ayuda
-            // 
-            this.Btn_ayuda.BackColor = System.Drawing.Color.Transparent;
-            this.Btn_ayuda.Location = new System.Drawing.Point(845, 6);
-            this.Btn_ayuda.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
-            this.Btn_ayuda.Name = "Btn_ayuda";
-            this.Btn_ayuda.Size = new System.Drawing.Size(62, 58);
-            this.Btn_ayuda.TabIndex = 49;
-            // 
             // Btn_MovInventario
             // 
             this.Btn_MovInventario.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(143)))), ((int)(((byte)(208)))), ((int)(((byte)(68)))));
@@ -180,6 +171,15 @@
             this.Pnl_desarrollo.Name = "Pnl_desarrollo";
             this.Pnl_desarrollo.Size = new System.Drawing.Size(913, 622);
             this.Pnl_desarrollo.TabIndex = 1;
+            // 
+            // Btn_ayuda
+            // 
+            this.Btn_ayuda.BackColor = System.Drawing.Color.Transparent;
+            this.Btn_ayuda.Location = new System.Drawing.Point(845, 6);
+            this.Btn_ayuda.Margin = new System.Windows.Forms.Padding(6);
+            this.Btn_ayuda.Name = "Btn_ayuda";
+            this.Btn_ayuda.Size = new System.Drawing.Size(62, 58);
+            this.Btn_ayuda.TabIndex = 49;
             // 
             // Gpb_detalle
             // 

@@ -22,16 +22,17 @@ namespace CapaModeloSCM.Compras
         Mensaje mensaje;
 
         //Obtener datos de Orden de compra encabezado
-        public string[] datosMovimiento(int encabezado)
+        public string[] ordenCompraEncab(int encabezado)
         {
             ordenCompraEncabezado = sql_ordenCompraEncabezado.obtenerOrdenEncabezado(encabezado);
 
             string[] datos =  {
-                ordenCompraEncabezado.COTIZACION_ENCABEZADO.ToString(),
+                ordenCompraEncabezado.ID_ORDEN_COMPRA_ENCABEZADO.ToString(),
                 ordenCompraEncabezado.NOMBRE_ORDEN_COMPRA,
                 ordenCompraEncabezado.DESCRIPCION_ORDEN_COMPRA,
                 ordenCompraEncabezado.PROVEEDOR.NOMBRE_PROVEEDOR,
-                ordenCompraEncabezado.COTIZACION_ENCABEZADO.ID_COTIZACION.ToString(),
+                ordenCompraEncabezado.COTIZACION_ENCABEZADO.ID_COTIZACION.ToString() + 
+                    " - " + ordenCompraEncabezado.COTIZACION_ENCABEZADO.NOMBRE_COTIZACION.ToString(),
                 ordenCompraEncabezado.FECHA_ENTREGA.ToString(),
                 ordenCompraEncabezado.FECHA_EMISION.ToString(),
                 ordenCompraEncabezado.ESTADO.ToString()
