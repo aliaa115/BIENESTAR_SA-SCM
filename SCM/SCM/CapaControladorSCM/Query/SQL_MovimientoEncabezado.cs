@@ -2,6 +2,7 @@
 using CapaControladorSCM.Objetos;
 using System.Collections.Generic;
 using System.Data.Odbc;
+using System.Windows.Forms;
 
 namespace CapaControladorSCM.Query
 {

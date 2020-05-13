@@ -2,6 +2,7 @@
 using CapaControladorSCM.Objetos;
 using System.Collections.Generic;
 using System.Data.Odbc;
+using System.Windows.Forms;
 
 namespace CapaControladorSCM.Query
 {
@@ -10,9 +11,8 @@ namespace CapaControladorSCM.Query
         Mensaje mensaje;
         transaccion transaccion = new transaccion();
 
-
         //obtener datos para el datagrid de detalle de movimiento
-        public List<OrdenCompraDetalle> llenarDGVMovimientoDetalle(int id_orden_compra_encabezado)
+        public List<OrdenCompraDetalle> llenarDGVOrdenDetalle(int id_orden_compra_encabezado)
         {
             SQL_Producto sql_Producto = new SQL_Producto();
             SQL_CotizacionEncabezado sql_CotizacionEncabezado = new SQL_CotizacionEncabezado();
@@ -23,14 +23,14 @@ namespace CapaControladorSCM.Query
             {
                 string sComando = string.Format("" +
                     "SELECT " +
-                        "id_movimiento_inventario_detalle, " +
-                        "id_cotizacion, " +
+                        "id_orden_compra_detalle, " +
+                        "id_cotizacion_encabezado, " +
                         "id_proveedor, " +
                         "id_producto, " +
                         "cantidad, " +
                         "precio_unitario " +
-                    "FROM movimientos_inventario_detalle " +
-                    "WHERE id_movimiento_inventario_encabezado = {0}; ",
+                    "FROM ordenes_compras_detalle " +
+                    "WHERE id_orden_compra_encabezado = {0}; ",
                     id_orden_compra_encabezado);
 
                 OdbcDataReader reader = transaccion.ConsultarDatos(sComando);
@@ -64,14 +64,14 @@ namespace CapaControladorSCM.Query
         public void ingresarOrdenCompraDetalle(string[] valores)
         {
             string sCommando = string.Format(
-                    "INSERT INTO `erp`.`movimientos_inventario_detalle` ( " +
-                        "id_movimiento_inventario_detalle, " +
-                        "id_movimiento_inventario_encabezado, " +
-                        "id_cotizacion, " +
+                    "INSERT INTO ordenes_compras_detalle ( " +
+                        "id_orden_compra_detalle, " +
+                        "id_orden_compra_encabezado, " +
+                        "id_cotizacion_encabezado, " +
                         "id_proveedor, " +
                         "id_producto, " +
                         "cantidad, " +
-                        "precio_unitario) " +
+                        "precio_unitario ) " +
                     "VALUES ({0}, {1}, {2}, {3}, {4}, {5}, {6}); ",
                     valores[0], valores[1], valores[2], valores[3], valores[4], valores[5], valores[6]);
 
@@ -82,7 +82,7 @@ namespace CapaControladorSCM.Query
             }
             catch (OdbcException ex)
             {
-                mensaje = new Mensaje("Error en la operacion con la Base de Datos: \n" + ex.Message);
+                mensaje = new Mensaje(">  Error en la operacion con la Base de Datos: \n" + ex.Message);
                 mensaje.Show();
             }
 
@@ -124,6 +124,7 @@ namespace CapaControladorSCM.Query
             }
             catch (OdbcException ex)
             {
+                mensaje = new Mensaje("ERROR: \n" + ex.Message);
                 mensaje.Show();
             }
         }

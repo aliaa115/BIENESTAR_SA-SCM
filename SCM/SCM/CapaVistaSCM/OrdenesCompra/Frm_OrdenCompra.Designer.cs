@@ -30,32 +30,26 @@
         {
             this.Tbl_movimientoInventario = new System.Windows.Forms.TableLayoutPanel();
             this.Pnl_titulo = new System.Windows.Forms.Panel();
+            this.Btn_ayuda = new PDFHelpViewer.AyudaRup();
             this.Btn_MovInventario = new System.Windows.Forms.Button();
             this.Lbl_titulo = new System.Windows.Forms.Label();
             this.Pnl_desarrollo = new System.Windows.Forms.Panel();
-            this.Btn_ayuda = new PDFHelpViewer.AyudaRup();
             this.Gpb_detalle = new System.Windows.Forms.GroupBox();
-            this.Lbl_costoTotal = new System.Windows.Forms.Label();
-            this.Txt_costoTotal = new System.Windows.Forms.TextBox();
             this.Lbl_precioTotal = new System.Windows.Forms.Label();
             this.Txt_precioTotal = new System.Windows.Forms.TextBox();
             this.Dgv_ordenCompraDetalle = new System.Windows.Forms.DataGridView();
+            this.Numero = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Producto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Precio = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Costo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Grp_producto = new System.Windows.Forms.GroupBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.Btn_buscar = new System.Windows.Forms.Button();
             this.Cbo_producto = new CapaVista.Combo();
             this.Txt_producto = new System.Windows.Forms.TextBox();
-            this.Txt_costo = new System.Windows.Forms.TextBox();
-            this.Lbl_costo = new System.Windows.Forms.Label();
             this.Nud_cantidad = new System.Windows.Forms.NumericUpDown();
             this.Lbl_cantidad = new System.Windows.Forms.Label();
-            this.Txt_precio = new System.Windows.Forms.TextBox();
-            this.Lbl_precio = new System.Windows.Forms.Label();
             this.Lbl_producto = new System.Windows.Forms.Label();
             this.Grp_eliminar = new System.Windows.Forms.GroupBox();
             this.Btn_eliminar = new System.Windows.Forms.Button();
@@ -64,6 +58,7 @@
             this.Grp_encabezado = new System.Windows.Forms.GroupBox();
             this.Tbc_Datos = new System.Windows.Forms.TabControl();
             this.Tbp_Datos = new System.Windows.Forms.TabPage();
+            this.Chk_entregado = new System.Windows.Forms.CheckBox();
             this.Pnl_datos = new System.Windows.Forms.Panel();
             this.Cbo_cotizacion = new CapaVista.Combo();
             this.Txt_cotizacion = new System.Windows.Forms.TextBox();
@@ -74,7 +69,6 @@
             this.Btn_proveedor = new System.Windows.Forms.Button();
             this.Cbo_proveedor = new CapaVista.Combo();
             this.Chk_estado = new System.Windows.Forms.CheckBox();
-            this.Chk_iva = new System.Windows.Forms.CheckBox();
             this.Dtp_entrega = new System.Windows.Forms.DateTimePicker();
             this.label2 = new System.Windows.Forms.Label();
             this.Chk_codigo = new System.Windows.Forms.CheckBox();
@@ -125,12 +119,13 @@
             this.Tbl_movimientoInventario.RowCount = 2;
             this.Tbl_movimientoInventario.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 70F));
             this.Tbl_movimientoInventario.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 60F));
-            this.Tbl_movimientoInventario.Size = new System.Drawing.Size(904, 830);
+            this.Tbl_movimientoInventario.Size = new System.Drawing.Size(904, 758);
             this.Tbl_movimientoInventario.TabIndex = 2;
             // 
             // Pnl_titulo
             // 
             this.Pnl_titulo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(143)))), ((int)(((byte)(208)))), ((int)(((byte)(68)))));
+            this.Pnl_titulo.Controls.Add(this.Btn_ayuda);
             this.Pnl_titulo.Controls.Add(this.Btn_MovInventario);
             this.Pnl_titulo.Controls.Add(this.Lbl_titulo);
             this.Pnl_titulo.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -138,6 +133,15 @@
             this.Pnl_titulo.Name = "Pnl_titulo";
             this.Pnl_titulo.Size = new System.Drawing.Size(898, 64);
             this.Pnl_titulo.TabIndex = 0;
+            // 
+            // Btn_ayuda
+            // 
+            this.Btn_ayuda.BackColor = System.Drawing.Color.Transparent;
+            this.Btn_ayuda.Location = new System.Drawing.Point(695, 5);
+            this.Btn_ayuda.Margin = new System.Windows.Forms.Padding(5);
+            this.Btn_ayuda.Name = "Btn_ayuda";
+            this.Btn_ayuda.Size = new System.Drawing.Size(57, 55);
+            this.Btn_ayuda.TabIndex = 17;
             // 
             // Btn_MovInventario
             // 
@@ -170,59 +174,26 @@
             // Pnl_desarrollo
             // 
             this.Pnl_desarrollo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(232)))), ((int)(((byte)(232)))));
-            this.Pnl_desarrollo.Controls.Add(this.Btn_ayuda);
             this.Pnl_desarrollo.Controls.Add(this.Gpb_detalle);
             this.Pnl_desarrollo.Controls.Add(this.Grp_producto);
             this.Pnl_desarrollo.Controls.Add(this.Grp_encabezado);
             this.Pnl_desarrollo.Dock = System.Windows.Forms.DockStyle.Fill;
             this.Pnl_desarrollo.Location = new System.Drawing.Point(3, 73);
             this.Pnl_desarrollo.Name = "Pnl_desarrollo";
-            this.Pnl_desarrollo.Size = new System.Drawing.Size(898, 754);
+            this.Pnl_desarrollo.Size = new System.Drawing.Size(898, 682);
             this.Pnl_desarrollo.TabIndex = 1;
-            // 
-            // Btn_ayuda
-            // 
-            this.Btn_ayuda.BackColor = System.Drawing.Color.Transparent;
-            this.Btn_ayuda.Location = new System.Drawing.Point(819, 6);
-            this.Btn_ayuda.Margin = new System.Windows.Forms.Padding(6);
-            this.Btn_ayuda.Name = "Btn_ayuda";
-            this.Btn_ayuda.Size = new System.Drawing.Size(70, 62);
-            this.Btn_ayuda.TabIndex = 17;
             // 
             // Gpb_detalle
             // 
-            this.Gpb_detalle.Controls.Add(this.Lbl_costoTotal);
-            this.Gpb_detalle.Controls.Add(this.Txt_costoTotal);
             this.Gpb_detalle.Controls.Add(this.Lbl_precioTotal);
             this.Gpb_detalle.Controls.Add(this.Txt_precioTotal);
             this.Gpb_detalle.Controls.Add(this.Dgv_ordenCompraDetalle);
-            this.Gpb_detalle.Location = new System.Drawing.Point(10, 515);
+            this.Gpb_detalle.Location = new System.Drawing.Point(4, 452);
             this.Gpb_detalle.Name = "Gpb_detalle";
             this.Gpb_detalle.Size = new System.Drawing.Size(886, 230);
             this.Gpb_detalle.TabIndex = 16;
             this.Gpb_detalle.TabStop = false;
             this.Gpb_detalle.Text = "DETALLE DE ORDEN DE COMPRA";
-            // 
-            // Lbl_costoTotal
-            // 
-            this.Lbl_costoTotal.AutoSize = true;
-            this.Lbl_costoTotal.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Lbl_costoTotal.Location = new System.Drawing.Point(293, 197);
-            this.Lbl_costoTotal.Name = "Lbl_costoTotal";
-            this.Lbl_costoTotal.Size = new System.Drawing.Size(141, 23);
-            this.Lbl_costoTotal.TabIndex = 28;
-            this.Lbl_costoTotal.Text = "COSTO TOTAL";
-            // 
-            // Txt_costoTotal
-            // 
-            this.Txt_costoTotal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(232)))), ((int)(((byte)(232)))));
-            this.Txt_costoTotal.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.Txt_costoTotal.Enabled = false;
-            this.Txt_costoTotal.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Txt_costoTotal.Location = new System.Drawing.Point(413, 197);
-            this.Txt_costoTotal.Name = "Txt_costoTotal";
-            this.Txt_costoTotal.Size = new System.Drawing.Size(161, 25);
-            this.Txt_costoTotal.TabIndex = 29;
             // 
             // Lbl_precioTotal
             // 
@@ -254,11 +225,11 @@
             this.Dgv_ordenCompraDetalle.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.Dgv_ordenCompraDetalle.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.Dgv_ordenCompraDetalle.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Numero,
             this.Producto,
             this.Nombre,
             this.Cantidad,
-            this.Precio,
-            this.Costo});
+            this.Precio});
             this.Dgv_ordenCompraDetalle.Location = new System.Drawing.Point(5, 26);
             this.Dgv_ordenCompraDetalle.Name = "Dgv_ordenCompraDetalle";
             this.Dgv_ordenCompraDetalle.ReadOnly = true;
@@ -268,6 +239,13 @@
             this.Dgv_ordenCompraDetalle.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.Dgv_ordenCompraDetalle.Size = new System.Drawing.Size(878, 168);
             this.Dgv_ordenCompraDetalle.TabIndex = 25;
+            // 
+            // Numero
+            // 
+            this.Numero.HeaderText = "No.";
+            this.Numero.MinimumWidth = 6;
+            this.Numero.Name = "Numero";
+            this.Numero.ReadOnly = true;
             // 
             // Producto
             // 
@@ -297,28 +275,17 @@
             this.Precio.Name = "Precio";
             this.Precio.ReadOnly = true;
             // 
-            // Costo
-            // 
-            this.Costo.HeaderText = "Costo";
-            this.Costo.MinimumWidth = 6;
-            this.Costo.Name = "Costo";
-            this.Costo.ReadOnly = true;
-            // 
             // Grp_producto
             // 
             this.Grp_producto.Controls.Add(this.groupBox1);
             this.Grp_producto.Controls.Add(this.Cbo_producto);
             this.Grp_producto.Controls.Add(this.Txt_producto);
-            this.Grp_producto.Controls.Add(this.Txt_costo);
-            this.Grp_producto.Controls.Add(this.Lbl_costo);
             this.Grp_producto.Controls.Add(this.Nud_cantidad);
             this.Grp_producto.Controls.Add(this.Lbl_cantidad);
-            this.Grp_producto.Controls.Add(this.Txt_precio);
-            this.Grp_producto.Controls.Add(this.Lbl_precio);
             this.Grp_producto.Controls.Add(this.Lbl_producto);
             this.Grp_producto.Controls.Add(this.Grp_eliminar);
             this.Grp_producto.Controls.Add(this.Grp_agregar);
-            this.Grp_producto.Location = new System.Drawing.Point(5, 412);
+            this.Grp_producto.Location = new System.Drawing.Point(5, 349);
             this.Grp_producto.Name = "Grp_producto";
             this.Grp_producto.Size = new System.Drawing.Size(891, 97);
             this.Grp_producto.TabIndex = 15;
@@ -354,10 +321,10 @@
             // 
             // Cbo_producto
             // 
-            this.Cbo_producto.Location = new System.Drawing.Point(105, 25);
+            this.Cbo_producto.Location = new System.Drawing.Point(104, 25);
             this.Cbo_producto.Margin = new System.Windows.Forms.Padding(2);
             this.Cbo_producto.Name = "Cbo_producto";
-            this.Cbo_producto.Size = new System.Drawing.Size(187, 32);
+            this.Cbo_producto.Size = new System.Drawing.Size(200, 33);
             this.Cbo_producto.TabIndex = 50;
             // 
             // Txt_producto
@@ -370,27 +337,6 @@
             this.Txt_producto.Name = "Txt_producto";
             this.Txt_producto.Size = new System.Drawing.Size(282, 25);
             this.Txt_producto.TabIndex = 49;
-            // 
-            // Txt_costo
-            // 
-            this.Txt_costo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(232)))), ((int)(((byte)(232)))));
-            this.Txt_costo.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.Txt_costo.Enabled = false;
-            this.Txt_costo.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Txt_costo.Location = new System.Drawing.Point(542, 25);
-            this.Txt_costo.Name = "Txt_costo";
-            this.Txt_costo.Size = new System.Drawing.Size(103, 25);
-            this.Txt_costo.TabIndex = 48;
-            // 
-            // Lbl_costo
-            // 
-            this.Lbl_costo.AutoSize = true;
-            this.Lbl_costo.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Lbl_costo.Location = new System.Drawing.Point(472, 26);
-            this.Lbl_costo.Name = "Lbl_costo";
-            this.Lbl_costo.Size = new System.Drawing.Size(78, 23);
-            this.Lbl_costo.TabIndex = 47;
-            this.Lbl_costo.Text = "COSTO";
             // 
             // Nud_cantidad
             // 
@@ -424,27 +370,6 @@
             this.Lbl_cantidad.Size = new System.Drawing.Size(113, 23);
             this.Lbl_cantidad.TabIndex = 45;
             this.Lbl_cantidad.Text = "CANTIDAD";
-            // 
-            // Txt_precio
-            // 
-            this.Txt_precio.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(232)))), ((int)(((byte)(232)))));
-            this.Txt_precio.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.Txt_precio.Enabled = false;
-            this.Txt_precio.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Txt_precio.Location = new System.Drawing.Point(364, 63);
-            this.Txt_precio.Name = "Txt_precio";
-            this.Txt_precio.Size = new System.Drawing.Size(103, 25);
-            this.Txt_precio.TabIndex = 44;
-            // 
-            // Lbl_precio
-            // 
-            this.Lbl_precio.AutoSize = true;
-            this.Lbl_precio.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Lbl_precio.Location = new System.Drawing.Point(294, 64);
-            this.Lbl_precio.Name = "Lbl_precio";
-            this.Lbl_precio.Size = new System.Drawing.Size(82, 23);
-            this.Lbl_precio.TabIndex = 37;
-            this.Lbl_precio.Text = "PRECIO";
             // 
             // Lbl_producto
             // 
@@ -481,6 +406,7 @@
             this.Btn_eliminar.Size = new System.Drawing.Size(104, 28);
             this.Btn_eliminar.TabIndex = 36;
             this.Btn_eliminar.UseVisualStyleBackColor = false;
+            this.Btn_eliminar.Click += new System.EventHandler(this.Btn_eliminar_Click);
             // 
             // Grp_agregar
             // 
@@ -512,7 +438,7 @@
             // Grp_encabezado
             // 
             this.Grp_encabezado.Controls.Add(this.Tbc_Datos);
-            this.Grp_encabezado.Location = new System.Drawing.Point(5, 66);
+            this.Grp_encabezado.Location = new System.Drawing.Point(2, 3);
             this.Grp_encabezado.Name = "Grp_encabezado";
             this.Grp_encabezado.Size = new System.Drawing.Size(891, 340);
             this.Grp_encabezado.TabIndex = 14;
@@ -533,6 +459,7 @@
             // Tbp_Datos
             // 
             this.Tbp_Datos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(232)))), ((int)(((byte)(232)))));
+            this.Tbp_Datos.Controls.Add(this.Chk_entregado);
             this.Tbp_Datos.Controls.Add(this.Pnl_datos);
             this.Tbp_Datos.Location = new System.Drawing.Point(4, 32);
             this.Tbp_Datos.Name = "Tbp_Datos";
@@ -540,6 +467,17 @@
             this.Tbp_Datos.Size = new System.Drawing.Size(877, 273);
             this.Tbp_Datos.TabIndex = 0;
             this.Tbp_Datos.Text = "Datos";
+            // 
+            // Chk_entregado
+            // 
+            this.Chk_entregado.AutoSize = true;
+            this.Chk_entregado.Location = new System.Drawing.Point(191, 231);
+            this.Chk_entregado.Name = "Chk_entregado";
+            this.Chk_entregado.Size = new System.Drawing.Size(135, 27);
+            this.Chk_entregado.TabIndex = 55;
+            this.Chk_entregado.Text = "Entregado";
+            this.Chk_entregado.UseVisualStyleBackColor = true;
+            this.Chk_entregado.CheckedChanged += new System.EventHandler(this.Chk_entregado_CheckedChanged);
             // 
             // Pnl_datos
             // 
@@ -551,7 +489,6 @@
             this.Pnl_datos.Controls.Add(this.Grp_BuscarProv);
             this.Pnl_datos.Controls.Add(this.Cbo_proveedor);
             this.Pnl_datos.Controls.Add(this.Chk_estado);
-            this.Pnl_datos.Controls.Add(this.Chk_iva);
             this.Pnl_datos.Controls.Add(this.Dtp_entrega);
             this.Pnl_datos.Controls.Add(this.label2);
             this.Pnl_datos.Controls.Add(this.Chk_codigo);
@@ -570,13 +507,14 @@
             this.Pnl_datos.Name = "Pnl_datos";
             this.Pnl_datos.Size = new System.Drawing.Size(871, 267);
             this.Pnl_datos.TabIndex = 0;
+            this.Pnl_datos.Paint += new System.Windows.Forms.PaintEventHandler(this.Pnl_datos_Paint);
             // 
             // Cbo_cotizacion
             // 
-            this.Cbo_cotizacion.Location = new System.Drawing.Point(428, 129);
+            this.Cbo_cotizacion.Location = new System.Drawing.Point(583, 134);
             this.Cbo_cotizacion.Margin = new System.Windows.Forms.Padding(2);
             this.Cbo_cotizacion.Name = "Cbo_cotizacion";
-            this.Cbo_cotizacion.Size = new System.Drawing.Size(245, 36);
+            this.Cbo_cotizacion.Size = new System.Drawing.Size(274, 34);
             this.Cbo_cotizacion.TabIndex = 54;
             // 
             // Txt_cotizacion
@@ -605,7 +543,7 @@
             // 
             this.Grp_BuscarCot.Controls.Add(this.Btn_cotizacion);
             this.Grp_BuscarCot.Font = new System.Drawing.Font("Century Gothic", 10F);
-            this.Grp_BuscarCot.Location = new System.Drawing.Point(705, 114);
+            this.Grp_BuscarCot.Location = new System.Drawing.Point(429, 112);
             this.Grp_BuscarCot.Name = "Grp_BuscarCot";
             this.Grp_BuscarCot.Size = new System.Drawing.Size(146, 55);
             this.Grp_BuscarCot.TabIndex = 52;
@@ -632,12 +570,13 @@
             // 
             this.Grp_BuscarProv.Controls.Add(this.Btn_proveedor);
             this.Grp_BuscarProv.Font = new System.Drawing.Font("Century Gothic", 10F);
-            this.Grp_BuscarProv.Location = new System.Drawing.Point(705, 51);
+            this.Grp_BuscarProv.Location = new System.Drawing.Point(429, 46);
             this.Grp_BuscarProv.Name = "Grp_BuscarProv";
             this.Grp_BuscarProv.Size = new System.Drawing.Size(149, 55);
             this.Grp_BuscarProv.TabIndex = 52;
             this.Grp_BuscarProv.TabStop = false;
             this.Grp_BuscarProv.Text = "BUSCAR PROV";
+            this.Grp_BuscarProv.Enter += new System.EventHandler(this.Grp_BuscarProv_Enter);
             // 
             // Btn_proveedor
             // 
@@ -657,31 +596,23 @@
             // 
             // Cbo_proveedor
             // 
-            this.Cbo_proveedor.Location = new System.Drawing.Point(428, 72);
+            this.Cbo_proveedor.Location = new System.Drawing.Point(583, 67);
             this.Cbo_proveedor.Margin = new System.Windows.Forms.Padding(2);
             this.Cbo_proveedor.Name = "Cbo_proveedor";
-            this.Cbo_proveedor.Size = new System.Drawing.Size(245, 31);
+            this.Cbo_proveedor.Size = new System.Drawing.Size(274, 32);
             this.Cbo_proveedor.TabIndex = 49;
+            this.Cbo_proveedor.Load += new System.EventHandler(this.Cbo_proveedor_Load);
             // 
             // Chk_estado
             // 
             this.Chk_estado.AutoSize = true;
-            this.Chk_estado.Location = new System.Drawing.Point(533, 173);
+            this.Chk_estado.Location = new System.Drawing.Point(535, 232);
             this.Chk_estado.Name = "Chk_estado";
             this.Chk_estado.Size = new System.Drawing.Size(96, 27);
             this.Chk_estado.TabIndex = 47;
             this.Chk_estado.Text = "Activo";
             this.Chk_estado.UseVisualStyleBackColor = true;
-            // 
-            // Chk_iva
-            // 
-            this.Chk_iva.AutoSize = true;
-            this.Chk_iva.Location = new System.Drawing.Point(675, 173);
-            this.Chk_iva.Name = "Chk_iva";
-            this.Chk_iva.Size = new System.Drawing.Size(148, 27);
-            this.Chk_iva.TabIndex = 45;
-            this.Chk_iva.Text = "IVA incluido";
-            this.Chk_iva.UseVisualStyleBackColor = true;
+            this.Chk_estado.CheckedChanged += new System.EventHandler(this.Chk_estado_CheckedChanged);
             // 
             // Dtp_entrega
             // 
@@ -690,16 +621,17 @@
             this.Dtp_entrega.CalendarTitleBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(207)))), ((int)(((byte)(138)))));
             this.Dtp_entrega.CalendarTitleForeColor = System.Drawing.SystemColors.ControlText;
             this.Dtp_entrega.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.Dtp_entrega.Location = new System.Drawing.Point(188, 204);
+            this.Dtp_entrega.Location = new System.Drawing.Point(182, 186);
             this.Dtp_entrega.Name = "Dtp_entrega";
-            this.Dtp_entrega.Size = new System.Drawing.Size(133, 32);
+            this.Dtp_entrega.Size = new System.Drawing.Size(146, 32);
             this.Dtp_entrega.TabIndex = 43;
+            this.Dtp_entrega.ValueChanged += new System.EventHandler(this.Dtp_entrega_ValueChanged);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(14, 210);
+            this.label2.Location = new System.Drawing.Point(8, 192);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(168, 23);
             this.label2.TabIndex = 44;
@@ -733,16 +665,17 @@
             this.Dtp_emision.CalendarTitleBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(207)))), ((int)(((byte)(138)))));
             this.Dtp_emision.CalendarTitleForeColor = System.Drawing.SystemColors.ControlText;
             this.Dtp_emision.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.Dtp_emision.Location = new System.Drawing.Point(509, 204);
+            this.Dtp_emision.Location = new System.Drawing.Point(503, 186);
             this.Dtp_emision.Name = "Dtp_emision";
-            this.Dtp_emision.Size = new System.Drawing.Size(133, 32);
+            this.Dtp_emision.Size = new System.Drawing.Size(129, 32);
             this.Dtp_emision.TabIndex = 4;
+            this.Dtp_emision.ValueChanged += new System.EventHandler(this.Dtp_emision_ValueChanged);
             // 
             // Lbl_fecha
             // 
             this.Lbl_fecha.AutoSize = true;
             this.Lbl_fecha.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Lbl_fecha.Location = new System.Drawing.Point(340, 210);
+            this.Lbl_fecha.Location = new System.Drawing.Point(334, 192);
             this.Lbl_fecha.Name = "Lbl_fecha";
             this.Lbl_fecha.Size = new System.Drawing.Size(163, 23);
             this.Lbl_fecha.TabIndex = 37;
@@ -773,6 +706,7 @@
             this.Btn_cancelar.Size = new System.Drawing.Size(104, 28);
             this.Btn_cancelar.TabIndex = 10;
             this.Btn_cancelar.UseVisualStyleBackColor = false;
+            this.Btn_cancelar.Click += new System.EventHandler(this.Btn_cancelar_Click);
             // 
             // Grp_guardar
             // 
@@ -820,6 +754,7 @@
             this.Txt_nombre.Name = "Txt_nombre";
             this.Txt_nombre.Size = new System.Drawing.Size(245, 32);
             this.Txt_nombre.TabIndex = 2;
+            this.Txt_nombre.TextChanged += new System.EventHandler(this.Txt_nombre_TextChanged);
             // 
             // Lbl_codigo
             // 
@@ -840,6 +775,7 @@
             this.Txt_codigo.Name = "Txt_codigo";
             this.Txt_codigo.Size = new System.Drawing.Size(160, 32);
             this.Txt_codigo.TabIndex = 1;
+            this.Txt_codigo.TextChanged += new System.EventHandler(this.Txt_codigo_TextChanged);
             // 
             // Lbl_nombre
             // 
@@ -870,11 +806,12 @@
             this.Txt_descripcion.Name = "Txt_descripcion";
             this.Txt_descripcion.Size = new System.Drawing.Size(871, 274);
             this.Txt_descripcion.TabIndex = 12;
+            this.Txt_descripcion.TextChanged += new System.EventHandler(this.Txt_descripcion_TextChanged);
             // 
             // Frm_OrdenCompra
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.ClientSize = new System.Drawing.Size(904, 830);
+            this.ClientSize = new System.Drawing.Size(904, 758);
             this.Controls.Add(this.Tbl_movimientoInventario);
             this.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
@@ -898,6 +835,7 @@
             this.Grp_encabezado.ResumeLayout(false);
             this.Tbc_Datos.ResumeLayout(false);
             this.Tbp_Datos.ResumeLayout(false);
+            this.Tbp_Datos.PerformLayout();
             this.Pnl_datos.ResumeLayout(false);
             this.Pnl_datos.PerformLayout();
             this.Grp_BuscarCot.ResumeLayout(false);
@@ -918,24 +856,13 @@
         private System.Windows.Forms.Label Lbl_titulo;
         private System.Windows.Forms.Panel Pnl_desarrollo;
         private System.Windows.Forms.GroupBox Gpb_detalle;
-        private System.Windows.Forms.Label Lbl_costoTotal;
-        private System.Windows.Forms.TextBox Txt_costoTotal;
         private System.Windows.Forms.Label Lbl_precioTotal;
         private System.Windows.Forms.TextBox Txt_precioTotal;
         private System.Windows.Forms.DataGridView Dgv_ordenCompraDetalle;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Producto;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Cantidad;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Precio;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Costo;
         private System.Windows.Forms.GroupBox Grp_producto;
         private System.Windows.Forms.TextBox Txt_producto;
-        private System.Windows.Forms.TextBox Txt_costo;
-        private System.Windows.Forms.Label Lbl_costo;
         private System.Windows.Forms.NumericUpDown Nud_cantidad;
         private System.Windows.Forms.Label Lbl_cantidad;
-        private System.Windows.Forms.TextBox Txt_precio;
-        private System.Windows.Forms.Label Lbl_precio;
         private System.Windows.Forms.Label Lbl_producto;
         private System.Windows.Forms.GroupBox Grp_eliminar;
         private System.Windows.Forms.Button Btn_eliminar;
@@ -974,7 +901,12 @@
         private System.Windows.Forms.GroupBox Grp_BuscarProv;
         private System.Windows.Forms.Button Btn_proveedor;
         private CapaVista.Combo Cbo_cotizacion;
-        private System.Windows.Forms.CheckBox Chk_iva;
         private PDFHelpViewer.AyudaRup Btn_ayuda;
+        private System.Windows.Forms.CheckBox Chk_entregado;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Numero;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Producto;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Cantidad;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Precio;
     }
 }

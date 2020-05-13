@@ -51,6 +51,9 @@ namespace CapaVistaSCM
                 //Se inicializa el numero de encabezado para modos 2 y 3
             this.idEncabezado = encabezado;
 
+            Txt_precioTotal.Text = "0";
+            Txt_costoTotal.Text = "0";
+
             //Segun el modo se modo del form
 
             switch (modo)
@@ -81,7 +84,7 @@ namespace CapaVistaSCM
 
                     Btn_ayuda.AsignarAyuda("");
                     llenarEncabezado();
-
+                    llenarTotales();
                     break;
 
                 case 3: // Edicion de Registro
@@ -94,7 +97,9 @@ namespace CapaVistaSCM
 
                     Btn_ayuda.AsignarAyuda("");
                     llenarEncabezado();
-
+                    llenarTotales();
+                    cambioEnc = 0;
+                    cambioDet = 0;
                     break;
 
             }
@@ -168,21 +173,6 @@ namespace CapaVistaSCM
             // se agrea el movimiento de producto
             else
             {
-                // en caso de que se este editando un movimiento de inventario
-                /*if (modo == 3){
-                        cambioDet = 1;
-                        Txt_producto.Text = combo1.ObtenerIndif();
-
-                        prod = combo1.ObtenerIndif();
-                        idProd = "";
-                        int i = 0;
-                        while (prod[i] != '-')
-                        {
-                            idProd = idProd + prod[i];
-                            i++;
-                        }
-                }*/
-
                 // se obtiene los datos del movimiento
                 string[] produ = movimientoInventario.obtenerProducto(int.Parse(idProd));
 
@@ -245,13 +235,21 @@ namespace CapaVistaSCM
             string[] cambioExistencias = eliminarDetalle();
 
             cambioDet = 1;
-            mensaje = new Mensaje(cambioExistencias[0]);
+
             movimientoInventario.eliminarMovimientoDetalle(
                 int.Parse(Txt_codigo.Text),
                 int.Parse(Dgv_movimientoDetalle.CurrentRow.Cells[0].Value.ToString()),
                 int.Parse(cambioExistencias[1]),
                 cambioExistencias[0]
                 );
+
+            Txt_precioTotal.Text =
+               (double.Parse(Txt_precioTotal.Text) -
+               double.Parse(Dgv_movimientoDetalle.Rows[Dgv_movimientoDetalle.CurrentRow.Index].Cells[5].Value.ToString())).ToString();
+
+            Txt_costoTotal.Text =
+                (double.Parse(Txt_costoTotal.Text) -
+                double.Parse(Dgv_movimientoDetalle.Rows[Dgv_movimientoDetalle.CurrentRow.Index].Cells[4].Value.ToString())).ToString();
 
             Dgv_movimientoDetalle.Rows.RemoveAt(Dgv_movimientoDetalle.CurrentRow.Index);
 
@@ -456,7 +454,16 @@ namespace CapaVistaSCM
                                 Dtp_fecha.Value.Date.ToString("yyyy-MM-dd"),
                                 estado
                             };
-                movimientoInventario.insertarMovimientoEncabezado(encabezado);
+                switch (modo)
+                {
+                    case 1:
+                        movimientoInventario.insertarMovimientoEncabezado(encabezado);
+                        break;
+                    case 3:
+                        movimientoInventario.actualizarMovimientoEncabezado(encabezado);
+                        break;
+                }
+
                 return true;
             }
             return false;
@@ -484,6 +491,14 @@ namespace CapaVistaSCM
             Dgv_movimientoDetalle.Rows[fila].Cells[6].Value = (double.Parse(prod[4]));
             Dgv_movimientoDetalle.Rows[fila].Cells[7].Value = "0";
 
+            Txt_costoTotal.Text =
+                (double.Parse(Txt_costoTotal.Text) +
+                (double.Parse(Nud_cantidad.Value.ToString()) * double.Parse(prod[2]))).ToString();
+
+            Txt_precioTotal.Text =
+                (double.Parse(Txt_precioTotal.Text) +
+                (double.Parse(Nud_cantidad.Value.ToString()) * double.Parse(prod[3]))).ToString();
+
         }
 
         private void insertarDetalles()
@@ -496,6 +511,46 @@ namespace CapaVistaSCM
                 insertarDetalle(fila);
                 fila++;
             }
+        }
+
+        private void Btn_cancelar_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void Dgv_movimientoDetalle_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e)
+        {
+            //llenarTotales();
+        }
+
+        private void Dgv_movimientoDetalle_RowsRemoved(object sender, DataGridViewRowsRemovedEventArgs e)
+        {
+            //llenarTotales();
+        }
+
+        private void llenarTotales()
+        {
+            
+            if(Dgv_movimientoDetalle.RowCount > 0)
+            {
+                double sumaCosto = 0, sumaPrecio = 0;
+                int i = 0, fila = Dgv_movimientoDetalle.RowCount;
+
+                while (i < fila)
+                {
+                    sumaCosto += double.Parse(Dgv_movimientoDetalle.Rows[i].Cells[4].Value.ToString());
+                    sumaPrecio += double.Parse(Dgv_movimientoDetalle.Rows[i].Cells[5].Value.ToString());
+                    i++;
+                }
+                Txt_precioTotal.Text = "" + sumaPrecio;
+                Txt_costoTotal.Text = "" + sumaCosto;
+            }
+
+        }
+
+        private void Gpb_agregar_Enter(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -1,13 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
+﻿using CapaModeloSCM.Mantenimientos;
+using System;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using CapaModeloSCM.Mantenimientos;
 
 namespace CapaVistaSCM.Mantenimiento
 {
@@ -43,12 +37,12 @@ namespace CapaVistaSCM.Mantenimiento
             if (noForaneas != 0)
             {
                 int i = 1;
-                while(i <= noForaneas)
+                while (i <= noForaneas)
                 {
-                    Mant.foraneas(tbl,i);
+                    Mant.foraneas(tbl, i);
                     Nav_Mantenimiento.asignarComboConTabla(
-                        Mant.foraneas(tbl, i).Item1, 
-                        Mant.foraneas(tbl, i).Item2, 
+                        Mant.foraneas(tbl, i).Item1,
+                        Mant.foraneas(tbl, i).Item2,
                         Mant.foraneas(tbl, i).Item3
                         );
                     i++;
@@ -70,6 +64,6 @@ namespace CapaVistaSCM.Mantenimiento
             Nav_Mantenimiento.botonesYPermisosInicial(usuario, aplicacionActiva); // Consulta permisos al iniciar
             Nav_Mantenimiento.ObtenerIdAplicacion(aplicacionActiva);// Pasa el id de la aplicacion actual
         }
-        
+
     }
 }
