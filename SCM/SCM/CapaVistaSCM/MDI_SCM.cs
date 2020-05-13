@@ -125,8 +125,7 @@ namespace CapaVistaSCM
 
         private void trasladoDeInventarioToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            Frm_trasladoDeProducto trasladoProducto = null;
-            listas(2, trasladoProducto);
+
         }
 
         private void ordenDeCompraToolStripMenuItem_Click(object sender, EventArgs e)

@@ -16,6 +16,7 @@ namespace CapaControladorSCM.Objetos
         public DateTime FECHA_EMISION { get; set; }
         public DateTime FECHA_ENTREGA { get; set; }
         public DateTime FECHA_ESTIMADA_ENTREGA { get; set; }
+        public int ENTREGADO { get; set; }
         public int ESTADO { get; set; }
     }
 }

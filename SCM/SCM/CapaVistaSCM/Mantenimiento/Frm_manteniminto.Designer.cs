@@ -30,6 +30,7 @@
         {
             this.Tbl_movimientoInventario = new System.Windows.Forms.TableLayoutPanel();
             this.Pnl_titulo = new System.Windows.Forms.Panel();
+            this.ayudaRup1 = new PDFHelpViewer.AyudaRup();
             this.Btn_MovInventario = new System.Windows.Forms.Button();
             this.Lbl_titulo = new System.Windows.Forms.Label();
             this.Pnl_desarrollo = new System.Windows.Forms.Panel();
@@ -51,12 +52,13 @@
             this.Tbl_movimientoInventario.RowCount = 2;
             this.Tbl_movimientoInventario.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 70F));
             this.Tbl_movimientoInventario.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 60F));
-            this.Tbl_movimientoInventario.Size = new System.Drawing.Size(844, 721);
+            this.Tbl_movimientoInventario.Size = new System.Drawing.Size(844, 729);
             this.Tbl_movimientoInventario.TabIndex = 6;
             // 
             // Pnl_titulo
             // 
             this.Pnl_titulo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(143)))), ((int)(((byte)(208)))), ((int)(((byte)(68)))));
+            this.Pnl_titulo.Controls.Add(this.ayudaRup1);
             this.Pnl_titulo.Controls.Add(this.Btn_MovInventario);
             this.Pnl_titulo.Controls.Add(this.Lbl_titulo);
             this.Pnl_titulo.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -64,6 +66,15 @@
             this.Pnl_titulo.Name = "Pnl_titulo";
             this.Pnl_titulo.Size = new System.Drawing.Size(838, 64);
             this.Pnl_titulo.TabIndex = 0;
+            // 
+            // ayudaRup1
+            // 
+            this.ayudaRup1.BackColor = System.Drawing.Color.Transparent;
+            this.ayudaRup1.Location = new System.Drawing.Point(629, 4);
+            this.ayudaRup1.Margin = new System.Windows.Forms.Padding(4);
+            this.ayudaRup1.Name = "ayudaRup1";
+            this.ayudaRup1.Size = new System.Drawing.Size(64, 56);
+            this.ayudaRup1.TabIndex = 4;
             // 
             // Btn_MovInventario
             // 
@@ -99,14 +110,14 @@
             this.Pnl_desarrollo.Dock = System.Windows.Forms.DockStyle.Fill;
             this.Pnl_desarrollo.Location = new System.Drawing.Point(3, 73);
             this.Pnl_desarrollo.Name = "Pnl_desarrollo";
-            this.Pnl_desarrollo.Size = new System.Drawing.Size(838, 645);
+            this.Pnl_desarrollo.Size = new System.Drawing.Size(838, 653);
             this.Pnl_desarrollo.TabIndex = 1;
             // 
             // Nav_Mantenimiento
             // 
             this.Nav_Mantenimiento.BackColor = System.Drawing.Color.White;
             this.Nav_Mantenimiento.Font = new System.Drawing.Font("Century Gothic", 7F);
-            this.Nav_Mantenimiento.Location = new System.Drawing.Point(3, 3);
+            this.Nav_Mantenimiento.Location = new System.Drawing.Point(3, 1);
             this.Nav_Mantenimiento.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Nav_Mantenimiento.Name = "Nav_Mantenimiento";
             this.Nav_Mantenimiento.Size = new System.Drawing.Size(838, 650);
@@ -116,7 +127,7 @@
             // Frm_manteniminto
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.ClientSize = new System.Drawing.Size(844, 721);
+            this.ClientSize = new System.Drawing.Size(844, 729);
             this.Controls.Add(this.Tbl_movimientoInventario);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
             this.Name = "Frm_manteniminto";
@@ -138,5 +149,6 @@
         private System.Windows.Forms.Label Lbl_titulo;
         private System.Windows.Forms.Panel Pnl_desarrollo;
         private CapaDeDiseno.Navegador Nav_Mantenimiento;
+        private PDFHelpViewer.AyudaRup ayudaRup1;
     }
 }

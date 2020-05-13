@@ -68,7 +68,7 @@ namespace CapaControladorSCM.Query
                         producto.NOMBRE_PRODUCTO = reader.GetString(1);
                         producto.COSTO_PRODUCTO = reader.GetDouble(2);
                         producto.PRECIO_PRODUCTO = reader.GetDouble(3);
-                        producto.IMPUESTO = sql_impuesto.obtenerImpuestos(reader.GetInt32(0));
+                        producto.IMPUESTO = sql_impuesto.obtenerImpuestos(reader.GetInt32(4));
                     }
                 }
                 return producto;
@@ -127,7 +127,7 @@ namespace CapaControladorSCM.Query
             }
             catch (OdbcException ex)
             {
-                mensaje = new Mensaje("Error en la operacion con la Base de Datos: \n" + ex.Message);
+                mensaje = new Mensaje("> Error en la operacion con la Base de Datos: \n" + ex.Message);
                 mensaje.Show();
             }
 

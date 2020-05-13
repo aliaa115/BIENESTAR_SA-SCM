@@ -31,14 +31,15 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_MovimientosInventarios));
             this.Tbl_movimientoInventario = new System.Windows.Forms.TableLayoutPanel();
             this.Pnl_titulo = new System.Windows.Forms.Panel();
+            this.Btn_ayuda = new PDFHelpViewer.AyudaRup();
             this.Btn_MovInventario = new System.Windows.Forms.Button();
             this.Lbl_titulo = new System.Windows.Forms.Label();
             this.Pnl_desarrollo = new System.Windows.Forms.Panel();
-            this.Btn_ayuda = new PDFHelpViewer.AyudaRup();
             this.Gpb_detalle = new System.Windows.Forms.GroupBox();
+            this.ZZ = new System.Windows.Forms.Label();
             this.Lbl_costoTotal = new System.Windows.Forms.Label();
             this.Txt_costoTotal = new System.Windows.Forms.TextBox();
-            this.Lbl_precioTotal = new System.Windows.Forms.Label();
+            this.Txt_precioTotal = new System.Windows.Forms.TextBox();
             this.Dgv_movimientoDetalle = new System.Windows.Forms.DataGridView();
             this.Codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Producto = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -54,7 +55,6 @@
             this.Btn_buscar = new System.Windows.Forms.Button();
             this.Txt_producto = new System.Windows.Forms.TextBox();
             this.Txt_costo = new System.Windows.Forms.TextBox();
-            this.Txt_precioTotal = new System.Windows.Forms.TextBox();
             this.Lbl_costo = new System.Windows.Forms.Label();
             this.Nud_cantidad = new System.Windows.Forms.NumericUpDown();
             this.Lbl_cantidad = new System.Windows.Forms.Label();
@@ -117,19 +117,29 @@
             this.Tbl_movimientoInventario.RowCount = 2;
             this.Tbl_movimientoInventario.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 70F));
             this.Tbl_movimientoInventario.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 60F));
-            this.Tbl_movimientoInventario.Size = new System.Drawing.Size(919, 698);
+            this.Tbl_movimientoInventario.Size = new System.Drawing.Size(923, 642);
             this.Tbl_movimientoInventario.TabIndex = 1;
             // 
             // Pnl_titulo
             // 
             this.Pnl_titulo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(143)))), ((int)(((byte)(208)))), ((int)(((byte)(68)))));
+            this.Pnl_titulo.Controls.Add(this.Btn_ayuda);
             this.Pnl_titulo.Controls.Add(this.Btn_MovInventario);
             this.Pnl_titulo.Controls.Add(this.Lbl_titulo);
             this.Pnl_titulo.Dock = System.Windows.Forms.DockStyle.Fill;
             this.Pnl_titulo.Location = new System.Drawing.Point(3, 3);
             this.Pnl_titulo.Name = "Pnl_titulo";
-            this.Pnl_titulo.Size = new System.Drawing.Size(913, 64);
+            this.Pnl_titulo.Size = new System.Drawing.Size(917, 64);
             this.Pnl_titulo.TabIndex = 0;
+            // 
+            // Btn_ayuda
+            // 
+            this.Btn_ayuda.BackColor = System.Drawing.Color.Transparent;
+            this.Btn_ayuda.Location = new System.Drawing.Point(707, 3);
+            this.Btn_ayuda.Margin = new System.Windows.Forms.Padding(6);
+            this.Btn_ayuda.Name = "Btn_ayuda";
+            this.Btn_ayuda.Size = new System.Drawing.Size(62, 58);
+            this.Btn_ayuda.TabIndex = 49;
             // 
             // Btn_MovInventario
             // 
@@ -142,7 +152,7 @@
             this.Btn_MovInventario.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(143)))), ((int)(((byte)(208)))), ((int)(((byte)(68)))));
             this.Btn_MovInventario.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(143)))), ((int)(((byte)(208)))), ((int)(((byte)(68)))));
             this.Btn_MovInventario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Btn_MovInventario.Location = new System.Drawing.Point(775, 0);
+            this.Btn_MovInventario.Location = new System.Drawing.Point(779, 0);
             this.Btn_MovInventario.Name = "Btn_MovInventario";
             this.Btn_MovInventario.Size = new System.Drawing.Size(138, 64);
             this.Btn_MovInventario.TabIndex = 3;
@@ -162,43 +172,44 @@
             // Pnl_desarrollo
             // 
             this.Pnl_desarrollo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(232)))), ((int)(((byte)(232)))));
-            this.Pnl_desarrollo.Controls.Add(this.Btn_ayuda);
             this.Pnl_desarrollo.Controls.Add(this.Gpb_detalle);
             this.Pnl_desarrollo.Controls.Add(this.Grp_producto);
             this.Pnl_desarrollo.Controls.Add(this.Grp_DatosMovimiento);
             this.Pnl_desarrollo.Dock = System.Windows.Forms.DockStyle.Fill;
             this.Pnl_desarrollo.Location = new System.Drawing.Point(3, 73);
             this.Pnl_desarrollo.Name = "Pnl_desarrollo";
-            this.Pnl_desarrollo.Size = new System.Drawing.Size(913, 622);
+            this.Pnl_desarrollo.Size = new System.Drawing.Size(917, 566);
             this.Pnl_desarrollo.TabIndex = 1;
-            // 
-            // Btn_ayuda
-            // 
-            this.Btn_ayuda.BackColor = System.Drawing.Color.Transparent;
-            this.Btn_ayuda.Location = new System.Drawing.Point(845, 6);
-            this.Btn_ayuda.Margin = new System.Windows.Forms.Padding(6);
-            this.Btn_ayuda.Name = "Btn_ayuda";
-            this.Btn_ayuda.Size = new System.Drawing.Size(62, 58);
-            this.Btn_ayuda.TabIndex = 49;
             // 
             // Gpb_detalle
             // 
+            this.Gpb_detalle.Controls.Add(this.ZZ);
             this.Gpb_detalle.Controls.Add(this.Lbl_costoTotal);
             this.Gpb_detalle.Controls.Add(this.Txt_costoTotal);
-            this.Gpb_detalle.Controls.Add(this.Lbl_precioTotal);
+            this.Gpb_detalle.Controls.Add(this.Txt_precioTotal);
             this.Gpb_detalle.Controls.Add(this.Dgv_movimientoDetalle);
-            this.Gpb_detalle.Location = new System.Drawing.Point(9, 393);
+            this.Gpb_detalle.Location = new System.Drawing.Point(9, 326);
             this.Gpb_detalle.Name = "Gpb_detalle";
             this.Gpb_detalle.Size = new System.Drawing.Size(886, 230);
             this.Gpb_detalle.TabIndex = 16;
             this.Gpb_detalle.TabStop = false;
             this.Gpb_detalle.Text = "DETALLE DE MOVIMIENTO";
             // 
+            // ZZ
+            // 
+            this.ZZ.AutoSize = true;
+            this.ZZ.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ZZ.Location = new System.Drawing.Point(6, 199);
+            this.ZZ.Name = "ZZ";
+            this.ZZ.Size = new System.Drawing.Size(139, 23);
+            this.ZZ.TabIndex = 30;
+            this.ZZ.Text = "PRESIO TOTAL";
+            // 
             // Lbl_costoTotal
             // 
             this.Lbl_costoTotal.AutoSize = true;
             this.Lbl_costoTotal.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Lbl_costoTotal.Location = new System.Drawing.Point(293, 197);
+            this.Lbl_costoTotal.Location = new System.Drawing.Point(346, 197);
             this.Lbl_costoTotal.Name = "Lbl_costoTotal";
             this.Lbl_costoTotal.Size = new System.Drawing.Size(141, 23);
             this.Lbl_costoTotal.TabIndex = 28;
@@ -210,20 +221,21 @@
             this.Txt_costoTotal.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.Txt_costoTotal.Enabled = false;
             this.Txt_costoTotal.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Txt_costoTotal.Location = new System.Drawing.Point(413, 197);
+            this.Txt_costoTotal.Location = new System.Drawing.Point(504, 197);
             this.Txt_costoTotal.Name = "Txt_costoTotal";
             this.Txt_costoTotal.Size = new System.Drawing.Size(161, 25);
             this.Txt_costoTotal.TabIndex = 29;
             // 
-            // Lbl_precioTotal
+            // Txt_precioTotal
             // 
-            this.Lbl_precioTotal.AutoSize = true;
-            this.Lbl_precioTotal.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Lbl_precioTotal.Location = new System.Drawing.Point(6, 197);
-            this.Lbl_precioTotal.Name = "Lbl_precioTotal";
-            this.Lbl_precioTotal.Size = new System.Drawing.Size(145, 23);
-            this.Lbl_precioTotal.TabIndex = 26;
-            this.Lbl_precioTotal.Text = "PRECIO TOTAL";
+            this.Txt_precioTotal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(232)))), ((int)(((byte)(232)))));
+            this.Txt_precioTotal.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.Txt_precioTotal.Enabled = false;
+            this.Txt_precioTotal.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Txt_precioTotal.Location = new System.Drawing.Point(153, 200);
+            this.Txt_precioTotal.Name = "Txt_precioTotal";
+            this.Txt_precioTotal.Size = new System.Drawing.Size(187, 25);
+            this.Txt_precioTotal.TabIndex = 27;
             // 
             // Dgv_movimientoDetalle
             // 
@@ -251,6 +263,8 @@
             this.Dgv_movimientoDetalle.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.Dgv_movimientoDetalle.Size = new System.Drawing.Size(878, 168);
             this.Dgv_movimientoDetalle.TabIndex = 25;
+            this.Dgv_movimientoDetalle.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this.Dgv_movimientoDetalle_RowsAdded);
+            this.Dgv_movimientoDetalle.RowsRemoved += new System.Windows.Forms.DataGridViewRowsRemovedEventHandler(this.Dgv_movimientoDetalle_RowsRemoved);
             // 
             // Codigo
             // 
@@ -318,7 +332,6 @@
             this.Grp_producto.Controls.Add(this.groupBox1);
             this.Grp_producto.Controls.Add(this.Txt_producto);
             this.Grp_producto.Controls.Add(this.Txt_costo);
-            this.Grp_producto.Controls.Add(this.Txt_precioTotal);
             this.Grp_producto.Controls.Add(this.Lbl_costo);
             this.Grp_producto.Controls.Add(this.Nud_cantidad);
             this.Grp_producto.Controls.Add(this.Lbl_cantidad);
@@ -327,7 +340,7 @@
             this.Grp_producto.Controls.Add(this.Lbl_producto);
             this.Grp_producto.Controls.Add(this.Gpb_eliminar);
             this.Grp_producto.Controls.Add(this.Gpb_agregar);
-            this.Grp_producto.Location = new System.Drawing.Point(9, 290);
+            this.Grp_producto.Location = new System.Drawing.Point(9, 223);
             this.Grp_producto.Name = "Grp_producto";
             this.Grp_producto.Size = new System.Drawing.Size(891, 97);
             this.Grp_producto.TabIndex = 15;
@@ -390,17 +403,6 @@
             this.Txt_costo.Name = "Txt_costo";
             this.Txt_costo.Size = new System.Drawing.Size(103, 25);
             this.Txt_costo.TabIndex = 48;
-            // 
-            // Txt_precioTotal
-            // 
-            this.Txt_precioTotal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(232)))), ((int)(((byte)(232)))));
-            this.Txt_precioTotal.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.Txt_precioTotal.Enabled = false;
-            this.Txt_precioTotal.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Txt_precioTotal.Location = new System.Drawing.Point(364, 60);
-            this.Txt_precioTotal.Name = "Txt_precioTotal";
-            this.Txt_precioTotal.Size = new System.Drawing.Size(103, 25);
-            this.Txt_precioTotal.TabIndex = 27;
             // 
             // Lbl_costo
             // 
@@ -513,6 +515,7 @@
             this.Gpb_agregar.TabIndex = 33;
             this.Gpb_agregar.TabStop = false;
             this.Gpb_agregar.Text = "AGREGAR";
+            this.Gpb_agregar.Enter += new System.EventHandler(this.Gpb_agregar_Enter);
             // 
             // Btn_agregar
             // 
@@ -534,7 +537,7 @@
             // Grp_DatosMovimiento
             // 
             this.Grp_DatosMovimiento.Controls.Add(this.Tbc_Datos);
-            this.Grp_DatosMovimiento.Location = new System.Drawing.Point(9, 70);
+            this.Grp_DatosMovimiento.Location = new System.Drawing.Point(9, 3);
             this.Grp_DatosMovimiento.Name = "Grp_DatosMovimiento";
             this.Grp_DatosMovimiento.Size = new System.Drawing.Size(891, 214);
             this.Grp_DatosMovimiento.TabIndex = 14;
@@ -667,6 +670,7 @@
             this.Btn_cancelar.Size = new System.Drawing.Size(104, 28);
             this.Btn_cancelar.TabIndex = 10;
             this.Btn_cancelar.UseVisualStyleBackColor = false;
+            this.Btn_cancelar.Click += new System.EventHandler(this.Btn_cancelar_Click);
             // 
             // Grp_guardar
             // 
@@ -782,13 +786,12 @@
             // Frm_MovimientosInventarios
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.ClientSize = new System.Drawing.Size(919, 698);
+            this.ClientSize = new System.Drawing.Size(923, 642);
             this.Controls.Add(this.Tbl_movimientoInventario);
             this.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
-            this.MinimizeBox = false;
             this.Name = "Frm_MovimientosInventarios";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Movimientos de Inventario";
@@ -855,7 +858,6 @@
         private System.Windows.Forms.GroupBox Gpb_detalle;
         private System.Windows.Forms.Label Lbl_costoTotal;
         private System.Windows.Forms.TextBox Txt_costoTotal;
-        private System.Windows.Forms.Label Lbl_precioTotal;
         private System.Windows.Forms.TextBox Txt_precioTotal;
         private System.Windows.Forms.DataGridView Dgv_movimientoDetalle;
         private System.Windows.Forms.TextBox Txt_costo;
@@ -878,5 +880,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Impuesto;
         private System.Windows.Forms.DataGridViewTextBoxColumn Cambio;
         private PDFHelpViewer.AyudaRup Btn_ayuda;
+        private System.Windows.Forms.Label ZZ;
     }
 }

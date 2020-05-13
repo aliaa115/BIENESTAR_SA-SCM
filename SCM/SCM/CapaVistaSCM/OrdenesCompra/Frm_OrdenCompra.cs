@@ -28,7 +28,9 @@ namespace CapaVistaSCM
         int cambioEnc;  //identifica cuando se realizo un cambio en el area de encabezado a la hora de intrar en modo 1 o 3
         int idEncabezado; //almacena el id del movimiento en el que se esta trabajando
         string idProd = ""; //almacena el producto para su manejo en el edetalle
-        
+
+        int entregado;
+
         int codigoSig;
         string idCot;
         string idProv;
@@ -60,8 +62,10 @@ namespace CapaVistaSCM
             idEncabezado = encabezado;
 
             Chk_codigo.Checked = true;
-            Lbl_costo.Visible = false;
-            Lbl_precio.Visible = false;
+
+            Chk_estado.Checked = true;
+
+            Txt_precioTotal.Text = "0";
 
             switch (modo)
             {
@@ -73,6 +77,9 @@ namespace CapaVistaSCM
 
                     Btn_ayuda.AsignarAyuda("\\\\Mac\\Home\\Documents\\Universidad\\9no somestre\\042 Ingenieria de Software\\Proyecto Final\\Visual\\PruebasSCM\\PruebasSCM\\bin\\Debug\\Ayuda\\SCM.pdf");
 
+                    entregado = 0;
+
+                    cambioEnc = 0;
                     break;
 
                 //ver una orden de compra
@@ -124,8 +131,9 @@ namespace CapaVistaSCM
                     Dtp_entrega.Enabled = false;
 
                     Btn_ayuda.AsignarAyuda("");
-
                     llenarEncabezado();
+                    cambioEnc = 0;
+                    entregado = 0;
                     break;
 
             }
@@ -144,9 +152,19 @@ namespace CapaVistaSCM
             Txt_cotizacion.Text = datos[4];
             Dtp_entrega.Value = DateTime.Parse(datos[5]);
             Dtp_emision.Value = DateTime.Parse(datos[6]);
-
+            
             if (datos[7] == "1")
             {
+                Chk_entregado.Checked = true;
+            }
+            else
+            {
+                Chk_entregado.Checked = false;
+                entregado = 1;
+            }
+
+            if (datos[8] == "1")
+            {
                 Chk_estado.Checked = true;
             }
             else
@@ -154,25 +172,8 @@ namespace CapaVistaSCM
                 Chk_estado.Checked = false;
             }
 
-            /*
-            
-            Txt_codigo.Text = datos[0];
-            Cbo_tipoMovimiento.Text = datos[1];
-            Txt_nombre.Text = datos[2];
-            Txt_descripcion.Text = datos[3];
-            Dtp_fecha.Value = DateTime.Parse(datos[4]);
+            ordenesDeCompras.llenarDGV(Dgv_ordenCompraDetalle, idEncabezado);
 
-            if (datos[5] == "1")
-            {
-                Chk_estado.Checked = true;
-            }
-            else
-            {
-                Chk_estado.Checked = false;
-            }
-
-            movimientoInventario.llenarDGV(Dgv_movimientoDetalle, idEncabezado);
-             */
         }
 
         private void tipoCodigo()
@@ -180,7 +181,7 @@ namespace CapaVistaSCM
             if (Chk_codigo.Checked)
             {
                 Txt_codigo.Enabled = false;
-                Txt_codigo.Text = codigoSig.ToString(); 
+                Txt_codigo.Text = codigoSig.ToString();
             }
             else
             {
@@ -204,81 +205,48 @@ namespace CapaVistaSCM
         private void Chk_codigo_CheckedChanged(object sender, EventArgs e)
         {
             tipoCodigo();
+
+            cambioEnc = 1;
+
         }
 
         private void Btn_guardar_Click(object sender, EventArgs e)
         {
-            string estado;
+
             switch (modo)
             {
-                //nueva ordent de compra
                 case 1:
 
-                    if (Txt_cotizacion.Text != "" || Txt_proveedor.Text != "")
+                    if (guardarEncabezado())
                     {
-                        if (Chk_estado.Checked)
+                        int fila = 0;
+                        while (fila < Dgv_ordenCompraDetalle.RowCount)
                         {
-                            estado = "1";
+                            insertarDetalle(fila);
+                            fila++;
                         }
-                        else
-                        {
-                            estado = "0";
-                        }
-
-
-                        string cot = Txt_cotizacion.Text;
-                        idCot = "";
-                        int i = 0;
-                        while (cot[i] != '-')
-                        {
-                            idCot = idCot + cot[i];
-                            i++;
-                        }
-
-                        string prov = Txt_proveedor.Text;
-                        idProv = "";
-                        i = 0;
-                        while (prov[i] != '-')
-                        {
-                            idProv = idProv + prov[i];
-                            i++;
-                        }
-                        string[] encabezado =
-                        {
-                        Txt_codigo.Text,
-                        idCot,
-                        idProv,
-                        Txt_nombre.Text,
-                        Txt_descripcion.Text,
-                        Dtp_emision.Value.Date.ToString("yyyy-MM-dd"),
-                        Dtp_entrega.Value.Date.ToString("yyyy-MM-dd"),
-                        estado
-                    };
-
-
-                        if (Dgv_ordenCompraDetalle.RowCount < 1)
-                        {
-                            mensaje = new Mensaje("Se debe incluir al menos un producto a la orden de compra");
-                            mensaje.Show();
-                        }
+                    mensaje = new Mensaje("La orden de compra se guardo con exito");
+                    mensaje.Show();
+                    this.Close();
                     }
-                    else
-                    {
-                        mensaje = new Mensaje("Se debe elegir un proveedor y la cotizacion pertinente para continuar");
-                        mensaje.Show();
-                    }
-                    break;
 
-                //ver una orden de compra
-                case 2:
-                    // no se habilita el boton en este modo
                     break;
-
                 //editar una orden de compra
                 case 3:
 
-                    break;
+                    if (cambioEnc != 0)
+                    {
+                        guardarEncabezado();
+                    }
+                    if (cambioDet != 0)
+                    {
+                        alterarDetalle(null, 2);
+                    }
+                    mensaje = new Mensaje("La orden de compra se guardo con exito");
+                    mensaje.Show();
+                    this.Close();
 
+                    break;
             }
         }
 
@@ -288,8 +256,9 @@ namespace CapaVistaSCM
             {
                 mensaje = new Mensaje("Para agregar un producto se debe ingresar una cotizacion y un proveedor antes.");
                 mensaje.Show();
-            } else
-            { 
+            }
+            else
+            {
                 Txt_producto.Text = Cbo_producto.ObtenerIndif();
 
                 string prod = Cbo_producto.ObtenerIndif();
@@ -301,15 +270,8 @@ namespace CapaVistaSCM
                     i++;
                 }
 
-                string cot = Txt_cotizacion.Text;
-                idCot = "";
-                i = 0;
-                while (cot[i] != '-')
-                {
-                    idCot = idCot + cot[i];
-                    i++;
-                }
 
+                idCot = obtenerCodigoDeCombo(Txt_cotizacion.Text);
                 Nud_cantidad.Maximum = ordenesDeCompras.existenciasPosibles(int.Parse(idProd), int.Parse(idCot));
             }
         }
@@ -318,183 +280,301 @@ namespace CapaVistaSCM
         {
             string prov = Cbo_proveedor.ObtenerIndif();
             Txt_proveedor.Text = prov;
-            idProv = "";
+            idProv = obtenerCodigoDeCombo(prov);
+        }
+
+        private string obtenerCodigoDeCombo(string dato)
+        {
+            string codigo = "";
+
             int i = 0;
-            while (prov[i] != '-')
+            while (dato[i] != '-')
             {
-                idProv = idProv + prov[i];
+                codigo = codigo + dato[i];
                 i++;
             }
+
+            return codigo;
         }
 
         private void Btn_cotizacion_Click(object sender, EventArgs e)
         {
             string cot = Cbo_cotizacion.ObtenerIndif();
             Txt_cotizacion.Text = cot;
-            idCot = "";
-            int i = 0;
-            while (cot[i] != '-')
-            {
-                idCot = idCot + cot[i];
-                i++;
-            }
+            idCot = obtenerCodigoDeCombo(cot);
         }
 
         private void Btn_agregar_Click(object sender, EventArgs e)
         {
-            switch (modo)
+            if (Txt_producto.Text == "")
             {
-                //ingreso de un nuevo producto a la orden de compra
-                case 1:
+                mensaje = new Mensajes.Mensaje("No se ha elegido ningun producto");
+                mensaje.Show();
+            }
+            else if (Nud_cantidad.Value == 0)
+            {
+                mensaje = new Mensajes.Mensaje("No se ha indicado una cantidad valida de producto");
+                mensaje.Show();
+            }
+            else
+            {
+                cambioDet = 1;
 
-                    if (Txt_producto.Text == "")
-                    {
-                        mensaje = new Mensajes.Mensaje("No se ha elegido ningun producto");
-                        mensaje.Show();
-                    }
-                    else if (Nud_cantidad.Value == 0)
-                    {
-                        mensaje = new Mensajes.Mensaje("No se ha indicado una cantidad valida de producto");
-                        mensaje.Show();
-                    }
-                    else
-                    {
+                string[] prod = ordenesDeCompras.obtenerProducto(int.Parse(idProd));
 
-                        string[] prod = ordenesDeCompras.obtenerProducto(int.Parse(idProd));
-
-                        alterarDetalle(prod, 1);
-
-                    }
-                    break;
-
-                    break;
-                case 2:
-                    break;
-
+                alterarDetalle(prod, 1);
             }
         }
 
 
         private void alterarDetalle(string[] prod, int tipo)
         {
-
-            int fila;
             switch (modo)
             {
                 case 1:
                     switch (tipo)
                     {
                         case 1:
-                            fila = Dgv_ordenCompraDetalle.RowCount;
-
-                            Dgv_ordenCompraDetalle.Rows.Add();
-                            if (fila == 0)
-                            {
-                                Dgv_ordenCompraDetalle.Rows[fila].Cells[0].Value = fila;
-                            }
-                            else
-                            {
-                                Dgv_ordenCompraDetalle.Rows[fila].Cells[0].Value = int.Parse(Dgv_ordenCompraDetalle.Rows[fila - 1].Cells[0].Value.ToString()) + 1;
-                            }
-                            Dgv_ordenCompraDetalle.Rows[fila].Cells[1].Value = prod[0];
-                            Dgv_ordenCompraDetalle.Rows[fila].Cells[2].Value = prod[1];
-                            Dgv_ordenCompraDetalle.Rows[fila].Cells[3].Value = Nud_cantidad.Value.ToString();
-                            Dgv_ordenCompraDetalle.Rows[fila].Cells[4].Value = (double.Parse(Nud_cantidad.Value.ToString()) * double.Parse(prod[2]));
-                            Dgv_ordenCompraDetalle.Rows[fila].Cells[5].Value = (double.Parse(Nud_cantidad.Value.ToString()) * double.Parse(prod[3]));
-
+                            agregarProductoADGV(prod);
                             break;
 
                         case 2:
-                            /*
-                            fila = 0;
-
-                            while (fila < Dgv_movimientoDetalle.RowCount)
-                            {
-
-                                insertarDetalle(fila);
-                                fila++;
-                            }*/
+                            insertarDetalle();
                             break;
                     }
                     break;
                 case 3:
-                    /*
-                    switch (tipo) 
+                    switch (tipo)
                     {
                         case 1:
-                            fila = Dgv_movimientoDetalle.RowCount;
 
-                            Dgv_movimientoDetalle.Rows.Add();
-                            if (fila == 0)
-                            {
-                                Dgv_movimientoDetalle.Rows[fila].Cells[0].Value = fila;
-                            }
-                            else
-                            {
-                                Dgv_movimientoDetalle.Rows[fila].Cells[0].Value = int.Parse(Dgv_movimientoDetalle.Rows[fila - 1].Cells[0].Value.ToString()) + 1;
-                            }
-                            Dgv_movimientoDetalle.Rows[fila].Cells[1].Value = prod[0];
-                            Dgv_movimientoDetalle.Rows[fila].Cells[2].Value = prod[1];
-                            Dgv_movimientoDetalle.Rows[fila].Cells[3].Value = Nud_cantidad.Value.ToString();
-                            Dgv_movimientoDetalle.Rows[fila].Cells[4].Value = (double.Parse(Nud_cantidad.Value.ToString()) * double.Parse(prod[2]));
-                            Dgv_movimientoDetalle.Rows[fila].Cells[5].Value = (double.Parse(Nud_cantidad.Value.ToString()) * double.Parse(prod[3]));
+                            agregarProductoADGV(prod);
 
-                            ordenesDeCompras.eliminarMovimientoDetalle(int.Parse(Txt_codigo.Text));
+                            ordenesDeCompras.eliminarOrdenDetalle(int.Parse(Txt_codigo.Text));
 
-                            fila = 0;
+                            insertarDetalle();
 
-                            while (fila < Dgv_movimientoDetalle.RowCount)
-                            {
-                                insertarDetalle(fila);
-                                fila++;
-                            }
                             break;
 
                         case 2:
-                            ordenesDeCompras.eliminarMovimientoDetalle(int.Parse(Txt_codigo.Text));
+                            ordenesDeCompras.eliminarOrdenDetalle(int.Parse(Txt_codigo.Text));
 
-                            fila = 0;
+                            insertarDetalle();
 
-                            while (fila < Dgv_movimientoDetalle.RowCount)
-                            {
-                                insertarDetalle(fila);
-                                fila++;
-                            }
                             break;
-                    }*/
+                    }
                     break;
-
             }
 
         }
 
+        private void insertarDetalle()
+        {
+            int fila = 0;
+
+            while (fila < Dgv_ordenCompraDetalle.RowCount)
+            {
+
+                insertarDetalle(fila);
+                fila++;
+            }
+        }
         private void insertarDetalle(int fila)
         {
-            /*
-            string[] detalle = {
-                                Dgv_movimientoDetalle.Rows[fila].Cells[0].Value.ToString(),
-                                Txt_codigo.Text,
-                                Dgv_movimientoDetalle.Rows[fila].Cells[1].Value.ToString(),
-                                Dgv_movimientoDetalle.Rows[fila].Cells[3].Value.ToString(),
-                                Dgv_movimientoDetalle.Rows[fila].Cells[4].Value.ToString(),
-                                Dgv_movimientoDetalle.Rows[fila].Cells[5].Value.ToString()
-                                };
-            int producto = int.Parse(Dgv_movimientoDetalle.Rows[fila].Cells[1].Value.ToString());
-            int cant = int.Parse(Dgv_movimientoDetalle.Rows[fila].Cells[3].Value.ToString());
-            string signo = movimientoInventario.signoTipoMovimiento(int.Parse(Cbo_tipoMovimiento.SelectedValue.ToString()));
 
 
-            string cantidad = signo + " " + cant;
-            if (movimientoInventario.operacionMovimiento(producto, cant, int.Parse(Cbo_tipoMovimiento.SelectedValue.ToString())))
+            string[] detalle =
             {
-                movimientoInventario.insertarMovimientoDetalle(detalle, producto, cantidad);
+                Dgv_ordenCompraDetalle.Rows[fila].Cells[0].Value.ToString(),
+                Txt_codigo.Text,
+                obtenerCodigoDeCombo(Txt_cotizacion.Text),
+                obtenerCodigoDeCombo(Txt_proveedor.Text),
+                Dgv_ordenCompraDetalle.Rows[fila].Cells[1].Value.ToString(),
+                Dgv_ordenCompraDetalle.Rows[fila].Cells[3].Value.ToString(),
+                Dgv_ordenCompraDetalle.Rows[fila].Cells[4].Value.ToString()
+            };
+            
+            if (Chk_entregado.Checked && entregado != 1)
+            {
+                int producto = int.Parse(Dgv_ordenCompraDetalle.Rows[fila].Cells[1].Value.ToString());
+                int cant = int.Parse(Dgv_ordenCompraDetalle.Rows[fila].Cells[3].Value.ToString());
+
+                string signo = " + " + cant;
+
+                ordenesDeCompras.entregaProducto(producto, signo);
+
+            }
+
+            ordenesDeCompras.insertarOrdenDetalle(detalle);
+
+        }
+
+        private void Cbo_proveedor_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Pnl_datos_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void Txt_codigo_TextChanged(object sender, EventArgs e)
+        {
+            cambioEnc = 1;
+        }
+
+        private void Txt_nombre_TextChanged(object sender, EventArgs e)
+        {
+            cambioEnc = 1;
+        }
+
+        private void Dtp_entrega_ValueChanged(object sender, EventArgs e)
+        {
+            cambioEnc = 1;
+        }
+
+        private void Dtp_emision_ValueChanged(object sender, EventArgs e)
+        {
+            cambioEnc = 1;
+        }
+
+        private void Txt_descripcion_TextChanged(object sender, EventArgs e)
+        {
+            cambioEnc = 1;
+        }
+
+        private void Chk_estado_CheckedChanged(object sender, EventArgs e)
+        {
+            cambioEnc = 1;
+        }
+
+        private void Grp_BuscarProv_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Btn_eliminar_Click(object sender, EventArgs e)
+        {
+            string[] cambioExistencias = eliminarDetalle();
+
+            cambioDet = 1;
+
+            if (Chk_entregado.Checked && entregado != 1)
+            {
+                ordenesDeCompras.entregaProducto(int.Parse(cambioExistencias[1]), cambioExistencias[0]);
+            }
+
+            ordenesDeCompras.eliminarOrdenDetalle(
+                int.Parse(Txt_codigo.Text),
+                int.Parse(Dgv_ordenCompraDetalle.Rows[Dgv_ordenCompraDetalle.CurrentRow.Index].Cells[0].Value.ToString()));
+
+            Txt_precioTotal.Text =
+                       (double.Parse(Txt_precioTotal.Text) -
+                       double.Parse(Dgv_ordenCompraDetalle.Rows[Dgv_ordenCompraDetalle.CurrentRow.Index].Cells[4].Value.ToString())).ToString();
+
+            Dgv_ordenCompraDetalle.Rows.RemoveAt(Dgv_ordenCompraDetalle.CurrentRow.Index);
+
+
+        }
+
+        private string[] eliminarDetalle()
+        {
+            int cant = int.Parse(Dgv_ordenCompraDetalle.CurrentRow.Cells[3].Value.ToString());
+            string cantidad = "- " + cant;
+
+
+            string productoID = Dgv_ordenCompraDetalle.CurrentRow.Cells[1].Value.ToString();
+
+            string[] ret = { cantidad, productoID };
+
+            return ret;
+        }
+
+        private void agregarProductoADGV(string[] prod)
+        {
+            int fila = Dgv_ordenCompraDetalle.RowCount;
+
+            Dgv_ordenCompraDetalle.Rows.Add();
+            if (fila == 0)
+            {
+                Dgv_ordenCompraDetalle.Rows[fila].Cells[0].Value = fila;
             }
             else
             {
-                mensaje = new Mensaje("Error al operar el moviiento del producto: [ " + producto + " ]\n Prfavor verificar las existencias");
-            }*/
+                Dgv_ordenCompraDetalle.Rows[fila].Cells[0].Value = int.Parse(Dgv_ordenCompraDetalle.Rows[fila-1].Cells[0].Value.ToString())+1;
+            }
+            Dgv_ordenCompraDetalle.Rows[fila].Cells[1].Value = prod[0];
+            Dgv_ordenCompraDetalle.Rows[fila].Cells[2].Value = prod[1];
+            Dgv_ordenCompraDetalle.Rows[fila].Cells[3].Value = Nud_cantidad.Value.ToString();
+            Dgv_ordenCompraDetalle.Rows[fila].Cells[4].Value = (double.Parse(Nud_cantidad.Value.ToString()) * double.Parse(prod[2]));
+
+            Txt_precioTotal.Text =
+                (double.Parse(Txt_precioTotal.Text) +
+                double.Parse(Nud_cantidad.Value.ToString()) * double.Parse(prod[2])).ToString();
 
         }
 
+        private bool guardarEncabezado()
+        {
+            string estado, entregado;
+            if (Chk_estado.Checked) { estado = "1"; } else { estado = "0"; }
+            if (Chk_entregado.Checked) { entregado = "1"; } else { entregado = "0"; }
+
+            if (Txt_codigo.Text == "")
+            {
+                mensaje = new Mensaje("No ha ingresado el codigo del Movimiento.");
+                mensaje.Show();
+                return false;
+            }
+            if(Txt_cotizacion.Text == "" || Txt_proveedor.Text == "")
+            {
+                mensaje = new Mensaje("Se debe elegir un proveedor y la cotizacion pertinente para continuar.");
+                mensaje.Show();
+                return false;
+            }
+            if (Dgv_ordenCompraDetalle.RowCount < 1)
+            {
+                mensaje = new Mensaje("Se debe ingresarr al menos un producto al detalle.");
+                mensaje.Show();
+                return false;
+            }
+            else
+            {
+                string[] encabezado = {
+                                Txt_codigo.Text,
+                                obtenerCodigoDeCombo(Txt_cotizacion.Text),
+                                obtenerCodigoDeCombo(Txt_proveedor.Text),
+                                Txt_nombre.Text,
+                                Txt_descripcion.Text,
+                                Dtp_emision.Value.Date.ToString("yyyy-MM-dd"),
+                                Dtp_entrega.Value.Date.ToString("yyyy-MM-dd"),
+                                entregado,
+                                estado
+                            };
+                switch (modo)
+                {
+                    case 1:
+                        ordenesDeCompras.insertarOrdenEncabezado(encabezado);
+                        break;
+                    case 3:
+                        ordenesDeCompras.actualizarOrdenEncabezado(encabezado);
+                        break;
+                }
+
+                return true;
+            }
+            return false;
+        }
+
+        private void Btn_cancelar_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void Chk_entregado_CheckedChanged(object sender, EventArgs e)
+        {
+            cambioEnc = 1;
+        }
     }
 }
