@@ -43,6 +43,7 @@
             this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Precio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.modificado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Grp_producto = new System.Windows.Forms.GroupBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.Btn_buscar = new System.Windows.Forms.Button();
@@ -229,7 +230,8 @@
             this.Producto,
             this.Nombre,
             this.Cantidad,
-            this.Precio});
+            this.Precio,
+            this.modificado});
             this.Dgv_ordenCompraDetalle.Location = new System.Drawing.Point(5, 26);
             this.Dgv_ordenCompraDetalle.Name = "Dgv_ordenCompraDetalle";
             this.Dgv_ordenCompraDetalle.ReadOnly = true;
@@ -274,6 +276,14 @@
             this.Precio.MinimumWidth = 6;
             this.Precio.Name = "Precio";
             this.Precio.ReadOnly = true;
+            // 
+            // modificado
+            // 
+            this.modificado.HeaderText = "modificado";
+            this.modificado.MinimumWidth = 6;
+            this.modificado.Name = "modificado";
+            this.modificado.ReadOnly = true;
+            this.modificado.Visible = false;
             // 
             // Grp_producto
             // 
@@ -814,7 +824,8 @@
             this.ClientSize = new System.Drawing.Size(904, 758);
             this.Controls.Add(this.Tbl_movimientoInventario);
             this.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "Frm_OrdenCompra";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Orden de Compra";
@@ -908,5 +919,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
         private System.Windows.Forms.DataGridViewTextBoxColumn Cantidad;
         private System.Windows.Forms.DataGridViewTextBoxColumn Precio;
+        private System.Windows.Forms.DataGridViewTextBoxColumn modificado;
     }
 }

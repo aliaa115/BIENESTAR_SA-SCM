@@ -69,6 +69,7 @@
             // Pnl_titulo
             // 
             this.Pnl_titulo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(143)))), ((int)(((byte)(208)))), ((int)(((byte)(68)))));
+            this.Pnl_titulo.Controls.Add(this.Btn_ayuda);
             this.Pnl_titulo.Controls.Add(this.Btn_MovInventario);
             this.Pnl_titulo.Controls.Add(this.Lbl_titulo);
             this.Pnl_titulo.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -88,9 +89,9 @@
             this.Btn_MovInventario.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(143)))), ((int)(((byte)(208)))), ((int)(((byte)(68)))));
             this.Btn_MovInventario.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(143)))), ((int)(((byte)(208)))), ((int)(((byte)(68)))));
             this.Btn_MovInventario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Btn_MovInventario.Location = new System.Drawing.Point(656, 0);
+            this.Btn_MovInventario.Location = new System.Drawing.Point(690, 0);
             this.Btn_MovInventario.Name = "Btn_MovInventario";
-            this.Btn_MovInventario.Size = new System.Drawing.Size(138, 64);
+            this.Btn_MovInventario.Size = new System.Drawing.Size(104, 64);
             this.Btn_MovInventario.TabIndex = 3;
             this.Btn_MovInventario.UseVisualStyleBackColor = false;
             // 
@@ -107,7 +108,6 @@
             // Pnl_desarrollo
             // 
             this.Pnl_desarrollo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(232)))), ((int)(((byte)(232)))));
-            this.Pnl_desarrollo.Controls.Add(this.Btn_ayuda);
             this.Pnl_desarrollo.Controls.Add(this.Grp_editar);
             this.Pnl_desarrollo.Controls.Add(this.Grp_nuevo);
             this.Pnl_desarrollo.Controls.Add(this.Grp_guardar);
@@ -121,7 +121,7 @@
             // Btn_ayuda
             // 
             this.Btn_ayuda.BackColor = System.Drawing.Color.Transparent;
-            this.Btn_ayuda.Location = new System.Drawing.Point(718, 0);
+            this.Btn_ayuda.Location = new System.Drawing.Point(600, 6);
             this.Btn_ayuda.Margin = new System.Windows.Forms.Padding(21, 19, 21, 19);
             this.Btn_ayuda.Name = "Btn_ayuda";
             this.Btn_ayuda.Size = new System.Drawing.Size(66, 58);
@@ -239,7 +239,6 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
-            this.MinimizeBox = false;
             this.Name = "Frm_lista";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Load += new System.EventHandler(this.Frm_lista_Load);

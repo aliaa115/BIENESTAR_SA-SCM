@@ -156,6 +156,7 @@ namespace CapaVistaSCM
             if (datos[7] == "1")
             {
                 Chk_entregado.Checked = true;
+                entregado = 0;
             }
             else
             {
@@ -172,7 +173,7 @@ namespace CapaVistaSCM
                 Chk_estado.Checked = false;
             }
 
-            ordenesDeCompras.llenarDGV(Dgv_ordenCompraDetalle, idEncabezado);
+            ordenesDeCompras.llenarDGV(Dgv_ordenCompraDetalle, idEncabezado, int.Parse(datos[7]));
 
         }
 
@@ -401,8 +402,11 @@ namespace CapaVistaSCM
 
                 string signo = " + " + cant;
 
-                ordenesDeCompras.entregaProducto(producto, signo);
-
+                if (Dgv_ordenCompraDetalle.Rows[fila].Cells[5].Value.ToString() == "1")
+                {
+                    ordenesDeCompras.entregaProducto(producto, signo);
+                    Dgv_ordenCompraDetalle.Rows[fila].Cells[5].Value = 0;
+                }
             }
 
             ordenesDeCompras.insertarOrdenDetalle(detalle);
@@ -464,6 +468,7 @@ namespace CapaVistaSCM
             {
                 ordenesDeCompras.entregaProducto(int.Parse(cambioExistencias[1]), cambioExistencias[0]);
             }
+            
 
             ordenesDeCompras.eliminarOrdenDetalle(
                 int.Parse(Txt_codigo.Text),
@@ -508,6 +513,7 @@ namespace CapaVistaSCM
             Dgv_ordenCompraDetalle.Rows[fila].Cells[2].Value = prod[1];
             Dgv_ordenCompraDetalle.Rows[fila].Cells[3].Value = Nud_cantidad.Value.ToString();
             Dgv_ordenCompraDetalle.Rows[fila].Cells[4].Value = (double.Parse(Nud_cantidad.Value.ToString()) * double.Parse(prod[2]));
+            Dgv_ordenCompraDetalle.Rows[fila].Cells[5].Value = "1";
 
             Txt_precioTotal.Text =
                 (double.Parse(Txt_precioTotal.Text) +
