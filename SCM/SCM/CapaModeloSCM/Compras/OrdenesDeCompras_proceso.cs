@@ -149,7 +149,7 @@ namespace CapaModeloSCM.Compras
             sql_ordenCompraEncabezado.actualizarOrdenCompraEncabezado(encabezado);
         }
 
-        public void llenarDGV(DataGridView dgv, int encabezado)
+        public void llenarDGV(DataGridView dgv, int encabezado, int entregado)
         {
             dgv.Rows.Clear();
             int fila = 0;
@@ -162,6 +162,15 @@ namespace CapaModeloSCM.Compras
                 dgv.Rows[fila].Cells[2].Value = ordenTmp.PRODUCTO.NOMBRE_PRODUCTO.ToString();
                 dgv.Rows[fila].Cells[3].Value = ordenTmp.CANTIDAD.ToString();
                 dgv.Rows[fila].Cells[4].Value = ordenTmp.PRECIO_UNITARIO.ToString();
+
+                if (entregado == 1)
+                {
+                    dgv.Rows[fila].Cells[5].Value = "0";
+                }
+                else
+                {
+                    dgv.Rows[fila].Cells[5].Value = "1";
+                }
                 fila++;
             }
 

@@ -52,7 +52,7 @@
             this.Tbl_movimientoInventario.RowCount = 2;
             this.Tbl_movimientoInventario.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 70F));
             this.Tbl_movimientoInventario.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 60F));
-            this.Tbl_movimientoInventario.Size = new System.Drawing.Size(844, 729);
+            this.Tbl_movimientoInventario.Size = new System.Drawing.Size(849, 727);
             this.Tbl_movimientoInventario.TabIndex = 6;
             // 
             // Pnl_titulo
@@ -64,16 +64,16 @@
             this.Pnl_titulo.Dock = System.Windows.Forms.DockStyle.Fill;
             this.Pnl_titulo.Location = new System.Drawing.Point(3, 3);
             this.Pnl_titulo.Name = "Pnl_titulo";
-            this.Pnl_titulo.Size = new System.Drawing.Size(838, 64);
+            this.Pnl_titulo.Size = new System.Drawing.Size(843, 64);
             this.Pnl_titulo.TabIndex = 0;
             // 
             // ayudaRup1
             // 
             this.ayudaRup1.BackColor = System.Drawing.Color.Transparent;
-            this.ayudaRup1.Location = new System.Drawing.Point(629, 4);
+            this.ayudaRup1.Location = new System.Drawing.Point(652, 4);
             this.ayudaRup1.Margin = new System.Windows.Forms.Padding(4);
             this.ayudaRup1.Name = "ayudaRup1";
-            this.ayudaRup1.Size = new System.Drawing.Size(64, 56);
+            this.ayudaRup1.Size = new System.Drawing.Size(63, 59);
             this.ayudaRup1.TabIndex = 4;
             // 
             // Btn_MovInventario
@@ -87,9 +87,9 @@
             this.Btn_MovInventario.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(143)))), ((int)(((byte)(208)))), ((int)(((byte)(68)))));
             this.Btn_MovInventario.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(143)))), ((int)(((byte)(208)))), ((int)(((byte)(68)))));
             this.Btn_MovInventario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Btn_MovInventario.Location = new System.Drawing.Point(700, 0);
+            this.Btn_MovInventario.Location = new System.Drawing.Point(722, 0);
             this.Btn_MovInventario.Name = "Btn_MovInventario";
-            this.Btn_MovInventario.Size = new System.Drawing.Size(138, 64);
+            this.Btn_MovInventario.Size = new System.Drawing.Size(121, 64);
             this.Btn_MovInventario.TabIndex = 3;
             this.Btn_MovInventario.UseVisualStyleBackColor = false;
             // 
@@ -110,7 +110,7 @@
             this.Pnl_desarrollo.Dock = System.Windows.Forms.DockStyle.Fill;
             this.Pnl_desarrollo.Location = new System.Drawing.Point(3, 73);
             this.Pnl_desarrollo.Name = "Pnl_desarrollo";
-            this.Pnl_desarrollo.Size = new System.Drawing.Size(838, 653);
+            this.Pnl_desarrollo.Size = new System.Drawing.Size(843, 651);
             this.Pnl_desarrollo.TabIndex = 1;
             // 
             // Nav_Mantenimiento
@@ -127,9 +127,10 @@
             // Frm_manteniminto
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.ClientSize = new System.Drawing.Size(844, 729);
+            this.ClientSize = new System.Drawing.Size(849, 727);
             this.Controls.Add(this.Tbl_movimientoInventario);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "Frm_manteniminto";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Mantenimiento";
