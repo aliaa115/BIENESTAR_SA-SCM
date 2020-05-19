@@ -47,7 +47,7 @@ namespace CapaVistaSCM
                 //se establece el tipo de ingreso de codigo como codigo automatico 
             Chk_codigo.Checked = true;
                 //Se establece el mostrar el impuesto como falso-
-            Chk_iva.Checked = false;
+            //Chk_iva.Checked = false;
                 //Se inicializa el numero de encabezado para modos 2 y 3
             this.idEncabezado = encabezado;
 
@@ -63,7 +63,7 @@ namespace CapaVistaSCM
                     estadoCodigo();
                     //se obtiene el ultimo id de los movimientos de inventario
                     idEncabezado = movimientoInventario.obtenerUltimoIdEnc();
-                    Btn_ayuda.AsignarAyuda("");
+                    
                     break;
 
                 case 2: // Vista de Registro
@@ -74,15 +74,12 @@ namespace CapaVistaSCM
                     Grp_cancelar.Enabled = false;
                     Chk_codigo.Visible = false;
                     Chk_codigo.Enabled = false;
-                    Chk_iva.Visible = false;
-                    Chk_iva.Enabled = false;
                     Grp_producto.Visible = false;
                     Grp_producto.Enabled = false;
                     Pnl_datos.Enabled = false;
                     Txt_descripcion.Enabled = false;
                     Chk_estado.Enabled = false;
 
-                    Btn_ayuda.AsignarAyuda("");
                     llenarEncabezado();
                     llenarTotales();
                     break;
@@ -95,7 +92,6 @@ namespace CapaVistaSCM
 
                     llenarCombos();
 
-                    Btn_ayuda.AsignarAyuda("");
                     llenarEncabezado();
                     llenarTotales();
                     cambioEnc = 0;
@@ -109,7 +105,7 @@ namespace CapaVistaSCM
         // accion a tomar en caso de cerrar el form
         private void Frm_MovimientosInventarios_FormClosed(object sender, FormClosedEventArgs e)
         {
-            form.Visible = true;
+            //form.Visible = true;
         }
 
         // Establece el texto en el textbox de codigo segun el tipo de codigo que se desea
@@ -226,7 +222,7 @@ namespace CapaVistaSCM
             }
             ms = new Mensajes.Mensaje("Movimiento Guardado con exito");
             ms.Show();
-            this.Close();
+            //this.Close();
         }
 
         // cuando se da click en el boton eliminar
@@ -385,18 +381,6 @@ namespace CapaVistaSCM
 
         }
 
-        private void Chk_iva_CheckedChanged(object sender, EventArgs e)
-        {
-            if (Chk_iva.Checked == true)
-            {
-                Dgv_movimientoDetalle.Columns[6].Visible = true;
-            }
-            else
-            {
-                Dgv_movimientoDetalle.Columns[6].Visible = false;
-            }
-        }
-
         private void llenarCombos()
         {
             combo1.llenarse("productos", "id_producto", "nombre_producto");
@@ -551,6 +535,22 @@ namespace CapaVistaSCM
         private void Gpb_agregar_Enter(object sender, EventArgs e)
         {
 
+        }
+
+        private void Btn_ayuda_Click(object sender, EventArgs e)
+        {
+            switch (modo)
+            {
+                case 1:
+                    System.Diagnostics.Process.Start(@"Ayudas\ayudaMovNuev.chm");
+                    break;
+                case 2:
+                    System.Diagnostics.Process.Start(@"Ayudas\ayudaMovVer.chm");
+                    break;
+                case 3:
+                    System.Diagnostics.Process.Start(@"Ayudas\ayudaMovEdit.chm");
+                    break;
+            }
         }
     }
 }

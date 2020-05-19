@@ -3,6 +3,7 @@ using CapaDatos;
 using CapaModeloSCM.Mantenimientos;
 using CapaModeloSCM.Mantenimientos.ListaDatos;
 using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Windows.Forms;
 
@@ -16,6 +17,7 @@ namespace CapaVistaSCM.Lista
         int tabla;
         string usuario;
         Mensaje mensaje;
+        string ayuda;
 
         public Frm_lista(Panel panel, int tabla, Form form, string usuario)
         {
@@ -38,22 +40,22 @@ namespace CapaVistaSCM.Lista
                 case 1:
                     Text = "1002 - Lista " + listaDatos.form;
                     Lbl_titulo.Text = listaDatos.titulo;
-                    Btn_ayuda.AsignarAyuda("~\\SCM.pdf");
+                    ayuda = listaDatos.ayuda;
                     break;
                 case 2:
                     Text = "1002 - Lista " + listaDatos.form;
                     Lbl_titulo.Text = listaDatos.titulo;
-                    Btn_ayuda.AsignarAyuda("~\\SCM.pdf");
+                    ayuda = listaDatos.ayuda;
                     break;
                 case 3:
                     Text = "1003 - Lista " + listaDatos.form;
                     Lbl_titulo.Text = listaDatos.titulo;
-                    Btn_ayuda.AsignarAyuda("~\\SCM.pdf");
+                    ayuda = listaDatos.ayuda;
                     break;
                 case 4:
                     Text = "1003 - Lista " + listaDatos.form;
                     Lbl_titulo.Text = listaDatos.titulo;
-                    Btn_ayuda.AsignarAyuda("~\\SCM.pdf");
+                    ayuda = listaDatos.ayuda;
                     break;
                 default:
                     break;
@@ -86,8 +88,10 @@ namespace CapaVistaSCM.Lista
             form.Show();
             form.TopLevel = false;
             form.TopMost = true;
-            panel.Controls.Add(form);
-            Visible = false;
+            Controls.Add(form);
+            form.BringToFront();
+            form.StartPosition = FormStartPosition.CenterParent;
+
             switch (tabla)
             {
                 case 1:
@@ -109,8 +113,9 @@ namespace CapaVistaSCM.Lista
                 form.Show();
                 form.TopLevel = false;
                 form.TopMost = true;
-                panel.Controls.Add(form);
-                Visible = false;
+                Controls.Add(form);
+                form.BringToFront();
+                form.StartPosition = FormStartPosition.CenterParent;
                 switch (tabla)
                 {
                     case 1:
@@ -128,8 +133,9 @@ namespace CapaVistaSCM.Lista
                 form.Show();
                 form.TopLevel = false;
                 form.TopMost = true;
-                panel.Controls.Add(form);
-                Visible = false;
+                Controls.Add(form);
+                form.BringToFront();
+                form.StartPosition = FormStartPosition.CenterParent;
                 switch (tabla)
                 {
                     case 1:
@@ -147,6 +153,16 @@ namespace CapaVistaSCM.Lista
         private void Frm_lista_VisibleChanged(object sender, EventArgs e)
         {
             establecerDatos();
+        }
+
+        private void Btn_Cerrar_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void Btn_ayuda_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start(ayuda);
         }
     }
 }
