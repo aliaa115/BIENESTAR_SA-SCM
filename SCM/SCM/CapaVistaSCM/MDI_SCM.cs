@@ -35,6 +35,7 @@ namespace CapaVistaSCM
             lista.TopLevel = false;
             lista.TopMost = true;
             panel1.Controls.Add(lista);
+            lista.WindowState = FormWindowState.Maximized;
         }
 
         private void MDI_SCM1_Load(object sender, EventArgs e)

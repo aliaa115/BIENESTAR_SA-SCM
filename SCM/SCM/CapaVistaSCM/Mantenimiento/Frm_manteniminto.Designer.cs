@@ -28,9 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_manteniminto));
             this.Tbl_movimientoInventario = new System.Windows.Forms.TableLayoutPanel();
             this.Pnl_titulo = new System.Windows.Forms.Panel();
-            this.ayudaRup1 = new PDFHelpViewer.AyudaRup();
+            this.Btn_ayuda = new System.Windows.Forms.Button();
             this.Btn_MovInventario = new System.Windows.Forms.Button();
             this.Lbl_titulo = new System.Windows.Forms.Label();
             this.Pnl_desarrollo = new System.Windows.Forms.Panel();
@@ -58,7 +59,7 @@
             // Pnl_titulo
             // 
             this.Pnl_titulo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(143)))), ((int)(((byte)(208)))), ((int)(((byte)(68)))));
-            this.Pnl_titulo.Controls.Add(this.ayudaRup1);
+            this.Pnl_titulo.Controls.Add(this.Btn_ayuda);
             this.Pnl_titulo.Controls.Add(this.Btn_MovInventario);
             this.Pnl_titulo.Controls.Add(this.Lbl_titulo);
             this.Pnl_titulo.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -67,14 +68,22 @@
             this.Pnl_titulo.Size = new System.Drawing.Size(843, 64);
             this.Pnl_titulo.TabIndex = 0;
             // 
-            // ayudaRup1
+            // Btn_ayuda
             // 
-            this.ayudaRup1.BackColor = System.Drawing.Color.Transparent;
-            this.ayudaRup1.Location = new System.Drawing.Point(652, 4);
-            this.ayudaRup1.Margin = new System.Windows.Forms.Padding(4);
-            this.ayudaRup1.Name = "ayudaRup1";
-            this.ayudaRup1.Size = new System.Drawing.Size(63, 59);
-            this.ayudaRup1.TabIndex = 4;
+            this.Btn_ayuda.BackgroundImage = global::CapaVistaSCM.Properties.Resources.information;
+            this.Btn_ayuda.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.Btn_ayuda.Dock = System.Windows.Forms.DockStyle.Right;
+            this.Btn_ayuda.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(143)))), ((int)(((byte)(208)))), ((int)(((byte)(68)))));
+            this.Btn_ayuda.FlatAppearance.BorderSize = 0;
+            this.Btn_ayuda.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(143)))), ((int)(((byte)(208)))), ((int)(((byte)(68)))));
+            this.Btn_ayuda.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(143)))), ((int)(((byte)(208)))), ((int)(((byte)(68)))));
+            this.Btn_ayuda.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Btn_ayuda.Location = new System.Drawing.Point(685, 0);
+            this.Btn_ayuda.Name = "Btn_ayuda";
+            this.Btn_ayuda.Size = new System.Drawing.Size(37, 64);
+            this.Btn_ayuda.TabIndex = 4;
+            this.Btn_ayuda.UseVisualStyleBackColor = true;
+            this.Btn_ayuda.Click += new System.EventHandler(this.Btn_ayuda_Click);
             // 
             // Btn_MovInventario
             // 
@@ -100,7 +109,7 @@
             this.Lbl_titulo.Font = new System.Drawing.Font("Century Gothic", 30F, System.Drawing.FontStyle.Bold);
             this.Lbl_titulo.Location = new System.Drawing.Point(0, 0);
             this.Lbl_titulo.Name = "Lbl_titulo";
-            this.Lbl_titulo.Size = new System.Drawing.Size(0, 59);
+            this.Lbl_titulo.Size = new System.Drawing.Size(0, 47);
             this.Lbl_titulo.TabIndex = 0;
             // 
             // Pnl_desarrollo
@@ -118,7 +127,7 @@
             this.Nav_Mantenimiento.BackColor = System.Drawing.Color.White;
             this.Nav_Mantenimiento.Font = new System.Drawing.Font("Century Gothic", 7F);
             this.Nav_Mantenimiento.Location = new System.Drawing.Point(3, 1);
-            this.Nav_Mantenimiento.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Nav_Mantenimiento.Margin = new System.Windows.Forms.Padding(4);
             this.Nav_Mantenimiento.Name = "Nav_Mantenimiento";
             this.Nav_Mantenimiento.Size = new System.Drawing.Size(838, 650);
             this.Nav_Mantenimiento.TabIndex = 0;
@@ -130,10 +139,12 @@
             this.ClientSize = new System.Drawing.Size(849, 727);
             this.Controls.Add(this.Tbl_movimientoInventario);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "Frm_manteniminto";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Mantenimiento";
+            this.TopMost = true;
             this.Tbl_movimientoInventario.ResumeLayout(false);
             this.Pnl_titulo.ResumeLayout(false);
             this.Pnl_titulo.PerformLayout();
@@ -150,6 +161,6 @@
         private System.Windows.Forms.Label Lbl_titulo;
         private System.Windows.Forms.Panel Pnl_desarrollo;
         private CapaDeDiseno.Navegador Nav_Mantenimiento;
-        private PDFHelpViewer.AyudaRup ayudaRup1;
+        private System.Windows.Forms.Button Btn_ayuda;
     }
 }

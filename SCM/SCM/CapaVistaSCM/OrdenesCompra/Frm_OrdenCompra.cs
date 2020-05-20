@@ -75,8 +75,6 @@ namespace CapaVistaSCM
 
                     llenarCombos();
 
-                    Btn_ayuda.AsignarAyuda("\\\\Mac\\Home\\Documents\\Universidad\\9no somestre\\042 Ingenieria de Software\\Proyecto Final\\Visual\\PruebasSCM\\PruebasSCM\\bin\\Debug\\Ayuda\\SCM.pdf");
-
                     entregado = 0;
 
                     cambioEnc = 0;
@@ -107,8 +105,6 @@ namespace CapaVistaSCM
                     Dtp_emision.Enabled = false;
                     Dtp_entrega.Enabled = false;
 
-                    Btn_ayuda.AsignarAyuda("");
-
                     llenarEncabezado();
                     break;
 
@@ -130,7 +126,6 @@ namespace CapaVistaSCM
                     Dtp_emision.Enabled = false;
                     Dtp_entrega.Enabled = false;
 
-                    Btn_ayuda.AsignarAyuda("");
                     llenarEncabezado();
                     cambioEnc = 0;
                     entregado = 0;
@@ -200,7 +195,7 @@ namespace CapaVistaSCM
 
         private void Frm_OrdenCompra_FormClosed(object sender, FormClosedEventArgs e)
         {
-            form.Show();
+            //form.Show();
         }
 
         private void Chk_codigo_CheckedChanged(object sender, EventArgs e)
@@ -228,7 +223,7 @@ namespace CapaVistaSCM
                         }
                     mensaje = new Mensaje("La orden de compra se guardo con exito");
                     mensaje.Show();
-                    this.Close();
+                    //this.Close();
                     }
 
                     break;
@@ -245,7 +240,7 @@ namespace CapaVistaSCM
                     }
                     mensaje = new Mensaje("La orden de compra se guardo con exito");
                     mensaje.Show();
-                    this.Close();
+                    //this.Close();
 
                     break;
             }
@@ -581,6 +576,22 @@ namespace CapaVistaSCM
         private void Chk_entregado_CheckedChanged(object sender, EventArgs e)
         {
             cambioEnc = 1;
+        }
+
+        private void Btn_ayuda_Click(object sender, EventArgs e)
+        {
+            switch (modo)
+            {
+                case 1:
+                    System.Diagnostics.Process.Start(@"Ayudas\ayudaOrdNuev.chm");
+                    break;
+                case 2:
+                    System.Diagnostics.Process.Start(@"Ayudas\ayudaOrdVer.chm");
+                    break;
+                case 3:
+                    System.Diagnostics.Process.Start(@"Ayudas\ayudaOrdEdit.chm");
+                    break;
+            }
         }
     }
 }

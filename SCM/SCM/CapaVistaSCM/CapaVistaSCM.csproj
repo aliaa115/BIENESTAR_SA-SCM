@@ -223,5 +223,14 @@
   <ItemGroup>
     <None Include="Resources\forklift.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\information.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\forklift1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\forklift2.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

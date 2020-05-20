@@ -10,6 +10,7 @@ namespace CapaModeloSCM.Mantenimientos.ListaDatos
 
         public string form { get; set; }
 
+        public string ayuda { get; set; }
         public bool Equals(ListaData other)
         {
             throw new NotImplementedException();

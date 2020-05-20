@@ -26,6 +26,7 @@ namespace CapaModeloSCM.Mantenimientos
                     dataGV(tipoLista, dgv);
                     data.titulo = "MOVIMIENTOS DE INVENTARIO";
                     data.form = " de Movimientos de Inventario";
+                    data.ayuda = @"Ayudas\ayudaListMov.chm";
                     return data;
                 case 2:
                     dataGV(tipoLista, dgv);
@@ -34,8 +35,9 @@ namespace CapaModeloSCM.Mantenimientos
                     return data;
                 case 3:
                     dataGV(tipoLista, dgv);
-                    data.titulo = "COMPRAS";
+                    data.titulo = "ORDENES DE COMPRAS";
                     data.form = " de Compras";
+                    data.ayuda = @"Ayudas\ayudaListOrd.chm";
                     return data;
                 case 4:
                     dataGV(tipoLista, dgv);

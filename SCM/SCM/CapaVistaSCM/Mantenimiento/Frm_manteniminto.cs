@@ -65,5 +65,9 @@ namespace CapaVistaSCM.Mantenimiento
             Nav_Mantenimiento.ObtenerIdAplicacion(aplicacionActiva);// Pasa el id de la aplicacion actual
         }
 
+        private void Btn_ayuda_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start(@"Ayudas\ayudaMant.chm");
+        }
     }
 }
