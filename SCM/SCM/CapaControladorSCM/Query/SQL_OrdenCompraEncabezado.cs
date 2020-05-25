@@ -60,7 +60,6 @@ namespace CapaControladorSCM.Query
                         "nombre_orden_compra, " +
                         "descripcion_orden_compra, " +
                         "id_proveedor, " +
-                        "id_cotizacion_encabezado, " +
                         "fecha_estimada_entrega, " +
                         "fecha_emision, " +
                         "entregado, " +
@@ -81,12 +80,10 @@ namespace CapaControladorSCM.Query
                         ordenCompraEncabezado.NOMBRE_ORDEN_COMPRA = reader.GetString(1);
                         ordenCompraEncabezado.DESCRIPCION_ORDEN_COMPRA = reader.GetString(2);
                         ordenCompraEncabezado.PROVEEDOR = sql_proveedor.obtenerProveedor(reader.GetInt32(3));
-                        ordenCompraEncabezado.COTIZACION_ENCABEZADO =
-                            sql_cotizacionEncabezado.obtenerCotizacionEncabezado(reader.GetInt32(4), reader.GetInt32(3));
-                        ordenCompraEncabezado.FECHA_ESTIMADA_ENTREGA = reader.GetDate(5);
-                        ordenCompraEncabezado.FECHA_EMISION = reader.GetDate(6);
-                        ordenCompraEncabezado.ENTREGADO = reader.GetInt32(7);
-                        ordenCompraEncabezado.ESTADO = reader.GetInt32(8);
+                        ordenCompraEncabezado.FECHA_ESTIMADA_ENTREGA = reader.GetDate(4);
+                        ordenCompraEncabezado.FECHA_EMISION = reader.GetDate(5);
+                        ordenCompraEncabezado.ENTREGADO = reader.GetInt32(6);
+                        ordenCompraEncabezado.ESTADO = reader.GetInt32(7);
                     }
                 }
                 return ordenCompraEncabezado;
@@ -134,7 +131,6 @@ namespace CapaControladorSCM.Query
         {
             string sCommando = string.Format("insert into erp.ordenes_compras_encabezado (" +
                 "id_orden_compra_encabezado, " +
-                "id_cotizacion_encabezado, " +
                 "id_proveedor, " +
                 "nombre_orden_compra, " +
                 "descripcion_orden_compra, " +
@@ -142,7 +138,7 @@ namespace CapaControladorSCM.Query
                 "fecha_estimada_entrega, " +
                 "entregado, " +
                 "estado) " +
-                    "values({0}, {1}, {2}, '{3}', '{4}', '{5}', '{6}', {7}, {8}); ",
+                    "values({0}, {2}, '{3}', '{4}', '{5}', '{6}', {7}, {8}); ",
                     valores[0], valores[1], valores[2], valores[3], valores[4], valores[5],
                     valores[6], valores[7], valores[8]);
 
@@ -167,7 +163,7 @@ namespace CapaControladorSCM.Query
                             "fecha_estimada_entrega = '{6}', " +
                             "entregado = {7}, " +
                             "estado = {8} " +
-                            "WHERE id_orden_compra_encabezado = {0} and id_cotizacion_encabezado = {1} and id_proveedor = {2}; ",
+                            "WHERE id_orden_compra_encabezado = {0} and id_proveedor = {2}; ",
                                 valores[0], valores[1], valores[2], valores[3], valores[4], valores[5],
                                 valores[6], valores[7], valores[8]);
 

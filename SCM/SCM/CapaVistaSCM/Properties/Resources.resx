@@ -121,11 +121,17 @@
   <data name="046-agenda" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\046-agenda.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="180-reload" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\180-reload.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="091-trolley" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\091-trolley.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="065-edit" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\065-edit.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="059-file" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\059-file.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="information" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\information.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -166,8 +172,8 @@
   <data name="019-idea" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\019-idea.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="059-file" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\059-file.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="094-hammer-1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\094-hammer-1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="149-notepad-2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\149-notepad-2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -175,8 +181,8 @@
   <data name="159-pencil" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\159-pencil.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="094-hammer-1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\094-hammer-1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="forklift2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\forklift2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="083-floppy-disk" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\083-floppy-disk.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -187,7 +193,7 @@
   <data name="243-exit" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\243-exit.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="forklift2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\forklift2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="112-invoice-1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\112-invoice-1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

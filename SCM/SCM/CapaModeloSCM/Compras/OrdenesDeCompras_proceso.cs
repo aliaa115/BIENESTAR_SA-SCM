@@ -34,8 +34,7 @@ namespace CapaModeloSCM.Compras
                 ordenCompraEncabezado.DESCRIPCION_ORDEN_COMPRA,
                 ordenCompraEncabezado.PROVEEDOR.ID_PROVEEDOR.ToString() +
                     " - " + ordenCompraEncabezado.PROVEEDOR.NOMBRE_PROVEEDOR,
-                ordenCompraEncabezado.COTIZACION_ENCABEZADO.ID_COTIZACION.ToString() + 
-                    " - " + ordenCompraEncabezado.COTIZACION_ENCABEZADO.NOMBRE_COTIZACION.ToString(),
+                "",
                 ordenCompraEncabezado.FECHA_ESTIMADA_ENTREGA.ToString(),
                 ordenCompraEncabezado.FECHA_EMISION.ToString(),
                 ordenCompraEncabezado.ENTREGADO.ToString(),

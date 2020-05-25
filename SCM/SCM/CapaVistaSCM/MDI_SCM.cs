@@ -3,6 +3,8 @@ using CapaVistaSCM.Mantenimiento;
 using System;
 using System.Windows.Forms;
 using CapaDiseno;
+using Polizas;
+using System.Drawing;
 
 namespace CapaVistaSCM
 {
@@ -147,6 +149,85 @@ namespace CapaVistaSCM
             seguridad.lbl_nombreUsuario.Text = Lbl_usuario.Text;
             seguridad.ShowDialog();
 
+        }
+
+        private void polizaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void polizaToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            Polizas.Polizas poliza = new Polizas.Polizas();
+            poliza.Show();
+            poliza.AsignarQuery(
+                " select 'Compras' as Cuenta, round((select sum(precio_unitario) from ordenes_compras_detalle), 2) as debe, '0' as haber " +
+                " union all " +
+                " select 'Bancos' as Cuenta, '0' as debe, round((select sum(precio_unitario) from ordenes_compras_detalle), 2) as haber; ");
+            poliza.AsignarColores(Color.FromArgb(175, 207, 138), Color.Black);
+        }
+
+        private void polizaToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            Polizas.Polizas poliza = new Polizas.Polizas();
+            poliza.Show();
+            poliza.AsignarQuery(
+                " select 'Compras' as Cuenta, " +
+                " round(COALESCE((select sum(MOV_DET.precio_producto) as debe from " +
+                " movimientos_inventario_detalle MOV_DET " +
+                " join movimientos_inventario_encabezado MOV_ENC using (id_movimiento_inventario_encabezado) " +
+                " join tipos_movimientos TIPO_MOV using (id_tipo_movimiento) " +
+                " where TIPO_MOV.nombre_tipo_movimiento = 'Compra' ), 2)) as debe, " +
+                " '0' as haber " +
+                " union all " +
+                " select 'Compras' as Cuenta, " +
+                " '0' as debe,  " +
+                " round(COALESCE((select sum(MOV_DET.precio_producto) as debe from " +
+                " movimientos_inventario_detalle MOV_DET " +
+                " join movimientos_inventario_encabezado MOV_ENC using (id_movimiento_inventario_encabezado) " +
+                " join tipos_movimientos TIPO_MOV using (id_tipo_movimiento) " +
+                " where TIPO_MOV.nombre_tipo_movimiento = 'Compra' ), 2)) as haber " +
+                " union all " +
+                " select 'Venta' as Cuenta, " +
+                " '0' as debe,  " +
+                " round(COALESCE((select sum(MOV_DET.precio_producto) as debe from " +
+                " movimientos_inventario_detalle MOV_DET " +
+                " join movimientos_inventario_encabezado MOV_ENC using (id_movimiento_inventario_encabezado) " +
+                " join tipos_movimientos TIPO_MOV using (id_tipo_movimiento) " +
+                " where TIPO_MOV.nombre_tipo_movimiento = 'Venta' ), 2)) as haber " +
+                " union all " +
+                " select 'Caja' as Cuenta,  " +
+                " round(COALESCE((select sum(MOV_DET.precio_producto) as debe from " +
+                " movimientos_inventario_detalle MOV_DET " +
+                " join movimientos_inventario_encabezado MOV_ENC using (id_movimiento_inventario_encabezado) " +
+                " join tipos_movimientos TIPO_MOV using (id_tipo_movimiento) " +
+                " where TIPO_MOV.nombre_tipo_movimiento = 'Venta' ), 2)) as debe, " +
+                " '0' as haber; ");
+
+           
+            poliza.AsignarColores(Color.FromArgb(175, 207, 138), Color.Black);
+        }
+
+        private void moviientosDeInventarioToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Reportes.Frm_VerRptMovimiento rptMovimiento = new Reportes.Frm_VerRptMovimiento();
+            rptMovimiento.Show();
+            rptMovimiento.TopLevel = false;
+            rptMovimiento.TopMost = true;
+            Controls.Add(rptMovimiento);
+            rptMovimiento.BringToFront();
+            rptMovimiento.StartPosition = FormStartPosition.CenterParent;
+        }
+
+        private void ordenesDeCompraToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Reportes.Frm_VerRptCompras rptCompras = new Reportes.Frm_VerRptCompras();
+            rptCompras.Show();
+            rptCompras.TopLevel = false;
+            rptCompras.TopMost = true;
+            Controls.Add(rptCompras);
+            rptCompras.BringToFront();
+            rptCompras.StartPosition = FormStartPosition.CenterParent;
         }
     }
 }

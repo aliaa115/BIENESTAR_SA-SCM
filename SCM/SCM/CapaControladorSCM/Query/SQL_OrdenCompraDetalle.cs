@@ -15,8 +15,8 @@ namespace CapaControladorSCM.Query
         public List<OrdenCompraDetalle> llenarDGVOrdenDetalle(int id_orden_compra_encabezado)
         {
             SQL_Producto sql_Producto = new SQL_Producto();
-            SQL_CotizacionEncabezado sql_CotizacionEncabezado = new SQL_CotizacionEncabezado();
             SQL_Proveedor sql_Proveedor = new SQL_Proveedor();
+            SQL_OrdenCompraEncabezado sql_OrdenCompraEncabezado = new SQL_OrdenCompraEncabezado();
             List<OrdenCompraDetalle> ordenCompraDetalle = new List<OrdenCompraDetalle>();
 
             try
@@ -24,7 +24,7 @@ namespace CapaControladorSCM.Query
                 string sComando = string.Format("" +
                     "SELECT " +
                         "id_orden_compra_detalle, " +
-                        "id_cotizacion_encabezado, " +
+                        "id_orden_compra_encabezado, " +
                         "id_proveedor, " +
                         "id_producto, " +
                         "cantidad, " +
@@ -41,7 +41,7 @@ namespace CapaControladorSCM.Query
                     {
                         OrdenCompraDetalle ordenCompraDetalleTmp = new OrdenCompraDetalle();
                         ordenCompraDetalleTmp.ID_ORDEN_COMPRA_DETALLE = reader.GetInt32(0);
-                        ordenCompraDetalleTmp.COTIZACION_ENCABEZADO = sql_CotizacionEncabezado.obtenerCotizacionEncabezado(reader.GetInt32(1), reader.GetInt32(2));
+                        ordenCompraDetalleTmp.ID_ORDEN_COMPRA_ENCABEZADO = sql_OrdenCompraEncabezado.obtenerOrdenEncabezado(reader.GetInt32(1));
                         ordenCompraDetalleTmp.PROVEEDOR = sql_Proveedor.obtenerProveedor(reader.GetInt32(2));
                         ordenCompraDetalleTmp.PRODUCTO = sql_Producto.obtenerProducto(reader.GetInt32(3));
                         ordenCompraDetalleTmp.CANTIDAD = reader.GetInt32(4);
@@ -67,12 +67,11 @@ namespace CapaControladorSCM.Query
                     "INSERT INTO ordenes_compras_detalle ( " +
                         "id_orden_compra_detalle, " +
                         "id_orden_compra_encabezado, " +
-                        "id_cotizacion_encabezado, " +
                         "id_proveedor, " +
                         "id_producto, " +
                         "cantidad, " +
                         "precio_unitario ) " +
-                    "VALUES ({0}, {1}, {2}, {3}, {4}, {5}, {6}); ",
+                    "VALUES ({0}, {1}, {3}, {4}, {5}, {6}); ",
                     valores[0], valores[1], valores[2], valores[3], valores[4], valores[5], valores[6]);
 
             try

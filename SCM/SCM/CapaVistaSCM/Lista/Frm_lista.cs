@@ -164,5 +164,36 @@ namespace CapaVistaSCM.Lista
         {
             System.Diagnostics.Process.Start(ayuda);
         }
+
+        private void Btn_Actualizar_Click(object sender, EventArgs e)
+        {
+            establecerDatos();
+        }
+
+        private void Btn_Reporte_Click(object sender, EventArgs e)
+        {
+            switch (tabla)
+            {
+                case 1:
+                    Reportes.Frm_VerRptMovimiento rptMovimiento = new Reportes.Frm_VerRptMovimiento();
+                    rptMovimiento.Show();
+                    rptMovimiento.TopLevel = false;
+                    rptMovimiento.TopMost = true;
+                    Controls.Add(rptMovimiento);
+                    rptMovimiento.BringToFront();
+                    rptMovimiento.StartPosition = FormStartPosition.CenterParent;
+                    
+                    break;
+                case 3:
+                    Reportes.Frm_VerRptCompras rptCompras = new Reportes.Frm_VerRptCompras();
+                    rptCompras.Show();
+                    rptCompras.TopLevel = false;
+                    rptCompras.TopMost = true;
+                    Controls.Add(rptCompras);
+                    rptCompras.BringToFront();
+                    rptCompras.StartPosition = FormStartPosition.CenterParent;
+                    break;
+            }
+        }
     }
 }

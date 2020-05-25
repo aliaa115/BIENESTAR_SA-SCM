@@ -37,14 +37,18 @@
             this.Pnl_desarrollo = new System.Windows.Forms.Panel();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
-            this.Grp_guardar = new System.Windows.Forms.GroupBox();
-            this.Btn_ver = new System.Windows.Forms.Button();
             this.Grp_nuevo = new System.Windows.Forms.GroupBox();
             this.Btn_nuevo = new System.Windows.Forms.Button();
             this.Grp_editar = new System.Windows.Forms.GroupBox();
             this.Btn_editar = new System.Windows.Forms.Button();
+            this.Grp_guardar = new System.Windows.Forms.GroupBox();
+            this.Btn_ver = new System.Windows.Forms.Button();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.Btn_Actualizar = new System.Windows.Forms.Button();
             this.Grp_Cerrar = new System.Windows.Forms.GroupBox();
             this.Btn_Cerrar = new System.Windows.Forms.Button();
+            this.Grp_Reporte = new System.Windows.Forms.GroupBox();
+            this.Btn_Reporte = new System.Windows.Forms.Button();
             this.pnl_contenedor = new System.Windows.Forms.Panel();
             this.Dgv_lista = new System.Windows.Forms.DataGridView();
             this.Tbl_movimientoInventario.SuspendLayout();
@@ -52,10 +56,12 @@
             this.Pnl_desarrollo.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
-            this.Grp_guardar.SuspendLayout();
             this.Grp_nuevo.SuspendLayout();
             this.Grp_editar.SuspendLayout();
+            this.Grp_guardar.SuspendLayout();
+            this.groupBox1.SuspendLayout();
             this.Grp_Cerrar.SuspendLayout();
+            this.Grp_Reporte.SuspendLayout();
             this.pnl_contenedor.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Dgv_lista)).BeginInit();
             this.SuspendLayout();
@@ -128,7 +134,7 @@
             this.Lbl_titulo.Font = new System.Drawing.Font("Century Gothic", 30F, System.Drawing.FontStyle.Bold);
             this.Lbl_titulo.Location = new System.Drawing.Point(0, 0);
             this.Lbl_titulo.Name = "Lbl_titulo";
-            this.Lbl_titulo.Size = new System.Drawing.Size(0, 47);
+            this.Lbl_titulo.Size = new System.Drawing.Size(0, 59);
             this.Lbl_titulo.TabIndex = 0;
             // 
             // Pnl_desarrollo
@@ -158,16 +164,20 @@
             // 
             // tableLayoutPanel2
             // 
-            this.tableLayoutPanel2.ColumnCount = 5;
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 60F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.tableLayoutPanel2.Controls.Add(this.Grp_guardar, 0, 0);
-            this.tableLayoutPanel2.Controls.Add(this.Grp_nuevo, 1, 0);
-            this.tableLayoutPanel2.Controls.Add(this.Grp_editar, 2, 0);
-            this.tableLayoutPanel2.Controls.Add(this.Grp_Cerrar, 4, 0);
+            this.tableLayoutPanel2.ColumnCount = 7;
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 9.090909F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 9.090909F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 9.090909F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 9.090909F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 9.090909F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 45.45454F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 9.090909F));
+            this.tableLayoutPanel2.Controls.Add(this.Grp_nuevo, 0, 0);
+            this.tableLayoutPanel2.Controls.Add(this.Grp_editar, 1, 0);
+            this.tableLayoutPanel2.Controls.Add(this.Grp_guardar, 2, 0);
+            this.tableLayoutPanel2.Controls.Add(this.groupBox1, 3, 0);
+            this.tableLayoutPanel2.Controls.Add(this.Grp_Cerrar, 6, 0);
+            this.tableLayoutPanel2.Controls.Add(this.Grp_Reporte, 4, 0);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 3);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
@@ -176,40 +186,13 @@
             this.tableLayoutPanel2.Size = new System.Drawing.Size(788, 64);
             this.tableLayoutPanel2.TabIndex = 1;
             // 
-            // Grp_guardar
-            // 
-            this.Grp_guardar.Controls.Add(this.Btn_ver);
-            this.Grp_guardar.Font = new System.Drawing.Font("Century Gothic", 10F);
-            this.Grp_guardar.Location = new System.Drawing.Point(3, 3);
-            this.Grp_guardar.Name = "Grp_guardar";
-            this.Grp_guardar.Size = new System.Drawing.Size(72, 55);
-            this.Grp_guardar.TabIndex = 26;
-            this.Grp_guardar.TabStop = false;
-            this.Grp_guardar.Text = "VER";
-            // 
-            // Btn_ver
-            // 
-            this.Btn_ver.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(207)))), ((int)(((byte)(138)))));
-            this.Btn_ver.BackgroundImage = global::CapaVistaSCM.Properties.Resources._179_open_book_2;
-            this.Btn_ver.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.Btn_ver.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Btn_ver.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(207)))), ((int)(((byte)(138)))));
-            this.Btn_ver.FlatAppearance.BorderSize = 0;
-            this.Btn_ver.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Btn_ver.Location = new System.Drawing.Point(3, 20);
-            this.Btn_ver.Name = "Btn_ver";
-            this.Btn_ver.Size = new System.Drawing.Size(66, 32);
-            this.Btn_ver.TabIndex = 9;
-            this.Btn_ver.UseVisualStyleBackColor = false;
-            this.Btn_ver.Click += new System.EventHandler(this.Btn_ver_Click);
-            // 
             // Grp_nuevo
             // 
             this.Grp_nuevo.Controls.Add(this.Btn_nuevo);
             this.Grp_nuevo.Font = new System.Drawing.Font("Century Gothic", 10F);
-            this.Grp_nuevo.Location = new System.Drawing.Point(81, 3);
+            this.Grp_nuevo.Location = new System.Drawing.Point(3, 3);
             this.Grp_nuevo.Name = "Grp_nuevo";
-            this.Grp_nuevo.Size = new System.Drawing.Size(72, 55);
+            this.Grp_nuevo.Size = new System.Drawing.Size(65, 55);
             this.Grp_nuevo.TabIndex = 27;
             this.Grp_nuevo.TabStop = false;
             this.Grp_nuevo.Text = "NUEVO";
@@ -223,9 +206,9 @@
             this.Btn_nuevo.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(207)))), ((int)(((byte)(138)))));
             this.Btn_nuevo.FlatAppearance.BorderSize = 0;
             this.Btn_nuevo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Btn_nuevo.Location = new System.Drawing.Point(3, 20);
+            this.Btn_nuevo.Location = new System.Drawing.Point(3, 24);
             this.Btn_nuevo.Name = "Btn_nuevo";
-            this.Btn_nuevo.Size = new System.Drawing.Size(66, 32);
+            this.Btn_nuevo.Size = new System.Drawing.Size(59, 28);
             this.Btn_nuevo.TabIndex = 9;
             this.Btn_nuevo.UseVisualStyleBackColor = false;
             this.Btn_nuevo.Click += new System.EventHandler(this.Btn_nuevo_Click);
@@ -234,9 +217,9 @@
             // 
             this.Grp_editar.Controls.Add(this.Btn_editar);
             this.Grp_editar.Font = new System.Drawing.Font("Century Gothic", 10F);
-            this.Grp_editar.Location = new System.Drawing.Point(159, 3);
+            this.Grp_editar.Location = new System.Drawing.Point(74, 3);
             this.Grp_editar.Name = "Grp_editar";
-            this.Grp_editar.Size = new System.Drawing.Size(72, 55);
+            this.Grp_editar.Size = new System.Drawing.Size(65, 55);
             this.Grp_editar.TabIndex = 28;
             this.Grp_editar.TabStop = false;
             this.Grp_editar.Text = "EDITAR";
@@ -250,20 +233,74 @@
             this.Btn_editar.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(207)))), ((int)(((byte)(138)))));
             this.Btn_editar.FlatAppearance.BorderSize = 0;
             this.Btn_editar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Btn_editar.Location = new System.Drawing.Point(3, 20);
+            this.Btn_editar.Location = new System.Drawing.Point(3, 24);
             this.Btn_editar.Name = "Btn_editar";
-            this.Btn_editar.Size = new System.Drawing.Size(66, 32);
+            this.Btn_editar.Size = new System.Drawing.Size(59, 28);
             this.Btn_editar.TabIndex = 9;
             this.Btn_editar.UseVisualStyleBackColor = false;
             this.Btn_editar.Click += new System.EventHandler(this.Btn_editar_Click);
+            // 
+            // Grp_guardar
+            // 
+            this.Grp_guardar.Controls.Add(this.Btn_ver);
+            this.Grp_guardar.Font = new System.Drawing.Font("Century Gothic", 10F);
+            this.Grp_guardar.Location = new System.Drawing.Point(145, 3);
+            this.Grp_guardar.Name = "Grp_guardar";
+            this.Grp_guardar.Size = new System.Drawing.Size(65, 55);
+            this.Grp_guardar.TabIndex = 26;
+            this.Grp_guardar.TabStop = false;
+            this.Grp_guardar.Text = "VER";
+            // 
+            // Btn_ver
+            // 
+            this.Btn_ver.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(207)))), ((int)(((byte)(138)))));
+            this.Btn_ver.BackgroundImage = global::CapaVistaSCM.Properties.Resources._179_open_book_2;
+            this.Btn_ver.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.Btn_ver.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Btn_ver.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(207)))), ((int)(((byte)(138)))));
+            this.Btn_ver.FlatAppearance.BorderSize = 0;
+            this.Btn_ver.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Btn_ver.Location = new System.Drawing.Point(3, 24);
+            this.Btn_ver.Name = "Btn_ver";
+            this.Btn_ver.Size = new System.Drawing.Size(59, 28);
+            this.Btn_ver.TabIndex = 9;
+            this.Btn_ver.UseVisualStyleBackColor = false;
+            this.Btn_ver.Click += new System.EventHandler(this.Btn_ver_Click);
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.Btn_Actualizar);
+            this.groupBox1.Font = new System.Drawing.Font("Century Gothic", 10F);
+            this.groupBox1.Location = new System.Drawing.Point(216, 3);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(65, 55);
+            this.groupBox1.TabIndex = 30;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "ACTU";
+            // 
+            // Btn_Actualizar
+            // 
+            this.Btn_Actualizar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(207)))), ((int)(((byte)(138)))));
+            this.Btn_Actualizar.BackgroundImage = global::CapaVistaSCM.Properties.Resources._180_reload;
+            this.Btn_Actualizar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.Btn_Actualizar.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Btn_Actualizar.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(207)))), ((int)(((byte)(138)))));
+            this.Btn_Actualizar.FlatAppearance.BorderSize = 0;
+            this.Btn_Actualizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Btn_Actualizar.Location = new System.Drawing.Point(3, 24);
+            this.Btn_Actualizar.Name = "Btn_Actualizar";
+            this.Btn_Actualizar.Size = new System.Drawing.Size(59, 28);
+            this.Btn_Actualizar.TabIndex = 9;
+            this.Btn_Actualizar.UseVisualStyleBackColor = false;
+            this.Btn_Actualizar.Click += new System.EventHandler(this.Btn_Actualizar_Click);
             // 
             // Grp_Cerrar
             // 
             this.Grp_Cerrar.Controls.Add(this.Btn_Cerrar);
             this.Grp_Cerrar.Font = new System.Drawing.Font("Century Gothic", 10F);
-            this.Grp_Cerrar.Location = new System.Drawing.Point(709, 3);
+            this.Grp_Cerrar.Location = new System.Drawing.Point(716, 3);
             this.Grp_Cerrar.Name = "Grp_Cerrar";
-            this.Grp_Cerrar.Size = new System.Drawing.Size(72, 55);
+            this.Grp_Cerrar.Size = new System.Drawing.Size(69, 55);
             this.Grp_Cerrar.TabIndex = 29;
             this.Grp_Cerrar.TabStop = false;
             this.Grp_Cerrar.Text = "CERRAR";
@@ -277,12 +314,39 @@
             this.Btn_Cerrar.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(207)))), ((int)(((byte)(138)))));
             this.Btn_Cerrar.FlatAppearance.BorderSize = 0;
             this.Btn_Cerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Btn_Cerrar.Location = new System.Drawing.Point(3, 20);
+            this.Btn_Cerrar.Location = new System.Drawing.Point(3, 24);
             this.Btn_Cerrar.Name = "Btn_Cerrar";
-            this.Btn_Cerrar.Size = new System.Drawing.Size(66, 32);
+            this.Btn_Cerrar.Size = new System.Drawing.Size(63, 28);
             this.Btn_Cerrar.TabIndex = 9;
             this.Btn_Cerrar.UseVisualStyleBackColor = false;
             this.Btn_Cerrar.Click += new System.EventHandler(this.Btn_Cerrar_Click);
+            // 
+            // Grp_Reporte
+            // 
+            this.Grp_Reporte.Controls.Add(this.Btn_Reporte);
+            this.Grp_Reporte.Font = new System.Drawing.Font("Century Gothic", 10F);
+            this.Grp_Reporte.Location = new System.Drawing.Point(287, 3);
+            this.Grp_Reporte.Name = "Grp_Reporte";
+            this.Grp_Reporte.Size = new System.Drawing.Size(65, 55);
+            this.Grp_Reporte.TabIndex = 31;
+            this.Grp_Reporte.TabStop = false;
+            this.Grp_Reporte.Text = "REPORTE";
+            // 
+            // Btn_Reporte
+            // 
+            this.Btn_Reporte.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(207)))), ((int)(((byte)(138)))));
+            this.Btn_Reporte.BackgroundImage = global::CapaVistaSCM.Properties.Resources._112_invoice_1;
+            this.Btn_Reporte.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.Btn_Reporte.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Btn_Reporte.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(207)))), ((int)(((byte)(138)))));
+            this.Btn_Reporte.FlatAppearance.BorderSize = 0;
+            this.Btn_Reporte.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Btn_Reporte.Location = new System.Drawing.Point(3, 24);
+            this.Btn_Reporte.Name = "Btn_Reporte";
+            this.Btn_Reporte.Size = new System.Drawing.Size(59, 28);
+            this.Btn_Reporte.TabIndex = 9;
+            this.Btn_Reporte.UseVisualStyleBackColor = false;
+            this.Btn_Reporte.Click += new System.EventHandler(this.Btn_Reporte_Click);
             // 
             // pnl_contenedor
             // 
@@ -335,10 +399,12 @@
             this.Pnl_desarrollo.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel2.ResumeLayout(false);
-            this.Grp_guardar.ResumeLayout(false);
             this.Grp_nuevo.ResumeLayout(false);
             this.Grp_editar.ResumeLayout(false);
+            this.Grp_guardar.ResumeLayout(false);
+            this.groupBox1.ResumeLayout(false);
             this.Grp_Cerrar.ResumeLayout(false);
+            this.Grp_Reporte.ResumeLayout(false);
             this.pnl_contenedor.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.Dgv_lista)).EndInit();
             this.ResumeLayout(false);
@@ -365,5 +431,9 @@
         private System.Windows.Forms.Panel pnl_contenedor;
         public System.Windows.Forms.DataGridView Dgv_lista;
         private System.Windows.Forms.Button Btn_ayuda;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Button Btn_Actualizar;
+        private System.Windows.Forms.GroupBox Grp_Reporte;
+        private System.Windows.Forms.Button Btn_Reporte;
     }
 }
