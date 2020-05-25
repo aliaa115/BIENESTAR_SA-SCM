@@ -54,6 +54,12 @@ namespace CapaVistaSCM
             Txt_precioTotal.Text = "0";
             Txt_costoTotal.Text = "0";
 
+            establecerDatos();
+
+        }
+
+        private void establecerDatos()
+        {
             //Segun el modo se modo del form
 
             switch (modo)
@@ -61,8 +67,6 @@ namespace CapaVistaSCM
                 case 1: // ingreso de nuevo registro
                     llenarCombos();
                     estadoCodigo();
-                    //se obtiene el ultimo id de los movimientos de inventario
-                    idEncabezado = movimientoInventario.obtenerUltimoIdEnc();
                     
                     break;
 
@@ -79,6 +83,7 @@ namespace CapaVistaSCM
                     Pnl_datos.Enabled = false;
                     Txt_descripcion.Enabled = false;
                     Chk_estado.Enabled = false;
+                    Cbo_tipoMovimiento.Enabled = false;
 
                     llenarEncabezado();
                     llenarTotales();
@@ -86,9 +91,10 @@ namespace CapaVistaSCM
 
                 case 3: // Edicion de Registro
 
-                    Chk_codigo.Enabled = false;
                     Chk_codigo.Visible = false;
                     Chk_codigo.Enabled = false;
+                    Txt_codigo.Enabled = false;
+                    Cbo_tipoMovimiento.Enabled = false;
 
                     llenarCombos();
 
@@ -98,9 +104,22 @@ namespace CapaVistaSCM
                     cambioDet = 0;
                     break;
 
-            }
+                case 4:// Edicion de Registro recien ingresado
 
+                    Chk_codigo.Enabled = false;
+                    Chk_codigo.Visible = false;
+                    Txt_codigo.Enabled = false;
+                    Cbo_tipoMovimiento.Enabled = false;
+
+                    cambioEnc = 0;
+                    cambioDet = 0;
+
+                    modo = 3;
+                    break;
+
+            }
         }
+
 
         // accion a tomar en caso de cerrar el form
         private void Frm_MovimientosInventarios_FormClosed(object sender, FormClosedEventArgs e)
@@ -115,11 +134,15 @@ namespace CapaVistaSCM
             {
                 Txt_codigo.Text = "";
                 Txt_codigo.Enabled = true;
+                Btn_Verificar.Visible = true;
+                Btn_Verificar.Enabled = true;
             }
             else
             {
                 Txt_codigo.Text = idEncabezado + "";
                 Txt_codigo.Enabled = false;
+                Btn_Verificar.Visible = false;
+                Btn_Verificar.Enabled = false;
             }
         }
 
@@ -182,72 +205,81 @@ namespace CapaVistaSCM
         private void Btn_guardar_Click(object sender, EventArgs e)
         {
             Mensajes.Mensaje ms = null;
-            switch (modo)
+            if (Dgv_movimientoDetalle.RowCount > 0)
             {
 
-                case 1:
-                    try
-                    {
-                        if (guardarEncabezado())
+                switch (modo)
+                {
+                    case 1:
+                        try
                         {
-                            int fila = 0;
-
-                            while (fila < Dgv_movimientoDetalle.RowCount)
+                            if (guardarEncabezado())
                             {
+                                int fila = 0;
 
-                                insertarDetalle(fila);
-                                fila++;
+                                while (fila < Dgv_movimientoDetalle.RowCount)
+                                {
+
+                                    insertarDetalle(fila);
+                                    fila++;
+                                }
+
+                                modo = 4;
+                                establecerDatos();
                             }
-
+                            ms = new Mensajes.Mensaje("Movimiento Guardado con exito");
+                            ms.Show();
                         }
-                    }
-                    catch (Exception ex)
-                    {
-                        ms = new Mensajes.Mensaje("Error al guardar el movimiento: \n " + ex.ToString());
+                        catch (Exception ex)
+                        {
+                            ms = new Mensajes.Mensaje("Error al guardar el movimiento: \n " + ex.ToString());
+                            ms.Show();
+                        }
+                        break;
+
+                    case 3:
+                        if (cambioEnc != 0)
+                        {
+                            guardarEncabezado();
+                        }
+                        if (cambioDet != 0)
+                        {
+                            alterarDetalle(null, 2);
+                        }
+                        ms = new Mensajes.Mensaje("Movimiento Guardado con exito");
                         ms.Show();
-                    }
-                    break;
-
-                case 3:
-                    if (cambioEnc != 0)
-                    {
-                        guardarEncabezado();
-                    }
-                    if (cambioDet != 0)
-                    {
-                        alterarDetalle(null, 2);
-
-                    }
-                    break;
+                        break;
+                }
             }
-            ms = new Mensajes.Mensaje("Movimiento Guardado con exito");
-            ms.Show();
             //this.Close();
         }
 
         // cuando se da click en el boton eliminar
         private void Btn_eliminar_Click(object sender, EventArgs e)
         {
-            string[] cambioExistencias = eliminarDetalle();
+            if (Dgv_movimientoDetalle.RowCount > 0)
+            {
+                string[] cambioExistencias = eliminarDetalle();
 
-            cambioDet = 1;
+                cambioDet = 1;
 
-            movimientoInventario.eliminarMovimientoDetalle(
-                int.Parse(Txt_codigo.Text),
-                int.Parse(Dgv_movimientoDetalle.CurrentRow.Cells[0].Value.ToString()),
-                int.Parse(cambioExistencias[1]),
-                cambioExistencias[0]
-                );
+                movimientoInventario.eliminarMovimientoDetalle(
+                    int.Parse(Txt_codigo.Text),
+                    int.Parse(Dgv_movimientoDetalle.CurrentRow.Cells[0].Value.ToString()),
+                    int.Parse(cambioExistencias[1]),
+                    cambioExistencias[0]
+                    );
 
-            Txt_precioTotal.Text =
-               (double.Parse(Txt_precioTotal.Text) -
-               double.Parse(Dgv_movimientoDetalle.Rows[Dgv_movimientoDetalle.CurrentRow.Index].Cells[5].Value.ToString())).ToString();
+                Txt_precioTotal.Text =
+                   (double.Parse(Txt_precioTotal.Text) -
+                   double.Parse(Dgv_movimientoDetalle.Rows[Dgv_movimientoDetalle.CurrentRow.Index].Cells[5].Value.ToString())).ToString();
 
-            Txt_costoTotal.Text =
-                (double.Parse(Txt_costoTotal.Text) -
-                double.Parse(Dgv_movimientoDetalle.Rows[Dgv_movimientoDetalle.CurrentRow.Index].Cells[4].Value.ToString())).ToString();
+                Txt_costoTotal.Text =
+                    (double.Parse(Txt_costoTotal.Text) -
+                    double.Parse(Dgv_movimientoDetalle.Rows[Dgv_movimientoDetalle.CurrentRow.Index].Cells[4].Value.ToString())).ToString();
 
-            Dgv_movimientoDetalle.Rows.RemoveAt(Dgv_movimientoDetalle.CurrentRow.Index);
+                Dgv_movimientoDetalle.Rows.RemoveAt(Dgv_movimientoDetalle.CurrentRow.Index);
+            }
 
         }
 
@@ -422,15 +454,16 @@ namespace CapaVistaSCM
                 mensaje = new Mensaje("No ha ingresado el codigo del Movimiento.");
                 mensaje.Show();
             }
-            if (Dgv_movimientoDetalle.RowCount < 1)
-            {
-                mensaje = new Mensaje("Se debe ingresarr al menos un producto al detalle.");
-                mensaje.Show();
-            }
             else
             {
-                string[] encabezado = {
-                                Txt_codigo.Text,
+                if (Dgv_movimientoDetalle.RowCount < 1)
+                {
+                    mensaje = new Mensaje("Se debe ingresarr al menos un producto al detalle.");
+                    mensaje.Show();
+                }
+                else
+                {
+                    string[] encabezado = {
                                 Txt_codigo.Text,
                                 Cbo_tipoMovimiento.SelectedValue.ToString(),
                                 Txt_nombre.Text,
@@ -438,17 +471,18 @@ namespace CapaVistaSCM
                                 Dtp_fecha.Value.Date.ToString("yyyy-MM-dd"),
                                 estado
                             };
-                switch (modo)
-                {
-                    case 1:
-                        movimientoInventario.insertarMovimientoEncabezado(encabezado);
-                        break;
-                    case 3:
-                        movimientoInventario.actualizarMovimientoEncabezado(encabezado);
-                        break;
-                }
+                    switch (modo)
+                    {
+                        case 1:
+                            movimientoInventario.insertarMovimientoEncabezado(encabezado);
+                            break;
+                        case 3:
+                            movimientoInventario.actualizarMovimientoEncabezado(encabezado);
+                            break;
+                    }
 
-                return true;
+                    return true;
+                }
             }
             return false;
         }
@@ -471,8 +505,6 @@ namespace CapaVistaSCM
             Dgv_movimientoDetalle.Rows[fila].Cells[3].Value = Nud_cantidad.Value.ToString();
             Dgv_movimientoDetalle.Rows[fila].Cells[4].Value = (double.Parse(Nud_cantidad.Value.ToString()) * double.Parse(prod[2]));
             Dgv_movimientoDetalle.Rows[fila].Cells[5].Value = (double.Parse(Nud_cantidad.Value.ToString()) * double.Parse(prod[3]));
-            mensaje = new Mensaje(prod[4]);
-            Dgv_movimientoDetalle.Rows[fila].Cells[6].Value = (double.Parse(prod[4]));
             Dgv_movimientoDetalle.Rows[fila].Cells[7].Value = "0";
 
             Txt_costoTotal.Text =
@@ -551,6 +583,11 @@ namespace CapaVistaSCM
                     System.Diagnostics.Process.Start(@"Ayudas\ayudaMovEdit.chm");
                     break;
             }
+        }
+
+        private void Chk_estado_CheckedChanged(object sender, EventArgs e)
+        {
+            cambioEnc = 1;
         }
     }
 }

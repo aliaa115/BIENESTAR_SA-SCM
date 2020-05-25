@@ -60,10 +60,6 @@ namespace CapaModeloSCM.Mantenimientos
                     string[] alias3 = { "Codigo", "Nombre", "Descripcion", "Estado" };
                     return (alias3, "1", "tipos_productos", "de Tipos de Productos", "TIPO DE PRODUCTO", 0);
 
-                case 4:
-                    string[] alias4 = { "Codigo", "Nombre", "Descripcion", "Tasa", "Estado" };
-                    return (alias4, "1", "impuestos", "de Impuestos", "IMPUESTO", 0);
-
                 case 5:
                     string[] alias5 = { "Codigo", "Nombre", "Descripcion", "Estado" };
                     return (alias5, "1", "categorias", "de Categorias", "CATEGORIA", 0);
@@ -97,12 +93,12 @@ namespace CapaModeloSCM.Mantenimientos
                     return (alias12, "1", "documentos", "de Documentos", "DOCUMENTO", 0);
 
                 case 13:
-                    string[] alias13 = { "Id", "Cuenta", "Nombre", "Descripcion", "Signo", "Estado" };
-                    return (alias13, "1", "tipos_movimientos", "de Tipos de Movimientos", "TIPO MOVIMIENTO", 1);
+                    string[] alias13 = { "Id", "Nombre", "Descripcion", "Signo", "Estado" };
+                    return (alias13, "1", "tipos_movimientos", "de Tipos de Movimientos", "TIPO MOVIMIENTO", 0);
 
                 case 14:
-                    string[] alias14 = { "Id", "Tipo", "Impuesto", "Categoria", "Nombre", "Descripcion", "Costo", "Precio", "Cant Max", "Cant Min", "Stock", "Estado" };
-                    return (alias14, "1", "productos", "de Productos", "PRODUCTO", 3);
+                    string[] alias14 = { "Id", "Tipo", "Categoria", "Nombre", "Descripcion", "Costo", "Precio", "Cant Max", "Cant Min", "Stock", "Estado" };
+                    return (alias14, "1", "productos", "de Productos", "PRODUCTO", 2);
 
                 case 15:
                     string[] alias15 = { "Nombre", "Producto", "Bodega", "Descripcion", "Maximo", "Minimo", "Estanteria", "Existencias", "Estado" };
@@ -167,10 +163,8 @@ namespace CapaModeloSCM.Mantenimientos
                             return ("tipos_productos", "nombre_tipo_producto", 1);
 
                         case 2:
-                            return ("impuestos", "nombre_impuesto", 1);
-
-                        case 3:
                             return ("categorias", "nombre_categoria", 1);
+
                         default:
                             mensaje = new Mensaje("Error al identificar el mantenimiento a trabajar.");
                             mensaje.Show();

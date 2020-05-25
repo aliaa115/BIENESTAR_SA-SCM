@@ -31,6 +31,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AxShockwaveFlashObjects, Version=1.0.0.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
     <Reference Include="CapaControladorSCM">
       <HintPath>..\CapaControladorSCM\bin\Debug\CapaControladorSCM.dll</HintPath>
     </Reference>
@@ -48,14 +49,21 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>Y:\Google Drive\Bienestar S.A\Formación\DLLS\ComboAuto\CapaVista\bin\Debug\CapaVista.dll</HintPath>
     </Reference>
-    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
-    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="PDFHelpViewer">
       <HintPath>..\..\..\..\AyudaRupDll\PDFHelpViewer\PDFHelpViewer\bin\Debug\PDFHelpViewer.dll</HintPath>
+    </Reference>
+    <Reference Include="Polizas">
+      <HintPath>..\..\..\..\dd-polizas\Polizas\Polizas\bin\Debug\Polizas.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -100,6 +108,30 @@
     </Compile>
     <Compile Include="Mensajes\Mensaje.Designer.cs">
       <DependentUpon>Mensaje.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\Frm_VerRptCompras.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\Frm_VerRptCompras.Designer.cs">
+      <DependentUpon>Frm_VerRptCompras.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\Frm_VerRptMovimiento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\Frm_VerRptMovimiento.Designer.cs">
+      <DependentUpon>Frm_VerRptMovimiento.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Rpt_MovInventario.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Rpt_MovInventario.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Rpt_OrdCompras.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Rpt_OrdCompras.rpt</DependentUpon>
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="Transportes\Frm_solicitudTransporte.cs">
       <SubType>Form</SubType>
@@ -161,6 +193,20 @@
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\Frm_VerRptCompras.resx">
+      <DependentUpon>Frm_VerRptCompras.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\Frm_VerRptMovimiento.resx">
+      <DependentUpon>Frm_VerRptMovimiento.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Rpt_MovInventario.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Rpt_MovInventario.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Rpt_OrdCompras.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Rpt_OrdCompras.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
@@ -231,6 +277,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\forklift2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\180-reload.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\112-invoice-1.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

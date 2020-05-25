@@ -95,11 +95,8 @@ namespace CapaVistaSCM
                     Txt_descripcion.Enabled = false;
                     Dtp_emision.Enabled = false;
                     Dtp_entrega.Enabled = false;
-                    Cbo_cotizacion.Enabled = false;
                     Cbo_proveedor.Enabled = false;
                     Dgv_ordenCompraDetalle.Enabled = false;
-                    Grp_BuscarCot.Enabled = false;
-                    Grp_BuscarCot.Visible = false;
                     Grp_BuscarProv.Visible = false;
                     Grp_BuscarProv.Enabled = false;
                     Dtp_emision.Enabled = false;
@@ -115,10 +112,6 @@ namespace CapaVistaSCM
 
                     llenarCombos();
 
-                    Cbo_cotizacion.Visible = false;
-                    Cbo_cotizacion.Enabled = false;
-                    Grp_BuscarCot.Enabled = false;
-                    Grp_BuscarCot.Visible = false;
                     Grp_BuscarProv.Visible = false;
                     Grp_BuscarProv.Enabled = false;
                     Cbo_proveedor.Visible = false;
@@ -144,7 +137,7 @@ namespace CapaVistaSCM
             Txt_nombre.Text = datos[1];
             Txt_descripcion.Text = datos[2];
             Txt_proveedor.Text = datos[3];
-            Txt_cotizacion.Text = datos[4];
+            //Txt_cotizacion.Text = datos[4];
             Dtp_entrega.Value = DateTime.Parse(datos[5]);
             Dtp_emision.Value = DateTime.Parse(datos[6]);
             
@@ -190,7 +183,7 @@ namespace CapaVistaSCM
         {
             Cbo_proveedor.llenarse("proveedores", "id_proveedor", "nombre_proveedor");
             Cbo_producto.llenarse("productos", "id_producto", "nombre_producto");
-            Cbo_cotizacion.llenarse("cotizaciones_encabezado", "id_cotizacion_encabezado", "nombre_cotizacion");
+            //Cbo_cotizacion.llenarse("cotizaciones_encabezado", "id_cotizacion_encabezado", "nombre_cotizacion");
         }
 
         private void Frm_OrdenCompra_FormClosed(object sender, FormClosedEventArgs e)
@@ -248,7 +241,7 @@ namespace CapaVistaSCM
 
         private void Btn_buscar_Click(object sender, EventArgs e)
         {
-            if (Txt_proveedor.Text == "" || Txt_cotizacion.Text == "")
+            if (Txt_proveedor.Text == "")
             {
                 mensaje = new Mensaje("Para agregar un producto se debe ingresar una cotizacion y un proveedor antes.");
                 mensaje.Show();
@@ -267,8 +260,8 @@ namespace CapaVistaSCM
                 }
 
 
-                idCot = obtenerCodigoDeCombo(Txt_cotizacion.Text);
-                Nud_cantidad.Maximum = ordenesDeCompras.existenciasPosibles(int.Parse(idProd), int.Parse(idCot));
+                //idCot = obtenerCodigoDeCombo(Txt_cotizacion.Text);
+                //Nud_cantidad.Maximum = ordenesDeCompras.existenciasPosibles(int.Parse(idProd), int.Parse(idCot));
             }
         }
 
@@ -291,13 +284,6 @@ namespace CapaVistaSCM
             }
 
             return codigo;
-        }
-
-        private void Btn_cotizacion_Click(object sender, EventArgs e)
-        {
-            string cot = Cbo_cotizacion.ObtenerIndif();
-            Txt_cotizacion.Text = cot;
-            idCot = obtenerCodigoDeCombo(cot);
         }
 
         private void Btn_agregar_Click(object sender, EventArgs e)
@@ -383,7 +369,7 @@ namespace CapaVistaSCM
             {
                 Dgv_ordenCompraDetalle.Rows[fila].Cells[0].Value.ToString(),
                 Txt_codigo.Text,
-                obtenerCodigoDeCombo(Txt_cotizacion.Text),
+                "",//obtenerCodigoDeCombo(Txt_cotizacion.Text),
                 obtenerCodigoDeCombo(Txt_proveedor.Text),
                 Dgv_ordenCompraDetalle.Rows[fila].Cells[1].Value.ToString(),
                 Dgv_ordenCompraDetalle.Rows[fila].Cells[3].Value.ToString(),
@@ -455,27 +441,30 @@ namespace CapaVistaSCM
 
         private void Btn_eliminar_Click(object sender, EventArgs e)
         {
-            string[] cambioExistencias = eliminarDetalle();
-
-            cambioDet = 1;
-
-            if (Chk_entregado.Checked && entregado != 1)
+            if (Dgv_ordenCompraDetalle.RowCount > 0)
             {
-                ordenesDeCompras.entregaProducto(int.Parse(cambioExistencias[1]), cambioExistencias[0]);
+                string[] cambioExistencias = eliminarDetalle();
+
+                cambioDet = 1;
+
+                if (Chk_entregado.Checked && entregado != 1)
+                {
+                    ordenesDeCompras.entregaProducto(int.Parse(cambioExistencias[1]), cambioExistencias[0]);
+                }
+
+
+                ordenesDeCompras.eliminarOrdenDetalle(
+                    int.Parse(Txt_codigo.Text),
+                    int.Parse(Dgv_ordenCompraDetalle.Rows[Dgv_ordenCompraDetalle.CurrentRow.Index].Cells[0].Value.ToString()));
+
+                Txt_precioTotal.Text =
+                           (double.Parse(Txt_precioTotal.Text) -
+                           double.Parse(Dgv_ordenCompraDetalle.Rows[Dgv_ordenCompraDetalle.CurrentRow.Index].Cells[4].Value.ToString())).ToString();
+
+                Dgv_ordenCompraDetalle.Rows.RemoveAt(Dgv_ordenCompraDetalle.CurrentRow.Index);
+
+
             }
-            
-
-            ordenesDeCompras.eliminarOrdenDetalle(
-                int.Parse(Txt_codigo.Text),
-                int.Parse(Dgv_ordenCompraDetalle.Rows[Dgv_ordenCompraDetalle.CurrentRow.Index].Cells[0].Value.ToString()));
-
-            Txt_precioTotal.Text =
-                       (double.Parse(Txt_precioTotal.Text) -
-                       double.Parse(Dgv_ordenCompraDetalle.Rows[Dgv_ordenCompraDetalle.CurrentRow.Index].Cells[4].Value.ToString())).ToString();
-
-            Dgv_ordenCompraDetalle.Rows.RemoveAt(Dgv_ordenCompraDetalle.CurrentRow.Index);
-
-
         }
 
         private string[] eliminarDetalle()
@@ -528,7 +517,7 @@ namespace CapaVistaSCM
                 mensaje.Show();
                 return false;
             }
-            if(Txt_cotizacion.Text == "" || Txt_proveedor.Text == "")
+            if(Txt_proveedor.Text == "")
             {
                 mensaje = new Mensaje("Se debe elegir un proveedor y la cotizacion pertinente para continuar.");
                 mensaje.Show();
@@ -544,7 +533,7 @@ namespace CapaVistaSCM
             {
                 string[] encabezado = {
                                 Txt_codigo.Text,
-                                obtenerCodigoDeCombo(Txt_cotizacion.Text),
+                                "",//obtenerCodigoDeCombo(Txt_cotizacion.Text),
                                 obtenerCodigoDeCombo(Txt_proveedor.Text),
                                 Txt_nombre.Text,
                                 Txt_descripcion.Text,

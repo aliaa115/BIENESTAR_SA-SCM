@@ -121,8 +121,7 @@ namespace CapaModeloSCM.Movimientos
                 producto.ID_PRODUCTO.ToString(),
                 producto.NOMBRE_PRODUCTO,
                 producto.COSTO_PRODUCTO.ToString(),
-                producto.PRECIO_PRODUCTO.ToString(),
-                producto.IMPUESTO.TASA_IMPUESTO.ToString()
+                producto.PRECIO_PRODUCTO.ToString()
             };
 
             return datos;

@@ -193,6 +193,16 @@ namespace CapaVistaSCM.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _112_invoice_1 {
+            get {
+                object obj = ResourceManager.GetObject("112-invoice-1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap _149_notepad_2 {
             get {
                 object obj = ResourceManager.GetObject("149-notepad-2", resourceCulture);
@@ -216,6 +226,16 @@ namespace CapaVistaSCM.Properties {
         internal static System.Drawing.Bitmap _179_open_book_2 {
             get {
                 object obj = ResourceManager.GetObject("179-open-book-2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _180_reload {
+            get {
+                object obj = ResourceManager.GetObject("180-reload", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

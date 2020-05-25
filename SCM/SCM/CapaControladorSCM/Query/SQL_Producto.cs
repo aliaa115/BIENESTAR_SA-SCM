@@ -53,7 +53,7 @@ namespace CapaControladorSCM.Query
             try
             {
                 string sComando = string.Format(
-                    "SELECT id_producto, nombre_producto, costo_producto, precio_producto, id_impuesto " +
+                    "SELECT id_producto, nombre_producto, costo_producto, precio_producto " +
                     "FROM productos " +
                     "WHERE id_producto = {0} ;",
                     id_producto);
@@ -68,7 +68,7 @@ namespace CapaControladorSCM.Query
                         producto.NOMBRE_PRODUCTO = reader.GetString(1);
                         producto.COSTO_PRODUCTO = reader.GetDouble(2);
                         producto.PRECIO_PRODUCTO = reader.GetDouble(3);
-                        producto.IMPUESTO = sql_impuesto.obtenerImpuestos(reader.GetInt32(4));
+                        
                     }
                 }
                 return producto;

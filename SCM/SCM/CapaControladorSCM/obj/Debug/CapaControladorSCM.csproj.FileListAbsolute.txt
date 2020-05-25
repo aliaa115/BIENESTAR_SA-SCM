@@ -12,4 +12,3 @@
 \\Mac\Home\Documents\Universidad\9no somestre\042 Ingenieria de Software\Proyecto Final\git hub\SCM-Ligia\SCM\SCM\CapaControladorSCM\obj\Debug\CapaControladorSCM.Mensajes.Mensaje.resources
 \\Mac\Home\Documents\Universidad\9no somestre\042 Ingenieria de Software\Proyecto Final\git hub\SCM-Ligia\SCM\SCM\CapaControladorSCM\obj\Debug\CapaControladorSCM.Properties.Resources.resources
 \\Mac\Home\Documents\Universidad\9no somestre\042 Ingenieria de Software\Proyecto Final\git hub\SCM-Ligia\SCM\SCM\CapaControladorSCM\obj\Debug\CapaControladorSCM.csproj.GenerateResource.cache
-\\Mac\Home\Documents\Universidad\9no somestre\042 Ingenieria de Software\Proyecto Final\git hub\SCM-Ligia\SCM\SCM\CapaControladorSCM\obj\Debug\CapaControladorSCM.csprojAssemblyReference.cache
