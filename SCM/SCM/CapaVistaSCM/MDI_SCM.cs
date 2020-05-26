@@ -161,9 +161,9 @@ namespace CapaVistaSCM
             Polizas.Polizas poliza = new Polizas.Polizas();
             poliza.Show();
             poliza.AsignarQuery(
-                " select 'Compras' as Cuenta, round((select sum(precio_unitario) from ordenes_compras_detalle), 2) as debe, '0' as haber " +
+                " select 'COMPRAS' as Cuenta, round((select sum(precio_unitario) from ordenes_compras_detalle), 2) as debe, '0' as haber " +
                 " union all " +
-                " select 'Bancos' as Cuenta, '0' as debe, round((select sum(precio_unitario) from ordenes_compras_detalle), 2) as haber; ");
+                " select 'BANCOS' as Cuenta, '0' as debe, round((select sum(precio_unitario) from ordenes_compras_detalle), 2) as haber; ");
             poliza.AsignarColores(Color.FromArgb(175, 207, 138), Color.Black);
         }
 
@@ -172,7 +172,7 @@ namespace CapaVistaSCM
             Polizas.Polizas poliza = new Polizas.Polizas();
             poliza.Show();
             poliza.AsignarQuery(
-                " select 'Compras' as Cuenta, " +
+                " select 'COMPRAS' as Cuenta, " +
                 " round(COALESCE((select sum(MOV_DET.precio_producto) as debe from " +
                 " movimientos_inventario_detalle MOV_DET " +
                 " join movimientos_inventario_encabezado MOV_ENC using (id_movimiento_inventario_encabezado) " +
@@ -180,7 +180,7 @@ namespace CapaVistaSCM
                 " where TIPO_MOV.nombre_tipo_movimiento = 'Compra' ), 2)) as debe, " +
                 " '0' as haber " +
                 " union all " +
-                " select 'Compras' as Cuenta, " +
+                " select 'BANCOS' as Cuenta, " +
                 " '0' as debe,  " +
                 " round(COALESCE((select sum(MOV_DET.precio_producto) as debe from " +
                 " movimientos_inventario_detalle MOV_DET " +
@@ -188,7 +188,7 @@ namespace CapaVistaSCM
                 " join tipos_movimientos TIPO_MOV using (id_tipo_movimiento) " +
                 " where TIPO_MOV.nombre_tipo_movimiento = 'Compra' ), 2)) as haber " +
                 " union all " +
-                " select 'Venta' as Cuenta, " +
+                " select 'VENTAS' as Cuenta, " +
                 " '0' as debe,  " +
                 " round(COALESCE((select sum(MOV_DET.precio_producto) as debe from " +
                 " movimientos_inventario_detalle MOV_DET " +
@@ -196,7 +196,7 @@ namespace CapaVistaSCM
                 " join tipos_movimientos TIPO_MOV using (id_tipo_movimiento) " +
                 " where TIPO_MOV.nombre_tipo_movimiento = 'Venta' ), 2)) as haber " +
                 " union all " +
-                " select 'Caja' as Cuenta,  " +
+                " select 'CAJA' as Cuenta,  " +
                 " round(COALESCE((select sum(MOV_DET.precio_producto) as debe from " +
                 " movimientos_inventario_detalle MOV_DET " +
                 " join movimientos_inventario_encabezado MOV_ENC using (id_movimiento_inventario_encabezado) " +
