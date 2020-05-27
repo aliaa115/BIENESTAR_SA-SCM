@@ -61,7 +61,7 @@ namespace CapaControladorSCM.Query
         public void ingresarMovimientoDetalle(string[] valores)
         {
             string sCommando = string.Format(
-                    "INSERT INTO `erp`.`movimientos_inventario_detalle` ( " +
+                    "INSERT INTO movimientos_inventario_detalle ( " +
                         "id_movimiento_inventario_detalle, " +
                         "id_movimiento_inventario_encabezado, " +
                         "id_producto, " +

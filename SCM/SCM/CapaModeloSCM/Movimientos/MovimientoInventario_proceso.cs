@@ -144,6 +144,8 @@ namespace CapaModeloSCM.Movimientos
         //verifica la cantidad de inventario disponible para el movimineto
         public int existenciasPosibles(int producto)
         {
+            return 6000;
+            /*
             int posible;
             int[] Maximo;
 
@@ -161,6 +163,7 @@ namespace CapaModeloSCM.Movimientos
                     "porfavor verificar el maximo de producto en caso de querer agregar producto");
                 return 0;
             }
+            */
         }
 
         //obtener signo de tipo movimiento
