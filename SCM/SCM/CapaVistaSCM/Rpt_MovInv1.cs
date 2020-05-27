@@ -16,14 +16,14 @@ namespace CapaVistaSCM {
     using CrystalDecisions.CrystalReports.Engine;
     
     
-    public class Rpt_OrdCompras : ReportClass {
+    public class Rpt_MovInv1 : ReportClass {
         
-        public Rpt_OrdCompras() {
+        public Rpt_MovInv1() {
         }
         
         public override string ResourceName {
             get {
-                return "Rpt_OrdCompras.rpt";
+                return "Rpt_MovInv1.rpt";
             }
             set {
                 // Do nothing
@@ -41,7 +41,7 @@ namespace CapaVistaSCM {
         
         public override string FullResourceName {
             get {
-                return "CapaVistaSCM.Rpt_OrdCompras.rpt";
+                return "CapaVistaSCM.Rpt_MovInv1.rpt";
             }
             set {
                 // Do nothing
@@ -106,9 +106,9 @@ namespace CapaVistaSCM {
     }
     
     [System.Drawing.ToolboxBitmapAttribute(typeof(CrystalDecisions.Shared.ExportOptions), "report.bmp")]
-    public class CachedRpt_OrdCompras : Component, ICachedReport {
+    public class CachedRpt_MovInv1 : Component, ICachedReport {
         
-        public CachedRpt_OrdCompras() {
+        public CachedRpt_MovInv1() {
         }
         
         [Browsable(false)]
@@ -145,7 +145,7 @@ namespace CapaVistaSCM {
         }
         
         public virtual CrystalDecisions.CrystalReports.Engine.ReportDocument CreateReport() {
-            Rpt_OrdCompras rpt = new Rpt_OrdCompras();
+            Rpt_MovInv1 rpt = new Rpt_MovInv1();
             rpt.Site = this.Site;
             return rpt;
         }

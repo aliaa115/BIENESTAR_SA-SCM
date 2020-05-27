@@ -121,16 +121,16 @@
     <Compile Include="Reportes\Frm_VerRptMovimiento.Designer.cs">
       <DependentUpon>Frm_VerRptMovimiento.cs</DependentUpon>
     </Compile>
-    <Compile Include="Rpt_MovInventario.cs">
+    <Compile Include="Rpt_MovInv1.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>Rpt_MovInventario.rpt</DependentUpon>
+      <DependentUpon>Rpt_MovInv1.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Rpt_OrdCompras.cs">
+    <Compile Include="Rpt_OrdCompra.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>Rpt_OrdCompras.rpt</DependentUpon>
+      <DependentUpon>Rpt_OrdCompra.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Transportes\Frm_solicitudTransporte.cs">
@@ -200,13 +200,13 @@
     <EmbeddedResource Include="Reportes\Frm_VerRptMovimiento.resx">
       <DependentUpon>Frm_VerRptMovimiento.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Rpt_MovInventario.rpt">
+    <EmbeddedResource Include="Rpt_MovInv1.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>Rpt_MovInventario.cs</LastGenOutput>
+      <LastGenOutput>Rpt_MovInv1.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="Rpt_OrdCompras.rpt">
+    <EmbeddedResource Include="Rpt_OrdCompra.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>Rpt_OrdCompras.cs</LastGenOutput>
+      <LastGenOutput>Rpt_OrdCompra.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

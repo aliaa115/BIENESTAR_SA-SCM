@@ -29,7 +29,8 @@
         private void InitializeComponent()
         {
             this.crystalReportViewer1 = new CrystalDecisions.Windows.Forms.CrystalReportViewer();
-            this.Rpt_OrdCompras1 = new CapaVistaSCM.Rpt_OrdCompras();
+            this.Rpt_OrdCompra1 = new CapaVistaSCM.Rpt_OrdCompra();
+            this.Rpt_OrdCompra2 = new CapaVistaSCM.Rpt_OrdCompra();
             this.SuspendLayout();
             // 
             // crystalReportViewer1
@@ -40,18 +41,18 @@
             this.crystalReportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.crystalReportViewer1.Location = new System.Drawing.Point(0, 0);
             this.crystalReportViewer1.Name = "crystalReportViewer1";
-            this.crystalReportViewer1.ReportSource = this.Rpt_OrdCompras1;
-            this.crystalReportViewer1.Size = new System.Drawing.Size(930, 650);
+            this.crystalReportViewer1.ReportSource = this.Rpt_OrdCompra2;
+            this.crystalReportViewer1.Size = new System.Drawing.Size(800, 450);
             this.crystalReportViewer1.TabIndex = 0;
             // 
             // Frm_VerRptCompras
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(930, 650);
+            this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.crystalReportViewer1);
             this.Name = "Frm_VerRptCompras";
-            this.Text = "Frm_VerRptCompras";
+            this.Text = "Reporte";
             this.ResumeLayout(false);
 
         }
@@ -59,6 +60,7 @@
         #endregion
 
         private CrystalDecisions.Windows.Forms.CrystalReportViewer crystalReportViewer1;
-        private Rpt_OrdCompras Rpt_OrdCompras1;
+        private Rpt_OrdCompra Rpt_OrdCompra1;
+        private Rpt_OrdCompra Rpt_OrdCompra2;
     }
 }

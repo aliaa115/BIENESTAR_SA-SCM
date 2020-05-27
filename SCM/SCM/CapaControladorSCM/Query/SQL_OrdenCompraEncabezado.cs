@@ -129,7 +129,7 @@ namespace CapaControladorSCM.Query
 
         public void insertarOrdenCompraEncabezado(string[] valores)
         {
-            string sCommando = string.Format("insert into erp.ordenes_compras_encabezado (" +
+            string sCommando = string.Format("insert into ordenes_compras_encabezado (" +
                 "id_orden_compra_encabezado, " +
                 "id_proveedor, " +
                 "nombre_orden_compra, " +
@@ -156,7 +156,7 @@ namespace CapaControladorSCM.Query
         //actualiza el encabezado de una compra
         public void actualizarOrdenCompraEncabezado(string[] valores)
         {
-            string sCommando = string.Format("UPDATE erp.ordenes_compras_encabezado SET " +
+            string sCommando = string.Format("UPDATE ordenes_compras_encabezado SET " +
                             "nombre_orden_compra = '{3}', " +
                             "descripcion_orden_compra = '{4}', " +
                             "fecha_emision = '{5}', " +

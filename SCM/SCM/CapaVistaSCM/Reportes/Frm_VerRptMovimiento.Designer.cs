@@ -29,7 +29,8 @@
         private void InitializeComponent()
         {
             this.crystalReportViewer1 = new CrystalDecisions.Windows.Forms.CrystalReportViewer();
-            this.Rpt_MovInventario1 = new CapaVistaSCM.Rpt_MovInventario();
+ //           this.Rpt_MovInv1 = new CapaVistaSCM.Rpt_MovInv();
+            this.Rpt_MovInv11 = new CapaVistaSCM.Rpt_MovInv1();
             this.SuspendLayout();
             // 
             // crystalReportViewer1
@@ -40,7 +41,7 @@
             this.crystalReportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.crystalReportViewer1.Location = new System.Drawing.Point(0, 0);
             this.crystalReportViewer1.Name = "crystalReportViewer1";
-            this.crystalReportViewer1.ReportSource = this.Rpt_MovInventario1;
+            this.crystalReportViewer1.ReportSource = this.Rpt_MovInv11;
             this.crystalReportViewer1.Size = new System.Drawing.Size(800, 450);
             this.crystalReportViewer1.TabIndex = 0;
             // 
@@ -51,7 +52,7 @@
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.crystalReportViewer1);
             this.Name = "Frm_VerRptMovimiento";
-            this.Text = "Frm_VerRptMovimiento";
+            this.Text = "Reporte";
             this.ResumeLayout(false);
 
         }
@@ -59,6 +60,7 @@
         #endregion
 
         private CrystalDecisions.Windows.Forms.CrystalReportViewer crystalReportViewer1;
-        private Rpt_MovInventario Rpt_MovInventario1;
+        //private Rpt_MovInv Rpt_MovInv1;
+        private Rpt_MovInv1 Rpt_MovInv11;
     }
 }

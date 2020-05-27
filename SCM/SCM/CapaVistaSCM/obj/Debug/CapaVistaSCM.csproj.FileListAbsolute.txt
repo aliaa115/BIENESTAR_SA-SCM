@@ -82,6 +82,6 @@
 \\Mac\Home\Documents\Universidad\9no somestre\042 Ingenieria de Software\Proyecto Final\git hub\SCM-Ligia\SCM\SCM\CapaVistaSCM\bin\Debug\CrystalDecisions.ReportAppServer.ObjectFactory.dll
 \\Mac\Home\Documents\Universidad\9no somestre\042 Ingenieria de Software\Proyecto Final\git hub\SCM-Ligia\SCM\SCM\CapaVistaSCM\bin\Debug\CrystalDecisions.ReportAppServer.CommonControls.dll
 \\Mac\Home\Documents\Universidad\9no somestre\042 Ingenieria de Software\Proyecto Final\git hub\SCM-Ligia\SCM\SCM\CapaVistaSCM\obj\Debug\CapaVistaSCM.Reportes.Frm_VerRptCompras.resources
-\\Mac\Home\Documents\Universidad\9no somestre\042 Ingenieria de Software\Proyecto Final\git hub\SCM-Ligia\SCM\SCM\CapaVistaSCM\obj\Debug\CapaVistaSCM.Reportes.Frm_VerRptMovimiento.resources
 \\Mac\Home\Documents\Universidad\9no somestre\042 Ingenieria de Software\Proyecto Final\git hub\SCM-Ligia\SCM\SCM\CapaVistaSCM\bin\Debug\Polizas.dll
 \\Mac\Home\Documents\Universidad\9no somestre\042 Ingenieria de Software\Proyecto Final\git hub\SCM-Ligia\SCM\SCM\CapaVistaSCM\bin\Debug\Polizas.pdb
+\\Mac\Home\Documents\Universidad\9no somestre\042 Ingenieria de Software\Proyecto Final\git hub\SCM-Ligia\SCM\SCM\CapaVistaSCM\obj\Debug\CapaVistaSCM.Reportes.Frm_VerRptMovimiento.resources

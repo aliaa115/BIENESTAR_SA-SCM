@@ -117,7 +117,7 @@ namespace CapaControladorSCM.Query
         //actualiza el stock actual
         public void actualizarStockProducto(int producto, string valor)
         {
-            string sCommando = string.Format("UPDATE `erp`.`productos` SET " +
+            string sCommando = string.Format("UPDATE productos SET " +
                     "stock_producto = stock_producto {1} " +
                     "WHERE id_producto = {0}; ",
                     producto, valor);
